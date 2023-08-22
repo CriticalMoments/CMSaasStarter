@@ -1,0 +1,27 @@
+{
+    "blogInfo": {
+      "baseUrl": "https://sassstarter.pages.dev",
+      "name": "Sass Starter Blog",
+      "description": "A sample blog"
+    },
+    "postList": [
+        {
+            "title": "Awesome Blog Post",
+            "description": "Even more example content!",
+            "link": "/blog/awesome_post",
+            "date": "2022-9-23"
+        },
+        {
+            "title": "How to build a Sass Webpage in 12 easy steps",
+            "description": "A getting started guide for sass websites.",
+            "link": "/blog/how_to_build_sass_page",
+            "date": "2022-12-26"
+        },
+        {
+            "title": "Example Blog Post",
+            "description": "A sample blog post, showing our blog engine",
+            "link": "/blog/example_blog_post",
+            "date": "2023-03-13"
+        }
+    ]
+}
