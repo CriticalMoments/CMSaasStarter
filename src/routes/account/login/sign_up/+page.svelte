@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { Auth } from '@supabase/auth-ui-svelte'
-    import { sharedAppearance, oauthProviders } from '../login_config.ts';
+    import { sharedAppearance, oauthProviders } from '../login_config';
 
     export let data
 </script>
+
+<svelte:head>
+	<title>Sign up</title>
+</svelte:head>
 
 <h1 class="text-2xl font-bold mb-6">Sign Up</h1>
 <Auth
