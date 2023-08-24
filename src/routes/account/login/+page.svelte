@@ -26,43 +26,92 @@
 
 	let sharedAppearance = {
 		theme: ThemeSupa,
-		style: {
-			input: 'color: #555'
+		variables: {
+			default: {
+				colors: {
+					brand: 'hsl(var(--p))',
+					brandAccent: 'hsl(var(--pf))',
+					inputText: 'hsl(var(--n))',
+					brandButtonText: 'hsl(var(--pc))',
+					messageText: 'hsl(var(--b))',
+					dividerBackground: 'hsl(var(--n))',
+					inputLabelText: 'hsl(var(--n))',
+					defaultButtonText: 'hsl(var(--n))',
+					anchorTextColor: 'hsl(var(--nc))',
+				},
+			},
+        },
+		className: {
+			button: 'btn'
 		}
 	}
 	let oauthProviders = ['github'] as Provider[]
+
+	let currentSection = "choose_flow"
+
+	function showSignUp() {
+		currentSection = "sign_up"
+	}
+	function showSignIn() {
+		currentSection = "sign_in"
+	}
+	function showForgotPassword() {
+		currentSection = "forgot_password"
+	}
 </script>
 
 <svelte:head>
 	<title>Sign up / Sign in</title>
 </svelte:head>
 
-<h1>Sign In</h1>
-<div class="row flex-center flex">
-	<div class="col-6 form-widget">
-		<Auth
-			supabaseClient={data.supabase}
-			view="sign_in"
-			redirectTo={`${data.url}/auth/callback`}
-            providers={oauthProviders}
-			showLinks={false}
-			appearance={sharedAppearance}
-			additionalData={undefined}
-		/>
+<div class="text-center content-center max-w-lg mx-auto min-h-[70vh] mb-12 flex items-center place-content-center">
+	<div class="flex flex-col {currentSection == "choose_flow" ? '' : 'hidden'}">
+		<h1 class="text-xl font-bold">Get Started</h1>
+		<button class="btn btn-primary mt-3 btn-wide" on:click={showSignUp}>Sign Up</button>
+		<h1 class="text-xl mt-6">Already have an account?</h1>
+		<button class="btn btn-outline btn-primary mt-3 btn-wide" on:click={showSignIn}>Sign In</button>
 	</div>
-</div>
-
-<h1>Sign Up</h1>
-<div class="row flex-center flex">
-	<div class="col-6 form-widget">
+	<div class="flex flex-col w-64 lg:w-80 {currentSection == "sign_up" ? '' : 'hidden'}">
+		<h1 class="text-2xl font-bold mb-6">Sign Up</h1>
 		<Auth
 			supabaseClient={data.supabase}
 			view="sign_up"
 			redirectTo={`${data.url}/auth/callback`}
 			showLinks={false}
-            providers={oauthProviders}
+			providers={oauthProviders}
+			socialLayout='horizontal'
 			appearance={sharedAppearance}
 			additionalData={undefined}
 		/>
+		<div class="text-l text-slate-800 mt-4 mb-2">Have an account? <a class="underline" on:click={showSignIn}>Sign in</a>.</div>
+	</div>
+	<div class="flex flex-col w-64 lg:w-80 {currentSection == "sign_in" ? '' : 'hidden'}">
+		<h1 class="text-2xl font-bold mb-6">Sign In</h1>
+		<Auth
+			supabaseClient={data.supabase}
+			view="sign_in"
+			redirectTo={`${data.url}/auth/callback`}
+			providers={oauthProviders}
+			socialLayout='horizontal'
+			showLinks={false}
+			appearance={sharedAppearance}
+			additionalData={undefined}
+		/>
+		<div class="text-l text-slate-800 mt-4"><a class="underline" on:click={showForgotPassword}>Forgot password?</a></div>
+		<div class="text-l text-slate-800 mt-3">Don't have an account? <a class="underline" on:click={showSignUp}>Sign up</a>.</div>
+	</div>
+	<div class="flex flex-col w-64 lg:w-80 {currentSection == "forgot_password" ? '' : 'hidden'}">
+		<h1 class="text-2xl font-bold mb-6">Forgot Password</h1>
+		<Auth
+			supabaseClient={data.supabase}
+			view="forgotten_password"
+			redirectTo={`${data.url}/auth/callback`}
+			providers={oauthProviders}
+			socialLayout='horizontal'
+			showLinks={false}
+			appearance={sharedAppearance}
+			additionalData={undefined}
+		/>
+		<div class="text-l text-slate-800 mt-4">Remember your password? <a class="underline" on:click={showSignIn}>Sign in</a>.</div>
 	</div>
 </div>
