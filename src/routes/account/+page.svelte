@@ -10,9 +10,8 @@
 	let profileForm: HTMLFormElement
 	let loading = false
 	let fullName: string = profile?.full_name ?? ''
-	let username: string = profile?.username ?? ''
+	let companyName: string = profile?.company_name ?? ''
 	let website: string = profile?.website ?? ''
-	let avatarUrl: string = profile?.avatar_url ?? ''
 
 	const handleSubmit: SubmitFunction = () => {
 		loading = true
@@ -24,8 +23,8 @@
 	const handleSignOut: SubmitFunction = () => {
 		loading = true
 		return async ({ update }) => {
-			loading = false
 			update()
+			loading = false
 		}
 	}
 </script>
@@ -34,7 +33,7 @@
 	<form
 		class="form-widget"
 		method="post"
-		action="?/update"
+		action="/account/api?/updateProfile"
 		use:enhance={handleSubmit}
 		bind:this={profileForm}
 	>
@@ -49,12 +48,12 @@
 		</div>
 
 		<div>
-			<label for="username">Username</label>
-			<input id="username" name="username" type="text" value={form?.username ?? username} />
+			<label for="companyName">Company Name</label>
+			<input id="companyName" name="companyName" type="text" value={form?.companyName ?? companyName} />
 		</div>
 
 		<div>
-			<label for="website">Website</label>
+			<label for="website">Company Website</label>
 			<input id="website" name="website" type="url" value={form?.website ?? website} />
 		</div>
 
@@ -68,9 +67,5 @@
 		</div>
 	</form>
 
-	<form method="post" action="?/signout" use:enhance={handleSignOut}>
-		<div>
-			<button class="button block" disabled={loading}>Sign Out</button>
-		</div>
-	</form>
+	<a href="/account/sign_out">Sign Out</a>
 </div>

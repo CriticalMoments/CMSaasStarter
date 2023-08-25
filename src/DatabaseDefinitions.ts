@@ -15,7 +15,7 @@ export interface Database {
           full_name: string | null
           id: string
           updated_at: string | null
-          username: string | null
+          company_name: string | null
           website: string | null
         }
         Insert: {
@@ -23,7 +23,7 @@ export interface Database {
           full_name?: string | null
           id: string
           updated_at?: string | null
-          username?: string | null
+          company_name?: string | null
           website?: string | null
         }
         Update: {
@@ -31,7 +31,7 @@ export interface Database {
           full_name?: string | null
           id?: string
           updated_at?: string | null
-          username?: string | null
+          company_name?: string | null
           website?: string | null
         }
         Relationships: [

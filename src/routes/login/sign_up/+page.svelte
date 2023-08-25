@@ -20,4 +20,4 @@
     appearance={sharedAppearance}
     additionalData={undefined}
 />
-<div class="text-l text-slate-800 mt-4 mb-2">Have an account? <a class="underline" href="/account/login/sign_in">Sign in</a>.</div>
+<div class="text-l text-slate-800 mt-4 mb-2">Have an account? <a class="underline" href="/login/sign_in">Sign in</a>.</div>
