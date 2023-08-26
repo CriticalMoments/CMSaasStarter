@@ -18,7 +18,7 @@
 
 <div class="drawer lg:drawer-open">
 	<input id="admin-drawer" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content flex flex-col items-center justify-center">
+	<div class="drawer-content" >
 		<div class="navbar bg-base-100 lg:hidden">
 			<div class="flex-1">
 				<a class="btn btn-ghost normal-case text-xl" href="/">SaaS Starter</a>
@@ -31,7 +31,9 @@
 				</div>
 			</div>
 		</div>
-		<slot />
+		<div class="container mx-auto mx-12 mt-6">
+			<slot />
+		</div>
 	</div> 
 
 	<div class="drawer-side">
