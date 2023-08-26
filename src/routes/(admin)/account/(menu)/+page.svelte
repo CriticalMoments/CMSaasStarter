@@ -9,10 +9,10 @@
 </script>
 
 <h1 class="text-2xl font-bold mb-3">Your Account</h1>
-<h1 class="text-xl mb-6">Replace this with your app's content!</h1>
+<h1 class="text-xl mb-6">Replace this page with your app's content</h1>
 
 <div class="my-6">
-	<div class="stats shadow w-96">
+	<div class="stats shadow w-[420px]">
 	
 		<div class="stat place-items-center">
 		<div class="stat-title">Downloads</div>
@@ -28,7 +28,7 @@
 	</div>
 </div>
 <div class="my-6">
-	<div class="stats shadow w-96">
+	<div class="stats shadow w-[420px]">
 		<div class="stat place-items-center">
 		<div class="stat-title">New Registers</div>
 		<div class="stat-value">1,200</div>
@@ -43,11 +43,11 @@
 	</div>
 </div>
 <div class="my-6">
-	<div class="stats shadow w-96">
+	<div class="stats shadow w-[420px]">
 		<div class="stat place-items-center">
 		<div class="stat-title text-success">Revenue</div>
 		<div class="stat-value text-success">$4200</div>
-		<div class="stat-desc">↗︎ 180 (4%)</div>
+		<div class="stat-desc">↗︎ $180 (4%)</div>
 		</div>
 		
 		<div class="stat place-items-center">
