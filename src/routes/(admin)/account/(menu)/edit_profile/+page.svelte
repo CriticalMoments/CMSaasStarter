@@ -1,7 +1,10 @@
-
 <script lang="ts">
-	import "../../../../app.css"
 	import { enhance, applyAction } from '$app/forms'
+	import { getContext } from 'svelte'
+	import type { Writable } from 'svelte/store';
+
+	let adminSection: Writable<String> = getContext('adminSection');
+	adminSection.set('profile')
 
 	export let data
 	export let form
@@ -18,30 +21,45 @@
 		return errors.includes(name)
 	}
 
+    let showSuccess = false
+
 	const handleSubmit = () => {
 		loading = true
 		return async ({ update, result }) => {
 			let response = await update({ reset: false });
 			await applyAction(result);
 			loading = false
+            if (result.type === 'success') {
+                showSuccess = true
+                setTimeout(() => {
+                    showSuccess = false
+                }, 1500)
+            }
 		}
 	}
 </script>
 
 <svelte:head>
-	<title>Create Profile</title>
+	<title>Update Profile</title>
 </svelte:head>
 
 <div class="text-center content-center max-w-lg mx-auto min-h-[100vh] mb-12 flex items-center place-content-center">
 	<div class="flex flex-col w-64 lg:w-80">
 		<div>
-			<h1 class="text-2xl font-bold mb-6">Create Profile</h1>
+			<h1 class="text-2xl font-bold mb-6">Edit Profile</h1>
 			<form
 				class="form-widget"
 				method="POST"
 				action="/account/api?/updateProfile"
 				use:enhance={handleSubmit}
 			>
+
+				<div class="mt-4">
+					<label for="Email" >
+						<span class="text-l text-center">Email</span>
+					</label>
+					<input id="email" name="email" disabled type="text" class=" mt-1 input input-bordered w-full max-w-xs" value={session?.user.email}/>
+				</div>
 
 				<div class="mt-4">
 					<label for="fullName" >
@@ -69,23 +87,22 @@
 						{form?.errorMessage} 
 					</p>
 				{/if}
-				<div class="mt-4">
+				<div class="mt-4 {!showSuccess ? '' : 'hidden'}">
 					<input
 						type="submit"
 						class="btn btn-primary mt-3 btn-wide"
-						value={loading ? "..." : "Create Profile"}
+						value={loading ? "..." : "Save Profile"}
 						disabled={loading}
 					/>
 				</div>
+				<div class="mt-4 {showSuccess ? '' : 'hidden'}">
+					<input
+						type="submit"
+						class="btn btn-success mt-3 btn-wide"
+						value="Saved!"
+					/>
+				</div>
 			</form>
-
-			<div class="text-sm text-slate-800 mt-14">
-				You are logged in as {session.user.email}. 
-				<br>
-				<a data-sveltekit-preload-data="hover" class="underline" href="/account/sign_out">
-					Sign out
-				</a>
-			</div>
 		</div>
     </div>
 </div>
