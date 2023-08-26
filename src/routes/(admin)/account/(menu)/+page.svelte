@@ -1,5 +1,10 @@
 <script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms'
+	import { getContext } from 'svelte'
+	import type { Writable } from 'svelte/store';
+
+	let adminSection: Writable<String> = getContext('adminSection');
+	adminSection.set('home')
 
 	export let data
 	export let form
