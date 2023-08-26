@@ -1,76 +1,59 @@
 <script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms'
 	import { getContext } from 'svelte'
 	import type { Writable } from 'svelte/store';
 
 	let adminSection: Writable<String> = getContext('adminSection');
 	adminSection.set('home')
 
-	export let data
-	export let form
 
-	let { session, supabase, profile } = data
-	$: ({ session, supabase, profile } = data)
-
-	let profileForm: HTMLFormElement
-	let loading = false
-	let fullName: string = profile?.full_name ?? ''
-	let companyName: string = profile?.company_name ?? ''
-	let website: string = profile?.website ?? ''
-
-	const handleSubmit: SubmitFunction = () => {
-		loading = true
-		return async () => {
-			loading = false
-		}
-	}
-
-	const handleSignOut: SubmitFunction = () => {
-		loading = true
-		return async ({ update }) => {
-			update()
-			loading = false
-		}
-	}
 </script>
 
-<div class="form-widget">
-	<form
-		class="form-widget"
-		method="post"
-		action="/account/api?/updateProfile"
-		use:enhance={handleSubmit}
-		bind:this={profileForm}
-	>
-		<div>
-			<label for="email">Email</label>
-			<input id="email" type="text" value={session.user.email} disabled />
-		</div>
+<h1 class="text-2xl font-bold mb-3">Your Account</h1>
+<h1 class="text-xl mb-6">Replace this with your app's content!</h1>
 
-		<div>
-			<label for="fullName">Full Name</label>
-			<input id="fullName" name="fullName" type="text" value={form?.fullName ?? fullName} />
+<div class="my-6">
+	<div class="stats shadow w-96">
+	
+		<div class="stat place-items-center">
+		<div class="stat-title">Downloads</div>
+		<div class="stat-value">31K</div>
+		<div class="stat-desc">From January 1st to February 1st</div>
 		</div>
-
-		<div>
-			<label for="companyName">Company Name</label>
-			<input id="companyName" name="companyName" type="text" value={form?.companyName ?? companyName} />
+		
+		<div class="stat place-items-center">
+		<div class="stat-title">Users</div>
+		<div class="stat-value text-secondary">4,200</div>
+		<div class="stat-desc text-secondary">↗︎ 40 (2%)</div>
 		</div>
-
-		<div>
-			<label for="website">Company Website</label>
-			<input id="website" name="website" type="url" value={form?.website ?? website} />
+	</div>
+</div>
+<div class="my-6">
+	<div class="stats shadow w-96">
+		<div class="stat place-items-center">
+		<div class="stat-title">New Registers</div>
+		<div class="stat-value">1,200</div>
+		<div class="stat-desc">↘︎ 90 (14%)</div>
 		</div>
-
-		<div>
-			<input
-				type="submit"
-				class="button block primary"
-				value={loading ? 'Loading...' : 'Update'}
-				disabled={loading}
-			/>
+		
+		<div class="stat place-items-center">
+		<div class="stat-title">Churned Accounts</div>
+		<div class="stat-value">42</div>
+		<div class="stat-desc">↘︎ 6 (12%)</div>
 		</div>
-	</form>
-
-	<a href="/account/sign_out">Sign Out</a>
+	</div>
+</div>
+<div class="my-6">
+	<div class="stats shadow w-96">
+		<div class="stat place-items-center">
+		<div class="stat-title text-success">Revenue</div>
+		<div class="stat-value text-success">$4200</div>
+		<div class="stat-desc">↗︎ 180 (4%)</div>
+		</div>
+		
+		<div class="stat place-items-center">
+		<div class="stat-title">New Subscribers</div>
+		<div class="stat-value">16</div>
+		<div class="stat-desc">↘︎ 1 (%7)</div>
+		</div>
+	</div>
 </div>
