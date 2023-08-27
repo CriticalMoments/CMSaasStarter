@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import {postList,blogInfo} from '/src/routes/blog/posts.json';
+import {postList,blogInfo} from '/src/routes/(marketing)/blog/posts.json';
 
 export const prerender = true
 

@@ -1,14 +1,14 @@
 <script>
-    import "../app.css";
+    import "../../app.css";
 </script>
 
 <div class="navbar bg-base-100">
     <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl" href="/">Sass Starter</a>
+        <a class="btn btn-ghost normal-case text-xl" href="/">SaaS Starter</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal px-1 hidden sm:flex">
-                <li><a href="https://github.com/CriticalMoments/CMSassStarter">Docs</a></li>
+                <li><a href="https://github.com/CriticalMoments/CMSaasStarter">Docs</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/pricing">Pricing</a></li>
                 <li><a href="/account">Account</a></li>
@@ -18,7 +18,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
             </label>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a href="https://github.com/CriticalMoments/CMSassStarter">Docs</a></li>
+                <li><a href="https://github.com/CriticalMoments/CMSaasStarter">Docs</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/pricing">Pricing</a></li>
                 <li><a href="/account">Account</a></li>
@@ -34,8 +34,8 @@
         <span class="footer-title">Product</span> 
         <a class="link link-hover" href="/">Overview</a>
         <a class="link link-hover" href="/pricing">Pricing</a>
-        <a class="link link-hover" href="https://github.com/CriticalMoments/CMSassStarter">Github</a>
-        <a class="link link-hover" href="https://github.com/CriticalMoments/CMSassStarter">Docs</a>
+        <a class="link link-hover" href="https://github.com/CriticalMoments/CMSaasStarter">Github</a>
+        <a class="link link-hover" href="https://github.com/CriticalMoments/CMSaasStarter">Docs</a>
     </div> 
     <div>
         <span class="footer-title">Company</span> 

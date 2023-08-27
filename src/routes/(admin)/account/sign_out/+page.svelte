@@ -1,0 +1,1 @@
+<h1 class="text-2xl font-bold m-6">There was an issue signing out.</h1>
