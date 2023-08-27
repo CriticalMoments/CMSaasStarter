@@ -6,7 +6,6 @@ export async function load({ parent }) {
 
     // They completed their profile! Redirect to account home
     if (_hasFullProfile(data?.profile)) {
-        console.log("redirecting")
         throw redirect(303, '/account')
     }
 
