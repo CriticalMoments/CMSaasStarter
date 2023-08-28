@@ -37,6 +37,8 @@
 	<title>Change Password</title>
 </svelte:head>
 
+<h1 class="text-2xl font-bold mb-6">Change Password</h1>
+
 <div class="card bg-base-200 shadow-xl p-6 mt-8 max-w-lg">
 
 	<form
@@ -71,7 +73,7 @@
 		<div class="">
 			<input
 				type="submit"
-				class="ml-auto btn btn-success btn-sm btn-outline mt-3 min-w-[145px]"
+				class="ml-auto btn btn-success btn-sm mt-3 min-w-[145px]"
 				value={loading ? "..." : "Change Password"}
 				disabled={loading}
 			/>

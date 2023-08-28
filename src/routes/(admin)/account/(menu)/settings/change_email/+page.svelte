@@ -65,7 +65,7 @@
 		<div class="{!showSuccess ? '' : 'hidden'}">
 			<input
 				type="submit"
-				class="ml-auto btn btn-success btn-sm btn-outline mt-3 min-w-[145px]"
+				class="ml-auto btn btn-success btn-sm mt-3 min-w-[145px]"
 				value={loading ? "..." : "Save"}
 				disabled={loading}
 			/>
