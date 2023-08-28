@@ -19,3 +19,13 @@
 
 <EditProfile data={data} editable={false}/>
 <ChangeEmail data={data} editable={false}/>
+
+<div class="card bg-base-200 shadow-xl p-6 mt-8 max-w-lg">
+	<h2 class="text-xl font-bold mb-1">Password</h2>
+	<div class="text-l">••••••••</div>
+	<a href="/account/settings/change_password">
+		<button class="btn btn-outline btn-sm mt-3 min-w-[145px]">
+			Change Password
+		</button>
+	</a>
+</div>
