@@ -1,6 +1,43 @@
 import { fail, redirect } from '@sveltejs/kit'
 
 export const actions = {
+  updatePrimaryEmail: async ({ request, locals: { supabase, getSession } }) => {
+    const formData = await request.formData()
+    const email = formData.get('email') as string
+    
+    let validationError
+    if (!email || email === '') {
+      validationError = 'An email address is required'
+    }
+    // Dead simple check -- there's no standard here (which is followed),
+    // and lots of errors will be missed until we actually email to verify, so 
+    // just do that
+    else if (!email.includes('@')) {
+      validationError = 'A valid email address is required'
+    }
+    if (validationError) {
+      return fail(400, {
+        errorMessage: validationError,
+        errorFields: ['email'],
+        email
+      })
+    }
+
+    const session = await getSession()
+
+    const { error } = await supabase.auth.updateUser({email: email})
+
+    if (error) {
+      return fail(500, {
+        errorMessage: 'Unknown error. If this persists please contact us.',
+        email,
+      })
+    }
+
+    return {
+      email
+    }
+  },
   updateProfile: async ({ request, locals: { supabase, getSession } }) => {
     const formData = await request.formData()
     const fullName = formData.get('fullName') as string
