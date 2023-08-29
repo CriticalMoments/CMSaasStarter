@@ -42,10 +42,10 @@
 <div class="card bg-base-200 shadow-xl p-6 mt-8 max-w-xl flex flex-col md:flex-row">
 
 {#if title}
-	<div class="text-xl font-bold mb-3 w-56 flex-none">{title}</div>
+	<div class="text-xl font-bold mb-3 w-48 flex-none">{title}</div>
 {/if}
 
-	<div class="w-full min-w-96">
+	<div class="w-full min-w-48">
 {#if !showSuccess}
  		<form
 			class="form-widget flex flex-col"
