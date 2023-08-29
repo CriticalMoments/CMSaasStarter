@@ -36,6 +36,7 @@
 	</div> 
 
 	<div class="drawer-side">
+	  <label for="admin-drawer" class="drawer-overlay"></label>
 	  <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-200 text-base-content">
 		<li>
 			<div class="normal-case menu-title text-xl font-bold text-black flex flex-row" >
