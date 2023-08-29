@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { enhance, applyAction } from '$app/forms'
 	import { getContext } from 'svelte'
 	import type { Writable } from 'svelte/store';
-	import ChangeEmail from './change_email/+page.svelte';
-	import EditProfile from './edit_profile/+page.svelte';
+	import SettingsModule from './settings_module.svelte';
 
 	let adminSection: Writable<String> = getContext('adminSection');
 	adminSection.set('settings')
 
 	export let data
+	let { session, profile } = data
 </script>
 
 <svelte:head>
@@ -17,15 +16,37 @@
 
 <h1 class="text-2xl font-bold mb-6">Settings</h1>
 
-<EditProfile data={data} editable={false}/>
-<ChangeEmail data={data} editable={false}/>
+<SettingsModule 
+	data={data}
+	title='Profile'
+	editable={false}
+	fields={[
+			{id: "fullName", label: 'Name', initialValue: profile?.full_name ?? ''},
+			{id: "companyName", label: 'Company Name', initialValue: profile?.company_name ?? ''},
+			{id: "website", label: 'Company Website', initialValue: profile?.website ?? ''}
+		]}
+	editButtonTitle='Edit Profile'
+	editLink="/account/settings/edit_profile"
+	/>
 
-<div class="card bg-base-200 shadow-xl p-6 mt-8 max-w-lg">
-	<h2 class="text-xl font-bold mb-1">Password</h2>
-	<div class="text-l">••••••••</div>
-	<a href="/account/settings/change_password">
-		<button class="btn btn-outline btn-sm mt-3 min-w-[145px]">
-			Change Password
-		</button>
-	</a>
-</div>
+<SettingsModule 
+	data={data}
+	title='Primary Email'
+	editable={false}
+	fields={[
+		{id: "email", initialValue: session?.user?.email}
+		]}
+	editButtonTitle='Change Email'
+	editLink="/account/settings/change_email"
+	/>
+
+<SettingsModule 
+	data={data}
+	title='Password'
+	editable={false}
+	fields={[
+		{id: "password", initialValue: '••••••••••••••••'}
+		]}
+	editButtonTitle='Change Password'
+	editLink="/account/settings/change_password"
+	/>

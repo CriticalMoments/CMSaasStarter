@@ -1,7 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit'
 
 export const actions = {
-  updatePrimaryEmail: async ({ request, locals: { supabase, getSession } }) => {
+  updateEmail: async ({ request, locals: { supabase, getSession } }) => {
     const formData = await request.formData()
     const email = formData.get('email') as string
     
@@ -133,7 +133,7 @@ export const actions = {
       errorFields.push('companyName')
     }
     if (!website) {
-      validationError = 'Company website is required. App Store urls work if you don\'t have a website.'
+      validationError = 'Company website is required. An app store URL is a good alternative if you don\'t have a website.'
       errorFields.push('website')
     }
     if (validationError) {
