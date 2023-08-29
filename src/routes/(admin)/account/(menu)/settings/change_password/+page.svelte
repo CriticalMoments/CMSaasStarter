@@ -13,10 +13,11 @@
 	<title>Change Password</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Change Password</h1>
+<h1 class="text-2xl font-bold mb-6">Settings</h1>
 
 <SettingsModule
     data={data}
+    title='Change Password'
 	editable={true}
     saveButtonTitle='Change Password'
     successTitle='Password Changed'
