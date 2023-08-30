@@ -14,12 +14,13 @@
         },
         {
             name: "Pro",
-            description: "A plan to test the purchase expereince. Try buying this with the fake credit card 4242424242424242.",
+            description: "A plan to test the purchase experience. Try buying this with the fake credit card 4242424242424242.",
             price: "$5",
             priceIntervalName: "per month",
             callToAction: "Get Started",
             highlight: true,
             features: [
+                "Everything in Free",
                 "Support us with fake money",
                 "Test the purchase experience"
             ]
@@ -31,6 +32,7 @@
             priceIntervalName: "per month",
             callToAction: "Get Started",
             features: [
+                "Everything in Pro",
                 "Try the 'upgrade plan' UX",
                 "Still actually free!"
             ]
@@ -42,13 +44,13 @@
     <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 </svelte:head>
 
-<div class="min-h-[70vh] my-5">
+<div class="min-h-[70vh]">
     <h1 class="text-2xl font-bold text-center my-6">Pricing</h1>
 
-    <div class="w-full mt-8">
-        <div class="flex flex-col lg:flex-row gap-4 place-content-center flex-wrap">
+    <div class="w-full my-8 px-3">
+        <div class="flex flex-col lg:flex-row gap-10 place-content-center flex-wrap">
             {#each plans as plan}
-                <div class="mx-3 flex-none card card-bordered {plan.highlight ? 'border-primary' : ''} shadow-xl flex-1 flex-grow min-w-[260px] max-w-[310px] p-6">
+                <div class="flex-none card card-bordered {plan.highlight ? 'border-primary' : ''} shadow-xl flex-1 flex-grow min-w-[260px] max-w-[310px] p-6">
                     <div class="flex flex-col h-full">
 
                         <div class="text-xl font-bold">{plan.name}</div>
