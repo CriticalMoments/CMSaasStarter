@@ -46,9 +46,9 @@
     <h1 class="text-2xl font-bold text-center my-6">Pricing</h1>
 
     <div class="w-full mt-8">
-        <div class="flex flex-col lg:flex-row gap-10 place-content-center flex-wrap">
+        <div class="flex flex-col lg:flex-row gap-4 place-content-center flex-wrap">
             {#each plans as plan}
-                <div class="flex-none card card-bordered {plan.highlight ? 'border-primary' : ''} shadow-xl flex-none w-[270px] p-6">
+                <div class="mx-3 flex-none card card-bordered {plan.highlight ? 'border-primary' : ''} shadow-xl flex-1 flex-grow min-w-[260px] max-w-[310px] p-6">
                     <div class="flex flex-col h-full">
 
                         <div class="text-xl font-bold">{plan.name}</div>
