@@ -12,7 +12,7 @@
     let sortedPosts = postList.sort(((a, b) => (b.parsedDate - a.parsedDate)));
 </script>
 
-<div class="py-8 max-w-xl mx-auto">
+<div class="py-8 px-4 max-w-xl mx-auto">
     <div class="text-2xl font-medium text-primary flex gap-3 items-baseline">
         <span class="flex-none">{blogInfo.name}</span>
         <a href="/blog/rss.xml" target="_blank" rel="noreferrer">

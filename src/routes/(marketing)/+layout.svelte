@@ -27,7 +27,9 @@
     </div>
 </div>
 
-<slot />
+<div class=""> 
+    <slot />
+</div>
 
 <footer class="footer p-10 bg-neutral text-neutral-content">
     <div>
