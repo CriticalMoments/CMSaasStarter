@@ -44,8 +44,8 @@
     <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 </svelte:head>
 
-<div class="min-h-[70vh]">
-    <h1 class="text-2xl font-bold text-center my-6">Pricing</h1>
+<div class="min-h-[70vh] pb-8 pt-[5vh]">
+    <h1 class="text-2xl font-bold text-center">Pricing</h1>
 
     <div class="w-full my-8 px-3">
         <div class="flex flex-col lg:flex-row gap-10 place-content-center flex-wrap">
