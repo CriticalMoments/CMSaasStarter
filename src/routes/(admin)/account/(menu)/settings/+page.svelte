@@ -31,7 +31,7 @@
 
 <SettingsModule 
 	data={data}
-	title='Primary Email'
+	title='Email'
 	editable={false}
 	fields={[
 		{id: "email", initialValue: session?.user?.email}

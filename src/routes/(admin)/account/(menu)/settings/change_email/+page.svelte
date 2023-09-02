@@ -25,6 +25,6 @@
     successBody='You should recieve emails at both the old and new address to confirm the change. Please click the link in both emails to finalized the change. Until finalized, you must sign in with your current email.'
     formTarget='/account/api?/updateEmail'
 	fields={[
-            {id: "email", label: "Primary Email", initialValue: session?.user?.email ?? '', placeholder: 'Account Email'},
+            {id: "email", label: "Email", initialValue: session?.user?.email ?? '', placeholder: 'Email address'},
 		]}
     />
