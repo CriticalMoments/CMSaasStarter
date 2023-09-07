@@ -17,6 +17,7 @@
             description: "A plan to test the purchase experience. Try buying this with the fake credit card 4242424242424242.",
             price: "$5",
             priceIntervalName: "per month",
+            price_id: "price_1NkdZCHMjzZ8mGZnRSjUm4yA",
             callToAction: "Get Started",
             highlight: true,
             features: [
@@ -30,6 +31,7 @@
             description: "A plan to test the upgrade expereince. Try buying this with the fake credit card 4242424242424242.",
             price: "$15",
             priceIntervalName: "per month",
+            price_id: "price_1Nkda2HMjzZ8mGZn4sKvbDAV",
             callToAction: "Get Started",
             features: [
                 "Everything in Pro",
@@ -67,7 +69,10 @@
                             <span class="text-4xl font-bold">{plan.price}</span> 
                             <span class="text-gray-400">{plan.priceIntervalName}</span>
                             <div class="mt-6 pt-4 flex-1 flex flex-row items-center">
-                                <button class="btn btn-primary w-[80%] mx-auto">Get Started</button>
+                                <a href="{ plan.price_id ? '/account/subscribe/' + plan.price_id : '/login'}"
+                                  class="btn btn-primary w-[80%] mx-auto">
+                                    Get Started
+                                </a>
                             </div>
                         </div>
                     </div>
