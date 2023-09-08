@@ -39,10 +39,34 @@ export const actions = {
     }
   },
   updatePassword: async ({ request, locals: { supabase, getSession } }) => {
+    const session = await getSession()
+    if (!session) {
+      throw redirect(303, '/login')
+    }
+
     const formData = await request.formData()
     const newPassword1 = formData.get('newPassword1') as string
     const newPassword2 = formData.get('newPassword2') as string
     const currentPassword = formData.get('currentPassword') as string
+
+    // Can check if we're a "password recovery" session by checking session amr
+    // let currentPassword take priority if provided (user can use either form)
+    let recoveryAmr = session.user?.amr?.find((x) => x.method === 'recovery')
+    const isRecoverySession = recoveryAmr && !currentPassword
+
+    // if this is password recovery session, check timestamp of recovery session
+    if (isRecoverySession) {
+      let timeSinceLogin = Date.now() - (recoveryAmr.timestamp*1000)
+      if (timeSinceLogin > 1000*60*15) { // 15 mins in milliseconds
+          return fail(400, {
+            errorMessage: 'Recovery code expired. Please log out, then use "Forgot Password" on the sign in page to reset your password. Codes are valid for 15 minutes.',
+            errorFields: [],
+            newPassword1,
+            newPassword2,
+            currentPassword: ''
+          })
+      }
+    }
 
     let validationError
     let errorFields = []
@@ -67,8 +91,8 @@ export const actions = {
       errorFields.push('newPassword1')
       errorFields.push('newPassword2')
     }
-    if (!currentPassword) {
-      validationError = "You must include your current password. If you forgot it, use the reset password functionality."
+    if (!currentPassword && !isRecoverySession) {
+      validationError = "You must include your current password. If you forgot it, sign out then use 'forgot password' on the sign in page."
       errorFields.push('currentPassword')
     }
     if (validationError) {
@@ -81,33 +105,26 @@ export const actions = {
       })
     }
 
-    const session = await getSession()
-
-    {
-        // Check current password before updating
+    // Check current password is correct before updating, but only if they didn't log in with "recover" link
+     if (!isRecoverySession) {
         const { error } = await supabase.auth.signInWithPassword({
           email: session?.user.email || '',
           password: currentPassword,
         })
         if (error) {
-          // Not ideal, error message would be better.
-          // but this is unforunately logging the user out so this is
-          // better than leaving them in the admin console
-          throw redirect(303, '/login')
+          // The user was logged out because of bad password. Redirect to error page explaining.
+          throw redirect(303, '/login/current_password_error')
         }
     }
 
-    {
-        const { error } = await supabase.auth.updateUser({password: newPassword1})
-
-        if (error) {
-            return fail(500, {
-                errorMessage: 'Unknown error. If this persists please contact us.',
-                newPassword1,
-                newPassword2,
-                currentPassword
-            })
-        }
+    const { error } = await supabase.auth.updateUser({password: newPassword1})
+    if (error) {
+        return fail(500, {
+            errorMessage: 'Unknown error. If this persists please contact us.',
+            newPassword1,
+            newPassword2,
+            currentPassword
+        })
     }
 
     return {
