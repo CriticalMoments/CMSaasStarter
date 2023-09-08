@@ -1,5 +1,5 @@
 import { redirect, error } from '@sveltejs/kit'
-import { getOrCreateCustomerId } from '../../subscription_helpers' 
+import { getOrCreateCustomerId, fetchSubscription } from '../../subscription_helpers' 
 import type { PageServerLoad } from './$types'
 import { PRIVATE_STRIPE_API_KEY} from '$env/static/private'
 import Stripe from 'stripe'
@@ -13,24 +13,35 @@ export const load: PageServerLoad = async ({ params, url, locals: { supabase, ge
 
     let {error: idError, customerId } = await getOrCreateCustomerId({supabaseServiceRole, session})
     if (idError || !customerId) {
-        console.log("Error in customer id fetch: \n" + JSON.stringify(idError))
         throw error(500, {
             message: 'Unknown error. If issue persists, please contact us.'
         })
     }
 
-    const stripeSession = await stripe.checkout.sessions.create({
-        line_items: [
-          {
-            price: params.slug,
-            quantity: 1,
-          },
-        ],
-        customer: customerId,
-        mode: 'subscription',
-        success_url: `${url.origin}/account/billing`,
-        cancel_url: `${url.origin}/account/billing`,
-    })
+    const { primarySubscription } = await fetchSubscription({customerId, supabaseServiceRole, userId: session.user.id})
+    if (primarySubscription) {
+        // User already has plan, we shouldn't let them buy another
+        throw redirect(303, '/account/billing')
+    }
+
+    let checkoutUrl
+    try {
+        const stripeSession = await stripe.checkout.sessions.create({
+            line_items: [
+                {
+                    price: params.slug,
+                    quantity: 1,
+                },
+            ],
+            customer: customerId,
+            mode: 'subscription',
+            success_url: `${url.origin}/account/billing`,
+            cancel_url: `${url.origin}/account/billing`,
+        })
+        checkoutUrl = stripeSession.url
+    } catch (e) {
+        throw error(500, 'Unknown Error (SSE): If issue persists please contact us.')
+    }
     
-    throw redirect(303, stripeSession.url ?? '/pricing')
+    throw redirect(303, checkoutUrl ?? '/pricing')
 }

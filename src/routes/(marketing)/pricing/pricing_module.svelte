@@ -9,8 +9,8 @@
 </script>
 
 <div class="flex flex-col lg:flex-row gap-10 {center ? 'place-content-center' : ''} flex-wrap">
-    {#each Object.entries(pricingPlans) as [planId, plan]}
-        <div class="flex-none card card-bordered {planId === highlightedPlanId ? 'border-primary' : ''} shadow-xl flex-1 flex-grow min-w-[260px] max-w-[310px] p-6">
+    {#each pricingPlans as plan}
+        <div class="flex-none card card-bordered {plan.id === highlightedPlanId ? 'border-primary' : ''} shadow-xl flex-1 flex-grow min-w-[260px] max-w-[310px] p-6">
             <div class="flex flex-col h-full">
 
                 <div class="text-xl font-bold">{plan.name}</div>
@@ -27,7 +27,7 @@
                     <span class="text-4xl font-bold">{plan.price}</span> 
                     <span class="text-gray-400">{plan.priceIntervalName}</span>
                     <div class="mt-6 pt-4 flex-1 flex flex-row items-center">
-                        {#if planId === currentPlanId}
+                        {#if plan.id === currentPlanId}
                             <div class="btn btn-outline btn-success no-animation w-[80%] mx-auto cursor-default">Current Plan</div>
                         {:else}
                             <a href="{ plan.stripe_price_id ? '/account/subscribe/' + plan.stripe_price_id : '/login'}"
