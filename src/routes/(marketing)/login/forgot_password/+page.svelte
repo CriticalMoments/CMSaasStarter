@@ -13,7 +13,7 @@
 <Auth
     supabaseClient={data.supabase}
     view="forgotten_password"
-    redirectTo={`${data.url}/auth/callback`}
+    redirectTo={`${data.url}/auth/callback?next=%2Faccount%2Fsettings%2Freset_password`}
     providers={oauthProviders}
     socialLayout='horizontal'
     showLinks={false}
