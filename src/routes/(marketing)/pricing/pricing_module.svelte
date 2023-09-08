@@ -30,7 +30,7 @@
                         {#if plan.id === currentPlanId}
                             <div class="btn btn-outline btn-success no-animation w-[80%] mx-auto cursor-default">Current Plan</div>
                         {:else}
-                            <a href="{ plan.stripe_price_id ? '/account/subscribe/' + plan.stripe_price_id : '/login'}"
+                            <a href="{'/account/subscribe/' + (plan?.stripe_price_id ?? 'free_plan')}"
                                 class="btn btn-primary w-[80%] mx-auto">
                                 {callToAction}
                             </a>

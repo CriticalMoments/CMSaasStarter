@@ -18,7 +18,7 @@
 	<title>Billing</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Billing</h1>
+<h1 class="text-2xl font-bold mb-6">{data.isActiveCustomer ? 'Billing' : 'Select a Plan'}</h1>
 
 {#if !data.isActiveCustomer}
 

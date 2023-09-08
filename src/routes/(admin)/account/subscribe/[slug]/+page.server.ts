@@ -11,6 +11,11 @@ export const load: PageServerLoad = async ({ params, url, locals: { supabase, ge
         throw redirect(303, '/login')
     }
 
+    if (params.slug === 'free_plan') {
+        // plan with no stripe_price_id. Redirect to account home
+        throw redirect(303, '/account')
+    }
+
     let {error: idError, customerId } = await getOrCreateCustomerId({supabaseServiceRole, session})
     if (idError || !customerId) {
         throw error(500, {
@@ -35,7 +40,7 @@ export const load: PageServerLoad = async ({ params, url, locals: { supabase, ge
             ],
             customer: customerId,
             mode: 'subscription',
-            success_url: `${url.origin}/account/billing`,
+            success_url: `${url.origin}/account`,
             cancel_url: `${url.origin}/account/billing`,
         })
         checkoutUrl = stripeSession.url
