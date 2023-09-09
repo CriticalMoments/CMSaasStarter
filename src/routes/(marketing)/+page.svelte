@@ -20,14 +20,14 @@
     </div>
 </div>
 <div class="hero min-h-[60vh]">
-    <div class="hero-content text-center py-20">
+    <div class="hero-content text-center py-20 px-7">
       <div class="max-w-md">
         <div class="text-5xl font-bold">Explore the Demo</div>
         <div class="mt-6 text-xl">
           This is a fully functional demo page. Try it out!
         </div>
         
-        <div class="mt-5 text-l text-left max-w-[288px] mx-8 mx-auto">
+        <div class="mt-5 text-l text-left max-w-[288px] mx-auto">
           <ul class="list-disc">
             <li class="">A customizeable <a href="/pricing" class="link">pricing page</a></li>
             <li class="mt-2">A <a href="/blog" class="link">blog</a> with <a href="http://localhost:5173/blog/example_blog_post" class="link">rich formatting</a>, and <a href="/blog/rss.xml" class="link">RSS</a></li>
@@ -54,8 +54,8 @@
       </div>
     </div>
 </div>
-<div class="hero min-h-[60vh] bg-base-200">
-    <div class="hero-content text-center py-12 px-4">
+<div class="hero min-h-[60vh]">
+    <div class="hero-content text-center pb-16 pt-4 px-4">
       <div class="max-w-md">
         <div class="text-5xl font-bold mt-8">See it in Action</div>
         <div class="mt-6 text-xl">
