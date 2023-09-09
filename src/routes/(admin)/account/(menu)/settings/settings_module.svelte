@@ -56,7 +56,7 @@
 
 			{#each fields as field}
 				{#if field.label}
-					<label for="{field.id}" >
+					<label for="{field.id}">
 						<span class="text-sm text-gray-500">{field.label}</span>
 					</label>
 				{/if}
@@ -67,10 +67,10 @@
 						type="{field.inputType ?? 'text'}" 
 						disabled={!editable} 
 						placeholder="{field.placeholder ?? field.label ?? ''}" 
-						class="{fieldError($page?.form, field.id) ? 'input-error' : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3" 
+						class="{fieldError($page?.form, field.id) ? 'input-error' : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4" 
 						value="{$page.form ? $page.form[field.id] : field.initialValue}" />
 				{:else}
-					<div class="text-l mb-3">{field.initialValue}</div>
+					<div class="text-lg mb-3">{field.initialValue}</div>
 				{/if}
 			{/each}
 
