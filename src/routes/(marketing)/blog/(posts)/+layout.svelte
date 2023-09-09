@@ -22,7 +22,7 @@
 	<meta name="description" content="{currentPost.description ? currentPost.description : "Blog post"}" />
 </svelte:head>
 
-<article class="prose mx-auto py-12 px-4 font-sans">
+<article class="prose mx-auto py-12 px-6 font-sans">
     {#if currentPost == null }
         <h1>Blog post not found</h1>
     {:else }
