@@ -74,7 +74,7 @@
     </div>
 </div>
 <div class="min-h-[60vh]">
-    <div class="py-20 px-7">
+    <div class="pt-20 pb-8 px-7">
       <div class="max-w-lg mx-auto text-center">
         <div class="text-5xl font-bold">Explore the Demo</div>
         <div class="mt-6 text-xl">
