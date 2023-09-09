@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Blog Posts</title>
+    <title>{blogInfo.name}</title>
 	<meta name="description" content="Our blog posts." />
 </svelte:head>
 

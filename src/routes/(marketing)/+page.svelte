@@ -41,7 +41,14 @@
         description: "Works on mobile and desktop"
       }
     ]
+
+   import { PUBLIC_SITE_NAME } from '$env/static/public'
 </script>
+
+<svelte:head>
+    <title>{PUBLIC_SITE_NAME}</title>
+	  <meta name="description" content="Home page for {PUBLIC_SITE_NAME}" />
+</svelte:head>
 
 <div class="hero min-h-[60vh] bg-base-200">
     <div class="hero-content text-center py-12">
