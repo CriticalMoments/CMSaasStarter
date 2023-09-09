@@ -32,7 +32,7 @@
       },
       {
         name: "Performance",
-        link: "https://pagespeed.web.dev",
+        link: "https://pagespeed.web.dev/analysis/https-saasstarter-pages-dev/0lyw9nbcy6?form_factor=desktop",
         newPage: true,
         description: "Perfect 100/100 Google performance scores"
       },
@@ -85,7 +85,7 @@
         <div class="flex gap-6 mt-12 max-w-[800px] mx-auto place-content-center flex-wrap">
           {#each features as feature }
             <div class="card bg-base-200 w-[212px] min-h-[212px] flex-none">
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-[24px] pt-[32px]">
                 <h2 class="card-title">
                   {feature.name}
                 </h2>
@@ -94,7 +94,7 @@
                 </p>
                 {#if feature.link}
                   <a href="{feature.link}" class="py-2" target="{feature.newPage ? '_blank' : ''}">
-                    <div class="badge badge-primary min-w-[110px]">Try It</div>
+                    <button class="btn btn-xs btn-outline rounded-full btn-primary min-w-[100px]">Try It</button>
                   </a>
                 {/if}
               </div>
