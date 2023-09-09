@@ -13,7 +13,7 @@
       {
         name: "Blog",
         link: "/blog",
-        description: "With rich formatting and RSS"
+        description: "Blog with rich formatting and RSS"
       },
       {
         name: "Stripe Checkout",
@@ -84,7 +84,7 @@
     
         <div class="flex gap-6 mt-12 max-w-[800px] mx-auto place-content-center flex-wrap">
           {#each features as feature }
-            <div class="card bg-base-200 w-[212px] min-h-[212px] flex-none">
+            <div class="card bg-base-200 w-[212px] min-h-[212px] flex-none shadow">
               <div class="card-body items-center text-center p-[24px] pt-[32px]">
                 <h2 class="card-title">
                   {feature.name}
