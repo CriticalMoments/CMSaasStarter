@@ -12,7 +12,7 @@
     let sortedPosts = postList.sort(((a, b) => (b.parsedDate - a.parsedDate)));
 </script>
 
-<div class="py-8 px-4 max-w-lg mx-auto">
+<div class="py-8 px-6 max-w-lg mx-auto">
     <div class="text-3xl font-medium text-primary flex gap-3 items-baseline">
         <div class="flex-none font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600">
             {blogInfo.name}
