@@ -12,9 +12,11 @@
     let sortedPosts = postList.sort(((a, b) => (b.parsedDate - a.parsedDate)));
 </script>
 
-<div class="py-8 px-4 max-w-xl mx-auto">
-    <div class="text-2xl font-medium text-primary flex gap-3 items-baseline">
-        <span class="flex-none">{blogInfo.name}</span>
+<div class="py-8 px-4 max-w-lg mx-auto">
+    <div class="text-3xl font-medium text-primary flex gap-3 items-baseline">
+        <div class="flex-none font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600">
+            {blogInfo.name}
+        </div>
         <a href="/blog/rss.xml" target="_blank" rel="noreferrer">
             <img class="flex-none w-5 h-5 object-contain" src="/images/rss.svg" alt="rss feed"/>
         </a>
