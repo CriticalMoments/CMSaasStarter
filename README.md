@@ -58,11 +58,11 @@ There’s no cost for using this template; we’re MIT open source. The costs be
     - Unlimited static page requests. 
     - 100k serverless functions/day. 
   - Cons: 
-    - Does not include database backups. Note: if you trust this reddit post, there are actually backups available. The frugal among you could hook up pgdump with lambda and S3 to add backups for a <$1 a month.
+    - Does not include database backups. The frugal among you could hook up pgdump with lambda/S3 to add backups for a <$1 a month.
     - Will auto-pause your database when not in use. 
   - Who it’s for: 
     - This tier is perfectly functional for a hobby project, or pre-revenue company. It’s easy to scale up once revenue starts, but it’s also fine to keep indefinitely if it never takes off.
-- $30/mo - Supabase Pro, Cloudfare paid
+- $30/mo - Supabase pro, Cloudfare paid
   - Pros: 
     - Database backups. 
     - Never pauses database. 
@@ -74,12 +74,12 @@ There’s no cost for using this template; we’re MIT open source. The costs be
 
 ### Get Started (Local Development)
 
+To get started, fork this project!
+
 ```
 ## First fork the project on Github
 git pull [Your Fork]
 npm install
-## You’ll probably want the latest versions. It’s good to upgrade packages before you go too far.
-npm update
 ## Run the project
 npm run dev --
 ```
@@ -152,7 +152,7 @@ PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_
 
 Optional: enable Cloudflare analytics for usage metrics.
 
-. If you prefer another host you can explore alternatives: 
+If you prefer another host you can explore alternatives: 
 - [SvelteKit official adapters](https://kit.svelte.dev/docs/adapters) including Netlify, Vercel, and Node
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains unlike Cloudflare.
