@@ -44,7 +44,7 @@
     <aside>
         <span class="footer-title">Sponsor</span> 
         <a class="link link-hover max-w-[260px]" href="https://criticalmoments.io">
-            <img alt="Critical Moments Logo" src="/images/cm_logo.svg" class="max-w-[180px] mb-3 aspect-[420/154]" />
+            <img alt="Critical Moments Logo" src="/images/cm_logo.svg" class="w-[180px] mb-3 aspect-[420/154]" />
             Make mobile apps? Improve conversion rates and ratings with Critical Moments.
         </a>
     </aside>
