@@ -10,10 +10,18 @@ You can see a fully functional demo [here](https://saasstarter.work) and explore
 
 Note: this is a tech-stack demo, not a design demo. See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
 
+<kbd>
 <img width="224" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/25170958-89fe-4109-ba47-526b02cbfc7c">
+</kbd>
+<kbd>
 <img width="224" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/e093860f-4a1f-4cc0-aac2-b275d1671e4b">
+</kbd>
+<kbd>
 <img width="224" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/3e92329d-a426-4108-934f-c84b78dbdd3e">
+</kbd>
+<kbd>
 <img width="224" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/9092480e-3f5e-4ede-ae4a-24d8ddbb00df">
+</kbd>
 
 ### Benefits
 
