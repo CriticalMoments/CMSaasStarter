@@ -21,9 +21,9 @@ export function GET({ url }) {
   let body = `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> 
   <channel>
     <title>${blogInfo.name}</title>
-    <link>${blogInfo.baseUrl}</link>
+    <link>${url.origin}/blog</link>
     <description>${blogInfo.description}</description>
-    <atom:link href="${blogInfo.baseUrl}/blog/rss.xml" rel="self" type="application/rss+xml" />`;
+    <atom:link href="${url.origin}/blog/rss.xml" rel="self" type="application/rss+xml" />`;
   for (const post of postList) {
       let dateParts = post.date.split('-');
       post.parsedDate = new Date(dateParts[0], dateParts[1]-1, dateParts[2]); // Note: months are 0-based 
@@ -34,7 +34,7 @@ export function GET({ url }) {
     <item>
       <title>${encodeXML(post.title)}</title>
       <description>${encodeXML(post.description)}</description>
-      <link>${blogInfo.baseUrl + post.link}/</link>
+      <link>${url.origin + post.link}/</link>
       <pubDate>${post.parsedDate.toUTCString()}</pubDate>
     </item>\n`;
   }

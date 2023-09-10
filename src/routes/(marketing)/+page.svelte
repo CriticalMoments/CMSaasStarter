@@ -32,7 +32,7 @@
       },
       {
         name: "Performance",
-        link: "https://pagespeed.web.dev/analysis/https-saasstarter-pages-dev/0lyw9nbcy6?form_factor=desktop",
+        link: "https://pagespeed.web.dev/analysis/https-saasstarter-work/qwb02mwcwh?form_factor=desktop",
         newPage: true,
         description: "Perfect 100/100 Google performance scores"
       },
