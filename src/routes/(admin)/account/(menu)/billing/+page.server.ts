@@ -1,5 +1,5 @@
 import { redirect, error } from '@sveltejs/kit'
-import { getOrCreateCustomerId, fetchSubscription } from '../../subscription_helpers' 
+import { getOrCreateCustomerId, fetchSubscription } from '../../subscription_helpers.server' 
 import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = async ({ locals: { getSession, supabaseServiceRole } }) => {

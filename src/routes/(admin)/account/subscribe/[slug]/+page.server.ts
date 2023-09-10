@@ -1,5 +1,5 @@
 import { redirect, error } from '@sveltejs/kit'
-import { getOrCreateCustomerId, fetchSubscription } from '../../subscription_helpers' 
+import { getOrCreateCustomerId, fetchSubscription } from '../../subscription_helpers.server' 
 import type { PageServerLoad } from './$types'
 import { PRIVATE_STRIPE_API_KEY} from '$env/static/private'
 import Stripe from 'stripe'
