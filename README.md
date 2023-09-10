@@ -6,7 +6,7 @@ We used it to jump start criticalmoments.io and are making it 100% free MIT open
 
 ## Demo
 
-You can see a fully functional demo [here](https://saasstarter.pages.dev) and explore all the features.
+You can see a fully functional demo [here](https://saasstarter.work) and explore all the features.
 
 Note: this is a tech-stack demo, not a design demo. See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
 
@@ -111,8 +111,8 @@ VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=s
     ```
   - For production, add these two keys to your Cloudflare environment (see below). We suggest you encrypt your service role.
 - Auth Callback
-  - Set your default callback URL for auth in the Supabase Auth console. For example, for the demo page we added: `https://saasstarter.pages.dev/auth/callback` . Also add that same URL to the the “allowed redirect URL” list in the Supabase auth console further down the page. 
-  - Add a link to the redirect URL allow list which allows parameters to your auth callback. For example we added the following for the demo page: `https://saasstarter.pages.dev/auth/callback?*`
+  - Set your default callback URL for auth in the Supabase Auth console. For example, for the demo page we added: `https://saasstarter.work/auth/callback` . Also add that same URL to the the “allowed redirect URL” list in the Supabase auth console further down the page. 
+  - Add a link to the redirect URL allow list which allows parameters to your auth callback. For example we added the following for the demo page: `https://saasstarter.work/auth/callback?*`
   - Also add any local development URLs you want to use in testing to the list for your dev environment. For example, we added the following for local development: `http://localhost:5173/auth/callback` and `http://localhost:5173/auth/callback?*`.
   - Test that a sign up and forgot password email links back to your domain correctly by checking the have a redirect_to parameter to your `yourdomain/auth/callback`. If they link to the base URL or another page, double check you have the config above set correctly.
 - oAuth Logins
