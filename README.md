@@ -10,12 +10,17 @@ You can see a fully functional demo [here](https://saasstarter.pages.dev) and ex
 
 Note: this is a tech-stack demo, not a design demo. See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
 
+<img width="224" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/25170958-89fe-4109-ba47-526b02cbfc7c">
+<img width="224" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/e093860f-4a1f-4cc0-aac2-b275d1671e4b">
+<img width="224" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/3e92329d-a426-4108-934f-c84b78dbdd3e">
+<img width="224" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/9092480e-3f5e-4ede-ae4a-24d8ddbb00df">
+
 ### Benefits
 
 - Modern tooling (SvelteKit, Supabase Auth, Stripe, Postgres) 
 - Fast Perfomance
 - Free to host, cheap to scale
-- Hackable/Extensible: easy to add the features your project needs
+- Extensible: all the tools you need to add the features your project requires
 
 ### Features
 
@@ -24,10 +29,10 @@ Everything you need to get started for a SaaS company:
 - Marketing Page
 - Blog with rich formatting and RSS
 - Subscriptions
-- Pricing page 
+- Pricing page
 - User Authentication
-- Self serve billing managment
-- User portal to manage settings
+- Self-serve billing portal (change card, upgrade, cancel, etc)
+- User settings to manage profile
 - Style toolkit: theming, CSS, UI components
 - Suggested hosting stack with instructions to get up and running
 
@@ -37,7 +42,6 @@ Everything you need to get started for a SaaS company:
 - CSS / Styling
   - Framework: TailwindCSS
   - Component library: DaisyUI
-  - Blog styling: tailwind/typography
 - Hosting / Database
   - Host + CDN: Cloudflare Pages 
   - Serverless compute: Cloudflare Workers
@@ -49,7 +53,7 @@ Everything you need to get started for a SaaS company:
 
 ### Pricing
 
-There’s no cost for using this template; we’re MIT open source. The costs below reflect our suggested hosting stack.
+**There’s no cost for using this template**. The costs below reflect our suggested hosting stack.
 
 - $0/mo — Supabase free teir, Cloudflare free teir. 
   - Pros: 
