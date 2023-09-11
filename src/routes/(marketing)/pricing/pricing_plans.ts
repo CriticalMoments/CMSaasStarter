@@ -1,4 +1,4 @@
-export const defaultPlanId = "free";
+export const defaultPlanId = "free"
 
 export const pricingPlans = [
   {
@@ -40,4 +40,4 @@ export const pricingPlans = [
       "Still actually free!",
     ],
   },
-];
+]

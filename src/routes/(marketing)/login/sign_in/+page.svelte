@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Auth } from "@supabase/auth-ui-svelte";
-  import { sharedAppearance, oauthProviders } from "../login_config";
-  import { goto } from "$app/navigation";
-  import { onMount } from "svelte";
+  import { Auth } from "@supabase/auth-ui-svelte"
+  import { sharedAppearance, oauthProviders } from "../login_config"
+  import { goto } from "$app/navigation"
+  import { onMount } from "svelte"
 
-  export let data;
-  let { supabase } = data;
+  export let data
+  let { supabase } = data
 
   onMount(() => {
     supabase.auth.onAuthStateChange((event, _session) => {
@@ -15,12 +15,12 @@
         // Give the layout callback priority to update state or
         // we'll just bounch back to login when /account tries to load
         function goToAccount() {
-          goto("/account");
+          goto("/account")
         }
-        setTimeout(goToAccount, 1);
+        setTimeout(goToAccount, 1)
       }
-    });
-  });
+    })
+  })
 </script>
 
 <svelte:head>

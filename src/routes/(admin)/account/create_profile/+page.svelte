@@ -1,30 +1,30 @@
 <script lang="ts">
-  import "../../../../app.css";
-  import { enhance, applyAction } from "$app/forms";
+  import "../../../../app.css"
+  import { enhance, applyAction } from "$app/forms"
 
-  export let data;
-  export let form;
+  export let data
+  export let form
 
-  let { session, supabase, profile } = data;
+  let { session, supabase, profile } = data
 
-  let loading = false;
-  let fullName: string = profile?.full_name ?? "";
-  let companyName: string = profile?.company_name ?? "";
-  let website: string = profile?.website ?? "";
+  let loading = false
+  let fullName: string = profile?.full_name ?? ""
+  let companyName: string = profile?.company_name ?? ""
+  let website: string = profile?.website ?? ""
 
   const fieldError = (liveForm, name: String) => {
-    let errors = liveForm?.errorFields ?? [];
-    return errors.includes(name);
-  };
+    let errors = liveForm?.errorFields ?? []
+    return errors.includes(name)
+  }
 
   const handleSubmit = () => {
-    loading = true;
+    loading = true
     return async ({ update, result }) => {
-      let response = await update({ reset: false });
-      await applyAction(result);
-      loading = false;
-    };
-  };
+      let response = await update({ reset: false })
+      await applyAction(result)
+      loading = false
+    }
+  }
 </script>
 
 <svelte:head>

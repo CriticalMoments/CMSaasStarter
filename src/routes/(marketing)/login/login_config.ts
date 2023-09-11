@@ -1,7 +1,7 @@
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-import type { Provider } from "@supabase/supabase-js";
+import { ThemeSupa } from "@supabase/auth-ui-shared"
+import type { Provider } from "@supabase/supabase-js"
 
-export const oauthProviders = ["github"] as Provider[];
+export const oauthProviders = ["github"] as Provider[]
 
 // use the css variables from DaisyUI to style Supabase auth template
 export let sharedAppearance = {
@@ -24,4 +24,4 @@ export let sharedAppearance = {
   className: {
     button: "btn",
   },
-};
+}

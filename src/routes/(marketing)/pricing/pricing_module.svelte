@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { pricingPlans } from "./pricing_plans";
+  import { pricingPlans } from "./pricing_plans"
 
   // Module context
-  export let highlightedPlanId: string = "";
-  export let callToAction: string;
-  export let currentPlanId: string = "";
-  export let center = true;
+  export let highlightedPlanId: string = ""
+  export let callToAction: string
+  export let currentPlanId: string = ""
+  export let center = true
 </script>
 
 <div

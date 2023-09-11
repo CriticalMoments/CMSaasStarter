@@ -1,7 +1,7 @@
-import { pricingPlans } from "../../(marketing)/pricing/pricing_plans";
-import { PRIVATE_STRIPE_API_KEY } from "$env/static/private";
-import Stripe from "stripe";
-const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" });
+import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
+import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
+import Stripe from "stripe"
+const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 
 export const getOrCreateCustomerId = async ({
   supabaseServiceRole,
@@ -11,15 +11,15 @@ export const getOrCreateCustomerId = async ({
     .from("stripe_customers")
     .select("stripe_customer_id")
     .eq("user_id", session.user.id)
-    .single();
+    .single()
 
   if (error && error.code != "PGRST116") {
     // PGRST116 == no rows
-    return { error: error };
+    return { error: error }
   }
 
   if (dbCustomer?.stripe_customer_id) {
-    return { customerId: dbCustomer.stripe_customer_id };
+    return { customerId: dbCustomer.stripe_customer_id }
   }
 
   // Fetch data needed to create customer
@@ -27,13 +27,13 @@ export const getOrCreateCustomerId = async ({
     .from("profiles")
     .select(`full_name, website, company_name`)
     .eq("id", session.user.id)
-    .single();
+    .single()
   if (profileError) {
-    return { error: profileError };
+    return { error: profileError }
   }
 
   // Create a stripe customer
-  let customer;
+  let customer
   try {
     customer = await stripe.customers.create({
       email: session.user.email,
@@ -43,13 +43,13 @@ export const getOrCreateCustomerId = async ({
         company_name: profile.data?.company_name ?? "",
         website: profile.data?.website ?? "",
       },
-    });
+    })
   } catch (e) {
-    return { error: e };
+    return { error: e }
   }
 
   if (!customer.id) {
-    return { error: "Unknown stripe user creation error" };
+    return { error: "Unknown stripe user creation error" }
   }
 
   // insert instead of upsert so we never over-write. PK ensures later attempts error.
@@ -59,14 +59,14 @@ export const getOrCreateCustomerId = async ({
       user_id: session.user.id,
       stripe_customer_id: customer.id,
       updated_at: new Date(),
-    });
+    })
 
   if (insertError) {
-    return { error: insertError };
+    return { error: insertError }
   }
 
-  return { customerId: customer.id };
-};
+  return { customerId: customer.id }
+}
 
 export const fetchSubscription = async ({
   supabaseServiceRole,
@@ -74,15 +74,15 @@ export const fetchSubscription = async ({
   customerId,
 }) => {
   // Fetch user's subscriptions
-  let stripeSubscriptions;
+  let stripeSubscriptions
   try {
     stripeSubscriptions = await stripe.subscriptions.list({
       customer: customerId,
       limit: 100,
       status: "all",
-    });
+    })
   } catch (e) {
-    return { error: e };
+    return { error: e }
   }
 
   // find "primary". The user may have several old ones, we want an active one (including trials, and past_due in grace period).
@@ -91,34 +91,34 @@ export const fetchSubscription = async ({
       x.status === "active" ||
       x.status === "trialing" ||
       x.status === "past_due"
-    );
-  });
-  let appSubscription = null;
+    )
+  })
+  let appSubscription = null
   if (primaryStripeSubscription) {
     let productId =
-      primaryStripeSubscription?.items?.data?.[0]?.price.product ?? "";
+      primaryStripeSubscription?.items?.data?.[0]?.price.product ?? ""
     appSubscription = pricingPlans.find((x) => {
-      return x.stripe_product_id === productId;
-    });
+      return x.stripe_product_id === productId
+    })
     if (!appSubscription) {
       return {
         error:
           "Stripe subscription does not have matching app subscription in pricing_plans.ts (via product id match)",
-      };
+      }
     }
   }
-  let primarySubscription = null;
+  let primarySubscription = null
   if (primaryStripeSubscription && appSubscription) {
     primarySubscription = {
       stripeSubscription: primaryStripeSubscription,
       appSubscription: appSubscription,
-    };
+    }
   }
 
-  let hasEverHadSubscription = stripeSubscriptions.data.length > 0;
+  let hasEverHadSubscription = stripeSubscriptions.data.length > 0
 
   return {
     primarySubscription,
     hasEverHadSubscription,
-  };
-};
+  }
+}

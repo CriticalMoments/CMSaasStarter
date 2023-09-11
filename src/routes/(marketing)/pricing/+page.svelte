@@ -1,6 +1,6 @@
 <script lang="ts">
-  import PricingModule from "./pricing_module.svelte";
-  import { PUBLIC_SITE_NAME } from "$env/static/public";
+  import PricingModule from "./pricing_module.svelte"
+  import { PUBLIC_SITE_NAME } from "$env/static/public"
 </script>
 
 <svelte:head>

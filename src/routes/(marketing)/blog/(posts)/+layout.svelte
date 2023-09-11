@@ -1,25 +1,25 @@
 <script>
-  import { page } from "$app/stores";
-  import { add_transform } from "svelte/internal";
-  import { postList } from "./../posts.json";
-  let currentPost = null;
+  import { page } from "$app/stores"
+  import { add_transform } from "svelte/internal"
+  import { postList } from "./../posts.json"
+  let currentPost = null
   for (const post of postList) {
     if ($page.url.pathname == post.link) {
-      currentPost = post;
-      continue;
+      currentPost = post
+      continue
     }
   }
   if (currentPost != null) {
-    let dateParts = currentPost.date.split("-");
+    let dateParts = currentPost.date.split("-")
     currentPost.parsedDate = new Date(
       dateParts[0],
       dateParts[1] - 1,
       dateParts[2],
-    ); // Note: months are 0-based
+    ) // Note: months are 0-based
   } else {
     console.log(
       "WARNING: rendering blog post, which is not listed in posts.json",
-    );
+    )
   }
 </script>
 

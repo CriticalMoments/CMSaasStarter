@@ -40,9 +40,9 @@
       name: "Responsive",
       description: "Works on mobile and desktop",
     },
-  ];
+  ]
 
-  import { PUBLIC_SITE_NAME } from "$env/static/public";
+  import { PUBLIC_SITE_NAME } from "$env/static/public"
 </script>
 
 <svelte:head>

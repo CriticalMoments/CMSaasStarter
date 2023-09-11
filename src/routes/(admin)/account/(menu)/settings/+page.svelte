@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import SettingsModule from "./settings_module.svelte";
+  import { getContext } from "svelte"
+  import type { Writable } from "svelte/store"
+  import SettingsModule from "./settings_module.svelte"
 
-  let adminSection: Writable<String> = getContext("adminSection");
-  adminSection.set("settings");
+  let adminSection: Writable<String> = getContext("adminSection")
+  adminSection.set("settings")
 
-  export let data;
-  let { session, profile } = data;
+  export let data
+  let { session, profile } = data
 </script>
 
 <svelte:head>

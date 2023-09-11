@@ -1,10 +1,10 @@
 <script>
-  import { postList, blogInfo } from "./posts.json";
+  import { postList, blogInfo } from "./posts.json"
   for (const post of postList) {
-    let dateParts = post.date.split("-");
-    post.parsedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]); // Note: months are 0-based
+    let dateParts = post.date.split("-")
+    post.parsedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]) // Note: months are 0-based
   }
-  let sortedPosts = postList.sort((a, b) => b.parsedDate - a.parsedDate);
+  let sortedPosts = postList.sort((a, b) => b.parsedDate - a.parsedDate)
 </script>
 
 <svelte:head>

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Auth } from "@supabase/auth-ui-svelte";
-  import { sharedAppearance, oauthProviders } from "../login_config";
+  import { Auth } from "@supabase/auth-ui-svelte"
+  import { sharedAppearance, oauthProviders } from "../login_config"
 
-  export let data;
+  export let data
 </script>
 
 <svelte:head>

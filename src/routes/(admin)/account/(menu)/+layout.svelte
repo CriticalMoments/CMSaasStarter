@@ -1,17 +1,17 @@
 <script lang="ts">
-  import "../../../../app.css";
-  import { writable } from "svelte/store";
-  import { setContext } from "svelte";
+  import "../../../../app.css"
+  import { writable } from "svelte/store"
+  import { setContext } from "svelte"
 
-  const adminSectionStore = writable("");
-  setContext("adminSection", adminSectionStore);
-  let adminSection: String;
+  const adminSectionStore = writable("")
+  setContext("adminSection", adminSectionStore)
+  let adminSection: string
   adminSectionStore.subscribe((value) => {
-    adminSection = value;
-  });
+    adminSection = value
+  })
 
   function closeDrawer(): void {
-    document.getElementById("admin-drawer").checked = false;
+    document.getElementById("admin-drawer").checked = false
   }
 </script>
 

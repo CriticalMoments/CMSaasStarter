@@ -1,42 +1,42 @@
 <script lang="ts">
-  import { enhance, applyAction } from "$app/forms";
-  import { page } from "$app/stores";
+  import { enhance, applyAction } from "$app/forms"
+  import { page } from "$app/stores"
 
-  export let data;
+  export let data
 
-  let { session, supabase, profile } = data;
+  let { session, supabase, profile } = data
 
   const fieldError = (liveForm, name: String) => {
-    let errors = liveForm?.errorFields ?? [];
-    return errors.includes(name);
-  };
+    let errors = liveForm?.errorFields ?? []
+    return errors.includes(name)
+  }
 
   // Page state
-  let loading = false;
-  let showSuccess = false;
+  let loading = false
+  let showSuccess = false
 
   // Module context
-  export let editable = false;
-  export let title: string = "";
-  export let fields;
-  export let formTarget: string = "";
-  export let successTitle = "Success";
-  export let successBody = "";
-  export let editButtonTitle: string = "";
-  export let editLink: string = "";
-  export let saveButtonTitle: string = "Save";
+  export let editable = false
+  export let title: string = ""
+  export let fields
+  export let formTarget: string = ""
+  export let successTitle = "Success"
+  export let successBody = ""
+  export let editButtonTitle: string = ""
+  export let editLink: string = ""
+  export let saveButtonTitle: string = "Save"
 
   const handleSubmit = () => {
-    loading = true;
+    loading = true
     return async ({ update, result }) => {
-      let response = await update({ reset: false });
-      await applyAction(result);
-      loading = false;
+      let response = await update({ reset: false })
+      await applyAction(result)
+      loading = false
       if (result.type === "success") {
-        showSuccess = true;
+        showSuccess = true
       }
-    };
-  };
+    }
+  }
 </script>
 
 <div class="card bg-base-200 p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row">

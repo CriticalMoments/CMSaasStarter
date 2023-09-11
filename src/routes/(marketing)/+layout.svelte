@@ -1,5 +1,5 @@
 <script>
-  import "../../app.css";
+  import "../../app.css"
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">
