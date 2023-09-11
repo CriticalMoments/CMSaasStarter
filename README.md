@@ -2,7 +2,7 @@
 
 A ready to deploy starter stack for your SaaS company!
 
-We used it to jump start criticalmoments.io and are making it 100% free MIT open source.
+We used it to jump start [Critical Moments](criticalmoments.io) and are making it 100% free MIT open source.
 
 ## Demo
 
@@ -74,11 +74,11 @@ Everything you need to get started for a SaaS company:
     - Will auto-pause your database when not in use. 
   - Who it’s for: 
     - This tier is perfectly functional for a hobby project, or pre-revenue company. It’s easy to scale up once revenue starts, but it’s also fine to keep indefinitely if it never takes off.
-- $30/mo - Supabase pro, Cloudfare paid
+- $30/mo - Supabase Pro, Cloudfare [Workers Paid](https://www.cloudflare.com/plans/developer-platform/)
   - Pros: 
     - Database backups. 
     - Never pauses database. 
-    - Over 1M serverless functions/day, with linear pricing past that.
+    - Over 1M serverless functions per day, with linear pricing for additional invocations.
   - Cons: 
     - none
   - Who it’s for: 
@@ -98,7 +98,9 @@ npm run dev --
 
 ### Developer Environment
 
-VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+
+[Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
 
 ### Setup Supabase
 
@@ -112,7 +114,6 @@ VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=s
 - Go to the [API Settings](https://supabase.com/dashboard/project/_/settings/api) page in the Dashboard. Find your Project-URL (PUBLIC_SUPABASE_URL), anon (PUBLIC_SUPABASE_ANON_KEY) and service_role (PRIVATE_SUPABASE_SERVICE_ROLE).
   - For local development: create a `.env.local` file:
     ```
-    # Find these in your Supabase project settings https://supabase.com/dashboard/project/_/settings/api
     PUBLIC_SUPABASE_URL=https://your-project.supabase.co
     PUBLIC_SUPABASE_ANON_KEY=your-anon-key
     PRIVATE_SUPABASE_SERVICE_ROLE=your service_role secret
@@ -122,47 +123,47 @@ VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=s
   - Set your default callback URL for auth in the Supabase Auth console. For example, for the demo page we added: `https://saasstarter.work/auth/callback` . Also add that same URL to the the “allowed redirect URL” list in the Supabase auth console further down the page. 
   - Add a link to the redirect URL allow list which allows parameters to your auth callback. For example we added the following for the demo page: `https://saasstarter.work/auth/callback?*`
   - Also add any local development URLs you want to use in testing to the list for your dev environment. For example, we added the following for local development: `http://localhost:5173/auth/callback` and `http://localhost:5173/auth/callback?*`.
-  - Test that a sign up and forgot password email links back to your domain correctly by checking the have a redirect_to parameter to your `yourdomain/auth/callback`. If they link to the base URL or another page, double check you have the config above set correctly.
-- oAuth Logins
+  - Test that a sign up and forgot password email links back to your domain correctly by checking the have a redirect_to parameter to your `yourdomain.com/auth/callback`. If they link to the base URL or another page, double check you have the config above set correctly.
+- OAuth Logins
   - Decide which oauth logins you want to support, and set them up in the Supabase Auth console under “Auth Providers”
-  - Edit `oauthProviders` list in `/src/routes/(marketing)/login/login_conf.ts` with the list of providers you chose. If you don’t want any oAuth options, make this an empty array.
+  - Edit `oauthProviders` list in `/src/routes/(marketing)/login/login_conf.ts` with the list of providers you chose. If you don’t want any OAuth options, make this an empty array.
   - Test each provider to ensure you setup the client ID, client secret and callback up correctly for each
 - Auth Email SMTP
   - Supabase has a limit of 4 emails per hour on their development server. You should [Configure a Custom SMTP](https://supabase.com/docs/guides/auth/auth-smtp) sending emails from your own domain.
-  - Customize the email templates, including strings and design
+  - Customize the email templates in the Supabase Auth console to include your product name and branding
 - Test authentication
   - Open the `/login` page in your browser, and ensure you can sign up, confirm email, log in, and edit your account.
 
 ### Setup Stripe Billing
 
-- Create a Strupe account
-- Create a Product and price Tiers in the product dashboard
+- Create a Stripe account
+- Create a product and price Tiers
   - Create your [products](https://stripe.com/docs/api/products) and their [prices](https://stripe.com/docs/api/prices) in the Dashboard or with the Stripe CLI. 
-  - SaaS Starter works best if you define each tier as a separate product (eg, SaaS Starter Free, Saas Starter Pro, Saas Starter Enterprise). Include a monthly and annual price for each product if you want to support multiple billing periods. 
-  - You do not need to create a free plan in stripe. The free plan is managed within the app.
+  - SaaS Starter works best if you define each tier as a separate product (eg, `SaaS Starter Free`, `Saas Starter Pro`, `Saas Starter Enterprise`). Include a monthly and annual price for each product if you want to support multiple billing periods. 
+  - You do not need to create a free plan in Stripe. The free plan is managed within the app.
 - Setup your environment
-  - Get your [Secret API](https://dashboard.stripe.com/test/apikeys) key, and add it as an environment variable PRIVATE_STRIPE_API_KEY (`.env.local` locally, and Cloudflare Environment for prod). Be sure to use test keys for development, and keep your production/live keys secret and secure.
+  - Get your [Secret API](https://dashboard.stripe.com/test/apikeys) key, and add it as an environment variable PRIVATE_STRIPE_API_KEY (`.env.local` locally, and Cloudflare environment for prod). Be sure to use test keys for development, and keep your production/live keys secret and secure.
 - Optional: theme your Stripe integration
-  - Change the colors and fonts to match your brand: [Stripe Login | Sign in to the Stripe Dashboard](https://dashboard.stripe.com/settings/branding)
+  - Change the colors and fonts to match your brand [here](https://dashboard.stripe.com/settings/branding)
 - Update your pricing plan data to align to your stripe data
   - See `/src/routes/(marketing)/pricing/pricing.js` and Fill in all fields for each plan. stripe_price_id and stripe_product_id should only be omitted on a single “free” plan. Multiple free plans are not supported.
     - The product in Stripe can contain several prices for the same product (annual, monthly, etc). The stripe_price_id you choose to put in this json will be the default we use for the checkout experience. However, if you have more prices configured for a product configured, the user can switch between them in the management portal.
   - Set the `defaultPlanId` to the plan the user will see as their “current plan” after signup, but before subscribing to a paid plan (typically “free”). It should align to the plan with no stripe_price_id. 
-  - if you want an item highlighted on `/pricing`, specify  that plan id in `/src/routes/(marketing)/pricing/+page.svelte`
+  - if you want an item highlighted on `/pricing`, specify  that plan ID in `/src/routes/(marketing)/pricing/+page.svelte`
 - Update your portal configuration
-  - Open [Stripe Login | Sign in to the Stripe Dashboard](https://dashboard.stripe.com/test/settings/billing/portal) and make the following changes
+  - Open [stipe portal config](https://dashboard.stripe.com/test/settings/billing/portal) and make the following changes
     - Disallow editing email under customer information (since we allow editing in primary portal)
-    - Optional: setup a custom domain so Stripe pages use your TLD
+    - Optional: setup a custom domain so Stripe pages use your own domain
 - Repeat steps in production environment
 
-### Deploy To Cloudflare Pages
+### Deploy To Cloudflare
 
-Cloudflare pages is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/#deploy-with-cloudflare-pages) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
+Cloudflare Pages and Workers is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/#deploy-with-cloudflare-pages) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
 
 When prompted: add environment variables for your production environment (PUBLIC_SUPABASE_URL, 
-PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_KEY).
+PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, PRIVATE_STRIPE_API_KEY, and PUBLIC_SITE_NAME).
 
-Optional: enable Cloudflare analytics for usage metrics.
+Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-ca/application-services/products/analytics/) for usage metrics.
 
 If you prefer another host you can explore alternatives: 
 - [SvelteKit official adapters](https://kit.svelte.dev/docs/adapters) including Netlify, Vercel, and Node
@@ -182,7 +183,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Add any pages you want on top of our boiler plate (about, terms of service, etc). Be sure to add links to them in the header, mobile menu header, and footer as appropriate (`src/routes/(marketing)/+layout.svelte`).
   - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rending requirements.
 - Update SEO content
-  - Update title and meta description tags for every public page. We include generic ones using your site name, but the more specific these are the better.
+  - Update title and meta description tags for every public page. We include generic ones using your site name (PUBLIC_SITE_NAME), but the more specific these are the better.
   - This done automatically for blog posts from `posts.json`
 - Style
   - Create a new DaisyUI Theme matching your brand
@@ -190,6 +191,10 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Style: make it your own look and feel.
   - Update the favicon in the `/static/` directory
   - The Authentication UI should automatically update based on your DaisyUI style, but check out the login in pages, and further design tweaks can be made in `src/routes/(marketing)/login/login_config.ts` (see [Auth UI](https://supabase.com/docs/guides/auth/auth-helpers/auth-ui#customization) for options).
+- Functionality
+  - Add actual SaaS functionality!
+  - Replace the admin dashboard with real content (`/src/routes/(admin)/account/+page.svelte`).
+  - Add APIs and database tables as needed to deliver you product.
 
 ## Sponsor 
 We hope you enjoy SaaS Starter! If you build mobile apps, please check out its sponsor/creator, [Critical Moments](https://criticalmoments.io). We can help improve your mobile app conversions, improve your app rating, and mitigate major bugs and outages.
