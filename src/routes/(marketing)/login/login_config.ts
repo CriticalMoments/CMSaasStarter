@@ -19,6 +19,9 @@ export let sharedAppearance = {
         defaultButtonText: "hsl(var(--n))",
         anchorTextColor: "hsl(var(--nc))",
       },
+      fontSizes: {
+        baseInputSize: "16px"
+      }
     },
   },
   className: {
