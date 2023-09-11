@@ -40,6 +40,11 @@
       name: "Responsive",
       description: "Works on mobile and desktop",
     },
+    {
+      name: "Extensible",
+      description:
+        "All the tools you need to make APIs, marketing pages, admin portals, and more",
+    },
   ]
 
   import { PUBLIC_SITE_NAME } from "$env/static/public"
@@ -52,24 +57,17 @@
 
 <div class="hero min-h-[60vh] bg-base-200">
   <div class="hero-content text-center py-12">
-    <div class="max-w-md">
+    <div class="max-w-lg">
       <div
         class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600"
       >
         SaaS Starter Demo
       </div>
       <div class="my-6 text-xl">
-        SaaS Starter is a SaaS marketing page template which is open source,
-        fast and free to host.
+        SaaS marketing page template which is open source, fast and free to
+        host.
       </div>
-      <div class="my-6 text-xl">
-        Built with <a href="https://kit.svelte.dev" class="link" target="_blank"
-          >SvelteKit</a
-        >,
-        <a href="https://supabase.com" class="link" target="_blank">Supabase</a
-        >, and
-        <a href="https://stripe.com" class="link" target="_blank">Stripe</a>
-      </div>
+
       <div class="mt-10">
         <a href="https://github.com/CriticalMoments/CMSaasStarter">
           <button class="btn btn-primary btn-wide">★ us on Github</button>
@@ -81,6 +79,22 @@
             >Read the Docs</button
           >
         </a>
+      </div>
+      <div class="mt-8 text-large">
+        Built with <a href="https://kit.svelte.dev" class="link" target="_blank"
+          >SvelteKit</a
+        >,
+        <a href="https://supabase.com" class="link" target="_blank">Supabase</a
+        >,
+        <a href="https://stripe.com" class="link" target="_blank">Stripe</a>,
+        <a href="https://tailwindcss.com" class="link" target="_blank"
+          >Tailwind</a
+        >,
+        <a href="https://daisyui.com" class="link" target="_blank">daisyUI</a>,
+        and
+        <a href="https://www.postgresql.org" class="link" target="_blank"
+          >Postgres</a
+        >
       </div>
     </div>
   </div>
