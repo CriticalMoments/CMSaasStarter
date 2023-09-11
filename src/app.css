@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 a {
-    @apply cursor-pointer;
+  @apply cursor-pointer;
 }
