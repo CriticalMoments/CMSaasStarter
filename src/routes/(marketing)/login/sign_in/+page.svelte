@@ -14,10 +14,9 @@
         // Delay needed because order of callback not guaranteed.
         // Give the layout callback priority to update state or
         // we'll just bounch back to login when /account tries to load
-        function goToAccount() {
+        setTimeout(() => {
           goto("/account")
-        }
-        setTimeout(goToAccount, 1)
+        }, 1)
       }
     })
   })

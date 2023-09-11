@@ -1,6 +1,5 @@
 <script>
   import { page } from "$app/stores"
-  import { add_transform } from "svelte/internal"
   import { postList } from "./../posts.json"
   let currentPost = null
   for (const post of postList) {
