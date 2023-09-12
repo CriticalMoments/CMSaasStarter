@@ -1,19 +1,11 @@
 <script lang="ts">
   import "../app.css"
-  import { afterNavigate, beforeNavigate } from "$app/navigation"
+  import { navigating } from "$app/stores"
   import { expoOut } from "svelte/easing"
   import { slide } from "svelte/transition"
-
-  let navigating = false
-  beforeNavigate((_navigation) => {
-    navigating = true
-  })
-  afterNavigate((_navigation) => {
-    navigating = false
-  })
 </script>
 
-{#if navigating}
+{#if $navigating}
   <!-- 
     Loading animation for next page since svelte doesn't show any indicator. 
      - delay 100ms because most page loads are instant, and we don't want to flash 
