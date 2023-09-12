@@ -109,6 +109,8 @@ export const actions = {
     }
 
     // Check current password is correct before updating, but only if they didn't log in with "recover" link
+    // Note: to make this truely enforced you need to contact supabase. See: https://www.reddit.com/r/Supabase/comments/12iw7o1/updating_password_in_supabase_seems_insecure/
+    // However, having the UI accessible route still verify password is still helpful, and needed once you get the setting above enabled
     if (!isRecoverySession) {
       const { error } = await supabase.auth.signInWithPassword({
         email: session?.user.email || "",
