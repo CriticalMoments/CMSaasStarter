@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../app.css"
   import { afterNavigate, beforeNavigate } from "$app/navigation"
-  import { quintOut } from "svelte/easing"
+  import { expoOut } from "svelte/easing"
   import { slide } from "svelte/transition"
 
   let navigating = false
@@ -16,14 +16,14 @@
 {#if navigating}
   <!-- 
     Loading animation for next page since svelte doesn't show any indicator. 
-     - delay 100 because most page loads are instant, and we don't want to flash 
-     - long duration because we don't actually know how long it will take
-     - quint easing so fast loads (>100ms and <1s) still see lots of progress
-       while slow networks see it moving for the full 6 seconds
+     - delay 100ms because most page loads are instant, and we don't want to flash 
+     - long 12s duration because we don't actually know how long it will take
+     - exponential easing so fast loads (>100ms and <1s) still see enough progress,
+       while slow networks see it moving for a full 12 seconds
   -->
   <div
     class="fixed w-full top-0 right-0 left-0 h-1 z-50"
-    in:slide={{ delay: 100, duration: 6000, axis: "x", easing: quintOut }}
+    in:slide={{ delay: 100, duration: 12000, axis: "x", easing: expoOut }}
   >
     <div class="h-1 bg-primary w-full" />
   </div>
