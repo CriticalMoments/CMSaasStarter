@@ -5,8 +5,8 @@
 <h1 class="text-2xl font-bold mb-6">Current Password Incorrect</h1>
 
 <p>
-  You attempted to reset your password with an incorrect current password, and
-  have been logged out.
+  You attempted edit your account with an incorrect current password, and have
+  been logged out.
 </p>
 <p class="mt-6">
   If you remember your password <a href="/login/sign_in" class="link">sign in</a

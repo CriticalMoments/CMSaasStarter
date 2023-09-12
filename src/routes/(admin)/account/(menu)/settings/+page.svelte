@@ -54,3 +54,13 @@
   editButtonTitle="Change Password"
   editLink="/account/settings/change_password"
 />
+
+<SettingsModule
+  {data}
+  title="Danger Zone"
+  editable={false}
+  dangerous={true}
+  fields={[]}
+  editButtonTitle="Delete Account"
+  editLink="/account/settings/delete_account"
+/>
