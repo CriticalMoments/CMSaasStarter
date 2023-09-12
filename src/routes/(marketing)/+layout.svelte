@@ -56,8 +56,10 @@
   <slot />
 </div>
 
+<!-- Spacer grows so the footer can be at bottom on short pages -->
+<div class="flex-grow"></div>
 <div class="bg-base-200 text-base-content">
-  <footer class="footer p-10 gap-x-24 place-content-center">
+  <footer class="footer p-10 gap-x-48 place-content-center">
     <nav>
       <span class="footer-title">Explore</span>
       <a class="link link-hover" href="/">Overview</a>
