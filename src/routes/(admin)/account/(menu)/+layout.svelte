@@ -132,11 +132,7 @@
       </li>
 
       <li class="mt-auto">
-        <a
-          href="/account/sign_out"
-          data-sveltekit-preload-data="off"
-          class="mt-auto text-base">Sign Out</a
-        >
+        <a href="/account/sign_out" class="mt-auto text-base">Sign Out</a>
       </li>
     </ul>
   </div>

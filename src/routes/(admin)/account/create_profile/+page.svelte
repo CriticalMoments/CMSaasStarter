@@ -109,13 +109,7 @@
       <div class="text-sm text-slate-800 mt-14">
         You are logged in as {session?.user?.email}.
         <br />
-        <a
-          data-sveltekit-preload-data="hover"
-          class="underline"
-          href="/account/sign_out"
-        >
-          Sign out
-        </a>
+        <a class="underline" href="/account/sign_out"> Sign out </a>
       </div>
     </div>
   </div>
