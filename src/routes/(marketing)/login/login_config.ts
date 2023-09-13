@@ -25,6 +25,6 @@ export let sharedAppearance = {
     },
   },
   className: {
-    button: "btn",
+    button: "authBtn",
   },
 }

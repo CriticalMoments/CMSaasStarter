@@ -5,3 +5,12 @@
 a {
   @apply cursor-pointer;
 }
+
+/* https://github.com/supabase/auth-ui/issues/219 */
+.authBtn {
+  @apply btn;
+}
+button[disabled].authBtn::before {
+  content: 'Loading...';
+  color: hsl(var(--pc));
+}
