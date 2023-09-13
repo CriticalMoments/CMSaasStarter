@@ -6,11 +6,16 @@ a {
   @apply cursor-pointer;
 }
 
-/* https://github.com/supabase/auth-ui/issues/219 */
+/* Hack to temporarily solve https://github.com/supabase/auth-ui/issues/219 */
 .authBtn {
   @apply btn;
 }
+button[disabled].authBtn {
+  font-size: 0.001px;
+  filter: brightness(65%);
+}
 button[disabled].authBtn::before {
-  content: 'Loading...';
+  font-size: 14px;
+  content: 'Loading...\A';
   color: hsl(var(--pc));
 }
