@@ -61,7 +61,7 @@
       <div
         class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600"
       >
-        SaaS Starter Demo
+        Critical Moments
       </div>
       <div class="my-6 text-xl">
         SaaS marketing page template which is open source, fast and free to
