@@ -6,6 +6,7 @@
   export let callToAction: string
   export let currentPlanId: string = ""
   export let center = true
+  export let background = ""
 </script>
 
 <div
@@ -17,7 +18,7 @@
     <div
       class="flex-none card card-bordered {plan.id === highlightedPlanId
         ? 'border-primary'
-        : ''} shadow-xl flex-1 flex-grow min-w-[260px] stdphone:w-[310px] max-w-[310px] p-6"
+        : ''} shadow-xl flex-1 flex-grow min-w-[260px] stdphone:w-[310px] max-w-[310px] p-6 {background}"
     >
       <div class="flex flex-col h-full">
         <div class="text-xl font-bold">{plan.name}</div>
