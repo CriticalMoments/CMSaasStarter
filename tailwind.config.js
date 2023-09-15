@@ -22,7 +22,7 @@ export default {
     },
     fontFamily: {
       sans: 'Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
-      logo: "'Avenir','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Arial, sans-serif",
+      logo: "'Avenir Black', 'Avenir','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Arial, sans-serif",
     },
   },
   plugins: [
