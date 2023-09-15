@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores"
+  import BarsComponent from "../../../bars_component.svelte"
   import { postList } from "./../posts.json"
   let currentPost = null
   for (const post of postList) {
@@ -30,11 +31,13 @@
   />
 </svelte:head>
 
+<BarsComponent height={2} />
+
 <article class="prose mx-auto py-12 px-6 font-sans">
   {#if currentPost == null}
     <h1>Blog post not found</h1>
   {:else}
-    <div class="text-sm text-secondary">
+    <div class="text-slate-600 font-bold">
       {currentPost.parsedDate.toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",

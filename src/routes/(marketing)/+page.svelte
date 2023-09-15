@@ -1,5 +1,6 @@
 <script lang="ts">
   import { split } from "postcss/lib/list"
+  import BarsComponent from "../bars_component.svelte"
 
   const sections = [
     {
@@ -56,10 +57,7 @@
       </span>
     </div>
   </div>
-  {#each ["bg-rc1", "bg-rc2", "bg-rc3", "bg-rc4", "bg-rc5"] as barColor, i}
-    <div class="h-[3vh] relative {barColor}"></div>
-    <div class="h-[3.25vh] sticky z-10 {barColor}" style="top:{i * 3}vh;"></div>
-  {/each}
+  <BarsComponent />
 </div>
 
 {#each sections as section}
