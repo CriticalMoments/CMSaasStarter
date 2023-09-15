@@ -13,7 +13,7 @@
     >
   </div>
   <div class="flex-none">
-    <ul class="menu menu-horizontal md:px-1 hidden sm:flex font-logo">
+    <ul class="menu menu-horizontal md:px-1 hidden sm:flex font-header">
       <li>
         <a href="https://docs.criticalmoments.io" target="_blank">Docs</a>
       </li>
@@ -62,7 +62,7 @@
   <footer
     class="md:container md:mx-auto p-edge flex flex-col md:flex-row text-center md:text-left"
   >
-    <div class="flex-1 font-logo text-xl py-8 flex flex-col gap-y-2">
+    <div class="flex-1 font-header text-xl py-8 flex flex-col gap-y-2">
       <a class="md:hidden" href="/">Home</a>
       <a class="" href="https://docs.criticalmoments.io" target="_blank">Docs</a
       >

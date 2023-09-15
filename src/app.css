@@ -31,8 +31,13 @@ button[disabled].authBtn::before {
   @apply px-2;
   @apply md:px-5;
 }
-.logoType {
+.font-header {
   @apply font-logo;
+  font-weight: bold;
+  font-weight: bolder;
+}
+.logoType {
+  @apply font-header;
   padding-top: 3px;
   line-height: 0.95;
   text-align: left;

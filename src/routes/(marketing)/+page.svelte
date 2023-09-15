@@ -68,7 +68,7 @@
       <div
         class="flex-1 text-center md:text-left max-w-xl self-center pt-12 pb-6 md:py-12"
       >
-        <div class="font-logo text-2xl stdphone:text-3xl md:text-4xl py-4">
+        <div class="font-header text-2xl stdphone:text-3xl md:text-4xl py-4">
           {section.title}
         </div>
         {#each section.description.split("\n") as descriptionPart}
