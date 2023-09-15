@@ -13,7 +13,7 @@
 
 <div class="min-h-[70vh] py-8 px-6 flex flex-col place-content-center">
   <h1 class="font-header text-3xl md:text-5xl text-center">Pricing</h1>
-  <h2 class="text-xl md:text-2xl text-center text-slate-500 mt-1 pb-3">
+  <h2 class="pt-2 text-xl md:text-2xl text-center text-slate-600 mt-1 pb-3">
     Real pricing coming soon!
   </h2>
 
