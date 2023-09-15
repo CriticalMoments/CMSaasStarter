@@ -21,7 +21,7 @@
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="/account">Account</a></li>
     </ul>
-    <div class="dropdown dropdown-end sm:hidden">
+    <div class="dropdown dropdown-end sm:hidden z-50 font-header">
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
