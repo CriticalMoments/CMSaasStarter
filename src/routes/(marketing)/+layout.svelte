@@ -58,31 +58,25 @@
 
 <!-- Spacer grows so the footer can be at bottom on short pages -->
 <div class="flex-grow"></div>
-<div class="bg-base-200 text-base-content">
-  <footer class="footer p-10 gap-x-48 place-content-center">
-    <nav>
-      <span class="footer-title">Explore</span>
-      <a class="link link-hover" href="/">Overview</a>
-      <a class="link link-hover" href="/pricing">Pricing</a>
-      <a class="link link-hover" href="/blog">Blog</a>
-      <a
-        class="link link-hover"
-        href="https://github.com/CriticalMoments/CMSaasStarter">Github</a
+<div class="bg-rc5 text-white">
+  <footer
+    class="md:container md:mx-auto p-edge flex flex-col md:flex-row text-center md:text-left"
+  >
+    <div class="flex-1 font-logo text-xl py-8 flex flex-col gap-y-2">
+      <a class="md:hidden" href="/">Home</a>
+      <a class="" href="https://docs.criticalmoments.io" target="_blank">Docs</a
       >
-    </nav>
-    <aside>
-      <span class="footer-title">Sponsor</span>
-      <a
-        class="link link-hover max-w-[260px]"
-        href="https://criticalmoments.io"
-      >
-        <img
-          alt="Critical Moments Logo"
-          src="/images/cm_logo.svg"
-          class="w-[180px] mb-3 aspect-[420/154]"
-        />
-        Make mobile apps? Improve conversion rates and ratings with Critical Moments.
+      <a class="" href="/blog">Blog</a>
+      <a class="" href="/pricing">Pricing</a>
+      <a class="" href="/account">Account</a>
+      <a class="" href="/legal">Legal</a>
+    </div>
+    <div
+      class="logoType self-center text-2xl stdphone:text-3xl md:text-4xl xl:text-5xl hidden md:inline"
+    >
+      <a href="/">
+        Critical<br />Moments
       </a>
-    </aside>
+    </div>
   </footer>
 </div>
