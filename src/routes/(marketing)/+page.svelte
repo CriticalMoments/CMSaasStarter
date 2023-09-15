@@ -1,49 +1,30 @@
 <script lang="ts">
-  const features = [
+  import { split } from "postcss/lib/list"
+
+  const sections = [
     {
-      name: "User Auth",
-      link: "/login",
-      description: "Sign up, sign out, and recover password",
-    },
-    {
-      name: "Pricing Page",
-      link: "/pricing",
-      description: "Customizable and fast",
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-      description: "Blog with rich formatting and RSS",
-    },
-    {
-      name: "Stripe Checkout",
-      link: "/pricing",
-      description: "User friendly subscriptions",
-    },
-    {
-      name: "Stripe Portal",
-      link: "/account/billing",
-      description: "Self-serve card change, receipts, upgrades and more",
-    },
-    {
-      name: "User Settings",
-      link: "/account/settings",
-      description: "Update profile, email, password",
-    },
-    {
-      name: "Performance",
-      link: "https://pagespeed.web.dev/analysis/https-saasstarter-work/zyyrg32eaj?form_factor=mobile",
-      newPage: true,
-      description: "Perfect 100/100 Google performance scores",
-    },
-    {
-      name: "Responsive",
-      description: "Works on mobile and desktop",
-    },
-    {
-      name: "Extensible",
+      title: "Increase Conversions",
       description:
-        "All the tools you need to make APIs, marketing pages, admin portals, and more",
+        "Showing your upsell prompt at the right moment can increase conversion by 72%",
+      background: "",
+    },
+    {
+      title: "Improve App Ratings",
+      description:
+        "Showing your rating prompt at the right moment increases both the rating and number of ratings",
+      background: "bg-[#F9AE40]",
+    },
+    {
+      title: "Make Bugs Disappear",
+      description:
+        "Shit happens. Major Bugs. Outages. Dependencies break. Deprications. Re-brands.\nTarget only the impacted users and resolve remotely without waiting for app updates.",
+      background: "bg-[#E3543F]",
+    },
+    {
+      title: "Smarter Feature Flags",
+      description:
+        "Super charge your feature flags, targeting over 30 live device conditions from app version, to battery level.\nUpdate any time from the cloud.",
+      background: "",
     },
   ]
 </script>
@@ -81,73 +62,22 @@
   {/each}
 </div>
 
-<div class="hero min-h-[80vh] bg-white">
-  <div class="hero-content text-center py-12">
-    <div class="max-w-lg">
+{#each sections as section}
+  <div class="hero md:min-h-[60vh] {section.background}">
+    <div class="flex flex-col md:flex-row gap-x-24 p-edge">
       <div
-        class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600 font-logo"
+        class="flex-1 text-center md:text-left max-w-xl self-center pt-12 pb-6 md:py-12"
       >
-        Critical Moments
+        <div class="font-logo text-2xl stdphone:text-3xl md:text-4xl py-4">
+          {section.title}
+        </div>
+        {#each section.description.split("\n") as descriptionPart}
+          <div class="text-lg stdphone:text-xl md:text-2xl py-3">
+            {descriptionPart}
+          </div>
+        {/each}
       </div>
-      <div class="my-6 text-xl">
-        SaaS marketing page template which is open source, fast and free to
-        host.
-      </div>
-
-      <div class="mt-10">
-        <a href="https://github.com/CriticalMoments/CMSaasStarter">
-          <button class="btn btn-primary btn-wide">★ us on Github</button>
-        </a>
-        <a
-          href="https://github.com/CriticalMoments/CMSaasStarter/blob/main/README.md"
-        >
-          <button class="btn btn-outline btn-primary btn-wide mt-3"
-            >Read the Docs</button
-          >
-        </a>
-      </div>
-      <div class="mt-8 text-large">
-        Built with <a href="https://kit.svelte.dev" class="link" target="_blank"
-          >SvelteKit</a
-        >,
-        <a href="https://supabase.com" class="link" target="_blank">Supabase</a
-        >,
-        <a href="https://stripe.com" class="link" target="_blank">Stripe</a>,
-        <a href="https://tailwindcss.com" class="link" target="_blank"
-          >Tailwind</a
-        >,
-        <a href="https://daisyui.com" class="link" target="_blank">daisyUI</a>,
-        and
-        <a href="https://www.postgresql.org" class="link" target="_blank"
-          >Postgres</a
-        >
-      </div>
+      <div class="w-64 h-64 bg-slate-300 self-center"></div>
     </div>
   </div>
-</div>
-
-<div class="hero min-h-[60vh]">
-  <div class="hero-content text-center pb-16 pt-4 px-4">
-    <div class="max-w-md">
-      <div class="text-5xl font-bold mt-8">See it in Action</div>
-      <div class="mt-6 text-xl">
-        SaaS Started was created and sponsored by <a
-          href="https://criticalmoments.io"
-          class="link"
-          target="_blank">Critical Moments</a
-        >
-      </div>
-      <div class="mt-6 text-xl">
-        Our <a href="https://criticalmoments.io" class="link" target="_blank"
-          >webpage</a
-        > is the best example of SaaS Starter with style and real content.
-      </div>
-      <div class="mt-6 text-large">
-        <a href="https://criticalmoments.io" target="_blank">
-          <button class="btn btn-primary btn-wide mt-3">See it in Action</button
-          >
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+{/each}

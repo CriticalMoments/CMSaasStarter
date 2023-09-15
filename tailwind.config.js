@@ -21,7 +21,8 @@ export default {
     },
     fontFamily: {
       sans: 'Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
-      logo: "'Avenir Black','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+      // TODO: test the "bolds" or move the bolding to CSS
+      logo: "'Avenir Black','Gill Sans Bold', 'Gill Sans MT Bold', 'Calibri Bold', 'Trebuchet MS bold', sans-serif",
     },
   },
   plugins: [
