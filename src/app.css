@@ -19,3 +19,39 @@ button[disabled].authBtn::before {
   content: 'Loading...';
   color: hsl(var(--pc));
 }
+
+.menu {
+  font-size: 18px;
+}
+.menu li {
+  @apply px-1;
+  @apply leading-relaxed;
+}
+.menu li a {
+  @apply px-2;
+  @apply md:px-5;
+}
+.logoType {
+  @apply font-logo;
+  padding-top: 3px;
+  line-height: 0.95;
+  text-align: left;
+}
+.headerLogo {
+  @apply px-4;
+  font-size: 17px;
+}
+
+.p-edge {
+  @apply px-4;
+}
+.m-edge {
+  @apply mx-4;
+}
+
+.retroFill {
+  @apply bg-gradient-to-r;
+  @apply from-rc1;
+  @apply via-rc3;
+  @apply to-rc5;
+}

@@ -1,18 +1,21 @@
 <script>
   import "../../app.css"
+  import { page } from "$app/stores"
 </script>
 
-<div class="navbar bg-base-100 container mx-auto">
+<div class="navbar sm:container mx-auto">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl" href="/">Critical Moments</a>
+    <a
+      class="normal-case logoType headerLogo {$page.url.pathname === '/'
+        ? 'hidden'
+        : ''}"
+      href="/">Critical<br />Moments</a
+    >
   </div>
   <div class="flex-none">
-    <ul class="menu menu-horizontal px-1 hidden sm:flex">
+    <ul class="menu menu-horizontal md:px-1 hidden sm:flex font-logo">
       <li>
-        <a
-          href="https://github.com/CriticalMoments/CMSaasStarter"
-          class="bg-base-200">★ us on Github</a
-        >
+        <a href="https://docs.criticalmoments.io" target="_blank">Docs</a>
       </li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/pricing">Pricing</a></li>
@@ -38,15 +41,12 @@
         tabindex="0"
         class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
+        <li>
+          <a href="https://docs.criticalmoments.io" target="_blank">Docs</a>
+        </li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/account">Account</a></li>
-        <li>
-          <a
-            href="https://github.com/CriticalMoments/CMSaasStarter"
-            class="bg-base-200">★ us on Github</a
-          >
-        </li>
       </ul>
     </div>
   </div>

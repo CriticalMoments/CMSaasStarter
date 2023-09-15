@@ -46,20 +46,46 @@
         "All the tools you need to make APIs, marketing pages, admin portals, and more",
     },
   ]
-
-  import { PUBLIC_SITE_NAME } from "$env/static/public"
 </script>
 
 <svelte:head>
-  <title>{PUBLIC_SITE_NAME}</title>
-  <meta name="description" content="Home page for {PUBLIC_SITE_NAME}" />
+  <title>Critical Moments</title>
+  <meta
+    name="description"
+    content="Critical moments improves mobile app conversions and increases your app rating"
+  />
 </svelte:head>
 
-<div class="hero min-h-[60vh] bg-base-200">
+<div class="min-h-[80vh] flex flex-col">
+  <div
+    class="md:container mx-auto flex-grow flex flex-col md:flex-row p-edge md:items-end pb-8 gap-x-24 gap-y-8 place-content-end md:place-content-center"
+  >
+    <div class="logoType text-4xl stdphone:text-5xl md:text-6xl xl:text-7xl">
+      Critical<br />Moments
+    </div>
+    <div
+      class="text-xl stdphone:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap"
+      style="line-height:1.1;"
+    >
+      Target the right users<br />
+      at the right moment <br />
+      to
+      <span class="font-bold text-transparent bg-clip-text retroFill">
+        Increase Conversion
+      </span>
+    </div>
+  </div>
+  {#each ["bg-rc1", "bg-rc2", "bg-rc3", "bg-rc4", "bg-rc5"] as barColor, i}
+    <div class="h-[3vh] relative {barColor}"></div>
+    <div class="h-[3.25vh] sticky z-10 {barColor}" style="top:{i * 3}vh;"></div>
+  {/each}
+</div>
+
+<div class="hero min-h-[80vh] bg-white">
   <div class="hero-content text-center py-12">
     <div class="max-w-lg">
       <div
-        class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600"
+        class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-600 font-logo"
       >
         Critical Moments
       </div>
@@ -99,45 +125,7 @@
     </div>
   </div>
 </div>
-<div class="min-h-[60vh]">
-  <div class="pt-20 pb-8 px-7">
-    <div class="max-w-lg mx-auto text-center">
-      <div class="text-5xl font-bold">Explore the Demo</div>
-      <div class="mt-6 text-xl">
-        This is a fully functional demo page. Try it out!
-      </div>
-    </div>
 
-    <div
-      class="flex gap-6 mt-12 max-w-[800px] mx-auto place-content-center flex-wrap"
-    >
-      {#each features as feature}
-        <div class="card bg-base-200 w-[212px] min-h-[212px] flex-none shadow">
-          <div class="card-body items-center text-center p-[24px] pt-[32px]">
-            <h2 class="card-title">
-              {feature.name}
-            </h2>
-            <p class="text-sm">
-              {feature.description}
-            </p>
-            {#if feature.link}
-              <a
-                href={feature.link}
-                class="py-2"
-                target={feature.newPage ? "_blank" : ""}
-              >
-                <button
-                  class="btn btn-xs btn-outline rounded-full btn-primary min-w-[100px]"
-                  >Try It</button
-                >
-              </a>
-            {/if}
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
-</div>
 <div class="hero min-h-[60vh]">
   <div class="hero-content text-center pb-16 pt-4 px-4">
     <div class="max-w-md">
