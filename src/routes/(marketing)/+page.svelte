@@ -38,7 +38,7 @@
   />
 </svelte:head>
 
-<div class="min-h-[80vh] flex flex-col">
+<div class="min-h-[60vh] md:min-h-[70vh] flex flex-col">
   <div
     class="md:container mx-auto flex-grow flex flex-col md:flex-row p-edge md:items-end pb-8 gap-x-24 gap-y-8 place-content-end md:place-content-center"
   >
@@ -61,7 +61,7 @@
 </div>
 
 {#each sections as section}
-  <div class="hero md:min-h-[60vh] {section.background}">
+  <div class="hero md:min-h-[45vh] {section.background}">
     <div class="flex flex-col md:flex-row gap-x-24 p-edge">
       <div
         class="flex-1 text-center md:text-left max-w-xl self-center pt-12 pb-6 md:py-12"
