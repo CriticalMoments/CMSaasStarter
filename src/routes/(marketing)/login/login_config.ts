@@ -12,12 +12,17 @@ export let sharedAppearance = {
         brand: "hsl(var(--p))",
         brandAccent: "hsl(var(--pf))",
         inputText: "hsl(var(--n))",
+        inputBackground: "white",
+        defaultButtonBackground: 'transparent',
         brandButtonText: "hsl(var(--pc))",
         messageText: "hsl(var(--b))",
         dividerBackground: "hsl(var(--n))",
         inputLabelText: "hsl(var(--n))",
         defaultButtonText: "hsl(var(--n))",
         anchorTextColor: "hsl(var(--nc))",
+      },
+      fonts: {
+        buttonFontFamily: 'Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
       },
       fontSizes: {
         baseInputSize: "16px"
