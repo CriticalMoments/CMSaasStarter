@@ -50,7 +50,7 @@
 
 <style>
   .feature-flag-scroll-text {
-    animation-duration: 13s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-name: slidein;

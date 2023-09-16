@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { split } from "postcss/lib/list"
   import BarsComponent from "../bars_component.svelte"
   import DemoIncreaseConversion from "./graphics/demo_increase_conversion.svelte"
   import DemoIncreaseRating from "./graphics/demo_increase_rating.svelte"
@@ -32,6 +31,27 @@
       background: "",
     },
   ]
+
+  const leads = [
+    "Increase Conversion",
+    "Improve App Ratings",
+    "Make Bugs Disappear",
+  ]
+  let leadIndex = 0
+
+  import { onMount, onDestroy } from "svelte"
+  import { fade } from "svelte/transition"
+
+  let interval: NodeJS.Timeout
+  onMount(() => {
+    interval = setInterval(() => {
+      leadIndex = (leadIndex + 1) % leads.length
+    }, 8000)
+  })
+
+  onDestroy(() => {
+    clearInterval(interval)
+  })
 </script>
 
 <svelte:head>
@@ -50,15 +70,17 @@
       Critical<br />Moments
     </div>
     <div
-      class="text-xl stdphone:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap"
+      class="text-xl stdphone:text-2xl md:text-4xl md:min-w-[420px] lg:text-5xl lg:min-w-[560px] whitespace-nowrap"
       style="line-height:1.1;"
     >
       Target the right users<br />
       at the right moment <br />
       to
-      <span class="font-bold text-transparent bg-clip-text retroFill">
-        Increase Conversion
-      </span>
+      {#key leadIndex}
+        <span class="font-bold text-transparent bg-clip-text retroFill" in:fade>
+          {leads[leadIndex]}
+        </span>
+      {/key}
     </div>
   </div>
   <BarsComponent />

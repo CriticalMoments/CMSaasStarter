@@ -9,9 +9,15 @@
 
 <div class="rounded-t-3xl bg-device-color flex flex-col p-2 w-48 h-72">
   {#if title}
-    <div class="font-system text-center text-xl font-bold pt-6">{title}</div>
+    <div
+      class="font-system text-center text-xl font-bold pt-6 min-h-[92px] flex place-content-center"
+    >
+      <div class="self-center">
+        {title}
+      </div>
+    </div>
   {/if}
-  <div class="grow flex flex-col gap-y-3 place-content-center">
+  <div class="grow flex flex-col gap-y-3 mb-6 place-content-center">
     {#each Array(4) as _, index}
       <div class="h-1.5 mx-8 bg-device-faux-content"></div>
     {/each}

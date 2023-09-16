@@ -18,7 +18,7 @@
     },
     {
       label: "Issue with Dark Mode on iPad…",
-      code: "// Precise targeting\ndevice_class == 'pad' &&\ndark_mode == true &&\napp_version < '3.2.1' &&\ncurrency_code == 'JPY' &&\nlow_data_mode &&\nnetwork_type == 'cellular'\nhas_watch &&\n...",
+      code: "// Precise targeting\ndevice_class == 'pad' &&\ndark_mode == true &&\napp_version < '3.2.1' &&\ncurrency_code == 'JPY' &&\nlow_data_mode &&\nnetwork_type == 'cellular'\nhas_watch && ...",
     },
   ]
   let phoneTitle: string
