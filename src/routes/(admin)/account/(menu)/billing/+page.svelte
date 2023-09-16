@@ -28,7 +28,7 @@
 </h1>
 
 {#if !data.isActiveCustomer}
-  <div class="mt-12">
+  <div class="mt-8">
     <PricingModule
       {currentPlanId}
       callToAction="Select Plan"
