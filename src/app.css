@@ -60,3 +60,9 @@ button[disabled].authBtn::before {
   @apply via-rc3;
   @apply to-rc5;
 }
+.header-line-height {
+  @apply h-7;
+  @apply stdphone:h-8;
+  @apply md:h-12;
+  @apply xl:h-16;
+}

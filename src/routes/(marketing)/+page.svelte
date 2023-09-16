@@ -31,27 +31,6 @@
       background: "",
     },
   ]
-
-  const leads = [
-    "Increase Conversion",
-    "Improve App Ratings",
-    "Make Bugs Disappear",
-  ]
-  let leadIndex = 0
-
-  import { onMount, onDestroy } from "svelte"
-  import { fade } from "svelte/transition"
-
-  let interval: NodeJS.Timeout
-  onMount(() => {
-    interval = setInterval(() => {
-      leadIndex = (leadIndex + 1) % leads.length
-    }, 8000)
-  })
-
-  onDestroy(() => {
-    clearInterval(interval)
-  })
 </script>
 
 <svelte:head>
@@ -66,21 +45,40 @@
   <div
     class="md:container mx-auto flex-grow flex flex-col md:flex-row p-edge md:items-end pb-8 gap-x-24 gap-y-8 place-content-end md:place-content-center"
   >
-    <div class="logoType text-4xl stdphone:text-5xl md:text-6xl xl:text-7xl">
+    <div
+      class="logoType text-4xl stdphone:text-5xl md:text-6xl xl:text-7xl md: pb-1.5 xl:pb-2.5"
+    >
       Critical<br />Moments
     </div>
     <div
-      class="text-xl stdphone:text-2xl md:text-4xl md:min-w-[420px] lg:text-5xl lg:min-w-[560px] whitespace-nowrap"
-      style="line-height:1.1;"
+      class="text-xl stdphone:text-2xl md:text-4xl xl:text-5xl whitespace-nowrap"
     >
-      Target the right users<br />
-      at the right moment <br />
-      to
-      {#key leadIndex}
-        <span class="font-bold text-transparent bg-clip-text retroFill" in:fade>
-          {leads[leadIndex]}
-        </span>
-      {/key}
+      <div class="header-line-height">Target the right users</div>
+      <div class="header-line-height">at the right moment</div>
+      <div class="header-line-height">
+        <div class="inline-block header-line-height overflow-hidden">to</div>
+        <div class="inline-block header-line-height overflow-hidden">
+          {#each Array(2) as _}
+            <div class="header-scroll-text">
+              <div
+                class="header-line-height font-bold text-transparent bg-clip-text retroFill"
+              >
+                Increase Conversion
+              </div>
+              <div
+                class="header-line-height font-bold text-transparent bg-clip-text retroFill"
+              >
+                Improve App Ratings
+              </div>
+              <div
+                class="header-line-height font-bold text-transparent bg-clip-text retroFill"
+              >
+                Make Bugs Disappear
+              </div>
+            </div>
+          {/each}
+        </div>
+      </div>
     </div>
   </div>
   <BarsComponent />
@@ -122,3 +120,30 @@
     </div>
   </div>
 {/each}
+
+<style>
+  .header-scroll-text {
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-name: slideup;
+  }
+
+  @keyframes slideup {
+    0% {
+      transform: translateY(0%);
+    }
+    2%,
+    33% {
+      transform: translateY(-33.333333%);
+    }
+    35%,
+    67% {
+      transform: translateY(-66.666666%);
+    }
+    69%,
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+</style>
