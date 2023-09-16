@@ -38,9 +38,10 @@
 </script>
 
 <div
-  class="overflow-hidden flex flex-row flex-nowrap relative h-full invisible-scrollbar"
+  class="flex flex-row flex-nowrap relative h-full invisible-scrollbar"
   style="
   overflow-x: scroll;
+  overflow-y: hidden;
   scroll-snap-type: 
   x mandatory;
   scroll-snap-points-x: 
