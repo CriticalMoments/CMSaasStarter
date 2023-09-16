@@ -43,10 +43,10 @@
 
 <div class="min-h-[80vh] flex flex-col">
   <div
-    class="md:container mx-auto flex-grow flex flex-col md:flex-row p-edge md:items-end pb-8 gap-x-24 gap-y-8 place-content-end md:place-content-center"
+    class="lg:container mx-auto flex-grow flex flex-col lg:flex-row p-edge lg:items-end pb-8 gap-x-24 gap-y-8 place-content-end lg:place-content-center"
   >
     <div
-      class="logoType text-4xl stdphone:text-5xl md:text-6xl xl:text-7xl md: pb-1.5 xl:pb-2.5"
+      class="logoType text-4xl stdphone:text-5xl lg:text-6xl xl:text-7xl lg:pb-1.5 xl:pb-2.5"
     >
       Critical<br />Moments
     </div>
@@ -100,7 +100,7 @@
         {/each}
       </div>
       <div
-        class="w-[252px] h-[240px] stdphone:w-[294px] stdphone:h-[280px] md:w-[420px] md:h-[400px] self-center"
+        class="w-[252px] h-[240px] stdphone:w-[294px] stdphone:h-[280px] md:w-[420px] md:h-[400px] self-center md:self-end"
       >
         <div
           class="scale-[0.6] stdphone:scale-[0.7] md:transform-none w-[420px] h-[400px]"
