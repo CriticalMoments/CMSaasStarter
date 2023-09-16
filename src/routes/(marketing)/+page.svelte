@@ -1,6 +1,10 @@
 <script lang="ts">
   import { split } from "postcss/lib/list"
   import BarsComponent from "../bars_component.svelte"
+  import DemoIncreaseConversion from "./graphics/demo_increase_conversion.svelte"
+  import DemoIncreaseRating from "./graphics/demo_increase_rating.svelte"
+  import DemoKillBugs from "./graphics/demo_kill_bugs.svelte"
+  import DemoFlagList from "./graphics/demo_flag_list.svelte"
 
   const sections = [
     {
@@ -18,13 +22,13 @@
     {
       title: "Make Bugs Disappear",
       description:
-        "Shit happens. Major Bugs. Outages. Dependencies break. Deprications. Re-brands.\nTarget only the impacted users and resolve remotely without waiting for app updates.",
+        "Shit happens. Major Bugs. Outages. Dependencies break. Deprications. Announcements.\nTarget only the impacted users and resolve remotely without waiting for app updates.",
       background: "bg-[#E3543F]",
     },
     {
       title: "Smarter Feature Flags",
       description:
-        "Super charge your feature flags, targeting over 30 live device conditions from app version, to battery level.\nUpdate any time from the cloud.",
+        "Super charge your feature flags, targeting over 30 live device conditions from app version to current battery level.\nUpdate any time from the cloud.",
       background: "",
     },
   ]
@@ -60,9 +64,9 @@
   <BarsComponent />
 </div>
 
-{#each sections as section}
-  <div class="hero md:min-h-[45vh] {section.background}">
-    <div class="flex flex-col md:flex-row gap-x-24 p-edge">
+{#each sections as section, i}
+  <div class="hero {section.background}">
+    <div class="flex flex-col md:flex-row gap-x-24 p-edge {section.background}">
       <div
         class="flex-1 text-center md:text-left max-w-xl self-center pt-12 pb-6 md:py-12"
       >
@@ -75,7 +79,15 @@
           </div>
         {/each}
       </div>
-      <div class="w-64 h-64 bg-slate-300 self-center"></div>
+      {#if i === 0}
+        <DemoIncreaseConversion />
+      {:else if i === 1}
+        <DemoIncreaseRating />
+      {:else if i === 2}
+        <DemoKillBugs />
+      {:else if i === 3}
+        <DemoFlagList />
+      {/if}
     </div>
   </div>
 {/each}

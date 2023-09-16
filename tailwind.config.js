@@ -15,14 +15,17 @@ export default {
         rc3: '#D73A28',
         rc4: '#9F2F42',
         rc5: rc5,
+        'device-color': '#D9D9D9',
+        'device-faux-content': '#9F9F9F',
       },
       screens: {
         'stdphone': '390px',
       },
-    },
     fontFamily: {
       sans: 'Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
       logo: "'Avenir Black', 'Avenir','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Arial, sans-serif",
+      system: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+    },
     },
   },
   plugins: [
