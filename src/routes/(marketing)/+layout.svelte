@@ -1,6 +1,7 @@
 <script>
   import "../../app.css"
   import { page } from "$app/stores"
+  import BarsComponent from "../bars_component.svelte"
 </script>
 
 <div class="navbar sm:container mx-auto">
@@ -50,6 +51,10 @@
       </ul>
     </div>
   </div>
+</div>
+
+<div class={$page.url.pathname === "/" ? "hidden" : ""}>
+  <BarsComponent height={25} heightUnit="px" />
 </div>
 
 <div class="">

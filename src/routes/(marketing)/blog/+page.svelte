@@ -13,8 +13,6 @@
   <meta name="description" content={blogInfo.description} />
 </svelte:head>
 
-<BarsComponent height={2} />
-
 <div class="min-h-[70vh] py-8 p-edge flex flex-col place-content-center">
   <div
     class="mx-auto font-header text-3xl md:text-5xl whitespace-nowrap flex flex-row gap-2 items-baseline"

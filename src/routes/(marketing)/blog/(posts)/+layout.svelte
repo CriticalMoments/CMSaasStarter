@@ -31,8 +31,6 @@
   />
 </svelte:head>
 
-<BarsComponent height={2} />
-
 <article class="prose mx-auto py-12 px-6 font-sans">
   {#if currentPost == null}
     <h1>Blog post not found</h1>
