@@ -4,10 +4,11 @@
   export let index = 0
 </script>
 
-<div class="flex flex-row gap-x-2 place-content-center">
+<div class="flex flex-row gap-x-3 md:gap-x-2 place-content-center">
   {#each Array(count) as _, i}
     <button
-      class="w-4 h-4 rounded-full border-2 border-slate-600 {index === i
+      class="w-7 h-7 md:w-4 md:h-4 rounded-full border-2 border-slate-600 {index ===
+      i
         ? 'bg-[#A1CE8C]'
         : ''}"
       style="transition: background-color 300ms linear;"
