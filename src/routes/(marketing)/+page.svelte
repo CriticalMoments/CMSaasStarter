@@ -38,7 +38,7 @@
   />
 </svelte:head>
 
-<div class="min-h-[60vh] md:min-h-[70vh] flex flex-col">
+<div class="min-h-[80vh] flex flex-col">
   <div
     class="md:container mx-auto flex-grow flex flex-col md:flex-row p-edge md:items-end pb-8 gap-x-24 gap-y-8 place-content-end md:place-content-center"
   >
