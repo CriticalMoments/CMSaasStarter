@@ -13,7 +13,7 @@
       <div
         class="font-system text-center text-xl font-bold pt-6 min-h-[92px] flex place-content-center"
       >
-        <div class="self-center w-44 overflow-hidden">
+        <div class="self-center overflow-hidden">
           <div in:fly={{ x: 100.0 }}>
             {title}
           </div>
