@@ -6,7 +6,7 @@
   let steps = [
     {
       label: "Update Required",
-      code: "// Major bug in specifc\n// app version\napp_version == '3.2.1'\n\n// Very old app\napp_version < '2.0'",
+      code: "// Major bug in specific\n// app version\napp_version == '3.2.1'\n\n// Very old app\napp_version < '2.0'",
     },
     {
       label: "We'll be right back!",
