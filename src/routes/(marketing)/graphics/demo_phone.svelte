@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { slide, scale } from "svelte/transition"
+  import { fly, slide, scale } from "svelte/transition"
 
   export let title = ""
   export let buttonColor = "bg-[#A1CE8C]"
@@ -9,13 +9,17 @@
 
 <div class="rounded-t-3xl bg-device-color flex flex-col p-2 w-48 h-72">
   {#if title}
-    <div
-      class="font-system text-center text-xl font-bold pt-6 min-h-[92px] flex place-content-center"
-    >
-      <div class="self-center">
-        {title}
+    {#key title}
+      <div
+        class="font-system text-center text-xl font-bold pt-6 min-h-[92px] flex place-content-center"
+      >
+        <div class="self-center w-44 overflow-hidden">
+          <div in:fly={{ x: 100.0 }}>
+            {title}
+          </div>
+        </div>
       </div>
-    </div>
+    {/key}
   {/if}
   <div class="grow flex flex-col gap-y-3 mb-6 place-content-center">
     {#each Array(4) as _, index}
@@ -29,7 +33,7 @@
       {#key buttonLabel}
         <div
           class="leading-8 {buttonSize}"
-          in:scale
+          in:scale={{ start: buttonSize != "text-base" ? 3.0 : 1.0 }}
           style="text-shadow: rgb(0,0,0,0.2) 0px 0px 2px;"
         >
           {buttonLabel}
