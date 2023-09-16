@@ -9,12 +9,12 @@
     {
       label: "+3%",
       code: "app_launches > 6",
-      size: "text-xl",
+      size: "text-base",
     },
     {
       label: "+12%",
       code: "app_launches > 6 &&\nkey_feature_use > 5",
-      size: "text-xl",
+      size: "text-lg",
     },
     {
       label: "+33%",

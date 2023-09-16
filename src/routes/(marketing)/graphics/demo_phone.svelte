@@ -27,7 +27,11 @@
       class="rounded-xl {buttonColor} mx-6 h-8 mb-5 text-center text-white font-bold"
     >
       {#key buttonLabel}
-        <div class="leading-8 {buttonSize}" in:scale>
+        <div
+          class="leading-8 {buttonSize}"
+          in:scale
+          style="text-shadow: rgb(0,0,0,0.2) 0px 0px 2px;"
+        >
           {buttonLabel}
         </div>
       {/key}
