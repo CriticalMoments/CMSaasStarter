@@ -3,6 +3,7 @@
   import DemoPhone from "./demo_phone.svelte"
   import DemoPageDots from "./demo_page_dots.svelte"
   import DemoSwipeCover from "./demo_swipe_cover.svelte"
+  import { fly } from "svelte/transition"
 
   let steps = [
     {
@@ -24,7 +25,9 @@
   ]
   let phoneTitle: string
   let pageIndex: number = 0
-  let lastSetIndex: number = 0
+  let direction: string
+  let lastIndex = 0
+  let lastAutoIndex: number = 0
   let code: string = ""
   let swipedLeft = false
   let swipedRight = false
@@ -33,12 +36,23 @@
   $: {
     // update index for scroll events
     if (swipedLeft) {
+      direction = "left"
       pageIndex = (pageIndex - 1 + steps.length) % steps.length
       clearInterval(interval)
     }
     if (swipedRight) {
+      direction = "right"
       pageIndex = (pageIndex + 1) % steps.length
       clearInterval(interval)
+    }
+
+    // determine direction for animation
+    if (lastIndex != pageIndex) {
+      if (!swipedLeft && !swipedRight) {
+        // special case for swiping: should follow finger even if wrapping 4 -> 0
+        direction = lastIndex < pageIndex ? "right" : "left"
+      }
+      lastIndex = pageIndex
     }
 
     // update content for index
@@ -50,13 +64,13 @@
 
   onMount(() => {
     interval = setInterval(() => {
-      if (pageIndex != lastSetIndex) {
+      if (pageIndex != lastAutoIndex) {
         // User has starter interacting, stop animating
         clearInterval(interval)
         return
       }
-      lastSetIndex = (pageIndex + 1) % steps.length
-      pageIndex = lastSetIndex
+      lastAutoIndex = (pageIndex + 1) % steps.length
+      pageIndex = lastAutoIndex
     }, 6000)
   })
 
@@ -66,12 +80,19 @@
 </script>
 
 <div class="pt-6 w-full h-full relative">
-  <span class="absolute right-0">
-    <DemoCode bind:code />
-  </span>
-  <span class="absolute bottom-0">
-    <DemoPhone bind:title={phoneTitle} />
-  </span>
+  {#key pageIndex}
+    <span
+      in:fly={{ x: direction == "right" ? 150.0 : -150.0 }}
+      class="absolute top-6 bottom-0 right-0 left-0"
+    >
+      <span class="absolute right-0">
+        <DemoCode bind:code />
+      </span>
+      <span class="absolute bottom-0">
+        <DemoPhone bind:title={phoneTitle} />
+      </span>
+    </span>
+  {/key}
   <span class="absolute left-48 bottom-6 right-0">
     <DemoPageDots bind:index={pageIndex} count={steps.length} />
   </span>
