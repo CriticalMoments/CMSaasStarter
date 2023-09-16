@@ -48,7 +48,7 @@
   })
 </script>
 
-<div class="w-[420px] h-[400px] self-center mt-6 relative">
+<div class="pt-6 w-full h-full relative">
   <span class="absolute right-0 top-12">
     <DemoCode bind:code />
   </span>

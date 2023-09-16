@@ -79,15 +79,24 @@
           </div>
         {/each}
       </div>
-      {#if i === 0}
-        <DemoIncreaseConversion />
-      {:else if i === 1}
-        <DemoIncreaseRating />
-      {:else if i === 2}
-        <DemoKillBugs />
-      {:else if i === 3}
-        <DemoFlagList />
-      {/if}
+      <div
+        class="w-[252px] h-[240px] stdphone:w-[294px] stdphone:h-[280px] md:w-[420px] md:h-[400px] self-center"
+      >
+        <div
+          class="scale-[0.6] stdphone:scale-[0.7] md:transform-none w-[420px] h-[400px]"
+          style="transform-origin: top left;"
+        >
+          {#if i === 0}
+            <DemoIncreaseConversion />
+          {:else if i === 1}
+            <DemoIncreaseRating />
+          {:else if i === 2}
+            <DemoKillBugs />
+          {:else if i === 3}
+            <DemoFlagList />
+          {/if}
+        </div>
+      </div>
     </div>
   </div>
 {/each}

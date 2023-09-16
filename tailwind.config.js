@@ -21,11 +21,11 @@ export default {
       screens: {
         'stdphone': '390px',
       },
-    fontFamily: {
-      sans: 'Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
-      logo: "'Avenir Black', 'Avenir','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Arial, sans-serif",
-      system: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
-    },
+      fontFamily: {
+        sans: 'Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
+        logo: "'Avenir Black', 'Avenir','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Arial, sans-serif",
+        system: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+      },
     },
   },
   plugins: [

@@ -31,7 +31,7 @@
 </script>
 
 <div
-  class="w-[420px] h-[400px] self-center relative overflow-hidden text-center font-mono text-lg"
+  class="pt-6 w-full h-full relative overflow-hidden text-center font-mono text-lg"
 >
   {#each Array(2) as _}
     <div class="feature-flag-scroll-text">
