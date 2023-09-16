@@ -2,6 +2,7 @@
   import DemoAppRating from "./demo_app_rating.svelte"
   import DemoCode from "./demo_code.svelte"
   import DemoPageDots from "./demo_page_dots.svelte"
+  import DemoSwipeCover from "./demo_swipe_cover.svelte"
 
   let steps = [
     {
@@ -22,15 +23,27 @@
   let pageIndex: number = 0
   let lastSetIndex: number = 0
   let code: string = ""
+  let swipedLeft = false
+  let swipedRight = false
+  let interval: NodeJS.Timeout
 
   $: {
+    // update index for scroll events
+    if (swipedLeft) {
+      pageIndex = (pageIndex - 1 + steps.length) % steps.length
+      clearInterval(interval)
+    }
+    if (swipedRight) {
+      pageIndex = (pageIndex + 1) % steps.length
+      clearInterval(interval)
+    }
+    // Update content for index
     appRating = steps[pageIndex].rating
     code = steps[pageIndex].code
   }
 
   import { onMount, onDestroy } from "svelte"
 
-  let interval: NodeJS.Timeout
   onMount(() => {
     interval = setInterval(() => {
       if (pageIndex != lastSetIndex) {
@@ -57,5 +70,8 @@
   </span>
   <span class="absolute left-48 bottom-12 right-0">
     <DemoPageDots bind:index={pageIndex} count={steps.length} />
+  </span>
+  <span class="absolute top-0 bottom-20 right-0 left-0">
+    <DemoSwipeCover bind:swipedLeft bind:swipedRight />
   </span>
 </div>
