@@ -133,15 +133,21 @@
     0% {
       transform: translateY(0%);
     }
-    2%,
-    33% {
+    32% {
+      transform: translateY(0%);
+    }
+    34% {
       transform: translateY(-33.333333%);
     }
-    35%,
-    67% {
+    66% {
+      transform: translateY(-33.333333%);
+    }
+    68% {
       transform: translateY(-66.666666%);
     }
-    69%,
+    98% {
+      transform: translateY(-66.666666%);
+    }
     100% {
       transform: translateY(-100%);
     }
