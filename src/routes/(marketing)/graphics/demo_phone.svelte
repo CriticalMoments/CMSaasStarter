@@ -31,7 +31,7 @@
       {#key buttonLabel}
         <div
           class="leading-8 {buttonSize}"
-          in:scale={{ start: buttonSize != "text-base" ? 3.0 : 1.0 }}
+          in:scale={{ start: buttonSize != "text-base" ? 6.0 : 1.0 }}
           style="text-shadow: rgb(0,0,0,0.2) 0px 0px 2px;"
         >
           {buttonLabel}

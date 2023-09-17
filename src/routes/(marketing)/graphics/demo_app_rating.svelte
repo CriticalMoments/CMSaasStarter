@@ -10,7 +10,7 @@
   >
     {#each Array(5) as _, i}
       {#if i + 1 <= rating}
-        <div class="inline" in:scale={{ start: 4.0 }}>★</div>
+        <div class="inline" in:scale={{ start: 8.0 }}>★</div>
       {:else}
         <div class="inline">☆</div>
       {/if}
