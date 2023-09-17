@@ -127,9 +127,9 @@
           <!-- !editable -->
           <a href={editLink} class="mt-1">
             <button
-              class="btn btn-outline btn-sm {dangerous
+              class="btn btn-sm {dangerous
                 ? 'btn-error'
-                : ''} min-w-[145px]"
+                : 'btn-outline'} min-w-[145px]"
             >
               {editButtonTitle}
             </button>

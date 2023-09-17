@@ -40,7 +40,7 @@
           <div class="mt-6 pt-4 flex-1 flex flex-row items-center">
             {#if plan.id === currentPlanId}
               <div
-                class="btn btn-outline btn-success no-animation w-[80%] mx-auto cursor-default"
+                class="btn btn-outline no-animation hover:bg-transparent hover:text-neutral w-[80%] mx-auto cursor-default"
               >
                 Current Plan
               </div>

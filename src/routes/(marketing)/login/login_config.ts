@@ -13,7 +13,7 @@ export let sharedAppearance = {
         brandAccent: "hsl(var(--pf))",
         inputText: "hsl(var(--n))",
         inputBackground: "white",
-        defaultButtonBackground: 'transparent',
+        defaultButtonBackground: '#F9F7F3',
         brandButtonText: "hsl(var(--pc))",
         messageText: "hsl(var(--b))",
         dividerBackground: "hsl(var(--n))",
