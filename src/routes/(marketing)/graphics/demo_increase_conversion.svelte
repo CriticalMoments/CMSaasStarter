@@ -18,12 +18,12 @@
     },
     {
       label: "+33%",
-      code: "app_launches > 6 &&\nkey_feature_use > 5 &&\ninstall_date < now - 5d &&\nuser_distraction == low",
+      code: "app_launches > 6 &&\nkey_feature_use > 5 &&\ninstall_date < 5.days_ago &&\nuser_distraction == low",
       size: "text-xl",
     },
     {
       label: "+72%",
-      code: "app_launches > 6 &&\nkey_feature_use > 5 &&\ninstall_date < now - 5d &&\nuser_distraction == low &&\nbattery > 10% &&\nhas_wifi",
+      code: "app_launches > 6 &&\nkey_feature_use > 5 &&\ninstall_date < 5.days_ago &&\nuser_distraction == low &&\nbattery > 10% &&\nhas_wifi",
       size: "text-2xl",
     },
   ]

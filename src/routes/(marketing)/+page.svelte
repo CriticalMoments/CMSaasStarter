@@ -21,7 +21,7 @@
     {
       title: "Make Bugs Disappear",
       description:
-        "Shit happens. Major Bugs. Outages. Dependencies break. Deprications. Announcements.\nTarget only the impacted users and resolve remotely without waiting for app updates.",
+        "Shit happens. Major Bugs. Outages. Dependencies break. Deprications. Urgent announcements.\nTarget only the impacted users and resolve remotely without waiting for app updates.",
       background: "bg-[#E3543F]",
     },
     {

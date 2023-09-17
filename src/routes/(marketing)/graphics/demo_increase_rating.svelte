@@ -11,11 +11,11 @@
     },
     {
       rating: 4,
-      code: "after: key_feature_event\n\nkey_feature.count > 5",
+      code: "after: key_feature_event\n\nkey_feature_use > 5",
     },
     {
       rating: 5,
-      code: "after: key_feature_event\n\nkey_feature.count > 5 &&\nuser_distraction == low &&\nbattery > 20%",
+      code: "after: key_feature_event\n\nkey_feature_use > 5 &&\ninstall_date < 7.days_ago &&\nuser_distraction == low &&\nbattery > 20%",
     },
   ]
 
