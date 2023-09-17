@@ -14,20 +14,22 @@
     let left = scroller.scrollLeft
     let size = scroller.offsetWidth
     // 0.25 makes it respond faster. As soon as it crosses threshold
-    if (left > 2 * size - size * 0.25) {
+    if (left > 2 * size - size * 0.25 && !swipedRight) {
       swipedRight = true
     }
-    if (left < size * 0.25) {
+    if (left < size * 0.25 && !swipedLeft) {
       swipedLeft = true
     }
 
     if (swipedRight || swipedLeft) {
-      // reset and ignore for next half second
+      // needed to stop momentum from keeping moving in Chrome
+      scroller.style.overflowX = "hidden"
       resetPosition()
       setTimeout(() => {
+        scroller.style.overflowX = "scroll"
         swipedLeft = false
         swipedRight = false
-      }, 500)
+      }, 10)
     }
   }
 
