@@ -88,12 +88,12 @@
       <span class="absolute right-0">
         <DemoCode bind:code />
       </span>
-      <span class="absolute bottom-0">
+      <span class="absolute bottom-0 lg:bottom-7">
         <DemoPhone bind:title={phoneTitle} />
       </span>
     </span>
   {/key}
-  <span class="absolute left-48 bottom-6 right-0">
+  <span class="absolute left-48 bottom-6 right-0 lg:left-0 lg:bottom-0">
     <DemoPageDots bind:index={pageIndex} count={steps.length} />
   </span>
   <span class="absolute top-0 bottom-12 right-0 left-0">

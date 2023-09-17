@@ -16,7 +16,7 @@ export default {
         rc4: '#9F2F42',
         rc5: rc5,
         'device-color': '#D9D9D9',
-        'device-faux-content': '#9F9F9F',
+        'device-faux-content': '#AEAEAE',
       },
       screens: {
         'stdphone': '390px',

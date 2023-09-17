@@ -7,7 +7,9 @@
   export let buttonSize = "text-xl"
 </script>
 
-<div class="rounded-t-3xl bg-device-color flex flex-col p-2 w-48 h-72">
+<div
+  class="rounded-t-3xl lg:rounded-3xl bg-device-color flex flex-col p-2 w-[186px] lg:h-80"
+>
   {#if title}
     <div
       class="font-system text-center text-xl font-bold pt-6 min-h-[92px] flex place-content-center"

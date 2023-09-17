@@ -1,5 +1,4 @@
 <script>
-  import BarsComponent from "../../bars_component.svelte"
   import { postList, blogInfo } from "./posts.json"
   for (const post of postList) {
     let dateParts = post.date.split("-")

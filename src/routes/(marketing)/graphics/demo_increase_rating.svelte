@@ -62,13 +62,13 @@
 </script>
 
 <div class="pt-6 w-full h-full relative">
-  <span class="absolute right-0 top-12">
+  <span class="absolute right-0 top-16">
     <DemoCode bind:code />
   </span>
-  <span class="absolute bottom-0 top-44">
+  <span class="absolute bottom-0 top-40">
     <DemoAppRating bind:rating={appRating} />
   </span>
-  <span class="absolute left-48 bottom-12 right-0">
+  <span class="absolute left-0 bottom-12 right-0">
     <DemoPageDots bind:index={pageIndex} count={steps.length} />
   </span>
   <span class="absolute top-0 bottom-20 right-0 left-0">

@@ -9,13 +9,13 @@
     {
       title: "Increase Conversions",
       description:
-        "Showing your upsell prompt at the right moment can increase conversion by 72%",
+        "Increase your paid conversion rate by asking users when they are most likely to convert",
       background: "",
     },
     {
       title: "Improve App Ratings",
       description:
-        "Showing your rating prompt at the right moment increases both the rating and number of ratings",
+        "Increase your app rating and number of ratings by asking users to rate at the perfect moment",
       background: "bg-[#F9AE40]",
     },
     {
@@ -85,25 +85,27 @@
 </div>
 
 {#each sections as section, i}
-  <div class="hero {section.background}">
-    <div class="flex flex-col md:flex-row gap-x-24 p-edge {section.background}">
+  <div class="hero lg:min-h-[65vh] {section.background}">
+    <div
+      class="flex flex-col lg:flex-row gap-x-24 p-edge lg:p-6 {section.background}"
+    >
       <div
-        class="flex-1 text-center md:text-left max-w-xl self-center pt-12 pb-6 md:py-12"
+        class="flex-1 text-center lg:text-left max-w-xl self-center pt-12 pb-6 lg:py-12"
       >
         <div class="font-header text-2xl stdphone:text-3xl md:text-4xl py-4">
           {section.title}
         </div>
         {#each section.description.split("\n") as descriptionPart}
-          <div class="text-lg stdphone:text-xl md:text-2xl py-3">
+          <div class="text-lg stdphone:text-xl md:text-2xl py-3 max-w-md">
             {descriptionPart}
           </div>
         {/each}
       </div>
       <div
-        class="w-[252px] h-[240px] stdphone:w-[294px] stdphone:h-[280px] md:w-[420px] md:h-[400px] self-center md:self-end"
+        class="w-[252px] h-[240px] stdphone:w-[294px] stdphone:h-[280px] lg:w-[420px] lg:h-[400px] self-center lg:self-end lg:my-4"
       >
         <div
-          class="scale-[0.6] stdphone:scale-[0.7] md:transform-none w-[420px] h-[400px]"
+          class="scale-[0.6] stdphone:scale-[0.7] lg:transform-none w-[420px] h-[400px]"
           style="transform-origin: top left;"
         >
           {#if i === 0}
