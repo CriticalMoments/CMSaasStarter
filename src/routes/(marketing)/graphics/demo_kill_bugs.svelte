@@ -86,7 +86,7 @@
       class="absolute top-6 bottom-0 right-0 left-0"
     >
       <span class="absolute right-0">
-        <DemoCode bind:code />
+        <DemoCode bind:code animateChange={false} />
       </span>
       <span class="absolute bottom-0 lg:bottom-7">
         <DemoPhone bind:title={phoneTitle} />

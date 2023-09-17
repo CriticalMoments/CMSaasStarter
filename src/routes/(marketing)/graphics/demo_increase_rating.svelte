@@ -11,7 +11,7 @@
     },
     {
       rating: 4,
-      code: "after: key_feature_event\n\ncount(key_feature_use) > 5",
+      code: "after: key_feature_event\n\nkey_feature.count > 5",
     },
     {
       rating: 5,
