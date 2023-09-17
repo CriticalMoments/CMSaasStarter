@@ -11,6 +11,11 @@
       currentDisplayCode = code
     }
 
+    // snap to new if shorter
+    if (currentDisplayCode.length > code.length) {
+      currentDisplayCode = code
+    }
+
     // replace code if not shared prefix
     if (
       currentDisplayCode.length == 0 ||
@@ -19,7 +24,7 @@
       currentDisplayCode = ""
     }
 
-    if (!interval) {
+    if (!interval && code.length > currentDisplayCode.length) {
       interval = setInterval(() => {
         let nextLength = currentDisplayCode.length + 4
         currentDisplayCode = code.substring(
