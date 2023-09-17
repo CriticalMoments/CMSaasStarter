@@ -12,7 +12,7 @@
 >
   {#if title}
     <div
-      class="font-system text-center text-xl font-bold pt-6 min-h-[92px] flex place-content-center"
+      class="font-system text-center text-xl font-bold lg:pt-6 min-h-[92px] flex place-content-center"
     >
       <div class="self-center">
         {title}
