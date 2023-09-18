@@ -12,6 +12,7 @@
         ? 'bg-[#A1CE8C]'
         : ''}"
       style="transition: background-color 300ms linear;"
+      aria-label="Step {i + 1}"
       on:click={() => {
         index = i
       }}
