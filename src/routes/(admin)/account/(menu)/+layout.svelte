@@ -2,6 +2,7 @@
   import "../../../../app.css"
   import { writable } from "svelte/store"
   import { setContext } from "svelte"
+  import BarsComponent from "../../../bars_component.svelte"
 
   const adminSectionStore = writable("")
   setContext("adminSection", adminSectionStore)
@@ -18,6 +19,9 @@
 <div class="drawer lg:drawer-open">
   <input id="admin-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
+    <div class="md:hidden">
+      <BarsComponent height={25} heightUnit="px" scrollEffect={false} />
+    </div>
     <div class="navbar bg-base-100 lg:hidden">
       <div class="flex-1"></div>
       <div class="flex-none">
@@ -40,26 +44,39 @@
         </div>
       </div>
     </div>
-    <div class="container px-6 lg:px-12 pb-10 lg:pt-8">
-      <slot />
+    <div class="flex flex-row h-full">
+      <div class=" h-full flex flex-row justify-stretch hidden md:flex">
+        {#each Array(5) as _, i}
+          <div class="bg-rc{i + 1} w-1"></div>
+        {/each}
+      </div>
+      <div class="container px-6 lg:px-12 pb-10 lg:pt-8">
+        <slot />
+      </div>
     </div>
   </div>
 
   <div class="drawer-side">
     <label for="admin-drawer" class="drawer-overlay" />
     <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-200 text-base-content">
-      <a href="/" class="mb-4">
-        <li>
-          <div
-            class="normal-case menu-title text-xl font-bold text-black flex flex-row"
-          >
-            <span class="grow logoType">
+      <div class="flex flex-row pl-3 md:pl-6 pr-3 pt-4 pb-8">
+        <div class="grow">
+          <a href="/" class="flex-grow mr-5" style="all: initial;">
+            <span class="logoType text-xl pr-8">
               Critical<br />Moments
             </span>
-            <label for="admin-drawer" class="lg:hidden ml-3"> &#x2715; </label>
-          </div>
-        </li>
-      </a>
+          </a>
+        </div>
+        <div class="place-self-center">
+          <label
+            for="admin-drawer"
+            class="lg:hidden py-2 pl-4 pr-1 cursor-pointer"
+          >
+            &#x2715;
+          </label>
+        </div>
+      </div>
+
       <li>
         <a
           href="/account"

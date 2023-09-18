@@ -1,6 +1,7 @@
 <script lang="ts">
   export let height = 30
   export let heightUnit = "vh"
+  export let scrollEffect = true
   let barColors = ["bg-rc1", "bg-rc2", "bg-rc3", "bg-rc4", "bg-rc5"]
   let barCount = barColors.length
   let halfBarCount = barCount * 2.0
@@ -16,7 +17,7 @@
     ></div>
   </div>
   <div
-    class="sticky z-10 {barColor}"
+    class="{scrollEffect ? 'sticky z-10' : ''} {barColor}"
     style="height:{halfBarHeight + 0.05}{heightUnit}; top:{i *
       halfBarHeight}{heightUnit};"
   ></div>
