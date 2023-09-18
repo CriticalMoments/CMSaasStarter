@@ -5,6 +5,7 @@
 
   let scroller: HTMLElement
   var isChrome = browser && navigator.userAgent.indexOf("Chrome") != -1
+  var isFF = browser && navigator.userAgent.toLowerCase().includes("firefox")
 
   let resetPosition = () => {
     if (scroller.scrollLeft != scroller.offsetWidth) {
@@ -34,7 +35,7 @@
       swipeTriggered = true
       resetPosition()
       setTimeout(() => {
-        if (isChrome) {
+        if (isChrome || isFF) {
           scroller.style.overflowX = "hidden"
           setTimeout(() => {
             scroller.style.overflowX = "scroll"

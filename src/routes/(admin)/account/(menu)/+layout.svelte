@@ -62,7 +62,7 @@
       <div class="flex flex-row pl-3 md:pl-6 pr-3 pt-4 pb-8">
         <div class="grow">
           <a href="/" class="flex-grow mr-5" style="all: initial;">
-            <span class="logoType text-xl pr-8">
+            <span class="logoType text-xl pr-8 cursor-pointer">
               Critical<br />Moments
             </span>
           </a>
