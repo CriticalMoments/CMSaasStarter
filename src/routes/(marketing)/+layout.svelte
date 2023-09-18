@@ -7,7 +7,7 @@
 <div class="navbar sm:container mx-auto">
   <div class="flex-1">
     <a
-      class="normal-case logoType headerLogo {$page.url.pathname === '/'
+      class="normal-case px-4 text-lg logoType {$page.url.pathname === '/'
         ? 'hidden'
         : ''}"
       href="/">Critical<br />Moments</a

@@ -42,10 +42,6 @@ button[disabled].authBtn::before {
   line-height: 0.95;
   text-align: left;
 }
-.headerLogo {
-  @apply px-4;
-  font-size: 17px;
-}
 
 .p-edge {
   @apply px-4;
