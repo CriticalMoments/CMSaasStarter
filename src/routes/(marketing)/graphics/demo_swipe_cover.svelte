@@ -1,8 +1,10 @@
 <script lang="ts">
   export let swipedLeft = false
   export let swipedRight = false
+  import { browser } from "$app/environment"
 
   let scroller: HTMLElement
+  var isChrome = browser && navigator.userAgent.indexOf("Chrome") != -1
 
   let resetPosition = () => {
     if (scroller.scrollLeft != scroller.offsetWidth) {
@@ -10,6 +12,7 @@
     }
   }
 
+  let swipeTriggered = false
   let scrolled = () => {
     let left = scroller.scrollLeft
     let size = scroller.offsetWidth
@@ -21,15 +24,27 @@
       swipedLeft = true
     }
 
-    if (swipedRight || swipedLeft) {
-      // needed to stop momentum from keeping moving in Chrome
-      scroller.style.overflowX = "hidden"
+    /*
+      Oh, this looks overcomplicated, I can remove ....
+      Stop. Don't touch without testing swiping fast in
+      Chrome, Safari and mobile Safari. You'll break it.
+      It works. It's witch magic. Don't touch.
+    */
+    if ((swipedRight || swipedLeft) && !swipeTriggered) {
+      swipeTriggered = true
       resetPosition()
       setTimeout(() => {
-        scroller.style.overflowX = "scroll"
+        if (isChrome) {
+          scroller.style.overflowX = "hidden"
+          setTimeout(() => {
+            scroller.style.overflowX = "scroll"
+          }, 20)
+        }
+        resetPosition()
         swipedLeft = false
         swipedRight = false
-      }, 10)
+        swipeTriggered = false
+      }, 100)
     }
   }
 
