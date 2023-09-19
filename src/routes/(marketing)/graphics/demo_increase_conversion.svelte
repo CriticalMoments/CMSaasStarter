@@ -70,7 +70,7 @@
   })
 </script>
 
-<div class="pt-6 w-full h-full relative">
+<div class="pt-6 w-full h-full relative" aria-hidden="true">
   <span class="absolute right-0">
     <DemoCode bind:code />
   </span>

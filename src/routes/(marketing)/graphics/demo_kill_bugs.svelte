@@ -79,7 +79,7 @@
   })
 </script>
 
-<div class="pt-6 w-full h-full relative">
+<div class="pt-6 w-full h-full relative" aria-hidden="true">
   {#key pageIndex}
     <span
       in:fly={{ x: direction == "right" ? 150.0 : -150.0 }}
