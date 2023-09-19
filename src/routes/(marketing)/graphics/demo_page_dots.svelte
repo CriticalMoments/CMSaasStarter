@@ -13,6 +13,7 @@
         : ''}"
       style="transition: background-color 300ms linear;"
       aria-label="Step {i + 1}"
+      tabindex="-1"
       on:click={() => {
         index = i
       }}
