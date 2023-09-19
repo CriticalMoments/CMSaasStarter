@@ -14,3 +14,7 @@ npm run dev -- --host
 VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
 
 [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+
+### Licence
+
+All rights reserved.
