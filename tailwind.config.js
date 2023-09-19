@@ -37,6 +37,7 @@ export default {
       {
         cmtheme: {
           "primary": rc5,
+          "primary-content": 'white',
           "secondary": "#f6d860",
           "accent": "#37cdbe",
           "neutral": "#3d4451",
