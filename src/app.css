@@ -36,13 +36,6 @@ button[disabled].authBtn::before {
   font-weight: bold;
   font-weight: bolder;
 }
-.logoType {
-  @apply font-header;
-  padding-top: 3px;
-  line-height: 0.95;
-  text-align: left;
-}
-
 .p-edge {
   @apply px-4;
 }
@@ -61,4 +54,12 @@ button[disabled].authBtn::before {
   @apply stdphone:h-8;
   @apply md:h-12;
   @apply xl:h-16;
+}
+
+/* https://codepen.io/sosuke/pen/Pjoqqp with 2f2e2d */
+.logo-dark {
+  filter: invert(16%) sepia(7%) saturate(187%) hue-rotate(349deg) brightness(94%) contrast(92%);
+}
+.logo-white {
+  filter: invert(100%) sepia(0%) saturate(7439%) hue-rotate(169deg) brightness(121%) contrast(110%);
 }

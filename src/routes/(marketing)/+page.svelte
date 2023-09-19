@@ -43,12 +43,14 @@
 
 <div class="min-h-[80vh] flex flex-col">
   <div
-    class="lg:container mx-auto flex-grow flex flex-col lg:flex-row p-edge lg:items-end pb-8 gap-x-24 gap-y-8 place-content-end lg:place-content-center"
+    class="lg:container mx-auto flex-grow flex flex-col lg:flex-row p-edge lg:items-end pb-8 gap-x-16 gap-y-6 md:gap-y-10 place-content-end lg:place-content-center"
   >
-    <div
-      class="logoType text-4xl stdphone:text-5xl lg:text-6xl xl:text-7xl lg:pb-1.5 xl:pb-2.5"
-    >
-      Critical<br />Moments
+    <div class="lg:pb-3 xl:pb-5">
+      <img
+        src="/images/cm_logo.svg"
+        class="logo-dark h-[63px] stdphone:h-[82px] md:h-[97px] lg:h-[114px] xl:h-[139px]"
+        alt="Critial Moments logo"
+      />
     </div>
     <div
       class="text-xl stdphone:text-2xl md:text-4xl xl:text-5xl whitespace-nowrap"

@@ -19,7 +19,7 @@
 <div class="drawer lg:drawer-open">
   <input id="admin-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
-    <div class="md:hidden">
+    <div class="lg:hidden">
       <BarsComponent height={25} heightUnit="px" scrollEffect={false} />
     </div>
     <div class="navbar bg-base-100 lg:hidden">
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="flex flex-row h-full">
-      <div class=" h-full flex flex-row justify-stretch hidden md:flex">
+      <div class="h-full flex flex-row justify-stretch hidden lg:flex">
         {#each Array(5) as _, i}
           <div class="bg-rc{i + 1} w-1"></div>
         {/each}
@@ -59,12 +59,14 @@
   <div class="drawer-side">
     <label for="admin-drawer" class="drawer-overlay" />
     <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-200 text-base-content">
-      <div class="flex flex-row pl-3 md:pl-6 pr-3 pt-4 pb-8">
+      <div class="flex flex-row pl-3 md:pl-6 pr-3 pt-4 pb-8 gap-x-12">
         <div class="grow">
-          <a href="/" class="flex-grow mr-5" style="all: initial;">
-            <span class="logoType text-xl pr-8 cursor-pointer">
-              Critical<br />Moments
-            </span>
+          <a href="/" class="flex-grow">
+            <img
+              src="/images/cm_logo.svg"
+              class="logo-dark h-[38px] cursor-pointer"
+              alt="Critial Moments logo"
+            />
           </a>
         </div>
         <div class="place-self-center">

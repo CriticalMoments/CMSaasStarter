@@ -6,12 +6,13 @@
 
 <div class="navbar sm:container mx-auto">
   <div class="flex-1">
-    <a
-      class="normal-case px-4 text-lg logoType {$page.url.pathname === '/'
-        ? 'hidden'
-        : ''}"
-      href="/">Critical<br />Moments</a
-    >
+    <a class="px-4 {$page.url.pathname === '/' ? 'hidden' : ''}" href="/">
+      <img
+        src="/images/cm_logo.svg"
+        class="logo-dark h-[34px]"
+        alt="Critial Moments logo"
+      />
+    </a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal md:px-1 hidden sm:flex font-header">
@@ -76,12 +77,12 @@
       <a class="" href="/account">Account</a>
       <a class="" href="/legal">Legal</a>
     </div>
-    <div
-      class="logoType self-center text-2xl stdphone:text-3xl md:text-4xl xl:text-5xl hidden md:inline"
-    >
-      <a href="/">
-        Critical<br />Moments
-      </a>
+    <div class="self-center hidden md:inline">
+      <img
+        src="/images/cm_logo.svg"
+        class="logo-white h-[75px]"
+        alt="Critial Moments logo"
+      />
     </div>
   </footer>
 </div>
