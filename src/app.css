@@ -56,10 +56,11 @@ button[disabled].authBtn::before {
   @apply xl:h-16;
 }
 
-/* https://codepen.io/sosuke/pen/Pjoqqp with 2f2e2d */
 .logo-dark {
-  filter: invert(16%) sepia(7%) saturate(187%) hue-rotate(349deg) brightness(94%) contrast(92%);
+  @apply aspect-[420/154];
 }
+/* if I ever need another color https://codepen.io/sosuke/pen/Pjoqqp  */
 .logo-white {
-  filter: invert(100%) sepia(0%) saturate(7439%) hue-rotate(169deg) brightness(121%) contrast(110%);
+  @apply aspect-[420/154];
+  filter: brightness(0) saturate(100%) invert(100%) saturate(5000%);
 }

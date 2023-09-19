@@ -48,7 +48,7 @@
     <div class="lg:pb-3 xl:pb-5">
       <img
         src="/images/cm_logo.svg"
-        class="logo-dark h-[63px] stdphone:h-[82px] md:h-[97px] lg:h-[114px] xl:h-[139px] aspect-[420/154]"
+        class="logo-dark h-[63px] stdphone:h-[82px] md:h-[97px] lg:h-[114px] xl:h-[139px]"
         alt="Critial Moments logo"
       />
     </div>

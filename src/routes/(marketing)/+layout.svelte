@@ -9,7 +9,7 @@
     <a class="px-4 {$page.url.pathname === '/' ? 'hidden' : ''}" href="/">
       <img
         src="/images/cm_logo.svg"
-        class="logo-dark h-[34px] aspect-[420/154]"
+        class="logo-dark h-[34px]"
         alt="Critial Moments logo"
       />
     </a>
@@ -80,7 +80,7 @@
     <div class="self-center hidden md:inline">
       <img
         src="/images/cm_logo.svg"
-        class="logo-white h-[75px] aspect-[420/154]"
+        class="logo-white h-[75px]"
         alt="Critial Moments logo"
       />
     </div>
