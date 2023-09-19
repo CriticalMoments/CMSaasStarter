@@ -64,7 +64,7 @@
           <a href="/" class="flex-grow">
             <img
               src="/images/cm_logo.svg"
-              class="logo-dark h-[38px] cursor-pointer"
+              class="logo-dark h-[38px] cursor-pointer aspect-[420/154]"
               alt="Critial Moments logo"
             />
           </a>
