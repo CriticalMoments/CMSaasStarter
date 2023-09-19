@@ -43,6 +43,10 @@ button[disabled].authBtn::before {
   @apply mx-4;
 }
 
+.btn {
+  @apply font-avnext;
+}
+
 .retroFill {
   @apply bg-gradient-to-r;
   @apply from-rc1;
