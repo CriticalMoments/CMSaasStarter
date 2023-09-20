@@ -41,6 +41,7 @@ Everything you need to get started for a SaaS company:
 - User Authentication
 - Self-serve billing portal (change card, upgrade, cancel, etc)
 - User settings to manage profile
+- Onboarding flow after signup: collect user data, and select a payment plan
 - Style toolkit: theming, CSS, UI components
 - Suggested hosting stack with instructions to get up and running
 
