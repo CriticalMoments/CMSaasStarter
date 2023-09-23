@@ -31,7 +31,7 @@
 </script>
 
 <div
-  class="pt-6 w-full h-full relative overflow-hidden text-center font-mono text-lg font-bold text-slate-400"
+  class="pt-6 w-full h-full relative overflow-hidden text-center font-mono text-lg font-bold text-[#8494AE]"
   aria-hidden="true"
 >
   {#each Array(2) as _}
