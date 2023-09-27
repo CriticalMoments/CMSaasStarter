@@ -75,6 +75,11 @@
       <a class="" href="/blog">Blog</a>
       <a class="" href="/pricing">Pricing</a>
       <a class="" href="/account">Account</a>
+      <a
+        class=""
+        href="https://github.com/CriticalMoments/CriticalMoments"
+        target="_blank">Github</a
+      >
       <a class="" href="/legal">Legal</a>
     </div>
     <div class="self-center hidden md:inline">
