@@ -1,5 +1,6 @@
 <script lang="ts">
   import { enhance, applyAction } from "$app/forms"
+  import { invalidateAll } from "$app/navigation"
   import { page } from "$app/stores"
 
   export let data
@@ -27,6 +28,7 @@
   export let editButtonTitle: string = ""
   export let editLink: string = ""
   export let saveButtonTitle: string = "Save"
+  export let reloadOnSuccess = false
 
   const handleSubmit = () => {
     loading = true
@@ -35,7 +37,11 @@
       await applyAction(result)
       loading = false
       if (result.type === "success") {
-        showSuccess = true
+        if (reloadOnSuccess) {
+          invalidateAll()
+        } else {
+          showSuccess = true
+        }
       }
     }
   }
@@ -80,6 +86,14 @@
           {#if field.label}
             <label for={field.id}>
               <span class="text-sm text-gray-500">{field.label}</span>
+              {#if field.tooltip}
+                <div
+                  class="tooltip rounded-full bg-gray-500 w-3 h-3 text-white text-[9px] text-bold align-middle"
+                  data-tip={field.tooltip}
+                >
+                  i
+                </div>
+              {/if}
             </label>
           {/if}
           {#if editable}
@@ -89,6 +103,7 @@
               type={field.inputType ?? "text"}
               disabled={!editable}
               placeholder={field.placeholder ?? field.label ?? ""}
+              autocomplete={field.autocomplete ?? "on"}
               class="{fieldError($page?.form, field.id)
                 ? 'input-error'
                 : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"

@@ -1,6 +1,88 @@
 import { fail, redirect } from "@sveltejs/kit"
+import { PRIVATE_GO_API_ROOT, PRIVATE_GO_API_TOKEN } from '$env/static/private';
 
 export const actions = {
+  createApiKey: async ({ request, locals: { supabaseServiceRole, getSession } }) => {
+    const session = await getSession()
+    if (!session) {
+      throw redirect(303, "/login")
+    }
+
+    const formData = await request.formData()
+    const appName = formData.get("appName") as string
+    const appstoreUrl = formData.get("appstoreUrl") as string
+    const bundleId = formData.get("bundleId") as string
+
+    let validationError
+    let errorFields = []
+    if (!appName) {
+      validationError = "App Name is required"
+      errorFields.push("appName")
+    }
+    if (!bundleId) {
+      validationError = "Bundle ID is required"
+      errorFields.push("bundleId")
+    }
+    if (bundleId && !bundleId.match(/^[0-9a-zA-Z-.]+$/)) {
+      validationError = "Apple Bundle IDs only allows alphanumeric characters (A–Z, a–z, and 0–9), hyphens (-), and periods (.). See Apple documentation for details."
+      errorFields.push("bundleId")
+    }
+    if (validationError) {
+      return fail(400, {
+        errorMessage: validationError,
+        errorFields: [...new Set(errorFields)], // unique values
+        appName,
+        appstoreUrl,
+        bundleId
+      })
+    }
+
+    // Call out to get Generate API Key
+    let url = `${PRIVATE_GO_API_ROOT}/generate_api_key?bundle_id=${encodeURIComponent(bundleId)}`
+    const response = await fetch(url, {
+      headers: {
+        "X-Auth-Token": PRIVATE_GO_API_TOKEN
+      }
+    })
+    let keyPackage
+    try {
+      keyPackage = await response.json()
+    } catch(e) {}
+    if (!response.ok || !keyPackage?.apiKey) {
+      return fail(400, {
+        errorMessage: "Unknown error. If Problem persists, please contact us.",
+        errorFields: [], // unique values
+        appName,
+        appstoreUrl,
+        bundleId
+      })
+    }
+
+    // Create the app
+    // insert instead of upsert so we never over-write. 
+    // unique user_id field ensures later attempts error while we only support single apps
+    const { error: insertError } = await supabaseServiceRole
+      .from("apps")
+      .insert({
+        user_id: session.user.id,
+        updated_at: ((new Date()).toISOString()),
+        app_name: appName,
+        bundle_id: bundleId,
+        app_store_url: appstoreUrl,
+        api_key: keyPackage.apiKey,
+      })
+    if (insertError) { 
+      console.log(insertError)
+      return fail(400, {
+        errorMessage: "Unknown error. If Problem persistes, please contact us.",
+        errorFields: [],
+        appName,
+        appstoreUrl,
+        bundleId
+      })
+    }
+    return {}
+  },
   updateEmail: async ({ request, locals: { supabase, getSession } }) => {
     const formData = await request.formData()
     const email = formData.get("email") as string

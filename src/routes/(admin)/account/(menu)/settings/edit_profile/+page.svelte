@@ -27,6 +27,7 @@
     {
       id: "fullName",
       label: "Name",
+      autocomplete: "name",
       initialValue: profile?.full_name ?? "",
       placeholder: "Your full name",
     },

@@ -1,31 +1,100 @@
 <script lang="ts">
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
+  import SettingsModule from "./settings/settings_module.svelte"
+  import { fade } from "svelte/transition"
 
   let adminSection: Writable<String> = getContext("adminSection")
   adminSection.set("home")
+
+  export let data
+
+  let copied = false
+
+  function copyApiKey() {
+    navigator.clipboard.writeText(data.app?.api_key ?? "").then(
+      () => {
+        copied = true
+        setTimeout(() => {
+          copied = false
+        }, 1200)
+      },
+      () => {
+        alert("Copy not allowed by browser. Please copy the API key manually.")
+      },
+    )
+  }
 </script>
 
 <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
-<div class="alert alert-success max-w-lg my-16">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    class="stroke-current shrink-0 w-6 h-6"
-    ><path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-    ></path></svg
-  >
-  <div>
-    <div class="font-bold">Coming Soon</div>
-    <div class="my-2">Thanks for signing up!</div>
-    <div class="my-2">
-      Critical Moments is under development and is coming soon.
+
+{#if data.app}
+  <div class="card card-bordered p-6 pb-7 mt-8 max-w-xl flex flex-col shadow">
+    <div class="text-xl font-bold mb-3 w-48 flex-none mb-6">App Details</div>
+    <div>
+      <div class="text-sm text-gray-500">App Name</div>
+      <div class="text-lg mb-5 mt-1">{data.app.app_name}</div>
     </div>
-    <div class="my-2">We will reach out when the V1 is ready.</div>
+    <div>
+      <div class="text-sm text-gray-500">Bundle ID</div>
+      <div class="text-lg mb-5 mt-1">{data.app.bundle_id}</div>
+    </div>
+    <div>
+      <div class="text-sm text-gray-500">API Key</div>
+      <div class="relative w-full mt-1">
+        <input
+          id="apiKeyInput"
+          type="text"
+          class="input input-bordered w-full"
+          disabled
+          value={data.app.api_key}
+        />
+        {#key copied}
+          <button
+            class="bg-base-100 rounded border border-gray-700 px-3 absolute right-1 top-1 bottom-1 uppercase font-bold text-sm {copied
+              ? 'text-success'
+              : ''}"
+            on:click={copyApiKey}
+            out:fade>{copied ? "Copied to clipboard" : "Copy"}</button
+          >
+        {/key}
+      </div>
+    </div>
+    <a
+      href="https://docs.criticalmoments.io/get-started"
+      target="_blank"
+      class="btn btn-primary btn-outline mt-8">Integration Guide</a
+    >
   </div>
-</div>
+{:else}
+  <SettingsModule
+    data={{}}
+    editable={true}
+    title="Get Started"
+    message="Register your app to generate an API key."
+    saveButtonTitle="Next"
+    formTarget="/account/api?/createApiKey"
+    reloadOnSuccess={true}
+    fields={[
+      {
+        id: "appName",
+        label: "App Name",
+        initialValue: "",
+      },
+      {
+        id: "appstoreUrl",
+        label: "App Store URL",
+        initialValue: "",
+        tooltip: "Optional if app is pre-release",
+      },
+      {
+        id: "bundleId",
+        label: "App Bundle ID",
+        initialValue: "",
+        autocomplete: "off",
+        tooltip:
+          "Important: this must match your app's Bundle ID or your API Key will not work",
+      },
+    ]}
+  />
+{/if}

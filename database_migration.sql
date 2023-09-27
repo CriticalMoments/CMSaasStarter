@@ -31,6 +31,21 @@ create table stripe_customers (
 );
 alter table stripe_customers enable row level security;
 
+-- Create App Table
+-- One app per user (unique key enforced), but can change that later
+-- Limit RLS policies -- mostly only server side access
+create extension if not exists pgcrypto;
+create table apps (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users on delete cascade not null unique,
+  updated_at timestamp with time zone,
+  app_name text not null,
+  bundle_id text not null,
+  app_store_url text,
+  api_key text not null
+);
+alter table apps enable row level security;
+
 -- This trigger automatically creates a profile entry when a new user signs up via Supabase Auth.
 -- See https://supabase.com/docs/guides/auth/managing-user-data#using-triggers for more details.
 create function public.handle_new_user()
