@@ -42,16 +42,14 @@
     <div>
       <div class="text-sm text-gray-500">API Key</div>
       <div class="relative w-full mt-1">
-        <input
-          id="apiKeyInput"
-          type="text"
-          class="input input-bordered w-full"
-          disabled
-          value={data.app.api_key}
-        />
+        <div
+          class="rounded bg-base-200 w-full break-all hyphens-none p-4 pr-24 text-xs"
+        >
+          {data.app.api_key}
+        </div>
         {#key copied}
           <button
-            class="bg-base-100 rounded border border-gray-700 px-3 absolute right-1 top-1 bottom-1 uppercase font-bold text-sm {copied
+            class="bg-base-100 rounded border border-gray-700 px-3 py-2 absolute right-1 bottom-1 top-1 uppercase font-bold text-sm {copied
               ? 'text-success'
               : ''}"
             on:click={copyApiKey}
