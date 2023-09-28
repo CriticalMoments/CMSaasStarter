@@ -43,7 +43,7 @@
       <div class="text-sm text-gray-500">API Key</div>
       <div class="relative w-full mt-1">
         <div
-          class="rounded bg-base-200 w-full break-all hyphens-none p-4 pr-24 text-xs"
+          class="rounded bg-base-200 w-full break-all hyphens-none p-3 pr-24 text-xs"
         >
           {data.app.api_key}
         </div>
