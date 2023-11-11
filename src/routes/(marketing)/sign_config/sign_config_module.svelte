@@ -1,4 +1,5 @@
 <script lang="ts">
+  export let centerContent = true
   let isHovered = false
   let hasFailed = false
   let processing = false
@@ -87,7 +88,7 @@
   }
 </script>
 
-<div class="flex place-content-center">
+<div class="flex {centerContent ? 'place-content-center' : ''}">
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
     class="border-dashed border-2 border-slate-600 rounded-lg min-w-[240px] lg:w-[500px] px-4 py-12 lg:py-20 {isHovered
