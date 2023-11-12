@@ -3,7 +3,8 @@
   let isHovered = false
   let hasFailed = false
   let processing = false
-  let success: string | null = null
+  let signedConfig: string | null = null
+  let errorMessage: string | null = null
   function handleDragDrop(e: DragEvent) {
     e.preventDefault()
     isHovered = false
@@ -58,33 +59,53 @@
     processing = true
     const reader = new FileReader()
     reader.onload = (e) => {
-      const text = e.target?.result
-      // TODO: actually sign fils
-      if (typeof text === "string") {
-        success = text
-        console.log(text)
+      const fileContent = e.target?.result
+      if (typeof fileContent === "string") {
+        callSigningServer(fileContent)
       } else {
         hasFailed = true
       }
-      processing = false
     }
-    // TODO binary
     reader.readAsText(file)
   }
   function download() {
-    if (success == null) {
+    if (signedConfig == null) {
       return
     }
     var element = document.createElement("a")
     element.setAttribute(
       "href",
-      "data:text/plain;charset=utf-8," + encodeURIComponent(success),
+      "data:text/plain;charset=utf-8," + encodeURIComponent(signedConfig),
     )
     element.setAttribute("download", "criticalmoments-config.cmconfig")
     element.style.display = "none"
     document.body.appendChild(element)
     element.click()
     document.body.removeChild(element)
+  }
+  function callSigningServer(config: string) {
+    fetch("/account/api/sign_config", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: config,
+    }).then((response) => {
+      response.text().then((apiBody) => {
+        processing = false
+        if (!response.ok) {
+          try {
+            let errBody = JSON.parse(apiBody)
+            errorMessage = errBody.errorMessage
+          } catch (e) {
+            errorMessage = "An unknown error occurred."
+          }
+          hasFailed = true
+          return
+        }
+        signedConfig = apiBody
+      })
+    })
   }
 </script>
 
@@ -94,7 +115,9 @@
     class="border-dashed border-2 border-slate-600 rounded-lg min-w-[240px] lg:w-[500px] px-4 py-12 lg:py-20 {isHovered
       ? 'bg-base-200 bg-opacity-50'
       : ''}"
-    style={!hasFailed && !processing && success == null ? "" : "display: none;"}
+    style={!hasFailed && !processing && signedConfig == null
+      ? ""
+      : "display: none;"}
     on:drop={handleDragDrop}
     on:dragenter={handleDragEnter}
     on:dragleave={handleDragLeave}
@@ -143,7 +166,7 @@
   </div>
   <div
     class="border border-slate-600 rounded-lg min-w-[240px] lg:w-[500px] px-4 py-12 lg:py-20"
-    style={success != null ? "" : "display: none;"}
+    style={signedConfig != null ? "" : "display: none;"}
   >
     <div class="flex flex-col items-center">
       <div class="text-xl font-semibold text-center mb-6 mx-auto">Success!</div>
@@ -164,16 +187,14 @@
   </div>
   <div
     class="border border-slate-600 rounded-lg min-w-[240px] lg:w-[500px] px-4 py-12 lg:py-20"
-    style={success == null && hasFailed ? "" : "display: none;"}
+    style={signedConfig == null && hasFailed ? "" : "display: none;"}
   >
     <div class="flex flex-col items-center">
       <div class="text-xl font-semibold text-center mb-6 mx-auto">
         There was an issue.
       </div>
       <div class="text-center mb-6 mx-auto max-w-[300px]">
-        Please ensure the file you select is a valid Critical Moments config
-        file in JSON format.
-        <!-- TODO: error message from API -->
+        {errorMessage}
       </div>
       <button class="btn btn-primary mx-auto" on:click={retry}>Try again</button
       >
