@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.20.4",
+		"@sveltejs/kit": "^1.27.6",
 		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.15",
 		"daisyui": "^3.5.1",
