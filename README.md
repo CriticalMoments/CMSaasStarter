@@ -152,7 +152,7 @@ VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=s
   - Set the `defaultPlanId` to the plan the user will see as their “current plan” after signup, but before subscribing to a paid plan (typically “free”). It should align to the plan with no stripe_price_id. 
   - if you want an item highlighted on `/pricing`, specify  that plan ID in `/src/routes/(marketing)/pricing/+page.svelte`
 - Update your portal configuration
-  - Open [stipe portal config](https://dashboard.stripe.com/test/settings/billing/portal) and make the following changes
+  - Open [stripe portal config](https://dashboard.stripe.com/test/settings/billing/portal) and make the following changes
     - Disallow editing email under customer information (since we allow editing in primary portal)
     - Optional: setup a custom domain so Stripe pages use your own domain
 - Repeat steps in production environment
