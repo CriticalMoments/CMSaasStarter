@@ -296,8 +296,8 @@
                 href="https://criticalmoments.io"
                 class="link font-bold whitespace-nowrap"
                 target="_blank">Critical Moments</a
-              >: a SDK to increase conversion rates and app-ratings for mobile
-              apps.
+              >: a SDK to to help mobile apps increase their conversion rates
+              and app-ratings. apps.
             </div>
             <div class="px-4 mt-6 text-lg md:text-xl">
               Our <a
