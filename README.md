@@ -1,26 +1,26 @@
 # SaaS Starter
 
-A ready to deploy starter stack for your SaaS company!
+SaaS Starter is a open source, fast, and free to host SaaS template!
 
 We used it to jump start [Critical Moments](criticalmoments.io) and are making it 100% free MIT open source.
 
 ## Demo
 
-You can see a fully functional demo [here](https://saasstarter.work) and explore all the features.
+You can explore all the features using our fully functional demo [saasstarter.work](https://saasstarter.work).
 
-Note: this is a tech-stack demo, not a design demo. See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
+See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
 
 <kbd>
-<img width="224" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/25170958-89fe-4109-ba47-526b02cbfc7c">
+<img width="224" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/34944c09-df72-4ac2-9099-01d25d99911b">
 </kbd>
 <kbd>
-<img width="224" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/e093860f-4a1f-4cc0-aac2-b275d1671e4b">
+<img width="224" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/c3cb2ab7-3739-473e-a1fe-f82a4a31e844">
 </kbd>
 <kbd>
-<img width="224" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/3e92329d-a426-4108-934f-c84b78dbdd3e">
+<img width="224" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/264533e6-275b-4185-b556-6a460f8a12be">
 </kbd>
 <kbd>
-<img width="224" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/9092480e-3f5e-4ede-ae4a-24d8ddbb00df">
+<img width="224" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/0c4749c3-0d29-4edc-ae87-d8a4eefea3c9">
 </kbd>
 
 ### Benefits
@@ -185,17 +185,17 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rending requirements.
 - Update SEO content
   - Update title and meta description tags for every public page. We include generic ones using your site name (PUBLIC_SITE_NAME), but the more specific these are the better.
-  - This done automatically for blog posts from `posts.json`
+  - This done automatically for blog posts from `posts.json` metadata
 - Style
-  - Create a new DaisyUI Theme matching your brand
-  - Update `src/routes/(marketing)/+layout.svelte`: customize design, delete unwanted pages from header and footer
+  - Create a new DaisyUI Theme matching your brand or use one of the built in themes from DaisyUI (see `tailwind.config.js`)
+  - Update the marketing page layout `src/routes/(marketing)/+layout.svelte`: customize design, delete unwanted pages from header and footer
   - Style: make it your own look and feel.
   - Update the favicon in the `/static/` directory
   - The Authentication UI should automatically update based on your DaisyUI style, but check out the login in pages, and further design tweaks can be made in `src/routes/(marketing)/login/login_config.ts` (see [Auth UI](https://supabase.com/docs/guides/auth/auth-helpers/auth-ui#customization) for options).
 - Functionality
   - Add actual SaaS functionality!
   - Replace the admin dashboard with real content (`/src/routes/(admin)/account/+page.svelte`).
-  - Add APIs and database tables as needed to deliver you product.
+  - Add API endpoints and database tables as needed to deliver your SaaS product.
 
 ## Icons
 
