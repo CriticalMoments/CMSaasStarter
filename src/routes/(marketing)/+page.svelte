@@ -183,7 +183,9 @@
         <a href="https://github.com/CriticalMoments/CMSaasStarter">
           <button class="btn btn-primary btn-sm px-6">★ us on Github</button>
         </a>
-        <a href="https://github.com/CriticalMoments/CMSaasStarter">
+        <a
+          href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
+        >
           <button class="btn btn-outline btn-primary btn-sm px-6 mt-3 mx-2"
             >Read the Docs</button
           >
