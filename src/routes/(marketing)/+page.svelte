@@ -102,7 +102,7 @@
       name: "Free to host",
       description:
         "Instructions included for getting setup on Cloudflare+Supabase hosting. Free to start, and cost effective to scale.",
-      link: "https://github.com/CriticalMoments/CMSaasStarter",
+      link: "https://github.com/CriticalMoments/CMSaasStarter/blob/main/README.md#pricing",
       linkText: "Docs",
       newPage: true,
       svgContent: `<path d="M13.3057 18.2975L8.23724 19.987C5.47183 20.9088 4.08912 21.3697 3.35924 20.6398C2.62936 19.9099 3.09026 18.5272 4.01207 15.7618L5.70156 10.6933C6.46758 8.39525 6.85059 7.24623 7.75684 7.03229C8.6631 6.81835 9.51953 7.67478 11.2324 9.38764L14.6114 12.7666C16.3242 14.4795 17.1807 15.3359 16.9667 16.2422" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
