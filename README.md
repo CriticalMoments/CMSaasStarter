@@ -10,18 +10,19 @@ You can explore all the features using our fully functional demo [saasstarter.wo
 
 See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
 
+<a href="https://saasstarter.work">
 <kbd>
-<img width="224" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/34944c09-df72-4ac2-9099-01d25d99911b">
+<img width="500" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/34944c09-df72-4ac2-9099-01d25d99911b">
 </kbd>
+<br>
 <kbd>
-<img width="224" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/c3cb2ab7-3739-473e-a1fe-f82a4a31e844">
+<img width="250" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/c3cb2ab7-3739-473e-a1fe-f82a4a31e844">
+</kbd><kbd>
+<img width="250" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/264533e6-275b-4185-b556-6a460f8a12be">
+</kbd><kbd>
+<img width="250" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/0c4749c3-0d29-4edc-ae87-d8a4eefea3c9">
 </kbd>
-<kbd>
-<img width="224" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/264533e6-275b-4185-b556-6a460f8a12be">
-</kbd>
-<kbd>
-<img width="224" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/0c4749c3-0d29-4edc-ae87-d8a4eefea3c9">
-</kbd>
+</a>
 
 ### Benefits
 
