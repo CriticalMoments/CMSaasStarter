@@ -51,10 +51,10 @@
 
   <div class="drawer-side">
     <label for="admin-drawer" class="drawer-overlay" />
-    <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-200 text-base-content">
+    <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-200 text-primary">
       <li>
         <div
-          class="normal-case menu-title text-xl font-bold text-black flex flex-row"
+          class="normal-case menu-title text-xl font-bold text-primary flex flex-row"
         >
           <span class="grow">Saas Starter</span>
           <label for="admin-drawer" class="lg:hidden ml-3"> &#x2715; </label>

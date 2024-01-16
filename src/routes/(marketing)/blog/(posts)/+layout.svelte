@@ -34,7 +34,7 @@
   {#if currentPost == null}
     <h1>Blog post not found</h1>
   {:else}
-    <div class="text-sm text-secondary">
+    <div class="text-sm text-accent">
       {currentPost.parsedDate.toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",

@@ -7,16 +7,16 @@
     <a class="btn btn-ghost normal-case text-xl" href="/">SaaS Starter</a>
   </div>
   <div class="flex-none">
-    <ul class="menu menu-horizontal px-1 hidden sm:flex">
-      <li>
+    <ul class="menu menu-horizontal px-1 hidden sm:flex font-bold text-lg">
+      <li class="md:mx-4">
         <a
           href="https://github.com/CriticalMoments/CMSaasStarter"
-          class="bg-base-200">★ us on Github</a
+          class="border border-primary">★ us on Github</a
         >
       </li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/account">Account</a></li>
+      <li class="md:mx-2"><a href="/blog">Blog</a></li>
+      <li class="md:mx-2"><a href="/pricing">Pricing</a></li>
+      <li class="md:mx-2"><a href="/account">Account</a></li>
     </ul>
     <div class="dropdown dropdown-end sm:hidden">
       <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -36,7 +36,7 @@
       </label>
       <ul
         tabindex="0"
-        class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+        class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
       >
         <li><a href="/blog">Blog</a></li>
         <li><a href="/pricing">Pricing</a></li>
@@ -44,7 +44,7 @@
         <li>
           <a
             href="https://github.com/CriticalMoments/CMSaasStarter"
-            class="bg-base-200">★ us on Github</a
+            class="border border-primary">★ us on Github</a
           >
         </li>
       </ul>
@@ -58,7 +58,8 @@
 
 <!-- Spacer grows so the footer can be at bottom on short pages -->
 <div class="flex-grow"></div>
-<div class="bg-base-200 text-base-content">
+<div class="">
+  <div class="border-t max-w-xl mx-auto"></div>
   <footer class="footer p-10 gap-x-48 place-content-center">
     <nav>
       <span class="footer-title">Explore</span>

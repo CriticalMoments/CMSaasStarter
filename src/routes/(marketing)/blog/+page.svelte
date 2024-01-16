@@ -32,7 +32,7 @@
     <a href={post.link}>
       <div class="mt-8 mb-12">
         <div class="text-xl">{post.title}</div>
-        <div class="text-sm text-secondary">
+        <div class="text-sm text-accent">
           {post.parsedDate.toLocaleDateString("en-US", {
             month: "short",
             day: "numeric",
