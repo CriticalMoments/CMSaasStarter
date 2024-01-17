@@ -147,11 +147,20 @@
         SaasStarter Demo
       </div>
 
-      <div class="text-3xl md:text-6xl font-bold">
+      <div class="text-4xl md:text-6xl font-bold px-2">
         The
-        <span class="underline decoration-secondary">open source</span>,
-        <span class="underline decoration-secondary">fast</span>, and
-        <span class="underline decoration-secondary">free to host</span>
+        <span
+          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
+          >open source</span
+        >,
+        <span
+          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
+          >fast</span
+        >, and
+        <span
+          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
+          >free to host</span
+        >
         <span> SaaS template</span>
       </div>
       <div class="mt-4 text-sm md:text-lg">
@@ -203,7 +212,12 @@
         Explore the Features
       </div>
       <div class="mt-6 text-xl font-bold">
-        And try them on this fully functional demo page
+        And try them on this
+        <span
+          class="underline decoration-secondary decoration-[3px] md:decoration-[4px]"
+        >
+          fully functional demo
+        </span>
       </div>
     </div>
 
@@ -251,9 +265,9 @@
     </div>
   </div>
 </div>
-<div class="hero min-h-[60vh]">
+<div class="hero min-h-[60vh] mt-12">
   <div class="hero-content text-center pb-16 pt-4 px-4">
-    <div class="max-w-md">
+    <div class="max-w-lg">
       <div
         class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mt-4"
       >
