@@ -1,4 +1,7 @@
-# [SaaS Starter](https://saasstarter.work)
+# SaaS Starter
+
+[![Build](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml)
+[![License](https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f)](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
 
 SaaS Starter is an open source, fast, and free to host SaaS template!
 
