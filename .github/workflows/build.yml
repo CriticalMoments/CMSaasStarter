@@ -1,0 +1,17 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build_and_test:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: NPM install
+        run: npm install
+
+      - name: SvelteKit Build 
+        run: npm run build 
