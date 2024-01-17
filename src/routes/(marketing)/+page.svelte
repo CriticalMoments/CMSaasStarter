@@ -135,7 +135,7 @@
 
 <svelte:head>
   <title>{PUBLIC_SITE_NAME}</title>
-  <meta name="description" content="Home page for {PUBLIC_SITE_NAME}" />
+  <meta name="description" content="{PUBLIC_SITE_NAME} Home Page" />
 </svelte:head>
 
 <div class="hero min-h-[60vh]">

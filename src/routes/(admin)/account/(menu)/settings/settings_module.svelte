@@ -41,9 +41,7 @@
   }
 </script>
 
-<div
-  class="card bg-white p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow"
->
+<div class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow">
   {#if title}
     <div class="text-xl font-bold mb-3 w-48 flex-none">{title}</div>
   {/if}
