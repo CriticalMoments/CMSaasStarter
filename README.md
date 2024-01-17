@@ -1,12 +1,14 @@
-# SaaS Starter
+# [SaaS Starter](https://saasstarter.work)
 
 SaaS Starter is an open source, fast, and free to host SaaS template!
 
 We used it to jump start [Critical Moments](criticalmoments.io) and are making it 100% free MIT open source.
 
-## Demo
+## Demo 
 
 You can explore all the features using our fully functional demo [saasstarter.work](https://saasstarter.work).
+
+[![Try it Now](https://img.shields.io/badge/Try_it_Now-37a779?style=for-the-badge 'Try it Now')](https://saasstarter.work)
 
 See [criticalmoments.io](https://criticalmoments.io) for an example of what’s possible after this template has design, content, and functionality added.
 
@@ -52,7 +54,7 @@ Everything you need to get started for a SaaS company:
 - CSS / Styling
   - Framework: TailwindCSS
   - Component library: DaisyUI
-- Hosting / Database
+- Suggested Hosting Stack
   - Host + CDN: Cloudflare Pages 
   - Serverless compute: Cloudflare Workers
   - Authentication: Supabase Auth
