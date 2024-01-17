@@ -8,7 +8,7 @@ We used it to jump start [Critical Moments](criticalmoments.io) and are making i
 
 You can explore all the features using our fully functional demo [saasstarter.work](https://saasstarter.work).
 
-See [criticalmoments.io](criticalmoments.io) for an idea of what’s possible after it has design and content added.
+See [criticalmoments.io](https://criticalmoments.io) for an idea of what’s possible after it has design and content added.
 
 <a href="https://saasstarter.work">
 <kbd>
