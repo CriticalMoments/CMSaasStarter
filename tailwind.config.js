@@ -14,6 +14,7 @@ export default {
         saasstartertheme: {
           "primary": "#180042",
           "primary-content": "#fefbf6",
+          "neutral-content": "#fefbf6",
           "secondary": "#c7b9f8",
           "accent": "#db2777",
           "neutral": "#180042",
