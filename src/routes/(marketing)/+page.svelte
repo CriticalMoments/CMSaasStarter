@@ -57,7 +57,7 @@
 <path d="M7.5 8.5H16.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>`,
     },
     {
-      name: "Admin Dashboard",
+      name: "User Dashboard",
       link: "/account/settings",
       description:
         "User profile, user settings, update email/password, billing, and more.",
