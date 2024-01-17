@@ -3,7 +3,10 @@
   import { postList } from "./../posts.json"
   let currentPost = null
   for (const post of postList) {
-    if ($page.url.pathname.startsWith(post.link)) {
+    if (
+      $page.url.pathname == post.link ||
+      $page.url.pathname == post.link + "/"
+    ) {
       currentPost = post
       continue
     }
