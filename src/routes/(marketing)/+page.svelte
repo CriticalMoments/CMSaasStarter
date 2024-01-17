@@ -307,13 +307,13 @@
         <div class="min-w-[270px] lg:min-w-[420px] flex mt-6 lg:mt-0">
           <div class="my-auto">
             <div class="px-4 text-lg md:text-xl">
-              SaaS Starter was created by <a
-                href="https://criticalmoments.io"
-                class="link font-bold whitespace-nowrap"
-                target="_blank">Critical Moments</a
-              >: a SDK to to help mobile apps
-              <span class="bg-secondary"
-                >increase conversion rates and app-ratings.</span
+              <a href="https://criticalmoments.io" class="" target="_blank"
+                >SaaS Starter was created by <span
+                  class="font-bold whitespace-nowrap">Critical Moments</span
+                >: a SDK to to help mobile apps
+                <span class="underline decoration-secondary decoration-[3px]"
+                  >increase conversion rates and app-ratings.</span
+                ></a
               >
             </div>
             <div class="px-4 mt-6 text-lg md:text-xl">
