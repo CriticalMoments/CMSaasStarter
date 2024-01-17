@@ -1,6 +1,6 @@
 # SaaS Starter
 
-SaaS Starter is a open source, fast, and free to host SaaS template!
+SaaS Starter is an open source, fast, and free to host SaaS template!
 
 We used it to jump start [Critical Moments](criticalmoments.io) and are making it 100% free MIT open source.
 
@@ -65,7 +65,7 @@ Everything you need to get started for a SaaS company:
 
 **There’s no cost for using this template**. The costs below reflect our suggested hosting stack.
 
-- $0/mo — Supabase free teir, Cloudflare free teir. 
+- $0/mo — Supabase free tier, Cloudflare free tier. 
   - Pros: 
     - Free! 
     - Can scale to thousands of users. 
@@ -125,7 +125,7 @@ VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=s
   - Set your default callback URL for auth in the Supabase Auth console. For example, for the demo page we added: `https://saasstarter.work/auth/callback` . Also add that same URL to the the “allowed redirect URL” list in the Supabase auth console further down the page. 
   - Add a link to the redirect URL allow list which allows parameters to your auth callback. For example we added the following for the demo page: `https://saasstarter.work/auth/callback?*`
   - Also add any local development URLs you want to use in testing to the list for your dev environment. For example, we added the following for local development: `http://localhost:5173/auth/callback` and `http://localhost:5173/auth/callback?*`.
-  - Test that a sign up and forgot password email links back to your domain correctly by checking the have a redirect_to parameter to your `yourdomain.com/auth/callback`. If they link to the base URL or another page, double check you have the config above set correctly.
+  - Test that the "sign up" and "forgot password" emails link back to your domain correctly by checking the have a redirect_to parameter to your `yourdomain.com/auth/callback`. If they link to the base URL or another page, double check you have the config above set correctly.
 - OAuth Logins
   - Decide which oauth logins you want to support, and set them up in the Supabase Auth console under “Auth Providers”. Be sure to provide them the Supabase callback URL. Also be sure to set any platform specific permissions/settings to retrieve their email as part of the login (for example, for Github it's under `Account Permissions > Email Address > Read Only Access`
   - Edit `oauthProviders` list in `/src/routes/(marketing)/login/login_conf.ts` with the list of providers you chose. If you don’t want any OAuth options, make this an empty array.
@@ -183,7 +183,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
     - Update all fields in `src/routes/(markeing)/blog/posts.json`, and replace the post pages under `src/routes/(markeing)/blog/posts` to align to the urls from posts.json.
     - Alternatively remove the blog by removing the src/routes/(marketing)/blog directory, and remove any links to the blog in the header and footer. You can always bring it back later.
   - Add any pages you want on top of our boiler plate (about, terms of service, etc). Be sure to add links to them in the header, mobile menu header, and footer as appropriate (`src/routes/(marketing)/+layout.svelte`).
-  - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rending requirements.
+  - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rendering requirements.
 - Update SEO content
   - Update title and meta description tags for every public page. We include generic ones using your site name (PUBLIC_SITE_NAME), but the more specific these are the better.
   - This done automatically for blog posts from `posts.json` metadata
