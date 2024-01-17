@@ -51,7 +51,9 @@
 
   <div class="drawer-side">
     <label for="admin-drawer" class="drawer-overlay" />
-    <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-200 text-primary">
+    <ul
+      class="menu menu-lg p-4 w-80 min-h-full bg-base-100 lg:border-r text-primary"
+    >
       <li>
         <div
           class="normal-case menu-title text-xl font-bold text-primary flex flex-row"
