@@ -8,7 +8,7 @@ We used it to jump start [Critical Moments](criticalmoments.io) and are making i
 
 You can explore all the features using our fully functional demo [saasstarter.work](https://saasstarter.work).
 
-See [criticalmoments.io](https://criticalmoments.io) for an idea of what’s possible after it has design and content added.
+See [criticalmoments.io](https://criticalmoments.io) for an example of what’s possible after this template has design, content, and functionality added.
 
 <a href="https://saasstarter.work">
 <kbd>
@@ -16,11 +16,11 @@ See [criticalmoments.io](https://criticalmoments.io) for an idea of what’s pos
 </kbd>
 <br>
 <kbd>
-<img width="250" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/c3cb2ab7-3739-473e-a1fe-f82a4a31e844">
+<img width="200" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/c3cb2ab7-3739-473e-a1fe-f82a4a31e844">
 </kbd><kbd>
-<img width="250" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/264533e6-275b-4185-b556-6a460f8a12be">
+<img width="200" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/2d947c97-3cc7-4ff5-a5b1-7c8478b6f31a">
 </kbd><kbd>
-<img width="250" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/0c4749c3-0d29-4edc-ae87-d8a4eefea3c9">
+<img width="200" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/0c4749c3-0d29-4edc-ae87-d8a4eefea3c9">
 </kbd>
 </a>
 
