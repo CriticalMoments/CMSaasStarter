@@ -3,9 +3,20 @@
 [![Build](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f)](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
 
-SaaS Starter is an open source, fast, and free to host SaaS template!
+### SaaS Starter is an open source, fast, and free to host SaaS template / boilerplate
 
-We used it to jump start [Critical Moments](criticalmoments.io) and are making it 100% free MIT open source.
+- [Feature Rich](#features) user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more. 
+- [Lightning Performance](#performance--best-practices): perfect PageSpeed scores. 
+- [Delighful Tech Stack](#tech-stack): Tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase. 
+- Extensible: all the tools you need to make additional marketing pages, UI components, user dashbaords, admin portals, database backends, API endpoints, and more.
+- [Hosting](#suggested-hosting-stack): Our suggested hosting stack is free to host, cheap to scale, easy to manage, and includes automatic deployments
+- [MIT Open Source](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
+- [Fully Functional Demo](https://saasstarter.work)
+- [Quick Start](#quick-start): Full docs from `git clone` to deployment.
+
+Created by the folks at [Critical Moments](criticalmoments.io)! Check out our website site for an example depolyment of SaaS Starter. 
+
+**Also make mobile apps? Improve conversion rates and ratings with [Critical Moments](criticalmoments.io).**
 
 ## Demo 
 
@@ -29,29 +40,23 @@ See [criticalmoments.io](https://criticalmoments.io) for an example of what’s 
 </kbd>
 </a>
 
-### Benefits
-
-- Modern tooling (SvelteKit, Supabase Auth, Stripe, Postgres) 
-- Fast Perfomance
-- Free to host, cheap to scale
-- Extensible: all the tools you need to add the features your project requires
-
-### Features
+## Features
 
 Everything you need to get started for a SaaS company:
 
-- Marketing Page
-- Blog with rich formatting and RSS
-- Subscriptions
+- User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth.
+- Marketing Page with SEO optimization
+- Blog engine with rich formatting, RSS and SEO optimization.
+- User Dashboard with user profile, user settings, update email/password, billing, and more.
+- Subscriptions powered by Stripe Checkout
 - Pricing page
-- User Authentication
-- Self-serve billing portal (change card, upgrade, cancel, etc)
-- User settings to manage profile
+- Billing portal: self serve to change card, upgrade, cancel, or download receipts
 - Onboarding flow after signup: collect user data, and select a payment plan
-- Style toolkit: theming, CSS, UI components
-- Suggested hosting stack with instructions to get up and running
+- Style toolkit: theming and UI components
+- Responsive: designed for mobile and desktop.
+- Extensible: all the tools you need to make additional marketing pages, UI components, admin portals, database backends, API endpoints, and more.
 
-### Tech Stack
+## Tech Stack
 
 - Web Framework: SvelteKit
 - CSS / Styling
@@ -66,7 +71,7 @@ Everything you need to get started for a SaaS company:
   - Stripe Checkout 
   - Stripe Portal
 
-### Pricing
+## Suggested Hosting Stack
 
 **There’s no cost for using this template**. The costs below reflect our suggested hosting stack.
 
@@ -90,6 +95,22 @@ Everything you need to get started for a SaaS company:
     - none
   - Who it’s for: 
     - I suggest moving to this ASAP once you have paid customers or investors.
+
+## Performance / Best Practices
+
+The selected tech stack is capable of creating lightning fast websites.
+
+ - Pre-rendering (static generation) where possible, like the marketing pages and blog
+ - CDN optimized, for high cache hit ratios
+ - Edge-functions for dynamic APIs/pages
+ - Svelte and Tailwind compile out unused HTML, CSS and JS at deploy time
+ - Linting to find accessibility issues and follow best practices
+
+The result is a perfect Google Pagespeed Insights score!
+
+<img width="420" alt="Screenshot 2024-01-18 at 11 31 32 AM" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/46b5e960-2aa0-4fb5-acd7-4f84b380e1d0">
+
+# Quick Start
 
 ### Get Started (Local Development)
 
@@ -177,9 +198,9 @@ If you prefer another host you can explore alternatives:
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains unlike Cloudflare.
 
-### Post Fork Task List
+### Add your content!
 
-After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t actually have real content. The following checklist helps you customize the template to make a SaaS homepage for your company.
+After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t have your content. The following checklist helps you customize the template to make a SaaS homepage for your company.
 
 - Set the PUBLIC_SITE_NAME to your company name in `.env.local` and your production environment. 
 - Content
@@ -207,5 +228,6 @@ After the steps above, you’ll have a working version like the demo page. Howev
 
 Icons in the template are from [Solar Broken Line Icons Collection](https://www.svgrepo.com/collection/solar-broken-line-icons/) via CC Attribution License.
 
-## Sponsor 
+# Sponsor 
+
 We hope you enjoy SaaS Starter! If you build mobile apps, please check out its sponsor/creator, [Critical Moments](https://criticalmoments.io). We can help improve your mobile app conversions, improve your app rating, and mitigate major bugs and outages.
