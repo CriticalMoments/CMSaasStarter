@@ -288,6 +288,7 @@
               <div class="flex justify-center">
                 <img
                   alt="Screenshot of criticalmoments.io homepage"
+                  class="aspect-[2044/1242]"
                   src="/images/example-home.png"
                 />
               </div>
@@ -299,6 +300,7 @@
             <div class="card shadow-xl border overflow-hidden">
               <img
                 alt="Screenshot of criticalmoments.io homepage"
+                class="aspect-[2044/1242]"
                 src="/images/example-home.png"
               />
             </div></a
