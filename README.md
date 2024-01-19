@@ -5,18 +5,18 @@
 
 ### SaaS Starter is an open source, fast, and free to host SaaS template / boilerplate
 
-- [Feature Rich](#features) user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more. 
-- [Lightning Performance](#performance--best-practices): perfect PageSpeed scores. 
-- [Delighful Tech Stack](#tech-stack): Tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase. 
-- Extensible: all the tools you need to make additional marketing pages, UI components, user dashbaords, admin portals, database backends, API endpoints, and more.
-- [Hosting](#suggested-hosting-stack): Our suggested hosting stack is free to host, cheap to scale, easy to manage, and includes automatic deployments
+- [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more. 
+- [Lightning Performance](#performance--best-practices): fast pre-rendered pages which score 100/100 on Google PageSpeed. 
+- [Delighful Tech Stack](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase. 
+- Extensible: all the tools you need to make additional marketing pages, UI components, user dashboards, admin portals, database backends, API endpoints, and more.
+- [Hosting](#suggested-hosting-stack): Our suggested hosting stack is free to host, cheap to scale, easy to manage, and includes automatic deployments.
 - [MIT Open Source](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
 - [Fully Functional Demo](https://saasstarter.work)
 - [Quick Start](#quick-start): Full docs from `git clone` to deployment.
 
 Created by the folks at [Critical Moments](criticalmoments.io)! Check out our website site for an example depolyment of SaaS Starter. 
 
-**Also make mobile apps? Improve conversion rates and ratings with [Critical Moments](criticalmoments.io).**
+**Make mobile apps?** Improve conversion rates and ratings with [Critical Moments](criticalmoments.io).
 
 ## Demo 
 
@@ -98,15 +98,15 @@ Everything you need to get started for a SaaS company:
 
 ## Performance / Best Practices
 
-The selected tech stack is capable of creating lightning fast websites.
+The selected tech stack creates lightning fast websites.
 
- - Pre-rendering (static generation) where possible, like the marketing pages and blog
- - CDN optimized, for high cache hit ratios
+ - Pre-rendering (static generation) for marketing pages, pricing and blog
+ - CDN optimized, for high edge-cache hit ratios
  - Edge-functions for dynamic APIs/pages
- - Svelte and Tailwind compile out unused HTML, CSS and JS at deploy time
- - Linting to find accessibility issues and follow best practices
+ - Svelte and Tailwind compile out unused HTML, CSS and JS at deploy time for smaller pages
+ - Linting to find accessibility and syntax issues
 
-The result is a perfect Google Pagespeed Insights score!
+The result is a perfect Google PageSpeed Insights score in all categories!
 
 <img width="420" alt="Screenshot 2024-01-18 at 11 31 32 AM" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/46b5e960-2aa0-4fb5-acd7-4f84b380e1d0">
 
@@ -196,7 +196,7 @@ Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-ca/applica
 If you prefer another host you can explore alternatives: 
 - [SvelteKit official adapters](https://kit.svelte.dev/docs/adapters) including Netlify, Vercel, and Node
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
-- [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains unlike Cloudflare.
+- [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains, unlike Cloudflare.
 
 ### Add your content!
 
