@@ -20,8 +20,8 @@ export let sharedAppearance = {
         anchorTextColor: "hsl(var(--nc))",
       },
       fontSizes: {
-        baseInputSize: "16px"
-      }
+        baseInputSize: "16px",
+      },
     },
   },
   className: {

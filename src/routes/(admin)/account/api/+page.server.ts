@@ -140,7 +140,10 @@ export const actions = {
       currentPassword,
     }
   },
-  deleteAccount: async ({ request, locals: { supabase, supabaseServiceRole, getSession } }) => {
+  deleteAccount: async ({
+    request,
+    locals: { supabase, supabaseServiceRole, getSession },
+  }) => {
     const session = await getSession()
     if (!session) {
       throw redirect(303, "/login")
@@ -151,7 +154,8 @@ export const actions = {
 
     if (!currentPassword) {
       return fail(400, {
-        errorMessage: "You must provide your current password to delete your account. If you forgot it, sign out then use 'forgot password' on the sign in page.",
+        errorMessage:
+          "You must provide your current password to delete your account. If you forgot it, sign out then use 'forgot password' on the sign in page.",
         errorFields: ["currentPassword"],
         currentPassword,
       })
@@ -167,7 +171,10 @@ export const actions = {
       throw redirect(303, "/login/current_password_error")
     }
 
-    const { error } = await supabaseServiceRole.auth.admin.deleteUser(session.user.id, true)
+    const { error } = await supabaseServiceRole.auth.admin.deleteUser(
+      session.user.id,
+      true,
+    )
     if (error) {
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
