@@ -1,0 +1,24 @@
+name: Format Check
+
+on: [push]
+
+env:
+  PUBLIC_SUPABASE_URL: 'https://fake_test_url.supabase.co'
+  PUBLIC_SUPABASE_ANON_KEY: 'fake_anon_key'
+  PRIVATE_SUPABASE_SERVICE_ROLE: 'fake_service_role'
+  PRIVATE_STRIPE_API_KEY: 'fake_strip_api_key'
+  PUBLIC_SITE_NAME: 'SaaS Starter Build Test'
+
+jobs:
+  build_and_test:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: NPM install
+        run: npm install
+
+      - name: Check Code Format
+        run: npm run format_check
