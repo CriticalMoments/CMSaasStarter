@@ -239,6 +239,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
                 {@html feature.svgContent}
               </svg>
             </div>

@@ -19,6 +19,8 @@
       <li class="md:mx-2"><a href="/account">Account</a></li>
     </ul>
     <div class="dropdown dropdown-end sm:hidden">
+      <!-- svelte-ignore a11y-label-has-associated-control -->
+      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,6 +36,7 @@
           /></svg
         >
       </label>
+      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <ul
         tabindex="0"
         class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"

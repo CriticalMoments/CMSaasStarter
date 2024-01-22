@@ -2,10 +2,6 @@
   import { enhance, applyAction } from "$app/forms"
   import { page } from "$app/stores"
 
-  export let data
-
-  let { session, supabase, profile } = data
-
   const fieldError = (liveForm, name: String) => {
     let errors = liveForm?.errorFields ?? []
     return errors.includes(name)
@@ -20,7 +16,7 @@
   export let dangerous = false
   export let title: string = ""
   export let message: string = ""
-  export let fields
+  export let fields: any
   export let formTarget: string = ""
   export let successTitle = "Success"
   export let successBody = ""
@@ -31,7 +27,7 @@
   const handleSubmit = () => {
     loading = true
     return async ({ update, result }) => {
-      let response = await update({ reset: false })
+      await update({ reset: false })
       await applyAction(result)
       loading = false
       if (result.type === "success") {

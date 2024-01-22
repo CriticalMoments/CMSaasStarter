@@ -5,7 +5,7 @@
   export let data
   export let form
 
-  let { session, supabase, profile } = data
+  let { session, profile } = data
 
   let loading = false
   let fullName: string = profile?.full_name ?? ""
@@ -20,7 +20,7 @@
   const handleSubmit = () => {
     loading = true
     return async ({ update, result }) => {
-      let response = await update({ reset: false })
+      await update({ reset: false })
       await applyAction(result)
       loading = false
     }
