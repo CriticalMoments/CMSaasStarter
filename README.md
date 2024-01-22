@@ -128,9 +128,11 @@ npm run dev --
 
 ### Developer Environment
 
-VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support).
+The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). 
 
-Optionally add the lines below to the git hook file at the location `.git/hooks/pre-commit`. This will run linting and format checking before you commit. This ensures you find issues locally before the Github Action CI checks fail.
+Installing a Svelte extension in your editor will help automatically apply formatting on-save, and show linting issues inline. The [VS Code svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) is excellent. [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+
+To catch build, formatting and linting issues before you commit changes, we suggest the following local git hook. It will run before you commit, stop you from breaking the build, and show any issues that are found. Add the lines below to the git hook file at the location `.git/hooks/pre-commit`.
 
 ```
 #!/bin/sh
@@ -139,6 +141,8 @@ npm run format_check
 npm run lint
 npm run build
 ```
+
+Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
 
 ### Setup Supabase
 
