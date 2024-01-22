@@ -9,7 +9,7 @@
   let { supabase } = data
 
   onMount(() => {
-    supabase.auth.onAuthStateChange((event, _session) => {
+    supabase.auth.onAuthStateChange((event) => {
       // Redirect to account after sucessful login
       if (event == "SIGNED_IN") {
         // Delay needed because order of callback not guaranteed.

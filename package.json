@@ -17,6 +17,7 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.27.6",
 		"@tailwindcss/typography": "^0.5.9",
+		"@typescript-eslint/parser": "^6.19.0",
 		"autoprefixer": "^10.4.15",
 		"daisyui": "^3.5.1",
 		"eslint": "^8.28.0",

@@ -2,6 +2,7 @@
 
 [![Build](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml)
 [![Format Check](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml)
+[![Linting](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f)](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
 
 ### SaaS Starter is an open source, fast, and free to host SaaS template / boilerplate
@@ -115,21 +116,29 @@ The result is a perfect Google PageSpeed Insights score in all categories!
 
 ### Get Started (Local Development)
 
-To get started, fork this project!
+To get started, fork and run this project!
 
 ```
 ## First fork the project on Github
 git pull [Your Fork]
 npm install
-## Run the project
+## Run the project locally in dev mode
 npm run dev --
 ```
 
 ### Developer Environment
 
-VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+VSCode has a [nice plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support).
 
-[Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+Optionally add the lines below to the git hook file at the location `.git/hooks/pre-commit`. This will run linting and format checking before you commit. This ensures you find issues locally before the Github Action CI checks fail.
+
+```
+#!/bin/sh
+set -e
+npm run format_check
+npm run lint
+npm run build
+```
 
 ### Setup Supabase
 
