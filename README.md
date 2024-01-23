@@ -16,9 +16,9 @@
 - [Fully Functional Demo](https://saasstarter.work)
 - [Quick Start](#quick-start): Full docs from `git clone` to deployment.
 
-Created by the folks at [Critical Moments](criticalmoments.io)! Check out our website site for an example depolyment of SaaS Starter. 
+Created by the folks at [Critical Moments](https://criticalmoments.io)! Check out our website site for an example depolyment of SaaS Starter. 
 
-**Make mobile apps?** Improve conversion rates and ratings with [Critical Moments](criticalmoments.io).
+**Make mobile apps?** Improve conversion rates and ratings with [Critical Moments](https://criticalmoments.io).
 
 ## Demo 
 
