@@ -75,27 +75,28 @@ Everything you need to get started for a SaaS company:
 
 ## Philosophy
 
-- Delightful developer experience: thoughtful stack that’s fun to work with (SvelteKit+DaisyUI). It includes all the dev tools you need to make a project that scales (code formatting, linting, test framework, CI, etc).
-- Free: free tools are the origin of many great projects; a $200 template or $20/mo hosting bill is enough to squash them. This boilerplate is 100% free. Our suggested hosting stack is free as well.
+- Delightful developer experience: a stack that’s fun and productive to work with (SvelteKit+DaisyUI). It includes all the dev tools you need our of the box including code formatting, linting, test framework, CI, live reloading as you edit, and more.
+- Free: free tools are the origin of many great projects; a $200 template or $40/mo hosting bill is enough to stop great projects before they start. This boilerplate is 100% free. Our suggested hosting stack is free as well.
 - Open Source: This template is open source with MIT Licensed. Being open has major advantages: 1) community support on bug fixes 2) see code/quality/style before choosing a template. 3) No surprises. 
-- Minimal dependencies + Hackable: we have a short list of dependencies (SvelteKit, Tailwind, DaisyUI, Supabase, Stripe, plus development tools like eslint). The app is as about close to a pure “SvelteKit+Tailwind” app that you can get. There’s no templating engine to learn, no template specific CMS, no module system. That means it’s very easy to add/remove/modify features to fit your needs, and you’ll be learning transferable skills on some of the best web frameworks while you do.
+- Minimal dependencies: we have a short list of dependencies (SvelteKit, Tailwind, DaisyUI, Supabase, Stripe, plus development tools like eslint). The app is as about close to a pure “SvelteKit+Tailwind” app that you can get. There’s no templating engine to learn, no template specific CMS, no module system. You’ll be learning transferable skills on some of the best web frameworks, not one off project-specific config systems.
+- Hackable: It’s easy to add/remove/modify features to fit your needs. Swap out testing libraries, change formatting rules, change payment provider... you name it, you can build it.
 
 ## Suggested Hosting Stack
 
 **There’s no cost for using this template**. The costs below reflect our suggested hosting stack.
 
-- $0/mo — Supabase free tier, Cloudflare free tier. 
+- **$0/mo** — Supabase free tier, Cloudflare free tier. 
   - Pros: 
     - Free! 
     - Can scale to thousands of users. 
     - Unlimited static page requests. 
     - 100k serverless functions/day. 
   - Cons: 
-    - Does not include database backups. The frugal among you could hook up pgdump with lambda/S3 to add backups for a <$1 a month.
-    - Will auto-pause your database when not in use. 
+    - Does not include database backups. The frugal among you could hook up pgdump backups on lambda/S3 for a few cents per month.
+    - Will auto-pause your database when not in use for 7 days. 
   - Who it’s for: 
-    - This tier is perfectly functional for a hobby project, or pre-revenue company. It’s easy to scale up once revenue starts, but it’s also fine to keep indefinitely if it never takes off.
-- $30/mo - Supabase Pro, Cloudfare [Workers Paid](https://www.cloudflare.com/plans/developer-platform/)
+    - This tier is perfectly functional for a hobby project, or pre-revenue company (up to 50,000 monthly active users). It’s easy to scale up once revenue starts, but it’s also fine to keep at this scale indefinitely.
+- **$30/mo** - Supabase Pro, Cloudfare [Workers Paid](https://www.cloudflare.com/plans/developer-platform/)
   - Pros: 
     - Database backups. 
     - Never pauses database. 
@@ -103,7 +104,7 @@ Everything you need to get started for a SaaS company:
   - Cons: 
     - none
   - Who it’s for: 
-    - I suggest moving to this ASAP once you have paid customers or investors.
+    - I suggest moving to this once you have paid customers or investors.
 
 ## Performance / Best Practices
 
