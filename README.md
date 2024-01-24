@@ -73,6 +73,13 @@ Everything you need to get started for a SaaS company:
   - Stripe Checkout 
   - Stripe Portal
 
+## Philosophy
+
+- Delightful developer experience: thoughtful stack that’s fun to work with (SvelteKit+DaisyUI). It includes all the dev tools you need to make a project that scales (code formatting, linting, test framework, CI, etc).
+- Free: free tools are the origin of many great projects; a $200 template or $20/mo hosting bill is enough to squash them. This boilerplate is 100% free. Our suggested hosting stack is free as well.
+- Open Source: This template is open source with MIT Licensed. Being open has major advantages: 1) community support on bug fixes 2) see code/quality/style before choosing a template. 3) No surprises. 
+- Minimal dependencies + Hackable: we have a short list of dependencies (SvelteKit, Tailwind, DaisyUI, Supabase, Stripe, plus development tools like eslint). The app is as about close to a pure “SvelteKit+Tailwind” app that you can get. There’s no templating engine to learn, no template specific CMS, no module system. That means it’s very easy to add/remove/modify features to fit your needs, and you’ll be learning transferable skills on some of the best web frameworks while you do.
+
 ## Suggested Hosting Stack
 
 **There’s no cost for using this template**. The costs below reflect our suggested hosting stack.
@@ -103,6 +110,7 @@ Everything you need to get started for a SaaS company:
 The selected tech stack creates lightning fast websites.
 
  - Pre-rendering (static generation) for marketing pages, pricing and blog
+ - Instant navigation: the best of CSR + SSR in one. SSR your first page for fastest possible initial load times. For subsequent pages, the content is pre-loaded and rendered with CSR, for instant rendering.
  - CDN optimized, for high edge-cache hit ratios
  - Edge-functions for dynamic APIs/pages
  - Svelte and Tailwind compile out unused HTML, CSS and JS at deploy time for smaller pages
