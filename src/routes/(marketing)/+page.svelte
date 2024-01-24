@@ -143,13 +143,14 @@
   <div class="hero-content text-center py-12">
     <div class="max-w-xl">
       <div
-        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-4"
+        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-4 md:mb-8"
       >
         SaasStarter Demo
       </div>
 
       <div
-        class="leading-tight text-4xl md:text-6xl font-bold px-2 md:leading-tight"
+        class="text-4xl md:text-6xl font-bold px-2"
+        style="line-height: 1.2;"
       >
         The
         <span
@@ -166,7 +167,7 @@
         >
         <span> SaaS template</span>
       </div>
-      <div class="mt-4 text-sm md:text-lg">
+      <div class="mt-6 md:mt-10 text-sm md:text-lg">
         Built with <a
           href="https://kit.svelte.dev"
           class="link font-bold"
@@ -190,8 +191,7 @@
           target="_blank">Postgres</a
         >
       </div>
-
-      <div class="mt-6">
+      <div class="mt-6 md:mt-2">
         <a href="https://github.com/CriticalMoments/CMSaasStarter">
           <button class="btn btn-primary btn-sm px-6">★ us on Github</button>
         </a>
