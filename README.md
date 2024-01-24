@@ -9,7 +9,7 @@
 
 - [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more. 
 - [Lightning Performance](#performance--best-practices): fast pre-rendered pages which score 100/100 on Google PageSpeed. 
-- [Delighful Tech Stack](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase. 
+- [Delighful Developer Experience](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase. 
 - Extensible: all the tools you need to make additional marketing pages, UI components, user dashboards, admin portals, database backends, API endpoints, and more.
 - [Hosting](#suggested-hosting-stack): Our suggested hosting stack is free to host, cheap to scale, easy to manage, and includes automatic deployments.
 - [MIT Open Source](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
@@ -72,14 +72,6 @@ Everything you need to get started for a SaaS company:
 - Payments
   - Stripe Checkout 
   - Stripe Portal
-
-## Philosophy
-
-- Delightful developer experience: a stack that’s fun and productive to work with (SvelteKit+DaisyUI). It includes all the dev tools you need our of the box including code formatting, linting, test framework, CI, live reloading as you edit, and more.
-- Free: free tools are the origin of many great projects; a $200 template or $40/mo hosting bill is enough to stop great projects before they start. This boilerplate is 100% free. Our suggested hosting stack is free as well.
-- Open Source: This template is open source with MIT Licensed. Being open has major advantages: 1) community support on bug fixes 2) see code/quality/style before choosing a template. 3) No surprises. 
-- Minimal dependencies: we have a short list of dependencies (SvelteKit, Tailwind, DaisyUI, Supabase, Stripe, plus development tools like eslint). The app is as about close to a pure “SvelteKit+Tailwind” app that you can get. There’s no templating engine to learn, no template specific CMS, no module system. You’ll be learning transferable skills on some of the best web frameworks, not one off project-specific config systems.
-- Hackable: It’s easy to add/remove/modify features to fit your needs. Swap out testing libraries, change formatting rules, change payment provider... you name it, you can build it.
 
 ## Suggested Hosting Stack
 
