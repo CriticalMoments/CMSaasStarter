@@ -148,7 +148,9 @@
         SaasStarter Demo
       </div>
 
-      <div class="text-4xl md:text-6xl font-bold px-2">
+      <div
+        class="leading-tight text-4xl md:text-6xl font-bold px-2 md:leading-tight"
+      >
         The
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
