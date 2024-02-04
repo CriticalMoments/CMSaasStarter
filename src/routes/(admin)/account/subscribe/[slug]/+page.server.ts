@@ -11,7 +11,7 @@ const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 export const load: PageServerLoad = async ({
   params,
   url,
-  locals: { supabase, getSession, supabaseServiceRole },
+  locals: { getSession, supabaseServiceRole },
 }) => {
   const session = await getSession()
   if (!session) {
@@ -23,7 +23,7 @@ export const load: PageServerLoad = async ({
     throw redirect(303, "/account")
   }
 
-  let { error: idError, customerId } = await getOrCreateCustomerId({
+  const { error: idError, customerId } = await getOrCreateCustomerId({
     supabaseServiceRole,
     session,
   })

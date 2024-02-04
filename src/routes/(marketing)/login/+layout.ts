@@ -1,4 +1,3 @@
-import { invalidate } from "$app/navigation"
 import {
   PUBLIC_SUPABASE_ANON_KEY,
   PUBLIC_SUPABASE_URL,
@@ -15,7 +14,7 @@ export const load = async ({ fetch, data, depends }) => {
     serverSession: data.session,
   })
 
-  let url = data.url
+  const url = data.url
 
   return { supabase, url }
 }

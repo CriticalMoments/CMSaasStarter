@@ -2,7 +2,7 @@
   import { enhance, applyAction } from "$app/forms"
   import { page } from "$app/stores"
 
-  const fieldError = (liveForm, name: String) => {
+  const fieldError = (liveForm, name: string) => {
     let errors = liveForm?.errorFields ?? []
     return errors.includes(name)
   }
@@ -11,12 +11,18 @@
   let loading = false
   let showSuccess = false
 
+  type Field = {
+    id: string
+    label?: string
+    initialValue: string | boolean
+  }
+
   // Module context
   export let editable = false
   export let dangerous = false
   export let title: string = ""
   export let message: string = ""
-  export let fields: any
+  export let fields: Field[]
   export let formTarget: string = ""
   export let successTitle = "Success"
   export let successBody = ""

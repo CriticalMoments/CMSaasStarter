@@ -20,7 +20,7 @@ export const load = async ({ fetch, data, depends, url }) => {
     data: { session },
   } = await supabase.auth.getSession()
 
-  let profile = data.profile
+  const profile = data.profile
 
   const createProfilePath = "/account/create_profile"
   if (!_hasFullProfile(profile) && url.pathname !== createProfilePath) {

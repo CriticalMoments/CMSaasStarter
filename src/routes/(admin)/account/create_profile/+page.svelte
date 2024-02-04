@@ -12,7 +12,7 @@
   let companyName: string = profile?.company_name ?? ""
   let website: string = profile?.website ?? ""
 
-  const fieldError = (liveForm, name: String) => {
+  const fieldError = (liveForm, name: string) => {
     let errors = liveForm?.errorFields ?? []
     return errors.includes(name)
   }

@@ -8,7 +8,7 @@
     defaultPlanId,
   } from "../../../../(marketing)/pricing/pricing_plans"
 
-  let adminSection: Writable<String> = getContext("adminSection")
+  let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("billing")
 
   export let data

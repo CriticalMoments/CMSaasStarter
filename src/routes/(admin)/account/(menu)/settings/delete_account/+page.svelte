@@ -3,7 +3,7 @@
   import type { Writable } from "svelte/store"
   import SettingsModule from "../settings_module.svelte"
 
-  let adminSection: Writable<String> = getContext("adminSection")
+  let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
 
   export let data

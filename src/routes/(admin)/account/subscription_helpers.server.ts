@@ -23,7 +23,7 @@ export const getOrCreateCustomerId = async ({
   }
 
   // Fetch data needed to create customer
-  let { data: profile, error: profileError } = await supabaseServiceRole
+  const { data: profile, error: profileError } = await supabaseServiceRole
     .from("profiles")
     .select(`full_name, website, company_name`)
     .eq("id", session.user.id)
@@ -68,11 +68,7 @@ export const getOrCreateCustomerId = async ({
   return { customerId: customer.id }
 }
 
-export const fetchSubscription = async ({
-  supabaseServiceRole,
-  userId,
-  customerId,
-}) => {
+export const fetchSubscription = async ({ customerId }) => {
   // Fetch user's subscriptions
   let stripeSubscriptions
   try {
@@ -86,7 +82,7 @@ export const fetchSubscription = async ({
   }
 
   // find "primary". The user may have several old ones, we want an active one (including trials, and past_due in grace period).
-  let primaryStripeSubscription = stripeSubscriptions.data.find((x) => {
+  const primaryStripeSubscription = stripeSubscriptions.data.find((x) => {
     return (
       x.status === "active" ||
       x.status === "trialing" ||
@@ -95,7 +91,7 @@ export const fetchSubscription = async ({
   })
   let appSubscription = null
   if (primaryStripeSubscription) {
-    let productId =
+    const productId =
       primaryStripeSubscription?.items?.data?.[0]?.price.product ?? ""
     appSubscription = pricingPlans.find((x) => {
       return x.stripe_product_id === productId
@@ -115,7 +111,7 @@ export const fetchSubscription = async ({
     }
   }
 
-  let hasEverHadSubscription = stripeSubscriptions.data.length > 0
+  const hasEverHadSubscription = stripeSubscriptions.data.length > 0
 
   return {
     primarySubscription,

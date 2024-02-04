@@ -2,6 +2,11 @@ import { fail, redirect } from "@sveltejs/kit"
 
 export const actions = {
   updateEmail: async ({ request, locals: { supabase, getSession } }) => {
+    const session = await getSession()
+    if (!session) {
+      throw redirect(303, "/login")
+    }
+
     const formData = await request.formData()
     const email = formData.get("email") as string
 
@@ -23,8 +28,8 @@ export const actions = {
       })
     }
 
-    const session = await getSession()
-
+    // Supabase does not change the email until the user verifies both
+    // if 'Secure email change' is enabled in the Supabase dashboard
     const { error } = await supabase.auth.updateUser({ email: email })
 
     if (error) {
@@ -51,12 +56,12 @@ export const actions = {
 
     // Can check if we're a "password recovery" session by checking session amr
     // let currentPassword take priority if provided (user can use either form)
-    let recoveryAmr = session.user?.amr?.find((x) => x.method === "recovery")
+    const recoveryAmr = session.user?.amr?.find((x) => x.method === "recovery")
     const isRecoverySession = recoveryAmr && !currentPassword
 
     // if this is password recovery session, check timestamp of recovery session
     if (isRecoverySession) {
-      let timeSinceLogin = Date.now() - recoveryAmr.timestamp * 1000
+      const timeSinceLogin = Date.now() - recoveryAmr.timestamp * 1000
       if (timeSinceLogin > 1000 * 60 * 15) {
         // 15 mins in milliseconds
         return fail(400, {
@@ -71,7 +76,7 @@ export const actions = {
     }
 
     let validationError
-    let errorFields = []
+    const errorFields = []
     if (!newPassword1) {
       validationError = "You must type a new password"
       errorFields.push("newPassword1")
@@ -186,13 +191,18 @@ export const actions = {
     throw redirect(303, "/")
   },
   updateProfile: async ({ request, locals: { supabase, getSession } }) => {
+    const session = await getSession()
+    if (!session) {
+      throw redirect(303, "/login")
+    }
+
     const formData = await request.formData()
     const fullName = formData.get("fullName") as string
     const companyName = formData.get("companyName") as string
     const website = formData.get("website") as string
 
     let validationError
-    let errorFields = []
+    const errorFields = []
     if (!fullName) {
       validationError = "Name is required"
       errorFields.push("fullName")
@@ -217,14 +227,12 @@ export const actions = {
       })
     }
 
-    const session = await getSession()
-
     const { error } = await supabase.from("profiles").upsert({
       id: session?.user.id,
       full_name: fullName,
       company_name: companyName,
       website: website,
-      updated_at: new Date(),
+      updated_at: new Date().toISOString(),
     })
 
     if (error) {
@@ -246,6 +254,8 @@ export const actions = {
     const session = await getSession()
     if (session) {
       await supabase.auth.signOut()
+      throw redirect(303, "/")
+    } else {
       throw redirect(303, "/")
     }
   },

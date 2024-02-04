@@ -1,4 +1,4 @@
-import { fail, redirect } from "@sveltejs/kit"
+import { redirect } from "@sveltejs/kit"
 
 export const actions = {
   signout: async ({ locals: { supabase, getSession } }) => {
