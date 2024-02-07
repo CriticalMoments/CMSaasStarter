@@ -129,9 +129,13 @@ npm run dev --
 
 ### Developer Environment
 
-The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). 
+The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). Github disables CI on forks by default, so if you fork this repo, be sure to go into the Github Actions page for your repo and enable workflows. 
 
-Installing a Svelte extension in your editor will help automatically apply formatting on-save, and show linting issues inline. The [VS Code svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) is excellent. [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+You can manually run these scripts yourself; `npm run build` for the build, `npm run format_check` to check formatting, `npm run lint` for the linting, and `npm run check` for typechecking. 
+
+Installing a Svelte extension in your editor will help automatically apply formatting on-save, and show type issues inline. The [VS Code svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) is excellent. [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+
+If you want to see linting errors inline as well, you should install an ESLint extension in your editor. You can find [the VSCode extension here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and extensions for other editors [here.](https://eslint.org/docs/latest/use/integrations)
 
 To catch build, formatting and linting issues before you commit changes, we suggest the following local git hook. It will run before you commit, stop you from breaking the build, and show any issues that are found. Add the lines below to the git hook file at the location `.git/hooks/pre-commit`.
 
@@ -221,7 +225,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
 - Content
   - Add actual content for marketing homepage
   - Add actual content for your blog (or delete the blog) 
-    - Update all fields in `src/routes/(markeing)/blog/posts.json`, and replace the post pages under `src/routes/(markeing)/blog/posts` to align to the urls from posts.json.
+    - Update all fields in `src/routes/(marketing)/blog/posts.json`, and replace the post pages under `src/routes/(marketing)/blog/posts` to align to the urls from posts.json.
     - Alternatively remove the blog by removing the src/routes/(marketing)/blog directory, and remove any links to the blog in the header and footer. You can always bring it back later.
   - Add any pages you want on top of our boiler plate (about, terms of service, etc). Be sure to add links to them in the header, mobile menu header, and footer as appropriate (`src/routes/(marketing)/+layout.svelte`).
   - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rendering requirements.
