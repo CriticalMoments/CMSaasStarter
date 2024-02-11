@@ -10,7 +10,13 @@
   export let data
   let { session, supabase } = data
 
+  // True if definitely has a password, but can be false if they
+  // logged in with oAuth or email link
   let hasPassword = session?.user?.amr?.find((x) => x.method === "password")
+    ? true
+    : false
+
+  let usingOAuth = session?.user?.amr?.find((x) => x.method === "oauth")
     ? true
     : false
 
@@ -36,7 +42,7 @@
   <title>Change Password</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-bold mb-6">Change Password</h1>
 
 {#if hasPassword}
   <SettingsModule
@@ -69,31 +75,22 @@
     ]}
   />
 {:else}
-  <div class="alert max-w-md">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="stroke-current shrink-0 h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-      /></svg
-    >
+  <div
+    class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow max-w-md"
+  >
     <div class="flex flex-col gap-y-4">
-      <div class="font-bold">
-        You currently do not use a password to log in.
-      </div>
+      {#if usingOAuth}
+        <div class="font-bold">Set Password By Email</div>
+        <div>
+          You use oAuth to sign in ("Sign in with Github" or similar). You can
+          continue to access your account using only oAuth if you like!
+        </div>
+      {:else}
+        <div class="font-bold">Change Password By Email</div>
+      {/if}
       <div>
-        You use oAuth ("Sign in with Github" or similar). You can continue to
-        use your account using only oAuth if you like!
-      </div>
-      <div>
-        If you'd like to set a password to compliment your oAuth login, click
-        the button below. It will send you an email at {session?.user?.email} which
-        will allow you to set a password.
+        The button below will send you an email at {session?.user?.email} which will
+        allow you to set your password.
       </div>
       <button
         class="btn btn-outline btn-wide {sentEmail ? 'hidden' : ''}"
