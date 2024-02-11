@@ -1,9 +1,10 @@
 <script lang="ts">
   import "../../../../app.css"
   import { enhance, applyAction } from "$app/forms"
+  import type { SubmitFunction } from "@sveltejs/kit"
 
   export let data
-  export let form
+  export let form: FormResponse
 
   let { session, profile } = data
 
@@ -12,12 +13,12 @@
   let companyName: string = profile?.company_name ?? ""
   let website: string = profile?.website ?? ""
 
-  const fieldError = (liveForm, name: string) => {
-    let errors = liveForm?.errorFields ?? []
+  const fieldError = (liveForm: FormResponse, name: string) => {
+    let errors = liveForm?.accountUpdateResult?.errorFields ?? []
     return errors.includes(name)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit: SubmitFunction = () => {
     loading = true
     return async ({ update, result }) => {
       await update({ reset: false })
@@ -55,7 +56,7 @@
             class="{fieldError(form, 'fullName')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.fullName ?? fullName}
+            value={form?.accountUpdateResult?.fullName ?? fullName}
           />
         </div>
 
@@ -71,7 +72,7 @@
             class="{fieldError(form, 'companyName')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.companyName ?? companyName}
+            value={form?.accountUpdateResult?.companyName ?? companyName}
           />
         </div>
 
@@ -87,13 +88,13 @@
             class="{fieldError(form, 'website')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.website ?? website}
+            value={form?.accountUpdateResult?.website ?? website}
           />
         </div>
 
-        {#if form?.errorMessage}
+        {#if form?.accountUpdateResult?.errorMessage}
           <p class="text-red-700 text-sm font-bold text-center mt-3">
-            {form?.errorMessage}
+            {form?.accountUpdateResult?.errorMessage}
           </p>
         {/if}
         <div class="mt-4">

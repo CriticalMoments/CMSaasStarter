@@ -1,9 +1,10 @@
 <script lang="ts">
   import { enhance, applyAction } from "$app/forms"
   import { page } from "$app/stores"
+  import type { SubmitFunction } from "@sveltejs/kit"
 
-  const fieldError = (liveForm, name: string) => {
-    let errors = liveForm?.errorFields ?? []
+  const fieldError = (liveForm: FormResponse, name: string) => {
+    let errors = liveForm?.accountUpdateResult?.errorFields ?? []
     return errors.includes(name)
   }
 
@@ -12,9 +13,11 @@
   let showSuccess = false
 
   type Field = {
+    inputType?: string // default is "text"
     id: string
     label?: string
     initialValue: string | boolean
+    placeholder?: string
   }
 
   // Module context
@@ -30,7 +33,7 @@
   export let editLink: string = ""
   export let saveButtonTitle: string = "Save"
 
-  const handleSubmit = () => {
+  const handleSubmit: SubmitFunction = () => {
     loading = true
     return async ({ update, result }) => {
       await update({ reset: false })

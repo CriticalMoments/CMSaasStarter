@@ -5,8 +5,6 @@
 
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
-
-  export let data
 </script>
 
 <svelte:head>
@@ -16,7 +14,6 @@
 <h1 class="text-2xl font-bold mb-6">Settings</h1>
 
 <SettingsModule
-  {data}
   title="Reset Password"
   editable={true}
   saveButtonTitle="Reset Password"

@@ -56,6 +56,7 @@ export const actions = {
 
     // Can check if we're a "password recovery" session by checking session amr
     // let currentPassword take priority if provided (user can use either form)
+    // @ts-expect-error: TODO fix by using correct Supabase way to detect this
     const recoveryAmr = session.user?.amr?.find((x) => x.method === "recovery")
     const isRecoverySession = recoveryAmr && !currentPassword
 

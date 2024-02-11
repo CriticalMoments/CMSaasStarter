@@ -1,7 +1,7 @@
 import { redirect } from "@sveltejs/kit"
-import type { PageServerLoad } from "./$types"
+import type { LayoutServerLoad } from "./$types"
 
-export const load: PageServerLoad = async ({
+export const load: LayoutServerLoad = async ({
   locals: { supabase, getSession },
 }) => {
   const session = await getSession()
@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select(`full_name, website, company_name`)
+    .select(`full_name, website, company_name, id, avatar_url, updated_at`)
     .eq("id", session.user.id)
     .single()
 

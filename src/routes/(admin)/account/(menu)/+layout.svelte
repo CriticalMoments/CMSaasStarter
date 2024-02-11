@@ -11,7 +11,10 @@
   })
 
   function closeDrawer(): void {
-    document.getElementById("admin-drawer").checked = false
+    const adminDrawer = document.getElementById(
+      "admin-drawer",
+    ) as HTMLInputElement
+    adminDrawer.checked = false
   }
 </script>
 

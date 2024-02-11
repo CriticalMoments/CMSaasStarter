@@ -1,3 +1,6 @@
+import type { SupabaseClient, Session } from "@supabase/supabase-js"
+import type { Database } from "../../../DatabaseDefinitions"
+
 import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
 import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
 import Stripe from "stripe"
@@ -6,6 +9,9 @@ const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 export const getOrCreateCustomerId = async ({
   supabaseServiceRole,
   session,
+}: {
+  supabaseServiceRole: SupabaseClient<Database>
+  session: Session
 }) => {
   const { data: dbCustomer, error } = await supabaseServiceRole
     .from("stripe_customers")
@@ -37,11 +43,11 @@ export const getOrCreateCustomerId = async ({
   try {
     customer = await stripe.customers.create({
       email: session.user.email,
-      name: profile.data?.full_name ?? "",
+      name: profile.full_name ?? "",
       metadata: {
         user_id: session.user.id,
-        company_name: profile.data?.company_name ?? "",
-        website: profile.data?.website ?? "",
+        company_name: profile.company_name ?? "",
+        website: profile.website ?? "",
       },
     })
   } catch (e) {
@@ -53,7 +59,7 @@ export const getOrCreateCustomerId = async ({
   }
 
   // insert instead of upsert so we never over-write. PK ensures later attempts error.
-  const { insertError } = await supabaseServiceRole
+  const { error: insertError } = await supabaseServiceRole
     .from("stripe_customers")
     .insert({
       user_id: session.user.id,
@@ -68,7 +74,11 @@ export const getOrCreateCustomerId = async ({
   return { customerId: customer.id }
 }
 
-export const fetchSubscription = async ({ customerId }) => {
+export const fetchSubscription = async ({
+  customerId,
+}: {
+  customerId: string
+}) => {
   // Fetch user's subscriptions
   let stripeSubscriptions
   try {

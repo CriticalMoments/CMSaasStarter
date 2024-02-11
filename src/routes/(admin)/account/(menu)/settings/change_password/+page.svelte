@@ -10,6 +10,8 @@
   export let data
   let { session, supabase } = data
 
+  // ignore next line for Typescript
+  // @ts-expect-error ignore TODO fix Supabase AMR stuff
   let hasPassword = session?.user?.amr?.find((x) => x.method === "password")
     ? true
     : false
@@ -40,7 +42,6 @@
 
 {#if hasPassword}
   <SettingsModule
-    {data}
     title="Change Password"
     editable={true}
     saveButtonTitle="Change Password"

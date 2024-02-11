@@ -35,8 +35,6 @@ export const load: PageServerLoad = async ({
 
   const { primarySubscription } = await fetchSubscription({
     customerId,
-    supabaseServiceRole,
-    userId: session.user.id,
   })
   if (primarySubscription) {
     // User already has plan, we shouldn't let them buy another

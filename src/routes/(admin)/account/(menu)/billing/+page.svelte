@@ -39,11 +39,14 @@
   {/if}
 {:else}
   <SettingsModule
-    {data}
     title="Subscription"
     editable={false}
     fields={[
-      { id: "plan", label: "Current Plan", initialValue: currentPlanName },
+      {
+        id: "plan",
+        label: "Current Plan",
+        initialValue: currentPlanName || "",
+      },
     ]}
     editButtonTitle="Manage Subscripton"
     editLink="/account/billing/manage"

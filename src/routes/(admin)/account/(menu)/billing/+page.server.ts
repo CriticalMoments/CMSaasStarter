@@ -29,8 +29,6 @@ export const load: PageServerLoad = async ({
     error: fetchErr,
   } = await fetchSubscription({
     customerId,
-    supabaseServiceRole,
-    userId: session.user.id,
   })
   if (fetchErr) {
     throw error(500, {

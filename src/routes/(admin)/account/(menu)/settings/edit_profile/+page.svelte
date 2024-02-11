@@ -18,7 +18,6 @@
 <h1 class="text-2xl font-bold mb-6">Settings</h1>
 
 <SettingsModule
-  {data}
   editable={true}
   title="Edit Profile"
   successTitle="Saved Profile"
