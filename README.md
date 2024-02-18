@@ -145,6 +145,7 @@ set -e
 npm run format_check
 npm run lint
 npm run build
+npm run check
 ```
 
 Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
