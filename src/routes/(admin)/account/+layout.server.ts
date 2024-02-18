@@ -12,7 +12,7 @@ export const load: LayoutServerLoad = async ({
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select(`full_name, website, company_name, id, avatar_url, updated_at`)
+    .select(`*`)
     .eq("id", session.user.id)
     .single()
 

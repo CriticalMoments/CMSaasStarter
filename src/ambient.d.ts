@@ -1,13 +1,11 @@
 declare global {
-  type FormResponse = {
-    accountUpdateResult?: {
-      errorMessage?: string
-      errorFields?: string[]
-      fullName?: string
-      companyName?: string
-      website?: string
-      email?: string
-    }
+  type FormAccountUpdateResult = {
+    errorMessage?: string
+    errorFields?: string[]
+    fullName?: string
+    companyName?: string
+    website?: string
+    email?: string
   }
 
   type Post = {

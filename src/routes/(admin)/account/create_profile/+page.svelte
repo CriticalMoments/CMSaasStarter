@@ -4,7 +4,7 @@
   import type { SubmitFunction } from "@sveltejs/kit"
 
   export let data
-  export let form: FormResponse
+  export let form: FormAccountUpdateResult
 
   let { session, profile } = data
 
@@ -13,8 +13,8 @@
   let companyName: string = profile?.company_name ?? ""
   let website: string = profile?.website ?? ""
 
-  const fieldError = (liveForm: FormResponse, name: string) => {
-    let errors = liveForm?.accountUpdateResult?.errorFields ?? []
+  const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
+    let errors = liveForm?.errorFields ?? []
     return errors.includes(name)
   }
 
@@ -56,7 +56,7 @@
             class="{fieldError(form, 'fullName')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.accountUpdateResult?.fullName ?? fullName}
+            value={form?.fullName ?? fullName}
           />
         </div>
 
@@ -72,7 +72,7 @@
             class="{fieldError(form, 'companyName')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.accountUpdateResult?.companyName ?? companyName}
+            value={form?.companyName ?? companyName}
           />
         </div>
 
@@ -88,13 +88,13 @@
             class="{fieldError(form, 'website')
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
-            value={form?.accountUpdateResult?.website ?? website}
+            value={form?.website ?? website}
           />
         </div>
 
-        {#if form?.accountUpdateResult?.errorMessage}
+        {#if form?.errorMessage}
           <p class="text-red-700 text-sm font-bold text-center mt-3">
-            {form?.accountUpdateResult?.errorMessage}
+            {form?.errorMessage}
           </p>
         {/if}
         <div class="mt-4">

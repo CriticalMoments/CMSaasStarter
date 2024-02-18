@@ -3,8 +3,8 @@
   import { page } from "$app/stores"
   import type { SubmitFunction } from "@sveltejs/kit"
 
-  const fieldError = (liveForm: FormResponse, name: string) => {
-    let errors = liveForm?.accountUpdateResult?.errorFields ?? []
+  const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
+    let errors = liveForm?.errorFields ?? []
     return errors.includes(name)
   }
 
