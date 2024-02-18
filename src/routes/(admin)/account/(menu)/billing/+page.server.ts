@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({
     throw redirect(303, "/login")
   }
 
-  let { error: idError, customerId } = await getOrCreateCustomerId({
+  const { error: idError, customerId } = await getOrCreateCustomerId({
     supabaseServiceRole,
     session,
   })
@@ -29,8 +29,6 @@ export const load: PageServerLoad = async ({
     error: fetchErr,
   } = await fetchSubscription({
     customerId,
-    supabaseServiceRole,
-    userId: session.user.id,
   })
   if (fetchErr) {
     throw error(500, {

@@ -1,8 +1,10 @@
-import { postList, blogInfo } from "/src/routes/(marketing)/blog/posts.json"
+import { postList, blogInfo } from "../posts.json"
+
+const typedPostList: Post[] = postList as Post[]
 
 export const prerender = true
 
-const encodeXML = (str) =>
+const encodeXML = (str: string) =>
   str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -23,18 +25,27 @@ export function GET({ url }) {
     <link>${url.origin}/blog</link>
     <description>${blogInfo.description}</description>
     <atom:link href="${url.origin}/blog/rss.xml" rel="self" type="application/rss+xml" />`
-  for (const post of postList) {
-    let dateParts = post.date.split("-")
-    post.parsedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]) // Note: months are 0-based
+  for (const post of typedPostList) {
+    const dateParts = post.date.split("-")
+    post.parsedDate = new Date(
+      parseInt(dateParts[0]),
+      parseInt(dateParts[1]) - 1,
+      parseInt(dateParts[2]),
+    ) // Note: months are 0-based
   }
-  let sortedPosts = postList.sort((a, b) => b.parsedDate - a.parsedDate)
+  const sortedPosts = typedPostList.sort((a, b) => {
+    const parsedDateA = a.parsedDate || new Date(0)
+    const parsedDateB = b.parsedDate || new Date(0)
+    return parsedDateB.getTime() - parsedDateA.getTime()
+  })
+
   for (const post of sortedPosts) {
     body += `
     <item>
       <title>${encodeXML(post.title)}</title>
       <description>${encodeXML(post.description)}</description>
       <link>${url.origin + post.link}/</link>
-      <pubDate>${post.parsedDate.toUTCString()}</pubDate>
+      <pubDate>${post.parsedDate?.toUTCString()}</pubDate>
     </item>\n`
   }
   body += `  </channel>\n</rss>\n`

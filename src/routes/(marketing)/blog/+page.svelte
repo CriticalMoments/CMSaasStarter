@@ -1,10 +1,21 @@
-<script>
+<script lang="ts">
   import { postList, blogInfo } from "./posts.json"
-  for (const post of postList) {
+
+  const typedPostList: Post[] = postList as Post[]
+
+  for (const post of typedPostList) {
     let dateParts = post.date.split("-")
-    post.parsedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]) // Note: months are 0-based
+    post.parsedDate = new Date(
+      parseInt(dateParts[0]),
+      parseInt(dateParts[1]) - 1,
+      parseInt(dateParts[2]),
+    ) // Note: months are 0-based
   }
-  let sortedPosts = postList.sort((a, b) => b.parsedDate - a.parsedDate)
+  let sortedPosts = typedPostList.sort((a, b) => {
+    const dateA = a.parsedDate ? a.parsedDate.getTime() : 0
+    const dateB = b.parsedDate ? b.parsedDate.getTime() : 0
+    return dateB - dateA
+  })
 </script>
 
 <svelte:head>
@@ -38,7 +49,7 @@
         <div class="py-6 px-6">
           <div class="text-xl">{post.title}</div>
           <div class="text-sm text-accent">
-            {post.parsedDate.toLocaleDateString("en-US", {
+            {post.parsedDate?.toLocaleDateString("en-US", {
               month: "short",
               day: "numeric",
               year: "numeric",

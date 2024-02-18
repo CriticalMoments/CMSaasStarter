@@ -1,3 +1,6 @@
+import type { SupabaseClient, Session } from "@supabase/supabase-js"
+import type { Database } from "../../../DatabaseDefinitions"
+
 import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
 import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
 import Stripe from "stripe"
@@ -6,6 +9,9 @@ const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 export const getOrCreateCustomerId = async ({
   supabaseServiceRole,
   session,
+}: {
+  supabaseServiceRole: SupabaseClient<Database>
+  session: Session
 }) => {
   const { data: dbCustomer, error } = await supabaseServiceRole
     .from("stripe_customers")
@@ -23,7 +29,7 @@ export const getOrCreateCustomerId = async ({
   }
 
   // Fetch data needed to create customer
-  let { data: profile, error: profileError } = await supabaseServiceRole
+  const { data: profile, error: profileError } = await supabaseServiceRole
     .from("profiles")
     .select(`full_name, website, company_name`)
     .eq("id", session.user.id)
@@ -37,11 +43,11 @@ export const getOrCreateCustomerId = async ({
   try {
     customer = await stripe.customers.create({
       email: session.user.email,
-      name: profile.data?.full_name ?? "",
+      name: profile.full_name ?? "",
       metadata: {
         user_id: session.user.id,
-        company_name: profile.data?.company_name ?? "",
-        website: profile.data?.website ?? "",
+        company_name: profile.company_name ?? "",
+        website: profile.website ?? "",
       },
     })
   } catch (e) {
@@ -53,7 +59,7 @@ export const getOrCreateCustomerId = async ({
   }
 
   // insert instead of upsert so we never over-write. PK ensures later attempts error.
-  const { insertError } = await supabaseServiceRole
+  const { error: insertError } = await supabaseServiceRole
     .from("stripe_customers")
     .insert({
       user_id: session.user.id,
@@ -69,9 +75,9 @@ export const getOrCreateCustomerId = async ({
 }
 
 export const fetchSubscription = async ({
-  supabaseServiceRole,
-  userId,
   customerId,
+}: {
+  customerId: string
 }) => {
   // Fetch user's subscriptions
   let stripeSubscriptions
@@ -86,7 +92,7 @@ export const fetchSubscription = async ({
   }
 
   // find "primary". The user may have several old ones, we want an active one (including trials, and past_due in grace period).
-  let primaryStripeSubscription = stripeSubscriptions.data.find((x) => {
+  const primaryStripeSubscription = stripeSubscriptions.data.find((x) => {
     return (
       x.status === "active" ||
       x.status === "trialing" ||
@@ -95,7 +101,7 @@ export const fetchSubscription = async ({
   })
   let appSubscription = null
   if (primaryStripeSubscription) {
-    let productId =
+    const productId =
       primaryStripeSubscription?.items?.data?.[0]?.price.product ?? ""
     appSubscription = pricingPlans.find((x) => {
       return x.stripe_product_id === productId
@@ -115,7 +121,7 @@ export const fetchSubscription = async ({
     }
   }
 
-  let hasEverHadSubscription = stripeSubscriptions.data.length > 0
+  const hasEverHadSubscription = stripeSubscriptions.data.length > 0
 
   return {
     primarySubscription,

@@ -2,7 +2,7 @@
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
 
-  let adminSection: Writable<String> = getContext("adminSection")
+  let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("home")
 </script>
 

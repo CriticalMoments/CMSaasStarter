@@ -4,7 +4,7 @@
   import type { Writable } from "svelte/store"
   import SettingsModule from "../settings_module.svelte"
 
-  let adminSection: Writable<String> = getContext("adminSection")
+  let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
 
   export let data
@@ -12,10 +12,13 @@
 
   // True if definitely has a password, but can be false if they
   // logged in with oAuth or email link
+
+  // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
   let hasPassword = session?.user?.amr?.find((x) => x.method === "password")
     ? true
     : false
 
+  // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
   let usingOAuth = session?.user?.amr?.find((x) => x.method === "oauth")
     ? true
     : false
@@ -46,7 +49,6 @@
 
 {#if hasPassword}
   <SettingsModule
-    {data}
     title="Change Password"
     editable={true}
     saveButtonTitle="Change Password"

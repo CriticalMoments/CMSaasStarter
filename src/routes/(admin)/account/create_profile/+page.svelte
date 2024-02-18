@@ -1,9 +1,10 @@
 <script lang="ts">
   import "../../../../app.css"
   import { enhance, applyAction } from "$app/forms"
+  import type { SubmitFunction } from "@sveltejs/kit"
 
   export let data
-  export let form
+  export let form: FormAccountUpdateResult
 
   let { session, profile } = data
 
@@ -12,12 +13,12 @@
   let companyName: string = profile?.company_name ?? ""
   let website: string = profile?.website ?? ""
 
-  const fieldError = (liveForm, name: String) => {
+  const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
     let errors = liveForm?.errorFields ?? []
     return errors.includes(name)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit: SubmitFunction = () => {
     loading = true
     return async ({ update, result }) => {
       await update({ reset: false })

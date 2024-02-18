@@ -8,7 +8,7 @@
     defaultPlanId,
   } from "../../../../(marketing)/pricing/pricing_plans"
 
-  let adminSection: Writable<String> = getContext("adminSection")
+  let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("billing")
 
   export let data
@@ -39,11 +39,14 @@
   {/if}
 {:else}
   <SettingsModule
-    {data}
     title="Subscription"
     editable={false}
     fields={[
-      { id: "plan", label: "Current Plan", initialValue: currentPlanName },
+      {
+        id: "plan",
+        label: "Current Plan",
+        initialValue: currentPlanName || "",
+      },
     ]}
     editButtonTitle="Manage Subscripton"
     editLink="/account/billing/manage"

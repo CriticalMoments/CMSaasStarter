@@ -3,7 +3,7 @@
   import type { Writable } from "svelte/store"
   import SettingsModule from "./settings_module.svelte"
 
-  let adminSection: Writable<String> = getContext("adminSection")
+  let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
 
   export let data
@@ -17,7 +17,6 @@
 <h1 class="text-2xl font-bold mb-6">Settings</h1>
 
 <SettingsModule
-  {data}
   title="Profile"
   editable={false}
   fields={[
@@ -38,16 +37,14 @@
 />
 
 <SettingsModule
-  {data}
   title="Email"
   editable={false}
-  fields={[{ id: "email", initialValue: session?.user?.email }]}
+  fields={[{ id: "email", initialValue: session?.user?.email || "" }]}
   editButtonTitle="Change Email"
   editLink="/account/settings/change_email"
 />
 
 <SettingsModule
-  {data}
   title="Password"
   editable={false}
   fields={[{ id: "password", initialValue: "••••••••••••••••" }]}
@@ -56,7 +53,6 @@
 />
 
 <SettingsModule
-  {data}
   title="Danger Zone"
   editable={false}
   dangerous={true}

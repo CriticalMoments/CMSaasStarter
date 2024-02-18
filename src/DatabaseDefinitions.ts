@@ -22,7 +22,7 @@ export interface Database {
           avatar_url?: string | null
           full_name?: string | null
           id: string
-          updated_at?: string | null
+          updated_at?: Date | null
           company_name?: string | null
           website?: string | null
         }
