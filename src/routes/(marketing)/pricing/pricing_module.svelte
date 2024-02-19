@@ -32,16 +32,21 @@
       proIncluded: true,
     },
     {
+      name: "Feature 3",
+      freeString: "3",
+      proString: "Unlimited",
+    },
+    {
       name: "Section 2",
       header: true,
     },
     {
-      name: "Feature 3",
+      name: "Feature 4",
       freeIncluded: true,
       proIncluded: true,
     },
     {
-      name: "Feature 4",
+      name: "Feature 5",
       freeIncluded: false,
       proIncluded: true,
     },
@@ -226,12 +231,19 @@
             <td class="text-center">
               {#if feature.proString}
                 {feature.proString}
-              {:else}
+              {:else if feature.proIncluded}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-8 h-8 ml-2 inline text-success"
                 >
                   <use href="#checkcircle" />
+                </svg>
+              {:else}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-[26px] h-[26px] inline text-base-200"
+                >
+                  <use href="#nocircle" />
                 </svg>
               {/if}
             </td>
