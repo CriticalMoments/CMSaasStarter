@@ -18,8 +18,4 @@
   })
 </script>
 
-<svelte:head>
-  <title>Account</title>
-</svelte:head>
-
 <slot />
