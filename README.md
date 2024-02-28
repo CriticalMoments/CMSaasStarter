@@ -52,6 +52,7 @@ Everything you need to get started for a SaaS company:
 - User Dashboard with user profile, user settings, update email/password, billing, and more.
 - Subscriptions powered by Stripe Checkout
 - Pricing page
+- Contact-us form
 - Billing portal: self serve to change card, upgrade, cancel, or download receipts
 - Onboarding flow after signup: collect user data, and select a payment plan
 - Style toolkit: theming and UI components
