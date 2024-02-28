@@ -12,13 +12,13 @@ export const pricingPlans = [
   },
   {
     id: "pro",
-    name: "Pro",
+    name: "SKAN Bronze Subscription",
     description:
-      "A plan to test the purchase experience. Try buying this with the test credit card 4242424242424242.",
-    price: "$5",
+      "A bronze plan enabling you access to preplanned routes",
+    price: "$49.99",
     priceIntervalName: "per month",
-    stripe_price_id: "price_1NkdZCHMjzZ8mGZnRSjUm4yA",
-    stripe_product_id: "prod_OXj1CcemGMWOlU",
+    stripe_price_id: "price_1OonE0K3At0l0k1HWV3Z1vF7",
+    stripe_product_id: "prod_Pe5OlROS4oPoC7",
     features: [
       "Everything in Free",
       "Support us with fake money",
@@ -27,13 +27,13 @@ export const pricingPlans = [
   },
   {
     id: "enterprise",
-    name: "Enterprise",
+    name: "SKAN Pro Subscription",
     description:
-      "A plan to test the upgrade expereince. Try buying this with the test credit card 4242424242424242.",
-    price: "$15",
+      "The best plan you can get, giving you access to the secrets of the universe",
+    price: "$99",
     priceIntervalName: "per month",
-    stripe_price_id: "price_1Nkda2HMjzZ8mGZn4sKvbDAV",
-    stripe_product_id: "prod_OXj20YNpHYOXi7",
+    stripe_price_id: "price_1OdpxJK3At0l0k1HOx5Kxo9S",
+    stripe_product_id: "prod_PSlUxQsqZIwjGk",
     features: [
       "Everything in Pro",
       "Try the 'upgrade plan' UX",
