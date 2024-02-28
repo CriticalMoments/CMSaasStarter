@@ -13,8 +13,7 @@ export const pricingPlans = [
   {
     id: "pro",
     name: "SKAN Bronze Subscription",
-    description:
-      "A bronze plan enabling you access to preplanned routes",
+    description: "A bronze plan enabling you access to preplanned routes",
     price: "$49.99",
     priceIntervalName: "per month",
     stripe_price_id: "price_1OonE0K3At0l0k1HWV3Z1vF7",
