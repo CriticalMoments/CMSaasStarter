@@ -1,7 +1,5 @@
 import { sortedBlogPosts, blogInfo } from "../posts"
 
-export const prerender = true
-
 const encodeXML = (str: string) =>
   str
     .replace(/&/g, "&amp;")
