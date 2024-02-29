@@ -52,7 +52,6 @@
       await update({ reset: false })
       await applyAction(result)
       loading = false
-      console.log(result)
       if (result.type === "success") {
         showSuccess = true
       } else if (result.type === "failure") {
@@ -88,7 +87,7 @@
   </div>
 
   <div
-    class="flex flex-col flex-grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center"
+    class="flex flex-col flex-grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center lg:min-h-[70vh]"
   >
     {#if showSuccess}
       <div class="flex flex-col place-content-center lg:min-h-[70vh]">
