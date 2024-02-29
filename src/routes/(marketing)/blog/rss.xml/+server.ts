@@ -1,8 +1,4 @@
-import { postList, blogInfo } from "../posts.json"
-
-const typedPostList: Post[] = postList as Post[]
-
-export const prerender = true
+import { sortedBlogPosts, blogInfo } from "../posts"
 
 const encodeXML = (str: string) =>
   str
@@ -25,21 +21,7 @@ export function GET({ url }) {
     <link>${url.origin}/blog</link>
     <description>${blogInfo.description}</description>
     <atom:link href="${url.origin}/blog/rss.xml" rel="self" type="application/rss+xml" />`
-  for (const post of typedPostList) {
-    const dateParts = post.date.split("-")
-    post.parsedDate = new Date(
-      parseInt(dateParts[0]),
-      parseInt(dateParts[1]) - 1,
-      parseInt(dateParts[2]),
-    ) // Note: months are 0-based
-  }
-  const sortedPosts = typedPostList.sort((a, b) => {
-    const parsedDateA = a.parsedDate || new Date(0)
-    const parsedDateB = b.parsedDate || new Date(0)
-    return parsedDateB.getTime() - parsedDateA.getTime()
-  })
-
-  for (const post of sortedPosts) {
+  for (const post of sortedBlogPosts) {
     body += `
     <item>
       <title>${encodeXML(post.title)}</title>
