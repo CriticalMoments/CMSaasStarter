@@ -1,9 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores"
-  import { postList } from "./../posts.json"
+  import { error } from "@sveltejs/kit"
+  import { sortedBlogPosts, type BlogPost } from "./../posts"
 
-  let currentPost: Post | null = null
-  for (const post of postList) {
+  let currentPost: BlogPost | null = null
+  for (const post of sortedBlogPosts) {
     if (
       $page.url.pathname == post.link ||
       $page.url.pathname == post.link + "/"
@@ -12,17 +13,8 @@
       continue
     }
   }
-  if (currentPost != null) {
-    let dateParts = currentPost.date.split("-")
-    currentPost.parsedDate = new Date(
-      parseInt(dateParts[0]),
-      parseInt(dateParts[1]) - 1,
-      parseInt(dateParts[2]),
-    ) // Note: months are 0-based
-  } else {
-    console.log(
-      "WARNING: rendering blog post, which is not listed in posts.json",
-    )
+  if (!currentPost) {
+    throw error(404, "Blog post not found")
   }
 </script>
 

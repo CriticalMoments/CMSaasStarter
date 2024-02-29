@@ -227,13 +227,13 @@ After the steps above, you’ll have a working version like the demo page. Howev
 - Content
   - Add actual content for marketing homepage
   - Add actual content for your blog (or delete the blog) 
-    - Update all fields in `src/routes/(marketing)/blog/posts.json`, and replace the post pages under `src/routes/(marketing)/blog/posts` to align to the urls from posts.json.
+    - Update all fields in `src/routes/(marketing)/blog/posts.ts`, and replace the post pages under `src/routes/(marketing)/blog/posts` to align to the urls from `posts.ts`.
     - Alternatively remove the blog by removing the src/routes/(marketing)/blog directory, and remove any links to the blog in the header and footer. You can always bring it back later.
   - Add any pages you want on top of our boiler plate (about, terms of service, etc). Be sure to add links to them in the header, mobile menu header, and footer as appropriate (`src/routes/(marketing)/+layout.svelte`).
   - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rendering requirements.
 - Update SEO content
   - Update title and meta description tags for every public page. We include generic ones using your site name (PUBLIC_SITE_NAME), but the more specific these are the better.
-  - This done automatically for blog posts from `posts.json` metadata
+  - This done automatically for blog posts from `posts.ts` metadata
 - Style
   - Create a new DaisyUI Theme matching your brand or use one of the built in themes from DaisyUI (see `tailwind.config.js`)
   - Update the marketing page layout `src/routes/(marketing)/+layout.svelte`: customize design, delete unwanted pages from header and footer
