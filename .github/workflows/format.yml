@@ -11,7 +11,7 @@ env:
 
 jobs:
   build_and_test:
-    name: Build
+    name: Code Format Check
     runs-on: ubuntu-latest
 
     steps:

@@ -11,7 +11,7 @@ env:
 
 jobs:
   build_and_test:
-    name: Linting and Typechecking
+    name: Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -20,8 +20,6 @@ jobs:
       - name: NPM install
         run: npm install
 
-      - name: Linting
-        run: npm run lint
+      - name: Tests
+        run: npm run test_run
  
-      - name: Typechecking
-        run: npm run check
