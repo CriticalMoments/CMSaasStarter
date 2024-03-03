@@ -1,4 +1,4 @@
-name: Linting
+name: Tests
 
 on: [push]
 
