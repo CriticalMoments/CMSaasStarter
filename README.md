@@ -249,7 +249,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
 
 ## Icons
 
-Icons in the template are from [Solar Broken Line Icons Collection](https://www.svgrepo.com/collection/solar-broken-line-icons/) via CC Attribution License.
+Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/collection/solar-broken-line-icons/) and [Solar Linear Icons](https://www.svgrepo.com/collection/solar-linear-icons) via CC Attribution License.
 
 # Sponsor 
 
