@@ -132,13 +132,16 @@ npm run dev --
 
 The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). Github disables CI on forks by default, so if you fork this repo, be sure to go into the Github Actions page for your repo and enable workflows. 
 
-You can manually run these scripts yourself; `npm run build` for the build, `npm run format_check` to check formatting, `npm run lint` for the linting, and `npm run check` for typechecking. 
+You can manually run these scripts yourself; `npm run build` for the build, `npm run format_check` to check formatting, `npm run lint` for the linting, `npm run check` for typechecking, and `npm run test` for testing (if you add tests). 
 
-Installing a Svelte extension in your editor will help automatically apply formatting on-save, and show type issues inline. The [VS Code svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) is excellent. [Extensions for other editors are available here.](https://sveltesociety.dev/tools#editor-support)
+Installing extensions in your editor can automatically format-on-save, show linting/type issues inline, and run your test cases. We suggest the following extensions for VSCode:
+- [Svelte Extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) for Svelte and accessibility issues
+- [ESLint for type checking and linting](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Testing with Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) - if you add tests
 
-If you want to see linting errors inline as well, you should install an ESLint extension in your editor. You can find [the VSCode extension here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and extensions for other editors [here.](https://eslint.org/docs/latest/use/integrations)
+Extensions for other editors are available [here](https://sveltesociety.dev/tools#editor-support) and [here](https://eslint.org/docs/latest/use/integrations).
 
-To catch build, formatting and linting issues before you commit changes, we suggest the following local git hook. It will run before you commit, stop you from breaking the build, and show any issues that are found. Add the lines below to the git hook file at the location `.git/hooks/pre-commit`.
+To catch build, formatting, linting and test issues before you commit changes, we suggest the following local git hook. It will run before you commit, stop you from breaking the build, and show any issues that are found. Add the lines below to an executable git hook script at the location `.git/hooks/pre-commit`.
 
 ```
 #!/bin/sh
@@ -147,6 +150,7 @@ npm run format_check
 npm run lint
 npm run build
 npm run check
+npm run test_run
 ```
 
 Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
