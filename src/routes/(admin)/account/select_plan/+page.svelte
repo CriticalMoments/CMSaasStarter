@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div
-  class="text-center content-center min-h-[100vh] mb-12 mt-4 flex items-center place-content-center"
+  class="text-center content-center min-h-[100vh] pb-12 mt-4 flex items-center place-content-center"
 >
   <div class="flex flex-col w-full px-6">
     <div>
