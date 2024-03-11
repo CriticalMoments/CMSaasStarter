@@ -59,6 +59,10 @@ Everything you need to get started for a SaaS company:
 - Responsive: designed for mobile and desktop.
 - Extensible: all the tools you need to make additional marketing pages, UI components, admin portals, database backends, API endpoints, and more.
 
+## Introduction Blog Post
+
+What to learn why we picked the technologies we did, and how to keep your fork lightning fast as you add content? Check out [our blog post](https://criticalmoments.io/blog/how_we_built_our_marketing_page) on the process. Yes, it's hosted on a SaaS Starter fork!
+
 ## Tech Stack
 
 - Web Framework: SvelteKit
