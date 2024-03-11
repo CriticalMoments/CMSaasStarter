@@ -27,12 +27,6 @@ const blogPosts: BlogPost[] = [
     date: "2022-9-23",
   },
   {
-    title: "How to build a SaaS Webpage in 12 easy steps",
-    description: "A getting started guide for saas websites.",
-    link: "/blog/how_to_build_saas_page",
-    date: "2022-12-26",
-  },
-  {
     title: "Example Blog Post",
     description: "A sample blog post, showing our blog engine",
     link: "/blog/example_blog_post",
