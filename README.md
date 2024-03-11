@@ -123,9 +123,12 @@ To get started, fork and run this project!
 ```
 ## First fork the project on Github
 git pull [Your Fork]
+cd CMSaasStarter ## or your fork name if different
 npm install
-## Run the project locally in dev mode
-npm run dev --
+## Create an env file. You'll replace the values in this in later steps.
+cp local_env_template .env.local
+## Run the project locally in dev mode, and launch the browser
+npm run dev -- --open
 ```
 
 ### Developer Environment
