@@ -17,7 +17,7 @@ const blogPosts: BlogPost[] = [
   {
     title: "How we built a beautiful 41kb SaaS website with this template",
     description: "How to use this template you to bootstrap your own site.",
-    link: "/blog/how_we_built_our_saas_website",
+    link: "/blog/how_we_built_our_41kb_saas_website",
     date: "2024-03-10",
   },
   {
