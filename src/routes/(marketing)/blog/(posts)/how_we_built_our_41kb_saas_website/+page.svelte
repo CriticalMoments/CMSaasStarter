@@ -27,8 +27,9 @@
 </p>
 
 <p>
-  If you're looking for examples of blog posts with rich content rendered inside
-  this template, checkout the other demo posts <a href="/blog" class="link"
-    >here</a
+  If you are looking for examples of blog posts with rich content rendered
+  inside this template, checkout the other demo posts <a
+    href="/blog"
+    class="link">here</a
   >.
 </p>
