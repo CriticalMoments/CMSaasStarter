@@ -18,6 +18,7 @@
     label?: string
     initialValue: string | boolean
     placeholder?: string
+    maxlength?: number
   }
 
   // Module context
@@ -96,6 +97,7 @@
                 ? 'input-error'
                 : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"
               value={$page.form ? $page.form[field.id] : field.initialValue}
+              maxlength={field.maxlength ? `${field.maxlength}` : null}
             />
           {:else}
             <div class="text-lg mb-3">{field.initialValue}</div>
