@@ -57,6 +57,7 @@
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
             value={form?.fullName ?? fullName}
+            maxlength="50"
           />
         </div>
 
@@ -73,6 +74,7 @@
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
             value={form?.companyName ?? companyName}
+            maxlength="50"
           />
         </div>
 
@@ -89,6 +91,7 @@
               ? 'input-error'
               : ''} mt-1 input input-bordered w-full max-w-xs"
             value={form?.website ?? website}
+            maxlength="50"
           />
         </div>
 
