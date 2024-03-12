@@ -209,7 +209,7 @@ export const actions = {
       validationError = "Name is required"
       errorFields.push("fullName")
     } else if (fullName.length > fieldMaxTextLength) {
-      validationError = `Name must be less than ${fieldMaxTextLength} charaters`
+      validationError = `Name must be less than ${fieldMaxTextLength} characters`
       errorFields.push("fullName")
     }
     if (!companyName) {
@@ -217,7 +217,7 @@ export const actions = {
         "Company name is required. If this is a hobby project or personal app, please put your name."
       errorFields.push("companyName")
     } else if (companyName.length > fieldMaxTextLength) {
-      validationError = `Company name must be less than ${fieldMaxTextLength} charaters`
+      validationError = `Company name must be less than ${fieldMaxTextLength} characters`
       errorFields.push("companyName")
     }
     if (!website) {
@@ -225,7 +225,7 @@ export const actions = {
         "Company website is required. An app store URL is a good alternative if you don't have a website."
       errorFields.push("website")
     } else if (website.length > fieldMaxTextLength) {
-      validationError = `Company website must be less than ${fieldMaxTextLength} charaters`
+      validationError = `Company website must be less than ${fieldMaxTextLength} characters`
       errorFields.push("website")
     }
     if (validationError) {
