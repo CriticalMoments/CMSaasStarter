@@ -9,15 +9,15 @@ export const sharedAppearance = {
   variables: {
     default: {
       colors: {
-        brand: "hsl(var(--p))",
-        brandAccent: "hsl(var(--pf))",
-        inputText: "hsl(var(--n))",
-        brandButtonText: "hsl(var(--pc))",
-        messageText: "hsl(var(--b))",
-        dividerBackground: "hsl(var(--n))",
-        inputLabelText: "hsl(var(--n))",
-        defaultButtonText: "hsl(var(--n))",
-        anchorTextColor: "hsl(var(--nc))",
+        brand: "oklch(var(--p))",
+        brandAccent: "oklch(var(--pf))",
+        inputText: "oklch(var(--n))",
+        brandButtonText: "oklch(var(--pc))",
+        messageText: "oklch(var(--b))",
+        dividerBackground: "oklch(var(--n))",
+        inputLabelText: "oklch(var(--n))",
+        defaultButtonText: "oklch(var(--n))",
+        anchorTextColor: "oklch(var(--nc))",
       },
       fontSizes: {
         baseInputSize: "16px",
