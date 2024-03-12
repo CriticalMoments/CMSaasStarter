@@ -19,7 +19,9 @@
   }
 
   const pageTitle = currentPost?.title ? currentPost.title : "Not Found"
-  const pageDescription = currentPost?.description ? currentPost.description : "Blog post"
+  const pageDescription = currentPost?.description
+    ? currentPost.description
+    : "Blog post"
   const pageUrl = $page.url.origin + $page.url.pathname
 </script>
 
@@ -28,17 +30,17 @@
   <meta name="description" content={pageDescription} />
 
   <!-- Facebook -->
-  <meta property="og:title" content={pageTitle}>
-  <meta property="og:description" content={pageDescription}>
-  <meta property="og:site_name" content={PUBLIC_SITE_NAME}>
-  <meta property="og:url" content={pageUrl}>
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:site_name" content={PUBLIC_SITE_NAME} />
+  <meta property="og:url" content={pageUrl} />
   <!-- <meta property="og:image" content="https://samplesite.com/image.jpg"> -->
 
   <!-- Twitter -->
   <!-- “summary”, “summary_large_image”, “app”, or “player” -->
-  <meta name="twitter:card" content="summary"> 
-  <meta name="twitter:title" content={pageTitle}>
-  <meta name="twitter:description" content={pageDescription}>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
   <!-- <meta name="twitter:site" content="@samplesite"> -->
   <!-- <meta name="twitter:image" content="https://samplesite.com/image.jpg"> -->
 </svelte:head>
