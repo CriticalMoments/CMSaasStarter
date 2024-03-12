@@ -17,5 +17,5 @@ button[disabled].authBtn {
 button[disabled].authBtn::before {
   font-size: 14px;
   content: "Loading...";
-  color: hsl(var(--pc));
+  color: oklch(var(--pc));
 }
