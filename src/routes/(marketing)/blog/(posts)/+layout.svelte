@@ -2,7 +2,7 @@
   import { page } from "$app/stores"
   import { error } from "@sveltejs/kit"
   import { sortedBlogPosts, type BlogPost } from "./../posts"
-  import { PUBLIC_SITE_NAME } from "$env/static/public"
+  import { WebsiteName } from "../../../../config"
 
   let currentPost: BlogPost | null = null
   for (const post of sortedBlogPosts) {
@@ -32,7 +32,7 @@
   <!-- Facebook -->
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDescription} />
-  <meta property="og:site_name" content={PUBLIC_SITE_NAME} />
+  <meta property="og:site_name" content={WebsiteName} />
   <meta property="og:url" content={pageUrl} />
   <!-- <meta property="og:image" content="https://samplesite.com/image.jpg"> -->
 
