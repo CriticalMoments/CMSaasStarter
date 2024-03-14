@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { WebsiteName } from "./../../config"
+
   const features = [
     {
       name: "Free to host",
@@ -160,13 +162,11 @@
 <path d="M17 4C17 3.05719 17 2.58579 17.2929 2.29289C17.5858 2 18.0572 2 19 2C19.9428 2 20.4142 2 20.7071 2.29289C21 2.58579 21 3.05719 21 4V17C21 17.9428 21 18.4142 20.7071 18.7071C20.4142 19 19.9428 19 19 19C18.0572 19 17.5858 19 17.2929 18.7071C17 18.4142 17 17.9428 17 17V4Z" stroke="#1C274C" stroke-width="1.5"/>`,
     },
   ]
-
-  import { PUBLIC_SITE_NAME } from "$env/static/public"
 </script>
 
 <svelte:head>
-  <title>{PUBLIC_SITE_NAME}</title>
-  <meta name="description" content="{PUBLIC_SITE_NAME} Home Page" />
+  <title>{WebsiteName}</title>
+  <meta name="description" content="{WebsiteName} Home Page" />
 </svelte:head>
 
 <div class="hero min-h-[60vh]">
