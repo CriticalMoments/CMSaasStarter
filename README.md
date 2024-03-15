@@ -219,7 +219,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
 Cloudflare Pages and Workers is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/#deploy-with-cloudflare-pages) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
 
 When prompted: add environment variables for your production environment (PUBLIC_SUPABASE_URL, 
-PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, PRIVATE_STRIPE_API_KEY, and PUBLIC_SITE_NAME).
+PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_KEY).
 
 Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-ca/application-services/products/analytics/) for usage metrics.
 
@@ -232,7 +232,7 @@ If you prefer another host you can explore alternatives:
 
 After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t have your content. The following checklist helps you customize the template to make a SaaS homepage for your company.
 
-- Set the PUBLIC_SITE_NAME to your company name in `.env.local` and your production environment. 
+- Set a name for your site in `src/config.ts:WebsiteName`
 - Content
   - Add actual content for marketing homepage
   - Add actual content for your blog (or delete the blog) 
@@ -241,7 +241,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Add any pages you want on top of our boiler plate (about, terms of service, etc). Be sure to add links to them in the header, mobile menu header, and footer as appropriate (`src/routes/(marketing)/+layout.svelte`).
   - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rendering requirements.
 - Update SEO content
-  - Update title and meta description tags for every public page. We include generic ones using your site name (PUBLIC_SITE_NAME), but the more specific these are the better.
+  - Update title and meta description tags for every public page. We include generic ones using your site name (`src/config.ts:WebsiteName`), but the more specific these are the better.
   - This done automatically for blog posts from `posts.ts` metadata
 - Style
   - Create a new DaisyUI Theme matching your brand or use one of the built in themes from DaisyUI (see `tailwind.config.js`)
