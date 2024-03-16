@@ -11,7 +11,7 @@ export default {
   daisyui: {
     themes: [
       {
-        saasstartertheme: {
+        default: {
           "primary": "#180042",
           "primary-content": "#fefbf6",
           "secondary": "#c7b9f8",
@@ -25,7 +25,7 @@ export default {
           "success": "#37d399",
           "error": "#f77272",
         },
-      }
+      }, 'dark'
     ],
   }
 }
