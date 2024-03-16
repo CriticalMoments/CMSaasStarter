@@ -1,5 +1,6 @@
 <script>
   import "../../app.css"
+  import LangChange from "./lang-change.svelte"
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">
@@ -17,6 +18,7 @@
       <li class="md:mx-2"><a href="/blog">Blog</a></li>
       <li class="md:mx-2"><a href="/pricing">Pricing</a></li>
       <li class="md:mx-2"><a href="/account">Account</a></li>
+      <li class="md:mx-2"><LangChange /></li>
     </ul>
     <div class="dropdown dropdown-end sm:hidden">
       <!-- svelte-ignore a11y-label-has-associated-control -->

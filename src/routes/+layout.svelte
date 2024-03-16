@@ -3,6 +3,16 @@
   import { navigating } from "$app/stores"
   import { expoOut } from "svelte/easing"
   import { slide } from "svelte/transition"
+  import { onMount } from "svelte"
+  import { setLang } from "$lib/i18n"
+
+  onMount(() => {
+    let lang = new URL(document.location.toString()).searchParams.get("lang")
+    setLang(lang, false)
+    if (localStorage.getItem("lang")) {
+      setLang(localStorage.getItem("lang"), false)
+    }
+  })
 </script>
 
 {#if $navigating}
