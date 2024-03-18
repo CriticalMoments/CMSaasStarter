@@ -1,5 +1,7 @@
 <script>
   import "../../app.css"
+  import ShareIcon from "$lib/icons/share_icon.svelte"
+  import { webShare, webShareSupported } from "$lib/share"
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">
@@ -78,7 +80,20 @@
       >
     </nav>
     <aside>
-      <span class="footer-title opacity-80">Sponsor</span>
+      <span class="footer-title opacity-80"
+        >Sponsor {#if webShareSupported()}
+          <button
+            on:click={() =>
+              webShare(
+                "Sponsor",
+                "Critical Moments sponsors the SaaS Starter",
+                "https://criticalmoments.io",
+              )}
+          >
+            <ShareIcon size={20} />
+          </button>
+        {/if}
+      </span>
       <a
         class="link link-hover max-w-[260px]"
         href="https://criticalmoments.io"
