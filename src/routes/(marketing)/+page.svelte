@@ -175,7 +175,7 @@
       <div
         class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-4 md:mb-8"
       >
-        SaaS Starter Demo
+        FeedHack
       </div>
 
       <div
@@ -185,17 +185,14 @@
         The
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >open source</span
-        >,
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >fast</span
-        >, and
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >free to host</span
+          >fastest</span
         >
-        <span> SaaS template</span>
+        way to gather
+        <span
+          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
+          >feedback</span
+        >
+        <span>and iterate</span>
       </div>
       <div class="mt-6 md:mt-10 text-sm md:text-lg">
         Built with <a

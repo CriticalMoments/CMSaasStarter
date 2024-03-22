@@ -1,1 +1,1 @@
-export const WebsiteName: string = "SaaS Starter"
+export const WebsiteName: string = "FeedHack"
