@@ -15,7 +15,7 @@
   <div class="flex flex-col w-64 lg:w-80">
     <slot />
     <div class="mt-8 {isEurope ? 'block' : 'hidden'}">
-      🍪 Logging in uses Cookies 🍪
+      Logging in uses Cookies 🍪
     </div>
   </div>
 </div>

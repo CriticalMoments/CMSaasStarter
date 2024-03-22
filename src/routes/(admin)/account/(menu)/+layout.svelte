@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../../../../app.css"
+  import "../../../../app.pcss"
   import { writable } from "svelte/store"
   import { setContext } from "svelte"
 
@@ -23,7 +23,7 @@
   <div class="drawer-content">
     <div class="navbar bg-base-100 lg:hidden">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl" href="/">SaaS Starter</a>
+        <a class="btn btn-ghost text-xl normal-case" href="/">SaaS Starter</a>
       </div>
       <div class="flex-none">
         <div class="dropdown dropdown-end">
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="container px-6 lg:px-12 py-3 lg:py-6">
+    <div class="container px-6 py-3 lg:px-12 lg:py-6">
       <slot />
     </div>
   </div>
@@ -53,14 +53,14 @@
   <div class="drawer-side">
     <label for="admin-drawer" class="drawer-overlay" />
     <ul
-      class="menu menu-lg p-4 w-80 min-h-full bg-base-100 lg:border-r text-primary"
+      class="menu menu-lg bg-base-100 min-h-full w-80 p-4 text-primary lg:border-r"
     >
       <li>
         <div
-          class="normal-case menu-title text-xl font-bold text-primary flex flex-row"
+          class="menu-title flex flex-row text-xl font-bold normal-case text-primary"
         >
           <a href="/" class="grow">Saas Starter</a>
-          <label for="admin-drawer" class="lg:hidden ml-3"> &#x2715; </label>
+          <label for="admin-drawer" class="ml-3 lg:hidden"> &#x2715; </label>
         </div>
       </li>
       <li>
