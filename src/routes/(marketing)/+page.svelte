@@ -212,10 +212,8 @@
         <a href="https://daisyui.com" class="link font-bold" target="_blank"
           >DaisyUI</a
         >, and
-        <a
-          href="https://www.postgresql.org"
-          class="link font-bold"
-          target="_blank">Postgres</a
+        <a href="https://www.postgresql.org" class="font-bold" target="_blank"
+          >Postgres</a
         >
       </div>
     </div>
@@ -225,15 +223,13 @@
   <div class="px-7 pb-8 pt-20">
     <div class="mx-auto max-w-lg text-center">
       <div
-        class="bg-gradient-to-r from-primary to-accent bg-clip-text text-3xl font-bold text-transparent md:text-5xl"
+        class="bg-gradient-to-r bg-clip-text text-3xl font-bold text-transparent md:text-5xl"
       >
         Explore the Features
       </div>
       <div class="mt-6 text-xl font-bold">
         And try them on this
-        <span
-          class="underline decoration-secondary decoration-[3px] md:decoration-[4px]"
-        >
+        <span class="underline decoration-[3px] md:decoration-[4px]">
           fully functional demo
         </span>
       </div>
@@ -279,78 +275,6 @@
           </div>
         </div>
       {/each}
-    </div>
-  </div>
-</div>
-<div class="hero mt-12 min-h-[60vh]">
-  <div class="hero-content px-4 pb-16 pt-4 text-center">
-    <div class="max-w-lg">
-      <div
-        class="mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-3xl font-bold text-transparent md:text-5xl"
-      >
-        See it in Action
-      </div>
-      <div
-        class="mt-8 flex flex-col place-content-center content-center gap-6 lg:flex-row"
-      >
-        <div class="hidden md:block">
-          <a href="https://criticalmoments.io" target="_blank" class="link">
-            <div class="mockup-browser border">
-              <div class="mockup-browser-toolbar">
-                <div class="input" style="background:#eee;">
-                  https://criticalmoments.io
-                </div>
-              </div>
-              <div class="flex justify-center">
-                <img
-                  alt="Screenshot of criticalmoments.io homepage"
-                  class="aspect-[2044/1242]"
-                  src="/images/example-home.png"
-                />
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="md:hidden">
-          <a href="https://criticalmoments.io" target="_blank" class="link">
-            <div class="card overflow-hidden border shadow-xl">
-              <img
-                alt="Screenshot of criticalmoments.io homepage"
-                class="aspect-[2044/1242]"
-                src="/images/example-home.png"
-              />
-            </div></a
-          >
-        </div>
-        <div class="mt-6 flex min-w-[270px] lg:mt-0 lg:min-w-[420px]">
-          <div class="my-auto">
-            <div class="px-4 text-lg md:text-xl">
-              <a href="https://criticalmoments.io" class="" target="_blank"
-                >SaaS Starter was created by <span
-                  class="whitespace-nowrap font-bold">Critical Moments</span
-                >: a SDK to to help mobile apps
-                <span class="underline decoration-secondary decoration-[3px]"
-                  >increase conversion rates and app-ratings.</span
-                ></a
-              >
-            </div>
-            <div class="mt-6 px-4 text-lg md:text-xl">
-              Our <a
-                href="https://criticalmoments.io"
-                class="link font-bold"
-                target="_blank">webpage</a
-              > is the best example of SaaS Starter with style and real content.
-            </div>
-            <div class="text-large mt-4">
-              <a href="https://criticalmoments.io" target="_blank">
-                <button class="btn btn-primary btn-wide mt-3"
-                  >See it in Action</button
-                >
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

@@ -43,6 +43,8 @@
     "@supabase/auth-ui-svelte": "^0.2.2",
     "@supabase/supabase-js": "^2.33.0",
     "clsx": "^2.1.0",
+    "lucide-svelte": "^0.363.0",
+    "mode-watcher": "^0.3.0",
     "stripe": "^13.3.0",
     "tailwind-merge": "^2.2.2",
     "tailwind-variants": "^0.2.1"
