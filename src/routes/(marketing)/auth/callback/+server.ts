@@ -9,7 +9,6 @@ export const GET = async ({ url, locals: { supabase } }) => {
 		} catch (error) {
 			// If you open in another browser, need to redirect to login.
 			// Should not display error
-
 			if (isAuthApiError(error)) {
 				console.error("Error auth api error: ", error);
 				throw redirect(303, "/login/sign_in?verified=true");
