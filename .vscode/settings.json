@@ -1,5 +1,9 @@
 {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "svelte.svelte-vscode",
-    "eslint.validate": ["javascript", "javascriptreact", "svelte"]
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "svelte.svelte-vscode",
+	"eslint.validate": ["javascript", "javascriptreact", "svelte"],
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"typescript.tsdk": "node_modules/typescript/lib"
 }

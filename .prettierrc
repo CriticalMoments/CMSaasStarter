@@ -4,9 +4,9 @@
     "prettier-plugin-tailwindcss",
     "prettier-plugin-tailwindcss"
   ],
-  "useTabs": false,
-  "tabWidth": 2,
-  "semi": false,
+  "useTabs": true,
+  "tabWidth": 4,
+  "semi": true,
   "overrides": [
     {
       "files": "*.svelte",

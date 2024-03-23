@@ -1,1 +1,1 @@
-export const WebsiteName: string = "FeedHack"
+export const WebsiteName: string = "FeedHack";

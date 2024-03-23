@@ -1,44 +1,44 @@
-import { redirect, error } from "@sveltejs/kit"
+import { redirect, error } from "@sveltejs/kit";
 import {
-  getOrCreateCustomerId,
-  fetchSubscription,
-} from "../../subscription_helpers.server"
-import type { PageServerLoad } from "./$types"
+	getOrCreateCustomerId,
+	fetchSubscription,
+} from "../../subscription_helpers.server";
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({
-  locals: { getSession, supabaseServiceRole },
+	locals: { getSession, supabaseServiceRole },
 }) => {
-  const session = await getSession()
-  if (!session) {
-    throw redirect(303, "/login")
-  }
+	const session = await getSession();
+	if (!session) {
+		throw redirect(303, "/login");
+	}
 
-  const { error: idError, customerId } = await getOrCreateCustomerId({
-    supabaseServiceRole,
-    session,
-  })
-  if (idError || !customerId) {
-    throw error(500, {
-      message: "Unknown error. If issue persists, please contact us.",
-    })
-  }
+	const { error: idError, customerId } = await getOrCreateCustomerId({
+		supabaseServiceRole,
+		session,
+	});
+	if (idError || !customerId) {
+		throw error(500, {
+			message: "Unknown error. If issue persists, please contact us.",
+		});
+	}
 
-  const {
-    primarySubscription,
-    hasEverHadSubscription,
-    error: fetchErr,
-  } = await fetchSubscription({
-    customerId,
-  })
-  if (fetchErr) {
-    throw error(500, {
-      message: "Unknown error. If issue persists, please contact us.",
-    })
-  }
+	const {
+		primarySubscription,
+		hasEverHadSubscription,
+		error: fetchErr,
+	} = await fetchSubscription({
+		customerId,
+	});
+	if (fetchErr) {
+		throw error(500, {
+			message: "Unknown error. If issue persists, please contact us.",
+		});
+	}
 
-  return {
-    isActiveCustomer: !!primarySubscription,
-    hasEverHadSubscription,
-    currentPlanId: primarySubscription?.appSubscription?.id,
-  }
-}
+	return {
+		isActiveCustomer: !!primarySubscription,
+		hasEverHadSubscription,
+		currentPlanId: primarySubscription?.appSubscription?.id,
+	};
+};
