@@ -29,7 +29,7 @@
 			.signInWithOAuth({
 				provider: "google",
 				options: {
-					redirectTo: `http://localhost:5173/auth/callback`,
+					redirectTo: `${data.url}/auth/callback`,
 					queryParams: {
 						access_type: "offline",
 						prompt: "consent",
@@ -73,7 +73,7 @@
 	on:click={handleSignIn}
 	>New Google Signin
 </Button>
-<!-- <Auth
+<Auth
 	supabaseClient={data.supabase}
 	view="sign_in"
 	redirectTo={`${data.url}/auth/callback`}
@@ -82,8 +82,9 @@
 	showLinks={false}
 	appearance={sharedAppearance}
 	additionalData={undefined}
-/> -->
+/>
 <div class="text-l mt-3 text-slate-800">
 	Don't have an account? <a class="underline" href="/login/sign_up">Sign up</a
 	>.
 </div>
+<!-- redirectTo={`https://jsnmvywebfzrolwnzyax.supabase.co/auth/v1/callback`} -->
