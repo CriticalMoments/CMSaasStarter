@@ -37,8 +37,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/auth-helpers-sveltekit": "^0.10.2",
 		"@supabase/auth-ui-svelte": "^0.2.2",
+		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.33.0",
 		"stripe": "^13.3.0"
 	}
