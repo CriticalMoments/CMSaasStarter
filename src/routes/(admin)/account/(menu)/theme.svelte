@@ -10,7 +10,11 @@
       ? "dark"
       : "default"
     document.querySelector("html")?.setAttribute("data-theme", theme)
-    document.cookie = `theme=${theme}; expires=Thu, 1 Dec 2050 12:00:00 UTC`
+    if (theme !== "default") {
+      localStorage.setItem("ui_theme", theme)
+    } else {
+      localStorage.removeItem("ui_theme")
+    }
   }
 </script>
 

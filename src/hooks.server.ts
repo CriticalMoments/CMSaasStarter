@@ -7,9 +7,8 @@ import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
 import { createSupabaseServerClient } from "@supabase/auth-helpers-sveltekit"
 import { createClient } from "@supabase/supabase-js"
 import type { Handle } from "@sveltejs/kit"
-import { sequence } from "@sveltejs/kit/hooks"
 
-const setSession: Handle = async ({ event, resolve }) => {
+export const handle: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createSupabaseServerClient({
     supabaseUrl: PUBLIC_SUPABASE_URL,
     supabaseKey: PUBLIC_SUPABASE_ANON_KEY,
@@ -17,9 +16,9 @@ const setSession: Handle = async ({ event, resolve }) => {
   })
 
   event.locals.supabaseServiceRole = createClient(
-    PUBLIC_SUPABASE_URL,
-    PRIVATE_SUPABASE_SERVICE_ROLE,
-    { auth: { persistSession: false } },
+      PUBLIC_SUPABASE_URL,
+      PRIVATE_SUPABASE_SERVICE_ROLE,
+      { auth: { persistSession: false } },
   )
 
   /**
@@ -38,18 +37,3 @@ const setSession: Handle = async ({ event, resolve }) => {
     },
   })
 }
-
-const insertTheme: Handle = async ({ event, resolve }) => {
-  const theme = event.cookies.get("theme")
-
-  return await resolve(event, {
-    transformPageChunk: ({ html }) => {
-      if (theme) {
-        html = html.replace('data-theme="default"', `data-theme="${theme}"`)
-      }
-      return html
-    },
-  })
-}
-
-export const handle = sequence(setSession, insertTheme)
