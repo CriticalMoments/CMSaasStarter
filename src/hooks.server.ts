@@ -16,9 +16,9 @@ export const handle: Handle = async ({ event, resolve }) => {
   })
 
   event.locals.supabaseServiceRole = createClient(
-      PUBLIC_SUPABASE_URL,
-      PRIVATE_SUPABASE_SERVICE_ROLE,
-      { auth: { persistSession: false } },
+    PUBLIC_SUPABASE_URL,
+    PRIVATE_SUPABASE_SERVICE_ROLE,
+    { auth: { persistSession: false } },
   )
 
   /**
