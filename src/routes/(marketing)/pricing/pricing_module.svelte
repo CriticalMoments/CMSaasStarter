@@ -88,6 +88,13 @@
               >
                 Current Plan
               </div>
+            {:else if plan.id === "one_time_payment"}
+              <a
+                href={plan?.stripe_price_id ?? "free_plan"}
+                class="btn btn-primary w-[80%] mx-auto"
+              >
+                {callToAction}
+              </a>
             {:else}
               <a
                 href={"/account/subscribe/" +

@@ -51,7 +51,7 @@ export const pricingPlans = [
       "Pay once, use as long as you want. Get all features and updates",
     price: "$49.99",
     priceIntervalName: "",
-    stripe_price_id: "price_1P8wTPALVblCyqc111ukuDWM",
+    stripe_price_id: "https://buy.stripe.com/00gdS40BV7mk49yfZ3",
     stripe_product_id: "prod_PyuHZfz4igLeV2",
     features: [
       "✔️ Create unlimited coloring pages",
