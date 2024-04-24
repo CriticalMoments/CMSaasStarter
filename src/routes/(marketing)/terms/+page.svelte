@@ -8,8 +8,7 @@
 </svelte:head>
 
 <div class="prose-lg max-w-screen-sm mx-auto pt-12">
-  <h1 class="text-center">Terms &amp; Conditions</h1>
-  <p class="text-center -mt-8">Last updated: April 24, 2024</p>
+  <h1 class="text-2xl lg:text-4xl font-bold mb-4">Terms &amp; Conditions 📜</h1>
   <p>
     Welcome to PalettePlay.art, a product by Wasyl Mowczan (we, us, our, the
     Company). By accessing or using PalettePlay.art, you agree to be bound by
