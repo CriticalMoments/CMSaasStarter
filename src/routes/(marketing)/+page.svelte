@@ -202,12 +202,12 @@
             <div class="mockup-browser border">
               <div class="mockup-browser-toolbar">
                 <div class="input" style="background:#eee;">
-                  https://palleteplay.art
+                  https://paletteplay.art
                 </div>
               </div>
               <div class="flex justify-center">
                 <img
-                  alt="Screenshot of palleteplay homepage"
+                  alt="Screenshot of PalettePlay homepage"
                   class="aspect-[2044/1242]"
                   src="/images/example-home.png"
                 />

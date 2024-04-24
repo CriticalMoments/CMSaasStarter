@@ -1,1 +1,1 @@
-export const WebsiteName: string = "PalletePlay.art"
+export const WebsiteName: string = "PalettePlay.art"

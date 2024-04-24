@@ -5,7 +5,7 @@
 <!-- HEADER -->
 <div class="navbar bg-base-100 container mx-auto">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl" href="/">Pallet Play 🎉</a>
+    <a class="btn btn-ghost normal-case text-xl" href="/">Palette Play 🎉</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1 hidden sm:flex font-bold text-lg">
