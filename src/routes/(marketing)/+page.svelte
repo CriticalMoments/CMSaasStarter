@@ -130,11 +130,11 @@
         > -->
         <span> that can be printed in just a few seconds</span>
       </div>
+      <br />
       <button class="btn">
         Over
         <div class="badge badge-secondary">10,000 pages created!</div>
       </button>
-
       <!-- <div class="stats shadow">
         <div class="stat">
           <div class="stat-title">Overs</div>
@@ -142,8 +142,9 @@
           <div class="stat-desc">pages created!</div>
         </div>
       </div> -->
-
-      <div class="mt-6 md:mt-10 text-sm md:text-lg">
+      <br />
+      <br />
+      <!-- <div class="mt-6 md:mt-10 text-sm md:text-lg"> TODO: add free collections her
         Explore free collections <a
           href="https://kit.svelte.dev"
           class="link font-bold"
@@ -166,7 +167,7 @@
           class="link font-bold"
           target="_blank">Postgres</a
         >
-      </div>
+      </div> -->
       <div class="mt-6 md:mt-2">
         <a href="/login/sign_up">
           <button class="btn btn-primary btn-sm px-6"
