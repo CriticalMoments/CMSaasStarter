@@ -73,7 +73,7 @@
           Plan Includes:
           <ul class="list-disc list-inside mt-2 space-y-1">
             {#each plan.features as feature}
-              <li class="">{feature}</li>
+              <div class="">{feature}</div>
             {/each}
             <ul></ul>
           </ul>
@@ -104,53 +104,47 @@
   {/each}
 </div>
 
+<!-- Pricing FAQ -->
 <h1 class="text-2xl font-bold text-center mt-24">Pricing FAQ</h1>
 <div class="flex place-content-center">
   <div class="join join-vertical max-w-xl py-6 mx-auto">
     <div class="collapse collapse-arrow join-item border border-primary">
       <input type="radio" name="faq-accordion" />
       <div class="collapse-title text-lg font-medium">
-        Is this template free to use?
-      </div>
-      <div class="collapse-content">
-        <p>Yup! This template is free to use for any project.</p>
-      </div>
-    </div>
-    <div class="collapse collapse-arrow join-item border border-primary">
-      <input type="radio" name="faq-accordion" />
-      <div class="collapse-title text-lg font-medium">
-        Why does a free template have a pricing page?
+        Can I download my pages multiple times?
       </div>
       <div class="collapse-content">
         <p>
-          The pricing page is part of the boilerplate. It shows how the pricing
-          page integrates into the billing portal and the Stripe Checkout flows.
+          Yup! You can now download all your previous pages as many times as you
+          want.
         </p>
       </div>
     </div>
     <div class="collapse collapse-arrow join-item border border-primary">
       <input type="radio" name="faq-accordion" />
       <div class="collapse-title text-lg font-medium">
-        What license is the template under?
+        Are the coloring sheets suitable for all age groups?
       </div>
       <div class="collapse-content">
-        <p>The template is under the MIT license.</p>
+        <p>
+          Yes, our platform caters to users of all ages, from young children to
+          adults. Whether you're looking for simple designs for preschoolers or
+          intricate patterns for older kids and adults, our platform offers a
+          wide range of options to suit every age group and skill level.
+        </p>
       </div>
     </div>
     <div class="collapse collapse-arrow join-item border border-primary">
       <input type="radio" name="faq-accordion" />
       <div class="collapse-title text-lg font-medium">
-        Can I try out purchase flows without real a credit card?
+        What prompt can I use to engage kids with your coloring sheets?
       </div>
       <div class="collapse-content">
         <p>
-          Our demo page <a href="https://saasstarter.work" class="link"
-            >SaasStarter.work</a
-          > has a functional demo page, using Stripe's test environment.
-        </p>
-        <p class="mt-4">
-          You can use the credit card number 4242 4242 4242 4242 with any future
-          expiry date to test the payment and upgrade flows.
+          Engage kids in a world of imagination and creativity with our colorful
+          prompts! Here are some topics that kids love: Favorite Characters,
+          Animals and Nature, Fantasy and Magic, Dinosaurs and Monsters, Space
+          and Beyond.
         </p>
       </div>
     </div>
@@ -184,7 +178,8 @@
   </defs>
 </svg>
 
-<h1 class="text-2xl font-bold text-center mt-16">Plan Features</h1>
+<!-- TODO Add price/features comparing table -->
+<!-- <h1 class="text-2xl font-bold text-center mt-16">Plan Features</h1>
 <h2 class="text-xl text-center text-slate-500 mt-1 pb-3">
   Example feature table
 </h2>
@@ -252,4 +247,4 @@
       {/each}
     </tbody>
   </table>
-</div>
+</div> -->

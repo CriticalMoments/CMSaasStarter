@@ -70,19 +70,25 @@
     class="max-w-[400px] lg:max-w-[500px] flex flex-col place-content-center p-4 lg:mr-8 lg:mb-8 lg:min-h-[70vh]"
   >
     <div class="px-6">
-      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contact Us</h1>
-      <p class="text-lg">Talk to one of our service professionals to:</p>
+      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Get in Touch 🧸</h1>
+      <p class="text-lg"></p>
       <ul class="list-disc list-outside pl-6 py-4 space-y-1">
-        <li class="">Get a live demo</li>
-        <li class="">Discuss your specific needs</li>
-        <li>Get a quote</li>
-        <li>Answer any technical questions you have</li>
+        <li class="">
+          🐦 <b>Twitter</b> - If you've got a short question or message (280
+          characters), please tweet <b>@wasylmowczan</b> and I'll get back to you
+          as soon as I can.
+        </li>
+        <li class="">
+          📨 <b>Email</b> - If it's a longer thing, or you don't want it to be a
+          public tweet, please email me (<b>mowczanwasyl@gmail.com</b>). I read
+          100% of emails but may take longer for me to answer them.
+        </li>
+        <li>
+          Contact form here 👉 <br />
+        </li>
+        <br />
+        Once you complete the form, I'll reach out to you!
       </ul>
-      <p>Once you complete the form, we'll reach out to you! *</p>
-      <p class="text-sm pt-8">
-        *Not really for this demo page, but you should say something like that
-        😉
-      </p>
     </div>
   </div>
 
