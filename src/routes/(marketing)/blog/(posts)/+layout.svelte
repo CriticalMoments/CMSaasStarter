@@ -15,7 +15,7 @@
     }
   }
   if (!currentPost) {
-    throw error(404, "Blog post not found")
+    error(404, "Blog post not found")
   }
 
   const pageTitle = currentPost?.title ? currentPost.title : "Not Found"

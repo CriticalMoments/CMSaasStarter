@@ -76,6 +76,24 @@ export interface Database {
           },
         ]
       }
+      stripe_customers: {
+        Row: {
+          user_id: string | null
+          updated_at: Date | null
+          stripe_customer_id: string | null
+        }
+        Insert: {
+          user_id?: string | null
+          updated_at?: Date | null
+          stripe_customer_id?: string | null
+        }
+        Update: {
+          user_id?: string | null
+          updated_at?: Date | null
+          stripe_customer_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

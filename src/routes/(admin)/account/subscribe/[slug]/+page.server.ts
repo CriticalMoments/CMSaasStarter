@@ -15,12 +15,12 @@ export const load: PageServerLoad = async ({
 }) => {
   const session = await getSession()
   if (!session) {
-    throw redirect(303, "/login")
+    redirect(303, "/login")
   }
 
   if (params.slug === "free_plan") {
     // plan with no stripe_price_id. Redirect to account home
-    throw redirect(303, "/account")
+    redirect(303, "/account")
   }
 
   const { error: idError, customerId } = await getOrCreateCustomerId({
@@ -28,7 +28,7 @@ export const load: PageServerLoad = async ({
     session,
   })
   if (idError || !customerId) {
-    throw error(500, {
+    error(500, {
       message: "Unknown error. If issue persists, please contact us.",
     })
   }
@@ -38,7 +38,7 @@ export const load: PageServerLoad = async ({
   })
   if (primarySubscription) {
     // User already has plan, we shouldn't let them buy another
-    throw redirect(303, "/account/billing")
+    redirect(303, "/account/billing")
   }
 
   let checkoutUrl
@@ -57,11 +57,8 @@ export const load: PageServerLoad = async ({
     })
     checkoutUrl = stripeSession.url
   } catch (e) {
-    throw error(
-      500,
-      "Unknown Error (SSE): If issue persists please contact us.",
-    )
+    error(500, "Unknown Error (SSE): If issue persists please contact us.")
   }
 
-  throw redirect(303, checkoutUrl ?? "/pricing")
+  redirect(303, checkoutUrl ?? "/pricing")
 }

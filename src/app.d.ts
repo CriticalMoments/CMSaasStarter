@@ -14,7 +14,15 @@ declare global {
       session: Session | null
     }
     // interface Error {}
-    // interface Platform {}
+    interface Platform {
+      env: {
+        COUNTER: DurableObjectNamespace
+      }
+      context: {
+        waitUntil(promise: Promise<unknown>): void
+      }
+      caches: CacheStorage & { default: Cache }
+    }
   }
 }
 

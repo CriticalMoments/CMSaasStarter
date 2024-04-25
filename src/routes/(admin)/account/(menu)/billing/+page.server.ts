@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({
 }) => {
   const session = await getSession()
   if (!session) {
-    throw redirect(303, "/login")
+    redirect(303, "/login")
   }
 
   const { error: idError, customerId } = await getOrCreateCustomerId({
@@ -18,7 +18,7 @@ export const load: PageServerLoad = async ({
     session,
   })
   if (idError || !customerId) {
-    throw error(500, {
+    error(500, {
       message: "Unknown error. If issue persists, please contact us.",
     })
   }
@@ -31,7 +31,7 @@ export const load: PageServerLoad = async ({
     customerId,
   })
   if (fetchErr) {
-    throw error(500, {
+    error(500, {
       message: "Unknown error. If issue persists, please contact us.",
     })
   }
