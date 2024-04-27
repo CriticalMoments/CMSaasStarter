@@ -12,7 +12,7 @@
 <h1 class="text-2xl font-bold mb-6">Sign Up</h1>
 <Auth
   supabaseClient={data.supabase}
-  view="sign_up"
+  view="magic_link"
   redirectTo={`${data.url}/auth/callback`}
   showLinks={false}
   providers={oauthProviders}

@@ -10,7 +10,7 @@
 
   onMount(() => {
     supabase.auth.onAuthStateChange((event) => {
-      // Redirect to account after sucessful login
+      // Redirect to account after successful login
       if (event == "SIGNED_IN") {
         // Delay needed because order of callback not guaranteed.
         // Give the layout callback priority to update state or
@@ -47,7 +47,7 @@
 <h1 class="text-2xl font-bold mb-6">Sign In</h1>
 <Auth
   supabaseClient={data.supabase}
-  view="sign_in"
+  view="magic_link"
   redirectTo={`${data.url}/auth/callback`}
   providers={oauthProviders}
   socialLayout="horizontal"
