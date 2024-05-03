@@ -15,20 +15,17 @@
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("home")
 
-  function downloadImage(imageUrl: string) {
-    // Create a dummy anchor element
-    var anchor = document.createElement("a")
-    anchor.style.display = "none"
-    anchor.href = data.imagesIds.anchor.download = "downloaded_image.jpg"
+  async function downloadImage(imageSrc: string, imageName: string) {
+    const image = await fetch(imageSrc)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
 
-    // Append the anchor to the body
-    document.body.appendChild(anchor)
-
-    // Trigger the click event
-    anchor.click()
-
-    // Remove the anchor from the body
-    document.body.removeChild(anchor)
+    const link = document.createElement("a")
+    link.href = imageURL
+    link.download = imageName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 </script>
 
@@ -38,7 +35,7 @@
 
 <h1 class="text-2xl font-bold mb-1">Create new coloring page</h1>
 
-<div class="grow w-full flex items-center justify-cente">
+<div class="grow w-full flex items-center justify-left">
   <form
     class="bg-neutral-100 shadow-md p-8"
     method="POST"
@@ -60,7 +57,7 @@
       {:else}
         <button
           class="bg-neutral-400 text-white font-bold py-2 px-4 rounded"
-          disabled={true}>Loading...</button
+          disabled={isLoading}>Loading...</button
         >
       {/if}
     </div>
@@ -77,20 +74,23 @@
 <div
   class="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4"
 >
-  {#each data.imagesIds as id}
+  {#each data.images as image}
     <!-- Repeat this div for each photo -->
     <div class="relative group">
       <div class="relative">
         <img
-          src={constructImageUrl(id.id)}
-          alt={constructImageUrl(id.id)}
+          src={constructImageUrl(image.id)}
+          alt={constructImageUrl(image.id)}
           class="w:auto sm:auto h-auto rounded-lg"
         />
         <div class="absolute top-0 right-0 p-2">
           <button
             class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
             on:click={() =>
-              downloadImage(constructImageUrl(id.id) + "?download=true")}
+              downloadImage(
+                constructImageUrl(image.id) + "?download=true",
+                image.prompt,
+              )}
           >
             Download
           </button>

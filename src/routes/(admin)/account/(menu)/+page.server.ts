@@ -13,12 +13,12 @@ export const load: PageServerLoad = async ({
   }
 
   // get all image ids
-  let { data: imagesIds } = await supabase
+  let { data: images } = await supabase
     .from("images")
-    .select("id")
+    .select("id, prompt")
     .eq("owner_id", session.user.id)
     .order("created_at", { ascending: false })
-  return { imagesIds }
+  return { images }
 }
 
 export const actions = {
