@@ -1,26 +1,35 @@
 <script lang="ts">
   import { getContext, onMount } from "svelte"
-  import { writable, type Writable } from "svelte/store"
   import { enhance } from "$app/forms"
+  import type { Writable } from "svelte/store"
+  import { PUBLIC_SUPABASE_URL } from "$env/static/public"
   export let data
+
+  function constructImageUrl(imageId: string): string {
+    const profile = data.profile
+    const baseUrl = `${PUBLIC_SUPABASE_URL}/storage/v1/object/public/pages/${profile?.id}/`
+    return `${baseUrl}${imageId}`
+  }
 
   let isLoading = false
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("home")
 
-  // Fetch images from server endpoint
-  async function fetchImages() {
-    const response = await fetch("/api/getImages")
-    const { images } = await response.json()
-    return images
-  }
+  function downloadImage(imageUrl: string) {
+    // Create a dummy anchor element
+    var anchor = document.createElement("a")
+    anchor.style.display = "none"
+    anchor.href = data.imagesIds.anchor.download = "downloaded_image.jpg"
 
-  // Store to hold image URLs
-  const images = writable([])
-  onMount(async () => {
-    const fetchedImages = await fetchImages()
-    images.set(fetchedImages)
-  })
+    // Append the anchor to the body
+    document.body.appendChild(anchor)
+
+    // Trigger the click event
+    anchor.click()
+
+    // Remove the anchor from the body
+    document.body.removeChild(anchor)
+  }
 </script>
 
 <svelte:head>
@@ -64,7 +73,30 @@
   View all your previously created images here. Click on any image to download
   it.
 </p>
-
-<div>
-  <div></div>
+<br />
+<div
+  class="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4"
+>
+  {#each data.imagesIds as id}
+    <!-- Repeat this div for each photo -->
+    <div class="relative group">
+      <div class="relative">
+        <img
+          src={constructImageUrl(id.id)}
+          alt={constructImageUrl(id.id)}
+          class="w:auto sm:auto h-auto rounded-lg"
+        />
+        <div class="absolute top-0 right-0 p-2">
+          <button
+            class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
+            on:click={() =>
+              downloadImage(constructImageUrl(id.id) + "?download=true")}
+          >
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End of repeated div -->
+  {/each}
 </div>

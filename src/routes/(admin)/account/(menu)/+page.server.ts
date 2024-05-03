@@ -1,5 +1,25 @@
 import { redirect } from "@sveltejs/kit"
 import { STABILITY_API_KEY } from "$env/static/private"
+import type { PageServerLoad } from "./$types"
+
+export const load: PageServerLoad = async ({
+  locals: { getSession, supabase },
+}: {
+  locals: { getSession: () => Promise<any>; supabase: any }
+}) => {
+  const session = await getSession()
+  if (!session) {
+    throw redirect(303, "/login")
+  }
+
+  // get all image ids
+  let { data: imagesIds } = await supabase
+    .from("images")
+    .select("id")
+    .eq("owner_id", session.user.id)
+    .order("created_at", { ascending: false })
+  return { imagesIds }
+}
 
 export const actions = {
   signout: async ({ locals: { supabase, getSession } }) => {
@@ -76,6 +96,7 @@ export const actions = {
           {
             owner_id: profile.data?.[0]?.id,
             prompt: prompt,
+            id: imageId,
           },
         ])
         .select()
@@ -83,6 +104,4 @@ export const actions = {
       return { error: error }
     }
   },
-
-  // get all images of the user
 }
