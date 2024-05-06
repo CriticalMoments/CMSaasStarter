@@ -27,6 +27,9 @@
     link.click()
     document.body.removeChild(link)
   }
+
+  let imageNumber: number = data.images.length
+
 </script>
 
 <svelte:head>
@@ -34,34 +37,51 @@
 </svelte:head>
 
 <h1 class="text-2xl font-bold mb-1">Create new coloring page</h1>
-
-<div class="grow w-full flex items-center justify-left">
-  <form
-    class="bg-neutral-100 shadow-md p-8"
-    method="POST"
-    action="?/new"
-    use:enhance={() => {
-      isLoading = true
-    }}
+<div class="flex w-full">
+  <div
+    class="grid flex-grow card rounded-box place-items-center bg-neutral-100 shadow-md"
   >
-    <label for="prompt" class="block font-extralight tracking-wide px-2 py-1"
-      >Enter Your Prompt Here:</label
+    <form
+      class="p-8"
+      method="POST"
+      action="?/new"
+      use:enhance={() => {
+        isLoading = true
+        imageNumber += 1
+      }}
     >
-    <textarea name="prompt" class="w-[500px] h-[100px] px-2 py-1" />
-    <div class="w-full flex justify-center mt-4">
-      {#if !isLoading}
-        <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          type="submit">Generate</button
-        >
-      {:else}
-        <button
-          class="bg-neutral-400 text-white font-bold py-2 px-4 rounded"
-          disabled={isLoading}>Loading...</button
-        >
-      {/if}
+      <label for="prompt" class="block font-extralight tracking-wide px-2 py-1"
+        >Enter Your Prompt Here:</label
+      >
+      <textarea name="prompt" class="w-[500px] h-[100px] px-2 py-1" />
+      <div class="w-full flex justify-center mt-4">
+        {#if !isLoading}
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            type="submit">Generate</button
+          >
+        {:else}
+          <button
+            class="bg-neutral-400 text-white font-bold py-2 px-4 rounded"
+            disabled={isLoading}>Loading...</button
+          >
+        {/if}
+      </div>
+    </form>
+  </div>
+  <div class="divider divider-horizontal"></div>
+
+  <div
+    class="grid flex-grow card rounded-box place-items-center bg-neutral-100 shadow-md"
+  >
+    <div class="stats shadow">
+      <div class="stat">
+        <div class="stat-title">Total Page Views</div>
+        <div class="stat-value">{imageNumber} / 3</div>
+        <div class="stat-desc">21% more than last month</div>
+      </div>
     </div>
-  </form>
+  </div>
 </div>
 
 <hr class="border-t-2 border-gray-300 my-6" />

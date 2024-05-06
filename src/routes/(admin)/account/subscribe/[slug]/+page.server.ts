@@ -56,6 +56,18 @@ export const load: PageServerLoad = async ({
       cancel_url: `${url.origin}/account/billing`,
     })
     checkoutUrl = stripeSession.url
+    try {
+      await supabaseServiceRole
+        .from("profiles")
+        .insert([
+          {
+            plan: params.slug,
+          },
+        ])
+        .select()
+    } catch (error) {
+      return { error: error }
+    }
   } catch (e) {
     throw error(
       500,
