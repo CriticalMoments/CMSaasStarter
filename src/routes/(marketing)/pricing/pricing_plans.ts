@@ -29,29 +29,29 @@ export const pricingPlans = [
       "✔️ Personal use",
     ],
   },
-  {
-    id: "enterprise",
-    name: "Enterprise 👨",
-    description:
-      "Best for those looking to sell their creations. Get all features and updates.",
-    price: "$15",
-    priceIntervalName: "per month",
-    stripe_price_id: "price_1P8cQ8ALVblCyqc1AdjpXBpe",
-    stripe_product_id: "prod_PyZZxow2JZbP8i",
-    features: [
-      "✔️ Create unlimited coloring pages",
-      "✔️ Early access to new models & features",
-      "✔️ Commercial use",
-    ],
-  },
+  // {
+  //   id: "enterprise",
+  //   name: "Enterprise 👨",
+  //   description:
+  //     "Best for those looking to sell their creations. Get all features and updates.",
+  //   price: "$15",
+  //   priceIntervalName: "per month",
+  //   stripe_price_id: "price_1P8cQ8ALVblCyqc1AdjpXBpe",
+  //   stripe_product_id: "prod_PyZZxow2JZbP8i",
+  //   features: [
+  //     "✔️ Create unlimited coloring pages",
+  //     "✔️ Early access to new models & features",
+  //     "✔️ Commercial use",
+  //   ],
+  // },
   {
     id: "one_time_payment",
-    name: "One Time Payment 👨",
+    name: "Support me - donate 👨",
     description:
       "Pay once, use as long as you want. Get all features and updates",
-    price: "$49.99",
+    price: "$0-1000",
     priceIntervalName: "",
-    stripe_price_id: "https://buy.stripe.com/00gdS40BV7mk49yfZ3",
+    stripe_price_id: "https://donate.stripe.com/8wM01ebgzayw49yeV0",
     stripe_product_id: "prod_PyuHZfz4igLeV2",
     features: [
       "✔️ Create unlimited coloring pages",
