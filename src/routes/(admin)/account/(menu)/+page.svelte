@@ -29,7 +29,6 @@
   }
 
   let imageNumber: number = data.images.length
-
 </script>
 
 <svelte:head>
