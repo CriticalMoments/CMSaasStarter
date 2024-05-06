@@ -11,7 +11,7 @@ const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 export const load: PageServerLoad = async ({
   params,
   url,
-  locals: { getSession, supabaseServiceRole, supabase },
+  locals: { getSession, supabaseServiceRole },
 }) => {
   const session = await getSession()
   if (!session) {
@@ -56,24 +56,14 @@ export const load: PageServerLoad = async ({
       cancel_url: `${url.origin}/account/billing`,
     })
     checkoutUrl = stripeSession.url
-    try {
-      await supabase
-        .from("profiles")
-        .insert([
-          {
-            plan: params.slug,
-          },
-        ])
-        .select()
-    } catch (error) {
-      return { error: error }
-    }
   } catch (e) {
     throw error(
       500,
       "Unknown Error (SSE): If issue persists please contact us.",
     )
   }
+
+  
 
   throw redirect(303, checkoutUrl ?? "/pricing")
 }

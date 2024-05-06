@@ -16,5 +16,7 @@ export const load: LayoutServerLoad = async ({
     .eq("id", session.user.id)
     .single()
 
+
+  
   return { session, profile }
 }
