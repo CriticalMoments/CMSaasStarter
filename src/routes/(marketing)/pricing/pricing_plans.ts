@@ -29,21 +29,21 @@ export const pricingPlans = [
       "✔️ Personal use",
     ],
   },
-  // {
-  //   id: "enterprise",
-  //   name: "Enterprise 👨",
-  //   description:
-  //     "Best for those looking to sell their creations. Get all features and updates.",
-  //   price: "$15",
-  //   priceIntervalName: "per month",
-  //   stripe_price_id: "price_1P8cQ8ALVblCyqc1AdjpXBpe",
-  //   stripe_product_id: "prod_PyZZxow2JZbP8i",
-  //   features: [
-  //     "✔️ Create unlimited coloring pages",
-  //     "✔️ Early access to new models & features",
-  //     "✔️ Commercial use",
-  //   ],
-  // },
+  {
+    id: "enterprise",
+    name: "Enterprise 👨",
+    description:
+      "Best for those looking to sell their creations. Get all features and updates.",
+    price: "$15",
+    priceIntervalName: "per month",
+    stripe_price_id: "price_1P8cQ8ALVblCyqc1AdjpXBpe",
+    stripe_product_id: "prod_PyZZxow2JZbP8i",
+    features: [
+      "✔️ Create unlimited coloring pages",
+      "✔️ Early access to new models & features",
+      "✔️ Commercial use",
+    ],
+  },
   {
     id: "one_time_payment",
     name: "Support me - donate 👨",
@@ -56,7 +56,7 @@ export const pricingPlans = [
     features: [
       "✔️ Create unlimited coloring pages",
       "✔️ Early access to new models & features",
-      "✔️ Commercial use",
+      "✔️ Personal use",
     ],
   },
 ]
