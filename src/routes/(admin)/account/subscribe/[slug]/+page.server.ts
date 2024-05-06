@@ -11,7 +11,7 @@ const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 export const load: PageServerLoad = async ({
   params,
   url,
-  locals: { getSession, supabaseServiceRole },
+  locals: { getSession, supabaseServiceRole, supabase },
 }) => {
   const session = await getSession()
   if (!session) {
@@ -57,7 +57,7 @@ export const load: PageServerLoad = async ({
     })
     checkoutUrl = stripeSession.url
     try {
-      await supabaseServiceRole
+      await supabase
         .from("profiles")
         .insert([
           {
