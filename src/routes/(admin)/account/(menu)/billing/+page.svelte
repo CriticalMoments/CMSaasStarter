@@ -29,7 +29,7 @@
 
 {#if !data.isActiveCustomer}
   <div class="mt-12">
-    <PricingModule {currentPlanId} callToAction="Select Plan" center={false} />
+    <PricingModule {currentPlanId} callToAction="Select" center={false} />
   </div>
 
   {#if data.hasEverHadSubscription}
