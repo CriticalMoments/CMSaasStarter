@@ -70,7 +70,7 @@
           {plan.description}
         </p>
         <div class="mt-auto pt-4 text-sm text-gray-600">
-          Plan Includes:
+          Inside:
           <ul class="list-disc list-inside mt-2 space-y-1">
             {#each plan.features as feature}
               <div class="">{feature}</div>

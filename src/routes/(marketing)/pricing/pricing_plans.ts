@@ -48,15 +48,11 @@ export const pricingPlans = [
     id: "one_time_payment",
     name: "Support me - donate 👨",
     description:
-      "Pay once, use as long as you want. Get all features and updates",
+      "Support the development of this project with a one-time payment.",
     price: "$0-1000",
     priceIntervalName: "",
     stripe_price_id: "https://donate.stripe.com/8wM01ebgzayw49yeV0",
     stripe_product_id: "prod_PyuHZfz4igLeV2",
-    features: [
-      "✔️ Create unlimited coloring pages",
-      "✔️ Early access to new models & features",
-      "✔️ Personal use",
-    ],
+    features: ["✔️ Limitless satisfaction that you helped a developer 🤗"],
   },
 ]
