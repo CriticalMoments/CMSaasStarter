@@ -88,4 +88,17 @@
       <a class="link link-hover my-1" href="/login/sign_in">Log In</a>
     </nav>
   </footer>
+  <footer
+    class="footer items-center justify-center p-4 bg-neutral text-neutral-content"
+  >
+    <aside class="items-center grid-flow-col">
+      <p>
+        Made with ❤️ by <a
+          class="link"
+          target="_blank"
+          href="https://twitter.com/WasylMowczan">Wasyl Mowczan</a
+        >
+      </p>
+    </aside>
+  </footer>
 </div>
