@@ -36,6 +36,16 @@ export const load: PageServerLoad = async ({
     })
   }
 
+  const { error: insertError } = await supabaseServiceRole
+    .from("stripe_customers")
+    .insert({
+      plan: primarySubscription?.appSubscription?.id,
+    })
+
+  if (insertError) {
+    return { error: insertError }
+  }
+
   return {
     isActiveCustomer: !!primarySubscription,
     hasEverHadSubscription,
