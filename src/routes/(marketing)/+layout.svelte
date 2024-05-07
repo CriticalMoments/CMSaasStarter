@@ -74,7 +74,7 @@
       <!-- <span class="footer-title opacity-80">Explore</span> -->
       <!-- <a class="link link-hover my-1" href="/pricing">Pricing</a> -->
       <!-- <a class="link link-hover my-1" href="/blog">Blog</a> -->
-      <a class="link link-hover my-1" href="/contact_us">Contact Us</a>
+      <a class="link link-hover my-1" href="/contact_us">Contact Me</a>
       <a class="link link-hover mb-1" href="/terms">Terms & Conditions</a>
       <!--TODO Add Terms & Conditions page and content-->
       <!-- <a
