@@ -29,6 +29,9 @@
   }
 
   let imageNumber: number = data.images.length
+  let totalImageNumber = 100
+  // calculate the percentage of the total image number
+  let percentage = (imageNumber / totalImageNumber) * 100
 </script>
 
 <svelte:head>
@@ -75,9 +78,9 @@
   >
     <div class="stats shadow">
       <div class="stat">
-        <div class="stat-title">Total Page Views</div>
-        <div class="stat-value">{imageNumber} / 3</div>
-        <div class="stat-desc">21% more than last month</div>
+        <div class="stat-title">Page Generated</div>
+        <div class="stat-value">{imageNumber} / {totalImageNumber}</div>
+        <div class="stat-desc">{percentage} % license used</div>
       </div>
     </div>
   </div>
