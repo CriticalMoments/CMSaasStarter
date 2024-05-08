@@ -30,7 +30,7 @@
 
   // STATS WIDGET
   let imageNumber: number = data.images.length
-  let totalImageNumberFree = 100
+  let totalImageNumberFree = 10
   let totalImageNumberPro = 1000
   // calculate the percentage of the total image number
   let percentageFree = (imageNumber / totalImageNumberFree) * 100
@@ -61,7 +61,8 @@
         imageNumber = data.images.length
         setTimeout(() => {
           isLoading = false
-        }, 20000)
+          location.reload() // refresh the page
+        }, 10000)
       }}
     >
       {#if isLoading}

@@ -33,6 +33,7 @@ export const load: PageServerLoad = async ({
     .select("id, prompt")
     .eq("owner_id", session.user.id)
     .order("created_at", { ascending: false })
+
   return { images, license }
 }
 

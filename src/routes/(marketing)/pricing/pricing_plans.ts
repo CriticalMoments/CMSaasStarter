@@ -9,7 +9,7 @@ export const pricingPlans = [
     priceIntervalName: "per month",
     stripe_price_id: null,
     features: [
-      "✔️ Create 100 pages for free",
+      "✔️ Create 10 pages for free",
       "✔️ Personal use",
       "✔️ Upgrade anytime",
     ],
@@ -53,6 +53,6 @@ export const pricingPlans = [
     priceIntervalName: "",
     stripe_price_id: "https://donate.stripe.com/8wM01ebgzayw49yeV0",
     stripe_product_id: "prod_PyuHZfz4igLeV2",
-    features: ["✔️ Limitless satisfaction that you helped a developer 🤗"],
+    features: ["✔️ Unlimited satisfaction that you helped a developer 🤗"],
   },
 ]
