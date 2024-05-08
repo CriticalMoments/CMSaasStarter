@@ -108,7 +108,7 @@
 <!-- 1 section Header-->
 <div class="hero min-h-[60vh]">
   <div class="hero-content text-center py-12">
-    <div class="max-w-xl">
+    <div class="max-w-3xl">
       <div class="md:text-3xl">👶 ➕ 🎨 🟰 🥳</div>
 
       <div
