@@ -12,6 +12,7 @@
   }
 
   let isLoading = false
+  let inActive = false
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("home")
 
@@ -32,6 +33,12 @@
   let totalImageNumber = 100
   // calculate the percentage of the total image number
   let percentage = (imageNumber / totalImageNumber) * 100
+  // i want to make sure the percentage is not more than 100
+  percentage = percentage > 100 ? 100 : percentage
+  // i want to make sure the percentage is not less than 0
+  percentage = percentage < 0 ? 0 : percentage
+  // round the percentage to the nearest whole number
+  percentage = Math.round(percentage)
 </script>
 
 <svelte:head>
@@ -50,10 +57,19 @@
       use:enhance={() => {
         isLoading = true
         imageNumber += 1
+        imageNumber = data.images.length
+        setTimeout(() => {
+          isLoading = false
+        }, 20000)
       }}
     >
-      <label for="prompt" class="block font-extralight tracking-wide px-2 py-1"
-        >Enter Your Prompt Here:</label
+      {#if isLoading}
+        <div class="flex justify-center">
+          <div class="loader"></div>
+        </div>
+      {/if}
+      <label for="prompt" class="block tracking-wide px-2 py-1"
+        >Enter Your Prompt Here: 👇</label
       >
       <textarea name="prompt" class="w-[500px] h-[100px] px-2 py-1" />
       <div class="w-full flex justify-center mt-4">
@@ -80,7 +96,7 @@
       <div class="stat">
         <div class="stat-title">Page Generated</div>
         <div class="stat-value">{imageNumber} / {totalImageNumber}</div>
-        <div class="stat-desc">{percentage} % license used</div>
+        <div class="stat-desc">{percentage} % of license used</div>
       </div>
     </div>
   </div>
