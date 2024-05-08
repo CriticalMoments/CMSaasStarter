@@ -12,7 +12,6 @@
   }
 
   let isLoading = false
-  let inActive = false
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("home")
 
@@ -29,16 +28,18 @@
     document.body.removeChild(link)
   }
 
+  // STATS WIDGET
   let imageNumber: number = data.images.length
-  let totalImageNumber = 100
+  let totalImageNumberFree = 100
+  let totalImageNumberPro = 1000
   // calculate the percentage of the total image number
-  let percentage = (imageNumber / totalImageNumber) * 100
+  let percentageFree = (imageNumber / totalImageNumberFree) * 100
+  let percentagePro = (imageNumber / totalImageNumberPro) * 100
   // i want to make sure the percentage is not more than 100
-  percentage = percentage > 100 ? 100 : percentage
-  // i want to make sure the percentage is not less than 0
-  percentage = percentage < 0 ? 0 : percentage
-  // round the percentage to the nearest whole number
-  percentage = Math.round(percentage)
+  let percentage = data.license === "pro" ? percentagePro : percentageFree
+  // round to 2 decimal places
+  percentage = Math.round(percentage * 100) / 100
+  // STATS WIDGET
 </script>
 
 <svelte:head>
@@ -95,8 +96,14 @@
     <div class="stats shadow">
       <div class="stat">
         <div class="stat-title">Page Generated</div>
-        <div class="stat-value">{imageNumber} / {totalImageNumber}</div>
-        <div class="stat-desc">{percentage} % of license used</div>
+        <div class="stat-value">
+          {imageNumber} / {data.license === "pro"
+            ? totalImageNumberPro
+            : totalImageNumberFree}
+        </div>
+        <div class="stat-desc justify-center">
+          {percentage} % of license used
+        </div>
       </div>
     </div>
   </div>

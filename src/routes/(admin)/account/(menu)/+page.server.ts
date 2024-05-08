@@ -1,6 +1,10 @@
 import { redirect } from "@sveltejs/kit"
 import { STABILITY_API_KEY } from "$env/static/private"
 import type { PageServerLoad } from "./$types"
+import {
+  fetchSubscription,
+  getOrCreateCustomerId,
+} from "../subscription_helpers.server"
 
 export const load: PageServerLoad = async ({
   locals: { getSession, supabase },
@@ -12,13 +16,24 @@ export const load: PageServerLoad = async ({
     throw redirect(303, "/login")
   }
 
+  let { data: stripe_customer_id } = await supabase
+    .from("stripe_customers")
+    .select("stripe_customer_id")
+    .eq("user_id", session.user.id)
+
+  const { primarySubscription } = await fetchSubscription({
+    customerId: stripe_customer_id,
+  })
+
+  const license = primarySubscription?.appSubscription.id
+
   // get all image ids
   let { data: images } = await supabase
     .from("images")
     .select("id, prompt")
     .eq("owner_id", session.user.id)
     .order("created_at", { ascending: false })
-  return { images }
+  return { images, license }
 }
 
 export const actions = {
