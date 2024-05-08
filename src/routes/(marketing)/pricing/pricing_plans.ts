@@ -14,21 +14,21 @@ export const pricingPlans = [
       "✔️ Upgrade anytime",
     ],
   },
-  // {
-  //   id: "pro",
-  //   name: "Artist 👦",
-  //   description:
-  //     "Higher limits and access to all ways of creating coloring pages.",
-  //   price: "$5",
-  //   priceIntervalName: "per month",
-  //   stripe_price_id: "price_1P8cOpALVblCyqc1uulETqyI",
-  //   stripe_product_id: "prod_PyZXEGPULiuFxD",
-  //   features: [
-  //     "✔️ Create up to 1000 pages/month",
-  //     "✔️ Early access to new models & features",
-  //     "✔️ Personal use",
-  //   ],
-  // },
+  {
+    id: "pro",
+    name: "Artist 👦",
+    description:
+      "Higher limits and access to all ways of creating coloring pages.",
+    price: "$5",
+    priceIntervalName: "per month",
+    stripe_price_id: "price_1P8cOpALVblCyqc1uulETqyI",
+    stripe_product_id: "prod_PyZXEGPULiuFxD",
+    features: [
+      "✔️ Create up to 1000 pages/month",
+      "✔️ Early access to new models & features",
+      "✔️ Personal use",
+    ],
+  },
   // {
   //   id: "enterprise",
   //   name: "Enterprise 👨",
