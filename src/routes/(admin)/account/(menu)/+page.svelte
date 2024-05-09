@@ -11,6 +11,12 @@
     return `${baseUrl}${imageId}`
   }
 
+  let fallback = "images/broken_photo.png"
+  let image = ""
+
+  const handleError = (ev: { target: { src: string } }) =>
+    (ev.target.src = fallback)
+
   let isLoading = false
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("home")
@@ -146,6 +152,7 @@
             ;`images/broken_photo.png`
           }}
           alt={"Sorry! Image not available at this time"}
+          on:error={handleError}
         />
         <div class="absolute top-0 right-0 p-2">
           <button
