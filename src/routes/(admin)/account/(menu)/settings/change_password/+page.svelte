@@ -8,27 +8,25 @@
   adminSection.set("settings")
 
   export let data
-  let { session, supabase } = data
+  let { user, supabase } = data
 
   // True if definitely has a password, but can be false if they
   // logged in with oAuth or email link
 
   // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-  let hasPassword = session?.user?.amr?.find((x) => x.method === "password")
+  let hasPassword = user?.amr?.find((x) => x.method === "password")
     ? true
     : false
 
   // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-  let usingOAuth = session?.user?.amr?.find((x) => x.method === "oauth")
-    ? true
-    : false
+  let usingOAuth = user?.amr?.find((x) => x.method === "oauth") ? true : false
 
   let sendBtn: HTMLButtonElement
   let sentEmail = false
   let sendForgotPassword = () => {
     sendBtn.disabled = true
     sendBtn.textContent = "Sending..."
-    let email = session?.user.email
+    let email = user?.email
     if (email) {
       supabase.auth
         .resetPasswordForEmail(email, {
@@ -91,8 +89,8 @@
         <div class="font-bold">Change Password By Email</div>
       {/if}
       <div>
-        The button below will send you an email at {session?.user?.email} which will
-        allow you to set your password.
+        The button below will send you an email at {user?.email} which will allow
+        you to set your password.
       </div>
       <button
         class="btn btn-outline btn-wide {sentEmail ? 'hidden' : ''}"

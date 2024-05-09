@@ -2,9 +2,9 @@ import { redirect } from "@sveltejs/kit"
 import type { LayoutServerLoad } from "./$types"
 
 export const load: LayoutServerLoad = async ({
-  locals: { supabase, getSession },
+  locals: { supabase, safeGetSession },
 }) => {
-  const session = await getSession()
+  const { session, user } = await safeGetSession()
 
   if (!session) {
     throw redirect(303, "/login")
@@ -13,7 +13,7 @@ export const load: LayoutServerLoad = async ({
   const { data: profile } = await supabase
     .from("profiles")
     .select(`*`)
-    .eq("id", session.user.id)
+    .eq("id", user.id)
     .single()
 
   return { session, profile }

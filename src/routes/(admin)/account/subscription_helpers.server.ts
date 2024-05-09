@@ -1,22 +1,22 @@
-import type { SupabaseClient, Session } from "@supabase/supabase-js"
+import type { SupabaseClient, User } from "@supabase/supabase-js"
 import type { Database } from "../../../DatabaseDefinitions"
 
-import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
 import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
 import Stripe from "stripe"
+import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
 const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 
 export const getOrCreateCustomerId = async ({
   supabaseServiceRole,
-  session,
+  user,
 }: {
   supabaseServiceRole: SupabaseClient<Database>
-  session: Session
+  user: User
 }) => {
   const { data: dbCustomer, error } = await supabaseServiceRole
     .from("stripe_customers")
     .select("stripe_customer_id")
-    .eq("user_id", session.user.id)
+    .eq("user_id", user.id)
     .single()
 
   if (error && error.code != "PGRST116") {
@@ -32,7 +32,7 @@ export const getOrCreateCustomerId = async ({
   const { data: profile, error: profileError } = await supabaseServiceRole
     .from("profiles")
     .select(`full_name, website, company_name`)
-    .eq("id", session.user.id)
+    .eq("id", user.id)
     .single()
   if (profileError) {
     return { error: profileError }
@@ -42,10 +42,10 @@ export const getOrCreateCustomerId = async ({
   let customer
   try {
     customer = await stripe.customers.create({
-      email: session.user.email,
+      email: user.email,
       name: profile.full_name ?? "",
       metadata: {
-        user_id: session.user.id,
+        user_id: user.id,
         company_name: profile.company_name ?? "",
         website: profile.website ?? "",
       },
@@ -62,7 +62,7 @@ export const getOrCreateCustomerId = async ({
   const { error: insertError } = await supabaseServiceRole
     .from("stripe_customers")
     .insert({
-      user_id: session.user.id,
+      user_id: user.id,
       stripe_customer_id: customer.id,
       updated_at: new Date(),
     })
