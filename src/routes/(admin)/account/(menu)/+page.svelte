@@ -141,7 +141,7 @@
       <div class="relative">
         <img
           src={constructImageUrl(image.id)}
-          alt={constructImageUrl(image.id)}
+          alt={`static/broken_photo.png`}
           class="w:auto sm:auto h-auto rounded-lg"
         />
         <div class="absolute top-0 right-0 p-2">
