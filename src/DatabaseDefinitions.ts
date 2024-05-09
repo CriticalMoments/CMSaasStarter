@@ -78,19 +78,16 @@ export interface Database {
       }
       stripe_customers: {
         Row: {
-          id: string
           stripe_customer_id: string
           updated_at: Date | null
           user_id: string
         }
         Insert: {
-          id?: string
           stripe_customer_id: string
           updated_at?: Date | null
           user_id: string
         }
         Update: {
-          id?: string
           stripe_customer_id?: string
           updated_at?: Date | null
           user_id?: string
