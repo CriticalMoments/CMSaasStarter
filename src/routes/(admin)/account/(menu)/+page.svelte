@@ -144,36 +144,20 @@
           class="w:auto sm:auto h-auto rounded-lg"
           alt={"Sorry! Image not available at this time"}
         />
-        <div class="relative group">
-          {#if image.isBroken}
-            <div class="w-auto h-auto rounded-lg">
-              <p>{image.alt}</p>
-            </div>
-          {:else}
-            <div class="relative">
-              <img
-                src={constructImageUrl(image.id)}
-                class="w:auto sm:auto h-auto rounded-lg"
-                alt={"Sorry! Image not available at this time"}
-              />
-              <div class="absolute top-0 right-0 p-2">
-                <button
-                  class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
-                  on:click={() =>
-                    downloadImage(
-                      constructImageUrl(image.id) + "?download=true",
-                      image.prompt,
-                    )}
-                >
-                  Download
-                </button>
-              </div>
-            </div>
-          {/if}
+        <div class="absolute top-0 right-0 p-2">
+          <button
+            class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
+            on:click={() =>
+              downloadImage(
+                constructImageUrl(image.id) + "?download=true",
+                image.prompt,
+              )}
+          >
+            Download
+          </button>
         </div>
       </div>
     </div>
-    <!-- Remove the closing </div> tag -->
     <!-- End of repeated div -->
   {/each}
 </div>
