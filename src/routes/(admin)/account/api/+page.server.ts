@@ -1,8 +1,8 @@
 import { fail, redirect } from "@sveltejs/kit"
 
 export const actions = {
-  updateEmail: async ({ request, locals: { supabase, getSession } }) => {
-    const session = await getSession()
+  updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
+    const { session } = await safeGetSession()
     if (!session) {
       throw redirect(303, "/login")
     }
@@ -43,8 +43,8 @@ export const actions = {
       email,
     }
   },
-  updatePassword: async ({ request, locals: { supabase, getSession } }) => {
-    const session = await getSession()
+  updatePassword: async ({ request, locals: { supabase, safeGetSession } }) => {
+    const { session } = await safeGetSession()
     if (!session) {
       throw redirect(303, "/login")
     }
@@ -148,9 +148,9 @@ export const actions = {
   },
   deleteAccount: async ({
     request,
-    locals: { supabase, supabaseServiceRole, getSession },
+    locals: { supabase, supabaseServiceRole, safeGetSession },
   }) => {
-    const session = await getSession()
+    const { session } = await safeGetSession()
     if (!session) {
       throw redirect(303, "/login")
     }
@@ -191,8 +191,8 @@ export const actions = {
     await supabase.auth.signOut()
     throw redirect(303, "/")
   },
-  updateProfile: async ({ request, locals: { supabase, getSession } }) => {
-    const session = await getSession()
+  updateProfile: async ({ request, locals: { supabase, safeGetSession } }) => {
+    const { session } = await safeGetSession()
     if (!session) {
       throw redirect(303, "/login")
     }
@@ -261,8 +261,8 @@ export const actions = {
       website,
     }
   },
-  signout: async ({ locals: { supabase, getSession } }) => {
-    const session = await getSession()
+  signout: async ({ locals: { supabase, safeGetSession } }) => {
+    const { session } = await safeGetSession()
     if (session) {
       await supabase.auth.signOut()
       throw redirect(303, "/")
