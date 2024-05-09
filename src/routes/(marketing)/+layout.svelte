@@ -70,7 +70,7 @@
     class="footer p-10 gap-x-48 lg:gap-x-64 xl:gap-x-96 place-content-center text-base"
   >
     <nav>
-      <span class="footer-title opacity-80">Company</span>
+      <span class="footer-title opacity-80">Corpo Stuff</span>
       <!-- <span class="footer-title opacity-80">Explore</span> -->
       <!-- <a class="link link-hover my-1" href="/pricing">Pricing</a> -->
       <!-- <a class="link link-hover my-1" href="/blog">Blog</a> -->
