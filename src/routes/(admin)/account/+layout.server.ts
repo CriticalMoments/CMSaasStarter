@@ -16,5 +16,11 @@ export const load: LayoutServerLoad = async ({
     .eq("id", session.user.id)
     .single()
 
+  if (error) {
+    // the session could've been manipulated
+    await supabase.auth.signOut()
+    throw redirect(303, "/login?error=session")
+  }
+
   return { session, profile }
 }
