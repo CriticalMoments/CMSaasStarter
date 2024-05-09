@@ -6,9 +6,9 @@ import {
 import type { PageServerLoad } from "./$types"
 
 export const load: PageServerLoad = async ({
-  locals: { getSession, supabaseServiceRole },
+  locals: { safeGetSession, supabaseServiceRole },
 }) => {
-  const session = await getSession()
+  const { session } = await safeGetSession()
   if (!session) {
     throw redirect(303, "/login")
   }
