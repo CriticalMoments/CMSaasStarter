@@ -39,6 +39,8 @@
   let percentage = data.license === "pro" ? percentagePro : percentageFree
   // round to 2 decimal places
   percentage = Math.round(percentage * 100) / 100
+  // i want to make sure the percentage is not more than 100
+  percentage = percentage > 100 ? 100 : percentage
   // STATS WIDGET
 </script>
 
@@ -77,9 +79,22 @@
       <div class="w-full flex justify-center mt-4">
         {#if !isLoading}
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            type="submit">Generate</button
+            type="submit"
+            class={`bg-blue-500 text-white font-bold py-2 px-4 rounded ${(data.license === undefined && imageNumber <= totalImageNumberFree) || (data.license === "pro" && imageNumber <= totalImageNumberPro) ? "" : "bg-gray-400"}`}
+            disabled={(data.license === undefined &&
+              imageNumber >= totalImageNumberFree) ||
+              (data.license === "pro" && imageNumber >= totalImageNumberPro)}
           >
+            {#if data.license === undefined && imageNumber >= totalImageNumberFree}
+              <a href="/account/billing">Upgrade to generate more images</a>
+            {:else if data.license === "pro" && imageNumber >= totalImageNumberPro}
+              <a href="/account/billing"
+                >You have reached the maximum number of images for your license</a
+              >
+            {:else}
+              Generate
+            {/if}
+          </button>
         {:else}
           <button
             class="bg-neutral-400 text-white font-bold py-2 px-4 rounded"

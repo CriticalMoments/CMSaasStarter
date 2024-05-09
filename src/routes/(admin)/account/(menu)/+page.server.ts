@@ -16,13 +16,14 @@ export const load: PageServerLoad = async ({
     throw redirect(303, "/login")
   }
 
-  let { data: stripe_customer_id } = await supabase
+  const { data: stripe_customer_id } = await supabase
     .from("stripe_customers")
     .select("stripe_customer_id")
     .eq("user_id", session.user.id)
+    .single()
 
   const { primarySubscription } = await fetchSubscription({
-    customerId: stripe_customer_id,
+    customerId: stripe_customer_id.stripe_customer_id,
   })
 
   const license = primarySubscription?.appSubscription.id
