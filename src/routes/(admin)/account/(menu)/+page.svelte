@@ -144,7 +144,19 @@
           class="w:auto sm:auto h-auto rounded-lg"
           alt={"Sorry! Image not available at this time"}
         />
-        <div class="absolute top-0 right-0 p-2">
+        <div class="relative group">
+          {#if image.isBroken}
+            <div class="w-auto h-auto rounded-lg">
+              <p>{image.alt}</p>
+            </div>
+          {:else}
+            <div class="relative">
+              <img
+          src={constructImageUrl(image.id)}
+          class="w:auto sm:auto h-auto rounded-lg"
+          alt={"Sorry! Image not available at this time"}
+              />
+              <div class="absolute top-0 right-0 p-2">
           <button
             class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
             on:click={() =>
@@ -155,6 +167,10 @@
           >
             Download
           </button>
+              </div>
+            </div>
+          {/if}
+        </div>
         </div>
       </div>
     </div>
