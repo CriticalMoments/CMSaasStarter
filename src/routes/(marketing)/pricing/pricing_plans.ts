@@ -21,8 +21,8 @@ export const pricingPlans = [
       "Higher limits and access to all ways of creating coloring pages.",
     price: "$5",
     priceIntervalName: "per month",
-    stripe_price_id: "price_1P8cOpALVblCyqc1uulETqyI",
-    stripe_product_id: "prod_PyZXEGPULiuFxD",
+    stripe_price_id: "price_1PEyVnEAQD7sAy8kjpYVT0IS",
+    stripe_product_id: "prod_Q58nVOX7UK0gFX",
     features: [
       "✔️ Create up to 100 pages/month",
       "✔️ Early access to new models & features",
@@ -51,8 +51,8 @@ export const pricingPlans = [
       "Support the development of this project with a one-time payment.",
     price: "$0-1000",
     priceIntervalName: "",
-    stripe_price_id: "https://donate.stripe.com/8wM01ebgzayw49yeV0",
-    stripe_product_id: "prod_PyuHZfz4igLeV2",
+    stripe_price_id: "https://donate.stripe.com/6oEeUZcLLezga6A8ww",
+    stripe_product_id: "prod_Q58r6JxDPmJAG2",
     features: ["✔️ Unlimited satisfaction that you helped a developer 🤗"],
   },
 ]
