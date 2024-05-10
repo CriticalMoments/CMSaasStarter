@@ -47,19 +47,25 @@ export const handle: Handle = async ({ event, resolve }) => {
       data: { session },
     } = await event.locals.supabase.auth.getSession()
     if (!session) {
-      return { session: null, user: null }
+      return { session: null, user: null, amr: null }
     }
 
     const {
       data: { user },
-      error,
+      error: userError,
     } = await event.locals.supabase.auth.getUser()
-    if (error) {
+    if (userError) {
       // JWT validation has failed
-      return { session: null, user: null }
+      return { session: null, user: null, amr: null }
     }
 
-    return { session, user }
+    const { data: aal, error: amrError } =
+      await event.locals.supabase.auth.mfa.getAuthenticatorAssuranceLevel()
+    if (amrError) {
+      return { session, user, amr: null }
+    }
+
+    return { session, user, amr: aal.currentAuthenticationMethods }
   }
 
   return resolve(event, {

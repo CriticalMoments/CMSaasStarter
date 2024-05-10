@@ -45,6 +45,8 @@ export const load = async ({ fetch, data, depends, url }) => {
     data: { user },
   } = await supabase.auth.getUser()
 
+  const { data: aal } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel()
+
   const profile: Database["public"]["Tables"]["profiles"]["Row"] | null =
     data.profile
 
@@ -57,7 +59,13 @@ export const load = async ({ fetch, data, depends, url }) => {
     throw redirect(303, createProfilePath)
   }
 
-  return { supabase, session, profile, user }
+  return {
+    supabase,
+    session,
+    profile,
+    user,
+    amr: aal?.currentAuthenticationMethods,
+  }
 }
 
 export const _hasFullProfile = (

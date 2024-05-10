@@ -1,4 +1,4 @@
-import { Session, SupabaseClient } from "@supabase/supabase-js"
+import { Session, SupabaseClient, type AMREntry } from "@supabase/supabase-js"
 import { Database } from "./DatabaseDefinitions"
 
 // See https://kit.svelte.dev/docs/types#app
@@ -11,6 +11,7 @@ declare global {
       safeGetSession: () => Promise<{
         session: Session | null
         user: User | null
+        amr: AMREntry[] | null
       }>
     }
     interface PageData {

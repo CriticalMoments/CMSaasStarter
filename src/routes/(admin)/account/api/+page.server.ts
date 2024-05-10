@@ -44,7 +44,7 @@ export const actions = {
     }
   },
   updatePassword: async ({ request, locals: { supabase, safeGetSession } }) => {
-    const { session, user } = await safeGetSession()
+    const { session, user, amr } = await safeGetSession()
     if (!session) {
       throw redirect(303, "/login")
     }
@@ -56,8 +56,7 @@ export const actions = {
 
     // Can check if we're a "password recovery" session by checking session amr
     // let currentPassword take priority if provided (user can use either form)
-    // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-    const recoveryAmr = user?.amr?.find((x) => x.method === "recovery")
+    const recoveryAmr = amr?.find((x) => x.method === "recovery")
     const isRecoverySession = recoveryAmr && !currentPassword
 
     // if this is password recovery session, check timestamp of recovery session
@@ -151,7 +150,7 @@ export const actions = {
     locals: { supabase, supabaseServiceRole, safeGetSession },
   }) => {
     const { session, user } = await safeGetSession()
-    if (!session) {
+    if (!session || !user?.id) {
       throw redirect(303, "/login")
     }
 
@@ -193,7 +192,7 @@ export const actions = {
   },
   updateProfile: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session, user } = await safeGetSession()
-    if (!session) {
+    if (!session || !user?.id) {
       throw redirect(303, "/login")
     }
 
@@ -239,7 +238,7 @@ export const actions = {
     }
 
     const { error } = await supabase.from("profiles").upsert({
-      id: user?.id,
+      id: user.id,
       full_name: fullName,
       company_name: companyName,
       website: website,
