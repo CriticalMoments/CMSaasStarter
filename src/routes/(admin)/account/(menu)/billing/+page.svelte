@@ -23,12 +23,15 @@
   <title>Billing</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">
+<h1 class="text-2xl font-bold mb-2">
   {data.isActiveCustomer ? "Billing" : "Select a Plan"}
 </h1>
+<div>
+  View our <a href="/pricing" target="_blank" class="link">pricing page</a> for details.
+</div>
 
 {#if !data.isActiveCustomer}
-  <div class="mt-12">
+  <div class="mt-8">
     <PricingModule {currentPlanId} callToAction="Select Plan" center={false} />
   </div>
 
