@@ -1,10 +1,7 @@
 import { redirect } from "@sveltejs/kit"
 import { STABILITY_API_KEY } from "$env/static/private"
 import type { PageServerLoad } from "./$types"
-import {
-  fetchSubscription,
-  getOrCreateCustomerId,
-} from "../subscription_helpers.server"
+import { fetchSubscription } from "../subscription_helpers.server"
 
 export const load: PageServerLoad = async ({
   locals: { getSession, supabase },
