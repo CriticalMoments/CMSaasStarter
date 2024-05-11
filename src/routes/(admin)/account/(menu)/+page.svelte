@@ -63,7 +63,7 @@
         imageNumber = data.images.length
         setTimeout(() => {
           isLoading = false
-          location.reload() // refresh the page
+          location.reload() // here is the example of how to reload the page https://frontendmasters.com/courses/sveltekit/custom-use-enhance/
         }, 10000)
       }}
     >
