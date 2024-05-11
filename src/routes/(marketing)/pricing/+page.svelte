@@ -50,7 +50,7 @@
 
 <svelte:head>
   <title>Pricing</title>
-  <meta name="description" content="Pricing details for {WebsiteName}" />
+  <meta name="description" content="Pricing - {WebsiteName}" />
 </svelte:head>
 
 <div class="min-h-[70vh] pb-8 pt-[5vh] px-4">

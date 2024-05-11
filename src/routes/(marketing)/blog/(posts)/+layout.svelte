@@ -23,6 +23,17 @@
     ? currentPost.description
     : "Blog post"
   const pageUrl = $page.url.origin + $page.url.pathname
+
+  const ldJson = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: pageTitle,
+    datePublished: currentPost.parsedDate?.toISOString(),
+    dateModified: currentPost.parsedDate?.toISOString(),
+  }
+  const jsonldScript = `<script type="application/ld+json">${
+    JSON.stringify(ldJson) + "<"
+  }/script>`
 </script>
 
 <svelte:head>
@@ -43,6 +54,9 @@
   <meta name="twitter:description" content={pageDescription} />
   <!-- <meta name="twitter:site" content="@samplesite"> -->
   <!-- <meta name="twitter:image" content="https://samplesite.com/image.jpg"> -->
+
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html jsonldScript}
 </svelte:head>
 
 <article class="prose mx-auto py-12 px-6 font-sans">
