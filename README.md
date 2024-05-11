@@ -232,7 +232,7 @@ If you prefer another host you can explore alternatives:
 
 After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t have your content. The following checklist helps you customize the template to make a SaaS homepage for your company.
 
-- Set a name for your site in `src/config.ts:WebsiteName`
+- Describe your site with a name, description and base URL in in `src/config.ts:`. These values are used for SEO.
 - Content
   - Add actual content for marketing homepage
   - Add actual content for your blog (or delete the blog) 
@@ -241,7 +241,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Add any pages you want on top of our boiler plate (about, terms of service, etc). Be sure to add links to them in the header, mobile menu header, and footer as appropriate (`src/routes/(marketing)/+layout.svelte`).
   - Note: if you add any dynamic content to the main marketing page, pricing page or blog, be sure to set `prerender = false` in the appropriate `+page.ts` file. These are currently pre-rendered and served as static assets for performance reasons, but that will break if you add server side rendering requirements.
 - Update SEO content
-  - Update title and meta description tags for every public page. We include generic ones using your site name (`src/config.ts:WebsiteName`), but the more specific these are the better.
+  - Update title and meta description tags for every public page. We include generic ones using your site name (`src/config.ts`), but the more specific these are the better.
   - This done automatically for blog posts from `posts.ts` metadata
 - Style
   - Create a new DaisyUI Theme matching your brand or use one of the built in themes from DaisyUI (see `tailwind.config.js`)

@@ -1,5 +1,19 @@
 <script lang="ts">
-  import { WebsiteName } from "./../../config"
+  import {
+    WebsiteName,
+    WebsiteBaseUrl,
+    WebsiteDescription,
+  } from "./../../config"
+
+  const ldJson = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: WebsiteName,
+    url: WebsiteBaseUrl,
+  }
+  const jsonldScript = `<script type="application/ld+json">${
+    JSON.stringify(ldJson) + "<"
+  }/script>`
 
   const features = [
     {
@@ -179,7 +193,9 @@
 
 <svelte:head>
   <title>{WebsiteName}</title>
-  <meta name="description" content="{WebsiteName} Home Page" />
+  <meta name="description" content={WebsiteDescription} />
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html jsonldScript}
 </svelte:head>
 
 <div class="hero min-h-[60vh]">
