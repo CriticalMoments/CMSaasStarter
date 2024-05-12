@@ -11,8 +11,8 @@
 		"test": "vitest",
 		"test_run": "vitest run",
 		"lint": "eslint .",
-		"format": "prettier --write --plugin prettier-plugin-svelte ./src",
-		"format_check": "prettier --check --plugin prettier-plugin-svelte ./src"
+		"format": "prettier --write --plugin prettier-plugin-svelte ./",
+		"format_check": "prettier --check --plugin prettier-plugin-svelte ./"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
