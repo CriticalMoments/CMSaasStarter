@@ -1,12 +1,12 @@
 name: Build
 
-on: [push,pull_request]
+on: [push, pull_request]
 
 env:
-  PUBLIC_SUPABASE_URL: 'https://fake_test_url.supabase.co'
-  PUBLIC_SUPABASE_ANON_KEY: 'fake_anon_key'
-  PRIVATE_SUPABASE_SERVICE_ROLE: 'fake_service_role'
-  PRIVATE_STRIPE_API_KEY: 'fake_strip_api_key'
+  PUBLIC_SUPABASE_URL: "https://fake_test_url.supabase.co"
+  PUBLIC_SUPABASE_ANON_KEY: "fake_anon_key"
+  PRIVATE_SUPABASE_SERVICE_ROLE: "fake_service_role"
+  PRIVATE_STRIPE_API_KEY: "fake_strip_api_key"
 
 jobs:
   build_and_test:
@@ -19,5 +19,5 @@ jobs:
       - name: NPM install
         run: npm install
 
-      - name: SvelteKit Build 
-        run: npm run build 
+      - name: SvelteKit Build
+        run: npm run build

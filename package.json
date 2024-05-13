@@ -1,45 +1,45 @@
 {
-	"name": "cmsassstarter",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test": "vitest",
-		"test_run": "vitest run",
-		"lint": "eslint .",
-		"format": "prettier --write --plugin prettier-plugin-svelte ./src",
-		"format_check": "prettier --check --plugin prettier-plugin-svelte ./src"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.30.4",
-		"@tailwindcss/typography": "^0.5.10",
-		"@typescript-eslint/eslint-plugin": "^6.20.0",
-		"@typescript-eslint/parser": "^6.19.0",
-		"autoprefixer": "^10.4.15",
-		"daisyui": "^4.7.3",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.30.0",
-		"postcss": "^8.4.31",
-		"prettier": "^3.0.3",
-		"prettier-plugin-svelte": "^3.0.3",
-		"svelte": "^4.0.5",
-		"svelte-check": "^3.4.3",
-		"tailwindcss": "^3.4.1",
-		"typescript": "^5.0.0",
-		"vite": "^4.4.2",
-		"vitest": "^0.34.0"
-	},
-	"type": "module",
-	"dependencies": {
-		"@supabase/auth-ui-svelte": "^0.2.2",
-		"@supabase/ssr": "^0.3.0",
-		"@supabase/supabase-js": "^2.43.1",
-		"stripe": "^13.3.0"
-	}
+  "name": "cmsassstarter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "test": "vitest",
+    "test_run": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write --plugin prettier-plugin-svelte ./",
+    "format_check": "prettier --check --plugin prettier-plugin-svelte ./"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.30.4",
+    "@tailwindcss/typography": "^0.5.10",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "autoprefixer": "^10.4.15",
+    "daisyui": "^4.7.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.30.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "prettier-plugin-svelte": "^3.0.3",
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.2",
+    "vitest": "^0.34.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@supabase/auth-ui-svelte": "^0.2.2",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "^2.43.1",
+    "stripe": "^13.3.0"
+  }
 }
