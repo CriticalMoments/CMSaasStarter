@@ -76,6 +76,31 @@ export interface Database {
           },
         ]
       }
+      stripe_customers: {
+        Row: {
+          stripe_customer_id: string
+          updated_at: Date | null
+          user_id: string
+        }
+        Insert: {
+          stripe_customer_id: string
+          updated_at?: Date | null
+          user_id: string
+        }
+        Update: {
+          stripe_customer_id?: string
+          updated_at?: Date | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stripe_customers_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

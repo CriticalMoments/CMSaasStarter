@@ -4,16 +4,16 @@ import type { LayoutServerLoad } from "./$types"
 export const load: LayoutServerLoad = async ({
   locals: { supabase, safeGetSession },
 }) => {
-  const { session } = await safeGetSession()
+  const { session, user } = await safeGetSession()
 
-  if (!session) {
+  if (!session || !user?.id) {
     throw redirect(303, "/login")
   }
 
   const { data: profile } = await supabase
     .from("profiles")
     .select(`*`)
-    .eq("id", session.user.id)
+    .eq("id", user?.id)
     .single()
 
   return { session, profile }

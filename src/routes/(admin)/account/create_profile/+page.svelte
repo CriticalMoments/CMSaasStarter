@@ -1,12 +1,12 @@
 <script lang="ts">
-  import "../../../../app.css"
-  import { enhance, applyAction } from "$app/forms"
+  import { applyAction, enhance } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
+  import "../../../../app.css"
 
   export let data
   export let form: FormAccountUpdateResult
 
-  let { session, profile } = data
+  let { user, profile } = data
 
   let loading = false
   let fullName: string = profile?.full_name ?? ""
@@ -111,7 +111,7 @@
       </form>
 
       <div class="text-sm text-slate-800 mt-14">
-        You are logged in as {session?.user?.email}.
+        You are logged in as {user?.email}.
         <br />
         <a class="underline" href="/account/sign_out"> Sign out </a>
       </div>
