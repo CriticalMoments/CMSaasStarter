@@ -204,7 +204,7 @@
       <div
         class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-4 md:mb-8"
       >
-        SaaS Starter Demo
+        Snowball Stats
       </div>
 
       <div
@@ -214,53 +214,15 @@
         The
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >open source</span
-        >,
+          >affordable</span
+        >
+        <span
+          >stock portfolio</span
+        >
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >fast</span
-        >, and
-        <span
-          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >free to host</span
+          >analysis.</span
         >
-        <span> SaaS template</span>
-      </div>
-      <div class="mt-6 md:mt-10 text-sm md:text-lg">
-        Built with <a
-          href="https://kit.svelte.dev"
-          class="link font-bold"
-          target="_blank">SvelteKit</a
-        >,
-        <a href="https://supabase.com" class="link font-bold" target="_blank"
-          >Supabase</a
-        >,
-        <a href="https://stripe.com" class="link font-bold" target="_blank"
-          >Stripe</a
-        >,
-        <a href="https://tailwindcss.com" class="link font-bold" target="_blank"
-          >Tailwind</a
-        >,
-        <a href="https://daisyui.com" class="link font-bold" target="_blank"
-          >DaisyUI</a
-        >, and
-        <a
-          href="https://www.postgresql.org"
-          class="link font-bold"
-          target="_blank">Postgres</a
-        >
-      </div>
-      <div class="mt-6 md:mt-2">
-        <a href="https://github.com/CriticalMoments/CMSaasStarter">
-          <button class="btn btn-primary btn-sm px-6">★ us on Github</button>
-        </a>
-        <a
-          href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
-        >
-          <button class="btn btn-outline btn-primary btn-sm px-6 mt-3 mx-2"
-            >Read the Docs</button
-          >
-        </a>
       </div>
     </div>
   </div>
