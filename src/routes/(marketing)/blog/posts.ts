@@ -1,6 +1,6 @@
 export const blogInfo = {
-  name: "SaaS Starter Blog",
-  description: "A sample blog",
+  name: "Snow Stats Blog",
+  description: "A blog about this project, what its for, whos it for and my motavting factors.",
 }
 
 export type BlogPost = {
@@ -15,10 +15,10 @@ export type BlogPost = {
 // Create a page in the "(posts)" directory for each entry
 const blogPosts: BlogPost[] = [
   {
-    title: "How we built a beautiful 41kb SaaS website with this template",
-    description: "How to use this template you to bootstrap your own site.",
-    link: "/blog/how_we_built_our_41kb_saas_website",
-    date: "2024-03-10",
+    title: "The Plan.",
+    description: "Who am I? What the goal is?",
+    link: "/blog/the_plan",
+    date: "2024-05-15",
   },
   {
     title: "Example Blog Post 2",
