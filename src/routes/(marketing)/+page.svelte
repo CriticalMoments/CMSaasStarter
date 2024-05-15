@@ -102,7 +102,10 @@
 
 <svelte:head>
   <title>{WebsiteName}</title>
-  <meta name="description" content="{WebsiteName} Home Page" />
+  <meta
+    name="description"
+    content="{WebsiteName} is your go-to app for creating endless fun and creativity for children with customizable coloring pages. Whether you're a parent, teacher, or guardian, {WebsiteName} offers a unique and engaging platform for unleashing imagination and artistic expression in young minds."
+  />
 </svelte:head>
 
 <!-- 1 section Header-->
