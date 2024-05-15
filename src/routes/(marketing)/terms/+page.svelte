@@ -46,7 +46,7 @@
       <h3>Licensing</h3>
       <p>
         With the exception of the Artist plan, all images created with
-        ColorBliss.art are for personal, non-commercial use.
+        PalletPlay.art are for personal, non-commercial use.
       </p>
       <p>
         Personal, non-commercial use is defined as using the images for your
