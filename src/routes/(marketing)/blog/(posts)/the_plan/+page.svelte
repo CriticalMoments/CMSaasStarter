@@ -1,18 +1,18 @@
 <p class="lead">What this project is and why I am making it.</p>
 
 <p>
-  Well I am a computer sciece student from Belfast, currently studying at the University of Liverpool.
-  I have always been intrested in stocks and tradeing and always wondered why I cant see certain stats about my portfolio
-  specifcially; projected dividned income and projected compound growth ... hence the name "Snowball Stats."
-</p>
+  Well, I am a computer science student from Belfast, currently studying at the University of Liverpool. 
+  I have always been interested in stocks and trading and always wondered why I can't see certain stats 
+  about my portfolio specifically; projected dividend income and projected compound growth ... 
+  hence the name "Snowball Stats."
 
 <p> Goals:</p>
 
 <ul>
-  <li>I want it to be aforadable, as cheap as I can make it (stock data is expensive)</li>
-  <li>Be able to import portfolio from broker e.g. Trading 212 and it sync to when you buy/sell</li>
-  <li>Be usefull, provide acctual insight into long term growth</li>
-  <li>Be helpful, help users meet there fincacial goals and illistae the powerful effects of the "snowball"</li>
+  <li>I want it to be affordable, as cheap as I can make it (stock data is expensive)</li>
+  <li>Be able to import portfolio from broker e.g. Trading 212 and it syncs to when you buy/sell</li>
+  <li>Be useful, provide actual insight into long-term growth</li>
+  <li>Be helpful, help users meet their financial goals, and illustrate the powerful effects of the "snowball"</li>
 </ul>
 
 <a
