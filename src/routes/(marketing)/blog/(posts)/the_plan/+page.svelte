@@ -1,26 +1,27 @@
-<p class="lead">How to use this template you to bootstrap your own site.</p>
+<p class="lead">What this project is and why I am making it.</p>
 
 <p>
-  We've written a detailed blog post about how we took this template, and
-  created a real <a href="https://criticalmoments.io" target="_blank"
-    >SaaS company website</a
-  >. Topics include:
+  Well I am a computer sciece student from Belfast, currently studying at the University of Liverpool.
+  I have always been intrested in stocks and tradeing and always wondered why I cant see certain stats about my portfolio
+  specifcially; projected dividned income and projected compound growth ... hence the name "Snowball Stats."
 </p>
 
+<p> Goals:</p>
+
 <ul>
-  <li>Optimizing the stack for performance and developer productivity</li>
-  <li>Creating rich interactive animations with Svelte</li>
-  <li>Creating pixel perfect designs without rasterization</li>
-  <li>Speed measurements: how we kept it small and lightning fast</li>
+  <li>I want it to be aforadable, as cheap as I can make it (stock data is expensive)</li>
+  <li>Be able to import portfolio from broker e.g. Trading 212 and it sync to when you buy/sell</li>
+  <li>Be usefull, provide acctual insight into long term growth</li>
+  <li>Be helpful, help users meet there fincacial goals and illistae the powerful effects of the "snowball"</li>
 </ul>
 
 <a
-  href="https://criticalmoments.io/blog/how_we_built_our_marketing_page"
+  href="https://en.wikipedia.org/wiki/The_Snowball:_Warren_Buffett_and_the_Business_of_Life"
   target="_blank"
-  class="btn btn-primary">Read the Blog Post</a
+  class="btn btn-primary">What on eath is the snow ball?</a
 >
 
-<p>
+<!-- <p>
   The blog post is over on <a href="https://criticalmoments.io" target="_blank"
     >criticalmoments.io</a
   >, a page which uses this boilerplate as a starting point.
@@ -32,4 +33,4 @@
     href="/blog"
     class="link">here</a
   >.
-</p>
+</p> -->
