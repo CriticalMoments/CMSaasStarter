@@ -13,37 +13,42 @@
 
   const planFeatures: PlanFeatureRow[] = [
     {
-      name: "Section 1",
+      name: "Portfolio Analysis",
       header: true,
     },
     {
-      name: "Feature 1",
+      name: "Projected Annual Dividend Income figure",
       freeIncluded: true,
       proIncluded: true,
     },
     {
-      name: "Feature 2",
-      freeIncluded: false,
+      name: "P/E History",
+      freeIncluded: true,
       proIncluded: true,
     },
     {
-      name: "Feature 3",
-      freeString: "3",
+      name: "Stocks",
+      freeString: "1",
       proString: "Unlimited",
     },
     {
-      name: "Section 2",
+      name: "Playground",
       header: true,
     },
     {
-      name: "Feature 4",
+      name: "Plan Investements",
       freeIncluded: true,
       proIncluded: true,
     },
     {
-      name: "Feature 5",
+      name: "Custom Environment",
       freeIncluded: false,
       proIncluded: true,
+    },
+    {
+      name: "Stocks",
+      freeString: "1",
+      proString: "5",
     },
   ]
 </script>
@@ -67,48 +72,36 @@
         <div class="collapse collapse-arrow join-item border border-primary">
           <input type="radio" name="faq-accordion" />
           <div class="collapse-title text-lg font-medium">
-            Is this template free to use?
+            Why so much cheaper than other on market?
           </div>
           <div class="collapse-content">
-            <p>Yup! This template is free to use for any project.</p>
+            <p>Well, it's just me and this is not built for profit, I originally wanted
+              it to to be free however data is expensive.</p>
           </div>
         </div>
         <div class="collapse collapse-arrow join-item border border-primary">
           <input type="radio" name="faq-accordion" />
           <div class="collapse-title text-lg font-medium">
-            Why does a free template have a pricing page?
+            Will it sync when I buy/sell?
           </div>
           <div class="collapse-content">
             <p>
-              The pricing page is part of the boilerplate. It shows how the
-              pricing page integrates into the billing portal and the Stripe
-              Checkout flows.
+              Yes, if you choose to link with Trading 212's API it will automatically 
+              sync changes of your portfolio.
             </p>
           </div>
         </div>
         <div class="collapse collapse-arrow join-item border border-primary">
           <input type="radio" name="faq-accordion" />
           <div class="collapse-title text-lg font-medium">
-            What license is the template under?
-          </div>
-          <div class="collapse-content">
-            <p>The template is under the MIT license.</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border border-primary">
-          <input type="radio" name="faq-accordion" />
-          <div class="collapse-title text-lg font-medium">
-            Can I try out purchase flows without real a credit card?
+            Why "Snow Stats"?
           </div>
           <div class="collapse-content">
             <p>
-              Our demo page <a href="https://saasstarter.work" class="link"
-                >SaasStarter.work</a
-              > has a functional demo page, using Stripe's test environment.
-            </p>
-            <p class="mt-4">
-              You can use the credit card number 4242 4242 4242 4242 with any
-              future expiry date to test the payment and upgrade flows.
+              Well "snow" comes from Warren Buffets "Snowball" methodology.
+              Read about it <a href="/blog" class="link"
+              >here</a
+              > on our blog.
             </p>
           </div>
         </div>
@@ -144,7 +137,7 @@
 
     <h1 class="text-2xl font-bold text-center mt-16">Plan Features</h1>
     <h2 class="text-xl text-center text-slate-500 mt-1 pb-3">
-      Example feature table
+      What's included?
     </h2>
 
     <div class="overflow-visible mx-auto max-w-xl mt-4">
