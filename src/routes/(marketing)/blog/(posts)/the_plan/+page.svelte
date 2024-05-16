@@ -18,7 +18,7 @@
 <a
   href="https://en.wikipedia.org/wiki/The_Snowball:_Warren_Buffett_and_the_Business_of_Life"
   target="_blank"
-  class="btn btn-primary">What on eath is the snow ball?</a
+  class="btn btn-primary">What on earth is the "snowball"?</a
 >
 
 <!-- <p>
