@@ -13,7 +13,7 @@
     script.setAttribute("user_spend", "<Optional>")
     script.setAttribute(
       "onload",
-      "window.loadRoadmap('your-container-id-here')",
+      "window.loadVotingBoard('your-container-id-here')",
     )
     document.body.appendChild(script)
   })
