@@ -42,13 +42,13 @@
     },
     {
       name: "Custom Environment",
-      freeIncluded: false,
+      freeIncluded: true,
       proIncluded: true,
     },
     {
       name: "Stocks",
       freeString: "1",
-      proString: "5",
+      proString: "Unlimited",
     },
   ]
 </script>
