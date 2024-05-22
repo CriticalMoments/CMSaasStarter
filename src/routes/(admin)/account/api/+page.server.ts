@@ -4,7 +4,7 @@ export const actions = {
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (!session) {
-      throw redirect(303, "/login")
+      redirect(303, "/login")
     }
 
     const formData = await request.formData()
@@ -46,7 +46,7 @@ export const actions = {
   updatePassword: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (!session) {
-      throw redirect(303, "/login")
+      redirect(303, "/login")
     }
 
     const formData = await request.formData()
@@ -124,7 +124,7 @@ export const actions = {
       })
       if (error) {
         // The user was logged out because of bad password. Redirect to error page explaining.
-        throw redirect(303, "/login/current_password_error")
+        redirect(303, "/login/current_password_error")
       }
     }
 
@@ -152,7 +152,7 @@ export const actions = {
   }) => {
     const { session } = await safeGetSession()
     if (!session) {
-      throw redirect(303, "/login")
+      redirect(303, "/login")
     }
 
     const formData = await request.formData()
@@ -174,7 +174,7 @@ export const actions = {
     })
     if (pwError) {
       // The user was logged out because of bad password. Redirect to error page explaining.
-      throw redirect(303, "/login/current_password_error")
+      redirect(303, "/login/current_password_error")
     }
 
     const { error } = await supabaseServiceRole.auth.admin.deleteUser(
@@ -189,12 +189,12 @@ export const actions = {
     }
 
     await supabase.auth.signOut()
-    throw redirect(303, "/")
+    redirect(303, "/")
   },
   updateProfile: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (!session) {
-      throw redirect(303, "/login")
+      redirect(303, "/login")
     }
 
     const formData = await request.formData()
@@ -265,9 +265,9 @@ export const actions = {
     const { session } = await safeGetSession()
     if (session) {
       await supabase.auth.signOut()
-      throw redirect(303, "/")
+      redirect(303, "/")
     } else {
-      throw redirect(303, "/")
+      redirect(303, "/")
     }
   },
 }
