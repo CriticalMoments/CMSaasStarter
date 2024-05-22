@@ -13,7 +13,7 @@
       }
     }
     if (!searchPost) {
-      throw error(404, "Blog post not found")
+      error(404, "Blog post not found")
     }
     return searchPost
   }
