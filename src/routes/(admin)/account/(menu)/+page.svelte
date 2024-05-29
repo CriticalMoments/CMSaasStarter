@@ -1,9 +1,20 @@
 <script lang="ts">
-  import { getContext } from "svelte"
-  import type { Writable } from "svelte/store"
+  import { getContext } from "svelte";
+  import type { Writable } from "svelte/store";
+  import PricingModule from "../../../(marketing)/pricing/pricing_module.svelte";
+  import { pricingPlans, defaultPlanId } from "../../../(marketing)/pricing/pricing_plans";
 
-  let adminSection: Writable<string> = getContext("adminSection")
-  adminSection.set("home")
+  let adminSection: Writable<string> = getContext("adminSection");
+  adminSection.set("billing");
+
+  export let data;
+
+  let currentPlanId = data.currentPlanId ?? defaultPlanId;
+  let currentPlanName = pricingPlans.find(
+    (x) => x.id === data.currentPlanId
+  )?.name;
+  
+  console.log(currentPlanId, currentPlanName);
 </script>
 
 <svelte:head>

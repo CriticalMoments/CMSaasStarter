@@ -46,7 +46,7 @@
         <li>
           <a
             href="https://github.com/CriticalMoments/CMSaasStarter"
-            class="border border-primary">★ us on Github</a
+            class="border border-primary">TEST</a
           >
         </li>
       </ul>
