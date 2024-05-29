@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { pricingPlans, defaultPlanId } from "../../../(marketing)/pricing/pricing_plans";
-  import ProContents from './components/+proContents.svelte'; // Import the ProContents component
+  import ProContents from './components/proContents.svelte'; // Import the ProContents component
 
   let adminSection: Writable<string> = getContext("adminSection");
   adminSection.set("billing");
