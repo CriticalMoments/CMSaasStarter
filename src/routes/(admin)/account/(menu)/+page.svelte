@@ -13,6 +13,10 @@
   let currentPlanName = pricingPlans.find(
     (x) => x.id === data.currentPlanId
   )?.name;
+
+    // Variable to store the fetched external data
+    let externalData: any = null;
+
 </script>
 
 <svelte:head>
@@ -50,5 +54,5 @@
 </div> -->
 
 {#if currentPlanName === "Pro"}
-  <ProContents {data} />
+  <ProContents {externalData}/>
 {/if}

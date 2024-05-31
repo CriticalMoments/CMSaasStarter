@@ -1,6 +1,7 @@
 <script lang="ts">
-    export let data;
-  </script>
+  // Define the externalData export property
+  export let externalData: any;
+</script>
   
   <div class="my-6">
     <h1 class="text-xl font-bold mb-1">Users</h1>
@@ -50,4 +51,11 @@
       </div>
     </div>
   </div>
-  
+
+  <!-- Example usage of externalData -->
+{#if externalData}
+<div class="my-6">
+  <h1 class="text-xl font-bold mb-1">External Data</h1>
+  <pre>{JSON.stringify(externalData, null, 2)}</pre>
+</div>
+{/if}
