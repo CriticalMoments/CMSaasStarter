@@ -135,6 +135,8 @@ cp local_env_template .env.local
 npm run dev -- --open
 ```
 
+**Note:** some features won't work until you complete the rest of the setup steps below!
+
 ### Developer Environment
 
 The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). Github disables CI on forks by default, so if you fork this repo, be sure to go into the Github Actions page for your repo and enable workflows.
