@@ -1,13 +1,29 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
+  import type { SupabaseClient, Session } from "@supabase/supabase-js"; // Ensure these types are imported correctly
   import { pricingPlans, defaultPlanId } from "../../../(marketing)/pricing/pricing_plans";
   import ProContents from './components/proContents.svelte'; // Import the ProContents component
 
   let adminSection: Writable<string> = getContext("adminSection");
   adminSection.set("billing");
 
-  export let data;
+  // Explicitly define the type for `data`
+  export let data: {
+    supabase: SupabaseClient<any, "public", any>;
+    session: Session | null;
+    profile: {
+        avatar_url: string | null;
+        full_name: string | null;
+        id: string;
+        updated_at: string | null;
+        company_name: string | null;
+        website: string | null;
+    } | null;
+    isActiveCustomer: boolean;
+    hasEverHadSubscription: boolean | undefined;
+    currentPlanId: string | undefined;
+  };
 
   let currentPlanId = data.currentPlanId ?? defaultPlanId;
   let currentPlanName = pricingPlans.find(
