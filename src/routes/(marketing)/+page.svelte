@@ -209,11 +209,11 @@
                 </div>
               </div>
               <div class="flex justify-center">
-                <img
-                  alt="Screenshot of PalettePlay homepage"
-                  class="aspect-[2044/1242]"
-                  src="/images/example-home.png"
-                />
+                <video class="aspect-[1920/1080]">
+                  <source src="/video/Demo.mp4" type="video/mp4" />
+                  <track kind="captions" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </a>
