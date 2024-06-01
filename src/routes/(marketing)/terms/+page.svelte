@@ -17,24 +17,25 @@
         Terms &amp; Conditions 📜
       </h1>
       <p>
-        Welcome to PalettePlay.art, a product by Wasyl Mowczan (we, us, our, the
-        Company). By accessing or using PalettePlay.art, you agree to be bound
-        by the following terms:
+        Welcome to PalettePlay.art, a product by Wasyl Mowczan (referred to as
+        "we," "us," "our," or "the Company"). By using PalettePlay.art, you
+        agree to the following terms:
       </p>
       <h2>General Terms</h2>
       <p>
-        We're not liable for any indirect damages arising from your use or
-        inability to use our site. We may change prices and policies at any time
-        and will notify you of significant changes through email.
+        We are not liable for any indirect damages resulting from your use or
+        inability to use our site. We reserve the right to change prices and
+        policies at any time and will notify you of significant changes via
+        email.
       </p>
       <h3>User Accounts</h3>
       <p>
-        For some services, an account is required. Keep your account details
-        confidential. Providing false information may lead to account
+        Some services require an account. Keep your account details
+        confidential. Providing false information may result in account
         termination.
       </p>
       <p>
-        Abusing the platform by creating multiple free accounts may lead to
+        Abusing the platform by creating multiple free accounts may also lead to
         account termination.
       </p>
       <h3>Updates to Terms</h3>
@@ -49,17 +50,15 @@
         PalletPlay.art are for personal, non-commercial use.
       </p>
       <p>
-        Personal, non-commercial use is defined as using the images for your
-        enjoyment or educational purposes. You may not resell, distribute, or
-        sublicense these images.
+        Except for the Artist plan, all images created with PalettePlay.art are
+        for personal, non-commercial use. Personal, non-commercial use means
+        using the images for enjoyment or educational purposes. You may not
+        resell, distribute, or sublicense these images.
       </p>
       <p>
-        Commercial use is defined as using the images you create for profit or
-        financial gain.
-      </p>
-      <p>
-        Commercial use is granted for images created by accounts subscribed to
-        the "Enterprise" plan.
+        Commercial use, defined as using the images for profit or financial
+        gain, is only granted for images created by accounts subscribed to the
+        "Enterprise" plan.
       </p>
       <h3>User Responsibility and Indemnification</h3>
       <p>
@@ -67,9 +66,8 @@
         pages using images.
       </p>
       <p>
-        The Company shall not be liable for any use of these images created by
-        users, including but not limited to their use for personal or commercial
-        purposes.
+        We shall not be liable for any use of these images created by users,
+        including their use for personal or commercial purposes.
       </p>
       <p>
         Users are solely responsible for ensuring that their use of the images
@@ -92,7 +90,7 @@
       </p>
       <h2>Contact Information</h2>
       <p>
-        If you have questions about these terms, contact us via email at
+        If you have questions about these terms, please contact me via email at
         mowczanwasyl@gmail.com.
       </p>
     </div>

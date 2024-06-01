@@ -136,7 +136,7 @@
       <br />
       <button class="btn">
         Over
-        <div class="badge badge-secondary">+10,000 pages created!</div>
+        <div class="badge badge-secondary">10,000 pages created!</div>
       </button>
       <!-- <div class="stats shadow">
         <div class="stat">
