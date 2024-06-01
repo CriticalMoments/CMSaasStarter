@@ -76,7 +76,6 @@
       <a class="link link-hover my-1" href="/roadmap">Roadmap 📍</a>
       <a class="link link-hover my-1" href="/contact_us">Contact Me</a>
       <a class="link link-hover mb-1" href="/terms">Terms & Conditions</a>
-      <!--TODO Add Terms & Conditions page and content-->
       <!-- <a
         class="link link-hover my-1"
         href="https://github.com/CriticalMoments/CMSaasStarter">Github</a
