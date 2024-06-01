@@ -209,7 +209,7 @@
                 </div>
               </div>
               <div class="flex justify-center">
-                <video class="aspect-[1920/1080]">
+                <video class="aspect-[1920/1080]" controls>
                   <source src="/video/Demo.mp4" type="video/mp4" />
                   <track kind="captions" />
                   Your browser does not support the video tag.
