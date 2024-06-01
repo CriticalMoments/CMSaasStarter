@@ -253,7 +253,7 @@
               <span class="font-bold whitespace-nowrap">4.</span> Click download
               to save it and print later. <br />
               <span class="font-bold whitespace-nowrap">5.</span> Enjoy your
-              coloring page! <br />
+              coloring page 🥳 <br />
             </div>
             <!-- <div class="mt-4 text-large">
               <a href="https://criticalmoments.io" target="_blank">
