@@ -118,10 +118,10 @@
         class="text-4xl md:text-6xl font-bold px-2"
         style="line-height: 1.2;"
       >
-        Generate
+        Generate and print
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >coloring sheets</span
+          >coloring pages</span
         >
         <!-- <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
@@ -131,12 +131,12 @@
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
           >free to host</span
         > -->
-        <span> that can be printed in just a few seconds</span>
+        <span> your children really enjoy</span>
       </div>
       <br />
       <button class="btn">
         Over
-        <div class="badge badge-secondary">10,000 pages created!</div>
+        <div class="badge badge-secondary">+10,000 pages created!</div>
       </button>
       <!-- <div class="stats shadow">
         <div class="stat">
