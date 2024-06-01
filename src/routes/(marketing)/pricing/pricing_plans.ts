@@ -4,7 +4,7 @@ export const pricingPlans = [
   {
     id: "free",
     name: "Free 👶",
-    description: "Get started creating coloring pages from text prompts.",
+    description: "Began crafting engaging coloring pages.",
     price: "$0",
     priceIntervalName: "per month",
     stripe_price_id: null,
@@ -17,8 +17,7 @@ export const pricingPlans = [
   {
     id: "pro",
     name: "Artist 👦",
-    description:
-      "Higher limits and access to all ways of creating coloring pages.",
+    description: "Higher limits for demanding parents.",
     price: "$5",
     priceIntervalName: "per month",
     stripe_price_id: "price_1PEyVnEAQD7sAy8kjpYVT0IS",
