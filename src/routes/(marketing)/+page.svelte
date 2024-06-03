@@ -109,7 +109,7 @@
   />
   <meta
     name="keywords"
-    content="coloring pages, coloring, pages, children, kids, fun, creativity, imagination, artistic expression, parent, teacher, guardian, paletteplay, palette, play, art, app, platform, unique, engaging, unleash, young minds"
+    content="coloring pages, coloring, pages, children, kids, fun, creativity, imagination, artistic expression, parent, teacher, guardian, paletteplay, palette, play, art, app, platform, unique, engaging, unleash, young minds, Coloring Page Generator"
   />
   <meta property="og:type" content="website" />
   <meta
@@ -118,7 +118,7 @@
   />
   <meta property="og:image" content="{$page.url.origin}/images/ogimage.png" />
   <meta property="og:url" content={$page.url.href} />
-  <meta name="twitter:card" content="{$page.url.origin}/ogimage.png" />
+  <meta name="twitter:card" content="static/ogimage.png" />
   <meta name="twitter:creator" content="@WasylMowczan" />
   <link rel="canonical" href={$page.url.href} />
 </svelte:head>
