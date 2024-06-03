@@ -130,7 +130,7 @@
 </svelte:head>
 
 <!-- 1 section Header-->
-<div class="hero min-h-[60vh]">
+<div class="hero min-h-[40vh]">
   <div class="hero-content text-center py-12">
     <div class="max-w-3xl">
       <div class="md:text-3xl">👶 ➕ 🎨 🟰 🥳</div>
@@ -204,20 +204,28 @@
           >
         </a>
       </div>
-      <div class="hero-content text-center py-12">
-        <a
-          href="https://www.producthunt.com/posts/palleteplay-art?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-palleteplay&#0045;art"
-          target="_blank"
-          ><img
-            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=461246&theme=light"
-            alt="PalletePlay&#0046;art&#0032; - Coloring&#0032;page&#0032;generator&#0032;for&#0032;kids&#0046; | Product Hunt"
-            style="width: 250px; height: 54px;"
-            width="250"
-            height="54"
-          /></a
-        >
-      </div>
     </div>
+  </div>
+</div>
+
+<div class="max-w-[90%] lg:max-w-screen-xl mx-auto mb-16">
+  <h2 class="text-center mb-4 text-2xl font-bold text-slate-700">
+    Featured on
+  </h2>
+  <div
+    class="flex items-center flex-col space-y-4 md:flex-row md:flex-wrap justify-center md:space-x-8 md:items-baseline filrer grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+  >
+    <a
+      href="https://www.producthunt.com/posts/palleteplay-art?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-palleteplay&#0045;art"
+      target="_blank"
+      ><img
+        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=461246&theme=light"
+        alt="PalletePlay&#0046;art&#0032; - Coloring&#0032;page&#0032;generator&#0032;for&#0032;kids&#0046; | Product Hunt"
+        style="width: 250px; height: 54px;"
+        width="250"
+        height="54"
+      /></a
+    >
   </div>
 </div>
 
