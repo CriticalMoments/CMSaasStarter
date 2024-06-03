@@ -1,5 +1,6 @@
 <script lang="ts">
   import { WebsiteName } from "./../../config"
+  import { page } from "$app/stores"
 
   const features = [
     {
@@ -106,6 +107,20 @@
     name="description"
     content="{WebsiteName} is your go-to app for creating endless fun and creativity for children with customizable coloring pages. Whether you're a parent, teacher, or guardian, {WebsiteName} offers a unique and engaging platform for unleashing imagination and artistic expression in young minds."
   />
+  <meta
+    name="keywords"
+    content="coloring pages, coloring, pages, children, kids, fun, creativity, imagination, artistic expression, parent, teacher, guardian, paletteplay, palette, play, art, app, platform, unique, engaging, unleash, young minds"
+  />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="Coloring Page Generator for Your Kids | PalettePlay.art"
+  />
+  <meta property="og:image" content="{$page.url.origin}/images/ogimage.png" />
+  <meta property="og:url" content={$page.url.href} />
+  <meta name="twitter:card" content="{$page.url.origin}/ogimage.png" />
+  <meta name="twitter:creator" content="@WasylMowczan" />
+  <link rel="canonical" href={$page.url.href} />
 </svelte:head>
 
 <!-- 1 section Header-->
