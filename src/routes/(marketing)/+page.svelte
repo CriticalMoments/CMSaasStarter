@@ -116,9 +116,9 @@
     property="og:title"
     content="Coloring Page Generator for Your Kids | PalettePlay.art"
   />
-  <meta property="og:image" content="static/ogimage.png" />
+  <meta property="og:image" content="%sveltekit.assets%/ogimage.png" />
   <meta property="og:url" content={$page.url.href} />
-  <meta name="twitter:card" content="static/ogimage.png" />
+  <meta name="twitter:card" content="%sveltekit.assets%/ogimage.png" />
   <meta name="twitter:creator" content="@WasylMowczan" />
   <link rel="canonical" href={$page.url.href} />
 </svelte:head>
