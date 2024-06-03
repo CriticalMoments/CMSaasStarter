@@ -109,7 +109,7 @@
   />
   <meta
     name="keywords"
-    content="coloring pages, coloring, pages, children, kids, fun, creativity, imagination, artistic expression, parent, teacher, guardian, paletteplay, palette, play, art, app, platform, unique, engaging, unleash, young minds, Coloring Page Generator"
+    content="coloring pages, coloring, pages, children, kids, fun, creativity, imagination, artistic expression, parent, teacher, guardian, paletteplay, palette, play, art, app, platform, unique, engaging, unleash, young minds, Coloring Page Generator, Coloring Page, Generator, PalettePlay, PalettePlay.art, PalettePlay art, Palette Play"
   />
   <meta property="og:type" content="website" />
   <meta
