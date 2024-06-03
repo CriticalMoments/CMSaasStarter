@@ -204,6 +204,19 @@
           >
         </a>
       </div>
+      <div class="hero-content text-center py-12">
+        <a
+          href="https://www.producthunt.com/posts/palleteplay-art?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-palleteplay&#0045;art"
+          target="_blank"
+          ><img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=461246&theme=light"
+            alt="PalletePlay&#0046;art&#0032; - Coloring&#0032;page&#0032;generator&#0032;for&#0032;kids&#0046; | Product Hunt"
+            style="width: 250px; height: 54px;"
+            width="250"
+            height="54"
+          /></a
+        >
+      </div>
     </div>
   </div>
 </div>
