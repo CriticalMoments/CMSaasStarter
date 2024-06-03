@@ -5,7 +5,7 @@
   import ProContents from './components/proContents.svelte'; // Import the ProContents component
 
   let adminSection: Writable<string> = getContext("adminSection");
-  adminSection.set("billing");
+  adminSection.set("home");
 
   export let data;
 

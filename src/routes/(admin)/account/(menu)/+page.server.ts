@@ -49,3 +49,8 @@ export const actions = {
     }
   },
 };
+
+// funcions to get stocks data
+// have a t212_helpers
+// have a stock_api_helpers
+// kinda handle/display all here 
