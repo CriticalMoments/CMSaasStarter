@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getContext, onMount } from "svelte"
+  import { getContext } from "svelte"
   import { enhance } from "$app/forms"
   import type { Writable } from "svelte/store"
   import { PUBLIC_SUPABASE_URL } from "$env/static/public"

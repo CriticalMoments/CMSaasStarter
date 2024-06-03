@@ -276,7 +276,7 @@ export const actions = {
       throw redirect(303, "/login")
     }
 
-    let { data: imagesIds } = await supabase
+    const { data: imagesIds } = await supabase
       .from("images")
       .select("id")
       .eq("owner_id", session.user.id)

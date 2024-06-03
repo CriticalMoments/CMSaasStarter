@@ -7,50 +7,50 @@
   export let currentPlanId: string = ""
   export let center = true
 
-  type PlanFeatureRow = {
-    name: string
-    freeIncluded?: boolean
-    proIncluded?: boolean
-    freeString?: string
-    proString?: string
-    header?: boolean
-  }
+  // type PlanFeatureRow = {
+  //   name: string
+  //   freeIncluded?: boolean
+  //   proIncluded?: boolean
+  //   freeString?: string
+  //   proString?: string
+  //   header?: boolean
+  // }
 
-  const planFeatures: PlanFeatureRow[] = [
-    {
-      name: "Section 1",
-      header: true,
-    },
-    {
-      name: "Feature 1",
-      freeIncluded: true,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 2",
-      freeIncluded: false,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 3",
-      freeString: "3",
-      proString: "Unlimited",
-    },
-    {
-      name: "Section 2",
-      header: true,
-    },
-    {
-      name: "Feature 4",
-      freeIncluded: true,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 5",
-      freeIncluded: false,
-      proIncluded: true,
-    },
-  ]
+  // const planFeatures: PlanFeatureRow[] = [
+  //   {
+  //     name: "Section 1",
+  //     header: true,
+  //   },
+  //   {
+  //     name: "Feature 1",
+  //     freeIncluded: true,
+  //     proIncluded: true,
+  //   },
+  //   {
+  //     name: "Feature 2",
+  //     freeIncluded: false,
+  //     proIncluded: true,
+  //   },
+  //   {
+  //     name: "Feature 3",
+  //     freeString: "3",
+  //     proString: "Unlimited",
+  //   },
+  //   {
+  //     name: "Section 2",
+  //     header: true,
+  //   },
+  //   {
+  //     name: "Feature 4",
+  //     freeIncluded: true,
+  //     proIncluded: true,
+  //   },
+  //   {
+  //     name: "Feature 5",
+  //     freeIncluded: false,
+  //     proIncluded: true,
+  //   },
+  // ]
 </script>
 
 <div
