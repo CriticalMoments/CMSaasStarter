@@ -1,5 +1,5 @@
 export const blogInfo = {
-  name: "SaaS Starter Blog",
+  name: "GoodPair Rapid Development Blog",
   description: "A sample blog",
 }
 
@@ -14,6 +14,12 @@ export type BlogPost = {
 // Update this list with the actual blog post list
 // Create a page in the "(posts)" directory for each entry
 const blogPosts: BlogPost[] = [
+  {
+    title: "GPRD Day 1: README ",
+    description: "Exploration, dead ends, u-turns.",
+    link: "/blog/day1",
+    date: "2024-06-05",
+  },
   {
     title: "How we built a beautiful 41kb SaaS website with this template",
     description: "How to use this template you to bootstrap your own site.",
