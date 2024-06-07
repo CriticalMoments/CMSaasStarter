@@ -11,6 +11,9 @@
 </svelte:head>
 
 <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
+<div class="my-6 alert alert-error max-w-lg mt-2">
+  <img src="/startroundinspo.png" alt="Start a new Round" class="w-full h-auto mb-6">
+</div>
 <div class="alert alert-error max-w-lg mt-2">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -25,32 +28,35 @@
     /></svg
   >
   <div>
-    <div class="font-bold">Demo Content</div>
+    <div class="font-bold">^^^ Quick Score/Start Round</div>
     <div class="my-2">
-      This page is just a placeholder. Replace this page with your app's content
-      and functionality.
+      laceholder/concept for Start Round/Quick score module. User taps here to begin scoring a new round.  We can use this account home page as a launch pad for various features
     </div>
     <div class="my-2">
-      The <a href="/account/billing" class="link">billing</a> and
-      <a href="/account/settings" class="link">settings</a> pages are functional
-      demos.
+      The <a href="/account/billing" class="link">billing</a> page is not yet functional - requires Stripe API keys.
+      <a href="/account/settings" class="link">settings</a> page is semi-functional (needs OAuth delete account flow)
+      
+    </div>
+    <div class="my-2">
+      Password requirements unclear when OAth Enabled.
+     
     </div>
   </div>
 </div>
 
 <div class="my-6">
-  <h1 class="text-xl font-bold mb-1">Users</h1>
+  <h1 class="text-xl font-bold mb-1">Shots</h1>
   <div class="stats shadow stats-vertical sm:stats-horizontal sm:w-[420px]">
     <div class="stat place-items-center">
-      <div class="stat-title">Downloads</div>
+      <div class="stat-title">All-Time</div>
       <div class="stat-value">31K</div>
-      <div class="stat-desc">↗︎ 546 (2%)</div>
+      <div class="stat-desc">hitrate (62%)</div>
     </div>
 
     <div class="stat place-items-center">
-      <div class="stat-title">Users</div>
-      <div class="stat-value text-secondary">4,200</div>
-      <div class="stat-desc">↗︎ 40 (2%)</div>
+      <div class="stat-title">Last Round</div>
+      <div class="stat-value text-secondary">170</div>
+      <div class="stat-desc">↗︎ hitrate (71%)</div>
     </div>
   </div>
 </div>
