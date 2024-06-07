@@ -235,7 +235,7 @@
               <img
                 alt="Screenshot of criticalmoments.io homepage"
                 class="aspect-[2044/1242]"
-                src="/images/example-home.png"
+                src="/images/ten-mile.png"
               />
             </div></a
           >
