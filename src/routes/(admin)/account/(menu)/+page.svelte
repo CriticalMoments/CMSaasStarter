@@ -12,7 +12,7 @@
 
 <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
 <div class="my-6 alert alert-error max-w-lg mt-2">
-  <img src="/startroundinspo.png" alt="Start a new Round" class="w-full h-auto mb-6">
+  <img src="/images/startroundinspo.png" alt="Start a new Round" class="w-full h-auto mb-6">
 </div>
 <div class="alert alert-error max-w-lg mt-2">
   <svg
