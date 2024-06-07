@@ -28,7 +28,7 @@
     /></svg
   >
   <div>
-    <div class="font-bold">^^^ Quick Score/Start Round</div>
+    <div class="font-bold">^^^ test Score/Start Round</div>
     <div class="my-2">
       laceholder/concept for Start Round/Quick score module. User taps here to begin scoring a new round.  We can use this account home page as a launch pad for various features
     </div>
