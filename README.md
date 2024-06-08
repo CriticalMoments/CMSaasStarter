@@ -1,11 +1,25 @@
-# SaaS Starter
 
-[![Build](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml)
-[![Format Check](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml)
-[![Linting](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml)
-[![License](https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f)](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
+<p align="center">
+  <a href="https://criticalmoments.io">
+    <img width="420" alt="SaaS Starter Header reading: The open source, fast, and free to host SaaS template" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/12f47617-e5be-4694-affc-23310e54b885">
 
-### SaaS Starter is an open source, fast, and free to host SaaS template / boilerplate
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main" alt="Built Status"></a>
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml/badge.svg?branch=main" alt="Format Check"></a>
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml/badge.svg?branch=main" alt="Linting"></a>
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="https://saasstarter.work"><strong>Demo & Homepage</strong></a> •
+  <a href="https://github.com/CriticalMoments/CMSaasStarter#quick-start"><strong>Quick Start Guide</strong></a> • 
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/issues"><strong>Issues</strong></a>
+</p>
+
+# SaaS Starter: A SvelteKit Boilerplate/Template
 
 - [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more.
 - [Lightning Performance](#performance--best-practices): fast pre-rendered pages which score 100/100 on Google PageSpeed.
