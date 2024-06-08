@@ -1,49 +1,161 @@
 <script lang="ts">
-  import { getContext } from "svelte"
-  import type { Writable } from "svelte/store"
+  import { getContext } from "svelte";
+  import type { Writable } from "svelte/store";
 
-  let adminSection: Writable<string> = getContext("adminSection")
-  adminSection.set("home")
+  let adminSection: Writable<string> = getContext("adminSection");
+  adminSection.set("home");
+
+  let shooterNames = ['Shooter 1', 'Shooter 2', 'Shooter 3'];
+  let courses = ['course1', 'course2', 'course3'];
+  let selectedCourse = courses[0];
+  let startStation = 1;
+
+  function addShooter() {
+    shooterNames = [...shooterNames, `Shooter ${shooterNames.length + 1}`];
+  }
+
+  function removeShooter(index) {
+    shooterNames = shooterNames.filter((_, i) => i !== index);
+  }
+
+  // Button toggling logic
+  let buttonStates = shooterNames.map(() => Array(8).fill(false));
+
+  function toggleButton(shooterIndex, buttonIndex) {
+    buttonStates[shooterIndex][buttonIndex] = !buttonStates[shooterIndex][buttonIndex];
+  }
+
+  function getShooterScore(shooterIndex) {
+    return buttonStates[shooterIndex].filter(state => state).length;
+  }
 </script>
 
 <svelte:head>
   <title>Account</title>
 </svelte:head>
 
+<style>
+  .toggle-button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 16px;
+  }
+  .shooter-row {
+    margin-bottom: 10px;
+  }
+</style>
+
 <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
-<div class="my-6 alert alert-error max-w-lg mt-2">
-  <img src="/startroundinspo.png" alt="Start a new Round" class="w-full h-auto mb-6">
-</div>
 <div class="alert alert-error max-w-lg mt-2">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="stroke-current shrink-0 h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    ><path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-    /></svg
-  >
   <div>
-    <div class="font-bold">^^^ test Score/Start Round</div>
+    <div class="font-bold">Start a New Round</div>
     <div class="my-2">
-      laceholder/concept for Start Round/Quick score module. User taps here to begin scoring a new round.  We can use this account home page as a launch pad for various features
+      Begin a new scoring round by adding shooters, selecting a course, and choosing a starting station. Once ready, click "Start Round" to begin.
     </div>
-    <div class="my-2">
-      The <a href="/account/billing" class="link">billing</a> page is not yet functional - requires Stripe API keys.
-      <a href="/account/settings" class="link">settings</a> page is semi-functional (needs OAuth delete account flow)
-      
-    </div>
-    <div class="my-2">
-      Password requirements unclear when OAth Enabled.
-     
+    <!-- New Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="my-6">
+        <h1 class="text-xl font-bold mb-1">Add Shooters</h1>
+        {#each shooterNames as shooter, index}
+          <div class="flex items-center mb-2">
+            <input type="text" bind:value={shooterNames[index]} placeholder={`Shooter ${index + 1}`} class="input input-bordered w-full max-w-xs" />
+            {#if index > 0}
+              <button class="btn btn-error ml-2" on:click={() => removeShooter(index)}>x</button>
+            {/if}
+          </div>
+        {/each}
+        <button class="btn btn-primary btn-sm" on:click={addShooter}>Add Shooter</button>
+      </div>
+
+      <div class="my-6">
+        <h1 class="text-xl font-bold mb-1">Select Course</h1>
+        <select bind:value={selectedCourse} class="select select-bordered w-full max-w-xs">
+          {#each courses as course}
+            <option>{course}</option>
+          {/each}
+        </select>
+
+        <div class="my-6">
+          <h1 class="text-xl font-bold mb-1">Station Start Number</h1>
+          <input type="number" min="1" max="20" bind:value={startStation} class="input input-bordered w-full max-w-xs" />
+        </div>
+
+        <button class="btn btn-primary btn-lg">Start Round</button>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- Shooter Scoring Section -->
+{#each shooterNames as shooter, shooterIndex}
+  <div class="my-6 shooter-row">
+    <h1 class="text-xl font-bold mb-1">{shooter}</h1>
+    <div class="flex space-x-2 items-center">
+      {#each buttonStates[shooterIndex] as state, buttonIndex}
+        <button 
+          class={`btn btn-xs toggle-button ${state ? 'btn-secondary' : 'btn-outline'}`} 
+          on:click={() => toggleButton(shooterIndex, buttonIndex)}>
+          {state ? 'x' : ''}
+        </button>
+      {/each}
+      <div class="text-xl font-bold ml-4">{getShooterScore(shooterIndex)}</div>
+    </div>
+  </div>
+{/each}
+
+<!-- Button Test Section -->
+<div class="my-6">
+  <h1 class="text-xl font-bold mb-1">Button Test</h1>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <!-- Existing Buttons -->
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-accent">Accent</button>
+    <button class="btn btn-success">Success</button>
+    <button class="btn btn-error">Error</button>
+    <button class="btn btn-warning">Warning</button>
+    <button class="btn btn-info">Info</button>
+    <button class="btn btn-outline">Outline</button>
+    <button class="btn btn-ghost">Ghost</button>
+    <button class="btn btn-link">Link</button>
+
+    <!-- Radio Buttons -->
+    <div>
+      <label class="label">
+        <span class="label-text">Radio 1</span>
+        <input type="radio" name="radio1" class="radio radio-primary" />
+      </label>
+      <label class="label">
+        <span class="label-text">Radio 2</span>
+        <input type="radio" name="radio1" class="radio radio-secondary" />
+      </label>
+    </div>
+
+    <!-- Toggles -->
+    <div>
+      <label class="label">
+        <span class="label-text">Toggle 1</span>
+        <input type="checkbox" class="toggle toggle-primary" />
+      </label>
+      <label class="label">
+        <span class="label-text">Toggle 2</span>
+        <input type="checkbox" class="toggle toggle-secondary" />
+      </label>
+    </div>
+
+    <!-- Additional Button Styles -->
+    <button class="btn btn-primary btn-xs">Primary XS</button>
+    <button class="btn btn-secondary btn-sm">Secondary SM</button>
+    <button class="btn btn-accent btn-md">Accent MD</button>
+    <button class="btn btn-success btn-lg">Success LG</button>
+  </div>
+</div>
+
+<!-- Existing Content -->
 <div class="my-6">
   <h1 class="text-xl font-bold mb-1">Shots</h1>
   <div class="stats shadow stats-vertical sm:stats-horizontal sm:w-[420px]">
