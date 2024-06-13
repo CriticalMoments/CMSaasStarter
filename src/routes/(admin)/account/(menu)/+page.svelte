@@ -32,11 +32,16 @@
   let imageNumber: number = data.images.length
   let totalImageNumberFree = 5
   let totalImageNumberPro = 100
+  let totalImageNumberEnterprise = 1000
   // calculate the percentage of the total image number
   let percentageFree = (imageNumber / totalImageNumberFree) * 100
   let percentagePro = (imageNumber / totalImageNumberPro) * 100
+  let percentageEnterprise = (imageNumber / totalImageNumberEnterprise) * 100
   // i want to make sure the percentage is not more than 100
-  let percentage = data.license === "pro" ? percentagePro : percentageFree
+  let percentage =
+    data.license === "enterprise"
+      ? totalImageNumberEnterprise
+      : totalImageNumberPro
   // round to 2 decimal places
   percentage = Math.round(percentage * 100) / 100
   // i want to make sure the percentage is not more than 100
@@ -80,14 +85,18 @@
         {#if !isLoading}
           <button
             type="submit"
-            class={`bg-blue-500 text-white font-bold py-2 px-4 rounded ${(data.license === undefined && imageNumber <= totalImageNumberFree) || (data.license === "pro" && imageNumber <= totalImageNumberPro) ? "" : "bg-gray-400"}`}
+            class={`bg-blue-500 text-white font-bold py-2 px-4 rounded ${(data.license === undefined && imageNumber <= totalImageNumberFree) || (data.license === "pro" && imageNumber <= totalImageNumberPro) || (data.license === "enterprise" && imageNumber <= totalImageNumberEnterprise) ? "" : "bg-gray-400"}`}
             disabled={(data.license === undefined &&
               imageNumber >= totalImageNumberFree) ||
-              (data.license === "pro" && imageNumber >= totalImageNumberPro)}
+              (data.license === "pro" && imageNumber >= totalImageNumberPro) ||
+              (data.license === "enterprise" &&
+                imageNumber >= totalImageNumberEnterprise)}
           >
             {#if data.license === undefined && imageNumber >= totalImageNumberFree}
               <a href="/account/billing">Upgrade to generate more images</a>
             {:else if data.license === "pro" && imageNumber >= totalImageNumberPro}
+              <a href="/account/billing">Upgrade to generate more images</a>
+            {:else if data.license === "enterprise" && imageNumber >= totalImageNumberEnterprise}
               <a href="/account/billing"
                 >You have reached the maximum number of images for your license</a
               >
@@ -113,9 +122,9 @@
       <div class="stat">
         <div class="stat-title">Page Generated</div>
         <div class="stat-value">
-          {imageNumber} / {data.license === "pro"
-            ? totalImageNumberPro
-            : totalImageNumberFree}
+          {imageNumber} / {data.license === "enterprise"
+            ? totalImageNumberEnterprise
+            : totalImageNumberPro}
         </div>
         <div class="stat-desc justify-center">
           {percentage} % of license used
