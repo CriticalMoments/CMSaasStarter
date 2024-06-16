@@ -1,8 +1,5 @@
 <p align="center">
-  <a href="https://criticalmoments.io">
     <img width="420" alt="SaaS Starter Header reading: The open source, fast, and free to host SaaS template" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/12f47617-e5be-4694-affc-23310e54b885">
-
-  </a>
 </p>
 
 <p align="center">
@@ -17,6 +14,8 @@
   <a href="https://github.com/CriticalMoments/CMSaasStarter#quick-start"><strong>Quick Start Guide</strong></a> • 
   <a href="https://github.com/CriticalMoments/CMSaasStarter/issues"><strong>Issues</strong></a>
 </p>
+
+<br/>
 
 # SaaS Starter: A SvelteKit Boilerplate/Template
 
