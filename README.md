@@ -60,7 +60,7 @@ See [criticalmoments.io](https://criticalmoments.io) for an example of what’s 
 
 Everything you need to get started for a SaaS company:
 
-- User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth.
+- User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth. GDPR cookie warning for European users.
 - Marketing Page with SEO optimization
 - Blog engine with rich formatting, RSS and SEO optimization.
 - User Dashboard with user profile, user settings, update email/password, billing, and more.
