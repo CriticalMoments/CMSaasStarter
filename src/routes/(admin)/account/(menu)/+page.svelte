@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getContext, onMount } from "svelte";
   import type { Writable } from "svelte/store";
   import { pricingPlans, defaultPlanId } from "../../../(marketing)/pricing/pricing_plans";
   import ProContents from './components/proContents.svelte'; // Import the ProContents component
@@ -10,12 +10,9 @@
   export let data;
 
   let currentPlanId = data.currentPlanId ?? defaultPlanId;
-  let currentPlanName = pricingPlans.find(
-    (x) => x.id === data.currentPlanId
-  )?.name;
-
-    // Variable to store the fetched external data
-    let externalData: any = null;
+  
+  // Variable to store the fetched external data
+  let externalData = data.externalData;
 
 </script>
 
@@ -53,6 +50,12 @@
   </div>
 </div> -->
 
-{#if currentPlanName === "Pro"}
+{#if currentPlanId === "pro"}
+  <p>Pro Version Contents</p>
   <ProContents {externalData}/>
+{:else}
+  <p>Free Version Contents</p>
 {/if}
+
+
+

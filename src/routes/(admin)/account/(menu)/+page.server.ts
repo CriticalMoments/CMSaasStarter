@@ -1,6 +1,7 @@
 import { redirect, error } from "@sveltejs/kit";
 import { getOrCreateCustomerId, fetchSubscription } from "../subscription_helpers.server";
 import type { PageServerLoad } from "./$types";
+import { TRADING_212_API_KEY } from "$env/static/private"
 
 export const load: PageServerLoad = async ({
   locals: { safeGetSession, supabaseServiceRole },
@@ -33,10 +34,34 @@ export const load: PageServerLoad = async ({
     });
   }
 
+  let externalData = null;
+  try {
+    const resp = await fetch(
+      `https://live.trading212.com/api/v0/equity/portfolio`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: TRADING_212_API_KEY,'Content-Type': 'application/json'
+        }
+      }
+    );
+    console.log(TRADING_212_API_KEY);
+    console.log(resp.status);
+    if (!resp.ok) {
+      throw new Error('Failed to fetch data from third-party API');
+    }
+
+    externalData = await resp.json();
+    console.log(externalData);
+  } catch (err) {
+    console.error('Error fetching third-party data:', err);
+  }
+
   return {
     isActiveCustomer: !!primarySubscription,
     hasEverHadSubscription,
     currentPlanId: primarySubscription?.appSubscription?.id,
+    externalData,
   };
 };
 
@@ -49,8 +74,3 @@ export const actions = {
     }
   },
 };
-
-// funcions to get stocks data
-// have a t212_helpers
-// have a stock_api_helpers
-// kinda handle/display all here 
