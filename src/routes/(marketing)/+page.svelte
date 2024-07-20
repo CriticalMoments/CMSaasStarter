@@ -167,7 +167,7 @@
 <path d="M7 16H17" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>`,
     },
     {
-      name: "Scaleable",
+      name: "Scalable",
       description:
         "Handle new users and scale with horizontally scaling edge functions.",
       svgContent: `<path d="M3 22H21" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

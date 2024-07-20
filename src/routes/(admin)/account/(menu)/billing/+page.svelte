@@ -51,7 +51,7 @@
         initialValue: currentPlanName || "",
       },
     ]}
-    editButtonTitle="Manage Subscripton"
+    editButtonTitle="Manage Subscription"
     editLink="/account/billing/manage"
   />
 {/if}
