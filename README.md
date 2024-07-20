@@ -29,7 +29,7 @@
 - [Fully Functional Demo](https://saasstarter.work)
 - [Quick Start](#quick-start): Full docs from `git clone` to deployment.
 
-Created by the folks at [Critical Moments](https://criticalmoments.io)! Check out our website site for an example depolyment of SaaS Starter.
+Created by the folks at [Critical Moments](https://criticalmoments.io)! Check out our website site for an example deploymentof SaaS Starter.
 
 **Make mobile apps?** Improve conversion rates and ratings with [Critical Moments](https://criticalmoments.io).
 
@@ -133,14 +133,16 @@ The result is a perfect Google PageSpeed Insights score in all categories!
 
 # Quick Start
 
-### Get Started (Local Development)
+## Create a Copy of the Template
 
 To get started, create your own copy of the project for development. There are two options:
 
-- "Use this template": use this button if you want to build your own project using CMSaasStarter as a starter template and you aren't planning on contributing work back to the public open source project. See [Github Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+- "Use this template": use this Github button if you want to build your own project using CMSaasStarter as a starter template and you aren't planning on contributing work back to the public open source project. See [Github Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 - "Fork": use this button if you want contribute some or all of your work back to the public open source project. It will keep the full commit history, and be easier to create PRs back to CMSaasStarter.
 
-Then locally:
+## Setup Local Development
+
+On your development machine:
 
 ```
 git pull [Your Repo Created Above]
@@ -154,7 +156,7 @@ npm run dev -- --open
 
 **Note:** some features won't work until you complete the rest of the setup steps below!
 
-### Developer Environment
+## Developer Tools
 
 The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). Github disables CI on new repos by default, so be sure to go into the Github Actions page for your repo and enable workflows.
 
@@ -180,7 +182,7 @@ npm run test_run
 
 Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
 
-### Setup Supabase
+## Setup Supabase Project
 
 - Create a Supabase account
 - Create a new Supabase project in the console
@@ -196,7 +198,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
     PUBLIC_SUPABASE_ANON_KEY=your-anon-key
     PRIVATE_SUPABASE_SERVICE_ROLE=your service_role secret
     ```
-  - For production, add these two keys to your Cloudflare environment (see below). We suggest you encrypt your service role.
+  - For production, add these two keys to your deployment environment (see below). We suggest you encrypt your service role.
 - Auth Callback
   - Set your default callback URL for auth in the Supabase Auth console. For example, for the demo page we added: `https://saasstarter.work/auth/callback` . Also add that same URL to the the “allowed redirect URL” list in the Supabase auth console further down the page.
   - Add a link to the redirect URL allow list which allows parameters to your auth callback. For example we added the following for the demo page: `https://saasstarter.work/auth/callback?*`
@@ -212,7 +214,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
 - Test authentication
   - Open the `/login` page in your browser, and ensure you can sign up, confirm email, log in, and edit your account.
 
-### Setup Stripe Billing
+## Setup Stripe
 
 - Create a Stripe account
 - Create a product and price Tiers
@@ -234,6 +236,12 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
     - Optional: setup a custom domain so Stripe pages use your own domain
 - Repeat steps in production environment
 
+## Deploy
+
+We have two documented options for deploying SaaS Starter: Cloudflare Pages and Vercel. However, it can be hosted anywhere you can host a SvelteKit app.
+
+Our [official demo](https://saasstarter.work) is hosted on Cloudflare Pages, and deployed each time the main branch is updated.
+
 ### Deploy To Cloudflare
 
 Cloudflare Pages and Workers is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/#deploy-with-cloudflare-pages) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
@@ -243,13 +251,21 @@ PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_
 
 Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-ca/application-services/products/analytics/) for usage metrics.
 
+### Deploy to Vercel
+
+Deploy using Vercel's deploy button:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCriticalMoments%2FCMSaasStarter&env=PUBLIC_SUPABASE_URL,PUBLIC_SUPABASE_ANON_KEY,PRIVATE_SUPABASE_SERVICE_ROLE,PRIVATE_STRIPE_API_KEY,PUBLIC_SITE_NAME,PUBLIC_SITE_OWNER&envDescription=Each%20environment%20variable%20is%20documented%20in%20our%20quick%20start%20guide%3A%20https%3A%2F%2Fgithub.com%2FCriticalMoments%2FCMSaasStarter%3Ftab%3Dreadme-ov-file%23quick-start&envLink=https%3A%2F%2Fgithub.com%2FCriticalMoments%2FCMSaasStarter%3Ftab%3Dreadme-ov-file%23quick-start&demo-title=SaasStarter%20Demo&demo-description=A%20live%20demo%20of%20this%20template%2C%20deployed%20from%20the%20main%20branch.&demo-url=https%3A%2F%2Fsaasstarter.work&demo-image=https%3A%2F%2Fprivate-user-images.githubusercontent.com%2F848343%2F297197975-34944c09-df72-4ac2-9099-01d25d99911b.png%3Fjwt%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjE0NTAwMzMsIm5iZiI6MTcyMTQ0OTczMywicGF0aCI6Ii84NDgzNDMvMjk3MTk3OTc1LTM0OTQ0YzA5LWRmNzItNGFjMi05MDk5LTAxZDI1ZDk5OTExYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyMFQwNDI4NTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zY2E4ZmY3YjVhMTc3YWE5YmI2MzI3YWE3MWQ2OWIzMjI3MGU2YzhmZDJjNjhlNDJhY2VjMDExMDk5ZjMyM2M4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.O8e9x5qFiij0TILjUncTOXjAs5Di2-8221K-N0YttbE)
+
+### Deploy Alternatives
+
 If you prefer another host you can explore alternatives:
 
 - [SvelteKit official adapters](https://kit.svelte.dev/docs/adapters) including Netlify, Vercel, and Node
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains, unlike Cloudflare.
 
-### Add your content!
+## Add Your Content
 
 After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t have your content. The following checklist helps you customize the template to make a SaaS homepage for your company.
 
@@ -275,7 +291,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Replace the admin dashboard with real content (`/src/routes/(admin)/account/+page.svelte`).
   - Add API endpoints and database tables as needed to deliver your SaaS product.
 
-### Extensions
+## Community Extensions
 
 The open source community is extending and improving SaasStarter!
 
