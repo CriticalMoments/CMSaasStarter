@@ -179,6 +179,9 @@ npm run lint
 npm run build
 npm run check
 npm run test_run
+
+# Optional: check for misspelled words. Uncomment line below after installing misspell tool https://github.com/client9/misspell?tab=readme-ov-file#install
+# misspell -error ./src README.md
 ```
 
 Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
@@ -301,7 +304,7 @@ These extensions are reference implementations of commonly needed features. We d
 - Internationalization: [branch](https://github.com/CriticalMoments/CMSaasStarter/tree/extension/internationalization), and [instructions](https://github.com/CriticalMoments/CMSaasStarter/pull/49)
 - Dark mode theme: [branch](https://github.com/CriticalMoments/CMSaasStarter/tree/extension/dark_mode), and [instructions](https://github.com/CriticalMoments/CMSaasStarter/pull/47)
 
-## Icons
+### Icons Credits
 
 Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/collection/solar-broken-line-icons/) and [Solar Linear Icons](https://www.svgrepo.com/collection/solar-linear-icons) via CC Attribution License.
 

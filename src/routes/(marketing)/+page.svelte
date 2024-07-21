@@ -20,7 +20,7 @@
       name: "Free to host",
       description:
         "Instructions included for Cloudflare+Supabase. Free to start, and cost effective to scale.",
-      link: "https://github.com/CriticalMoments/CMSaasStarter/blob/main/README.md#pricing",
+      link: "https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#suggested-hosting-stack",
       linkText: "Docs",
       newPage: true,
       svgContent: `<path d="M4.01207 15.7618L5.70156 10.6933C6.46758 8.39525 6.85059 7.24623 7.75684 7.03229C8.6631 6.81835 9.51953 7.67478 11.2324 9.38764L14.6114 12.7666C16.3242 14.4795 17.1807 15.3359 16.9667 16.2422C16.7528 17.1484 15.6038 17.5314 13.3057 18.2975L8.23724 19.987C5.47183 20.9088 4.08912 21.3697 3.35924 20.6398C2.62936 19.9099 3.09026 18.5272 4.01207 15.7618Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
@@ -152,7 +152,7 @@
         "Built in linting, type checking, formatting, and test framework. Run locally in your editor, and on Github CI.",
       newPage: true,
       linkText: "Docs",
-      link: "https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#developer-environment",
+      link: "https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#developer-tools",
       svgContent: `<path d="M7 9C7 9.55228 6.55228 10 6 10C5.44772 10 5 9.55228 5 9C5 8.44772 5.44772 8 6 8C6.55228 8 7 8.44772 7 9Z" fill="#1C274C"/>
 <path d="M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12Z" fill="#1C274C"/>
 <path d="M10 12C10 12.5523 9.55228 13 9 13C8.44772 13 8 12.5523 8 12C8 11.4477 8.44772 11 9 11C9.55228 11 10 11.4477 10 12Z" fill="#1C274C"/>
@@ -181,7 +181,7 @@
         "Community extensions for internationalization, dark mode theme, and more.",
       linkText: "Docs",
       newPage: true,
-      link: "https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#extensions",
+      link: "https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#community-extensions",
       svgContent: `
       <circle cx="10" cy="6" r="4" stroke="#1C274C" stroke-width="1.5"/>
 <path d="M18 17.5C18 19.9853 18 22 10 22C2 22 2 19.9853 2 17.5C2 15.0147 5.58172 13 10 13C14.4183 13 18 15.0147 18 17.5Z" stroke="#1C274C" stroke-width="1.5"/>
