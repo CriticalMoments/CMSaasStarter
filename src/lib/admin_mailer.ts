@@ -22,6 +22,8 @@ export const sendAdminEmail = async ({
     return
   }
 
+  console.log("Nodemailer", nodemailer)
+
   if (nodemailer) {
     return sendAdminEmailNodemailer({ subject, body })
   } else {
@@ -50,7 +52,7 @@ const sendAdminEmailNodemailer = async ({
     !env.PRIVATE_SMTP_PASS
   ) {
     console.log(
-      "No smtp settings, not sending admil email. See CMSaasStarter setup instructions.",
+      "No smtp settings, not sending admin email. See CMSaasStarter setup instructions.",
     )
     return
   }
