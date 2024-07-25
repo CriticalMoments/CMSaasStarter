@@ -3,7 +3,6 @@ let nodemailer: typeof import("nodemailer") | undefined
 try {
   nodemailer = await import("nodemailer")
 } catch (e) {
-  console.log("nodemailer is not installed (Cloudflare Workers). Do nothing.", e)
   // nodemailer is not installed (Cloudflare Workers). Do nothing.
 }
 
@@ -23,14 +22,12 @@ export const sendAdminEmail = async ({
     return
   }
 
+  // Chech if we have a valid nodemailer.
   const canCreateTransport = nodemailer?.createTransport
-  console.log("ct1", canCreateTransport === undefined)
-  console.log("ct2", canCreateTransport)
-
   if (canCreateTransport) {
-    return sendAdminEmailNodemailer({ subject, body })
+    return await sendAdminEmailNodemailer({ subject, body })
   } else {
-    return sendAdminEmailCloudflareWorkers({ subject, body })
+    return await sendAdminEmailCloudflareWorkers({ subject, body })
   }
 }
 
