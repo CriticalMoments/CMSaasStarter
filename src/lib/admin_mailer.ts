@@ -3,6 +3,7 @@ let nodemailer: typeof import("nodemailer") | undefined
 try {
   nodemailer = await import("nodemailer")
 } catch (e) {
+  console.log("nodemailer is not installed (Cloudflare Workers). Do nothing.", e)
   // nodemailer is not installed (Cloudflare Workers). Do nothing.
 }
 
