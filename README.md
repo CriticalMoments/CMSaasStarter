@@ -273,13 +273,11 @@ If you prefer another host you can explore alternatives:
 
 ## Setup Admin Emailer -- Optional
 
-SaaS Starter includes an admin emailer for sending yourself email notifications when important events happen, such as a new user creating their profile. This let's you monitor your app and respond to users without watching the database.
+SaaS Starter includes an admin emailer for sending yourself email notifications when important events happen. This let's you monitor your app and respond to users without watching the database.
 
-Provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun.
+If you setup the admin emailer, it will email you when users create their profile or the 'Contact Us' form is submitted. You can add additional calls to sendAdminEmail() for any other events you want to monitor.
 
-Set the email address which admil emails will be sent to in `PRIVATE_ADMIN_EMAIL`.
-
-You can add additional calls to sendAdminEmail() for any other events you want to monitor.
+To setup, provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun. Then set the email address to which admin emails will be sent in `PRIVATE_ADMIN_EMAIL`.
 
 ## Add Your Content
 

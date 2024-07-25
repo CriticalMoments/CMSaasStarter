@@ -42,7 +42,14 @@
     "@supabase/auth-ui-svelte": "^0.2.9",
     "@supabase/supabase-js": "^2.33.0",
     "@types/nodemailer": "^6.4.15",
-    "nodemailer": "^6.9.14",
     "stripe": "^13.3.0"
+  },
+  "peerDependencies": {
+    "nodemailer": "^6.9.14"
+  },
+  "peerDependenciesMeta": {
+    "nodemailer": {
+      "optional": true
+    }
   }
 }
