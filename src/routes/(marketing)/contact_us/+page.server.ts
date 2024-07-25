@@ -70,7 +70,7 @@ export const actions = {
     }
 
     // Send email to admin
-    sendAdminEmail({
+    await sendAdminEmail({
       subject: "New contact request",
       body: `New contact request from ${firstName} ${lastName}.\n\nEmail: ${email}\n\nPhone: ${phone}\n\nCompany: ${company}\n\nMessage: ${message}`,
     })

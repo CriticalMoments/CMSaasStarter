@@ -256,7 +256,7 @@ export const actions = {
       })
     }
 
-    sendAdminEmail({
+    await sendAdminEmail({
       subject: "Profile Updated",
       body: `Profile updated by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
     })
