@@ -1,4 +1,5 @@
 import { fail, redirect } from "@sveltejs/kit"
+import { sendAdminEmail } from "$lib/admin_mailer"
 
 export const actions = {
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
@@ -254,6 +255,11 @@ export const actions = {
         website,
       })
     }
+
+    sendAdminEmail({
+      subject: "Profile Updated",
+      body: `Profile updated by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
+    })
 
     return {
       fullName,
