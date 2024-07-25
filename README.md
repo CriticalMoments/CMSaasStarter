@@ -277,6 +277,8 @@ SaaS Starter includes an admin emailer for sending yourself email notifications 
 
 If you setup the admin emailer, it will email you when users create their profile or the 'Contact Us' form is submitted. You can add additional calls to sendAdminEmail() for any other events you want to monitor.
 
+**Not supported on Cloudflare Workers**: the admin emailer is not supported on Cloudflare Workers as it does not have a full node.js environment.
+
 To setup, set the email address to which admin emails will be sent in the env var `PRIVATE_ADMIN_EMAIL`. That's all that's required if you host on Cloudflare Pages! If you host elsewhere, provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun. 
 
 ## Add Your Content
