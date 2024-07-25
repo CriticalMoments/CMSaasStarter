@@ -2,7 +2,7 @@
 
 SaaS Starter includes email capabilities for sending emails to users, and admins.
 
-There are two types of emails:
+There are three types of emails:
 
 - Admin emails: sent to a static admin email address, useful for monitoring app activity like new signups and contact-us form submissions.
 - User emails: sent to the user's email address. For example: a welcome email.
