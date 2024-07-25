@@ -279,7 +279,7 @@ If you setup the admin emailer, it will email you when users create their profil
 
 **Not supported on Cloudflare Workers**: the admin emailer is not supported on Cloudflare Workers as it does not have a full node.js environment.
 
-To setup, first set the email address to which admin emails will be sent in the env var `PRIVATE_ADMIN_EMAIL`. Then provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun. 
+To setup, first set the email address to which admin emails will be sent in the env var `PRIVATE_ADMIN_EMAIL`. Then provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun.
 
 ## Add Your Content
 
