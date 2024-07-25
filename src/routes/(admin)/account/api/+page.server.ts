@@ -1,5 +1,5 @@
 import { fail, redirect } from "@sveltejs/kit"
-import { sendAdminEmail } from "$lib/admin_mailer"
+import { sendAdminEmail, sendTemplatedEmail } from "$lib/mailer"
 
 export const actions = {
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
@@ -239,13 +239,23 @@ export const actions = {
       })
     }
 
-    const { error } = await supabase.from("profiles").upsert({
-      id: session?.user.id,
-      full_name: fullName,
-      company_name: companyName,
-      website: website,
-      updated_at: new Date(),
-    })
+    // To check if created or updated, check if priorProfile exists
+    const { data: priorProfile, error: priorProfileError } = await supabase
+      .from("profiles")
+      .select(`*`)
+      .eq("id", session?.user.id)
+      .single()
+
+    const { error } = await supabase
+      .from("profiles")
+      .upsert({
+        id: session?.user.id,
+        full_name: fullName,
+        company_name: companyName,
+        website: website,
+        updated_at: new Date(),
+      })
+      .select()
 
     if (error) {
       return fail(500, {
@@ -256,10 +266,27 @@ export const actions = {
       })
     }
 
-    await sendAdminEmail({
-      subject: "Profile Updated",
-      body: `Profile updated by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
-    })
+    // If the profile was just created, send an email to the user and admin
+    const newProfile =
+      priorProfile?.updated_at === null && priorProfileError === null
+    if (newProfile) {
+      await sendAdminEmail({
+        subject: "Profile Created",
+        body: `Profile created by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
+      })
+      const userEmail = session.user.email
+      if (userEmail) {
+        await sendTemplatedEmail({
+          subject: "Welcome!",
+          to_emails: [userEmail],
+          from_email: "no-reply@saasstarter.work",
+          template_name: "welcome_email",
+          template_properties: {
+            companyName: "SaaS Starter",
+          },
+        })
+      }
+    }
 
     return {
       fullName,
