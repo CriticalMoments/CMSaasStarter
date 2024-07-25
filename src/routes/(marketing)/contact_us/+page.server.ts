@@ -1,4 +1,5 @@
 import { fail } from "@sveltejs/kit"
+import { sendAdminEmail } from "$lib/admin_mailer.js"
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -67,5 +68,11 @@ export const actions = {
     if (insertError) {
       return fail(500, { errors: { _: "Error saving" } })
     }
+
+    // Send email to admin
+    await sendAdminEmail({
+      subject: "New contact request",
+      body: `New contact request from ${firstName} ${lastName}.\n\nEmail: ${email}\n\nPhone: ${phone}\n\nCompany: ${company}\n\nMessage: ${message}`,
+    })
   },
 }
