@@ -1,5 +1,5 @@
 import { fail } from "@sveltejs/kit"
-import { sendAdminEmail } from "$lib/admin_mailer.js"
+import { sendAdminEmail } from "$lib/mailer.js"
 
 /** @type {import('./$types').Actions} */
 export const actions = {
