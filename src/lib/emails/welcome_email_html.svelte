@@ -133,8 +133,7 @@
             <span
               class="preheader"
               style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;"
-              >Welcome to {companyName}. Here's a quick summary how to get
-              started.</span
+              >Welcome to {companyName}. We're excited to have you on board.</span
             >
             <table
               role="presentation"
@@ -211,7 +210,7 @@
                   <p
                     style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
                   >
-                    Thanks for using SaaS Starter!
+                    Thanks for using {companyName}!
                   </p>
                 </td>
               </tr>
@@ -242,7 +241,7 @@
                     <span
                       class="apple-link"
                       style="color: #9a9ea6; font-size: 16px; text-align: center;"
-                      >Company Inc, 7-11 Commercial Ct, Belfast BT1 2NB</span
+                      >Company Inc, 123 Main St, Toronto, Canada</span
                     >
                   </td>
                 </tr>

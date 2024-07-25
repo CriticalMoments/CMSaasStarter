@@ -271,17 +271,11 @@ If you prefer another host you can explore alternatives:
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains, unlike Cloudflare.
 
-## Setup Admin Emailer -- Optional
+## Setup Emailer -- Optional
 
-SaaS Starter includes an admin emailer for sending yourself email notifications when important events happen. This let's you monitor your app and respond to users without watching the database.
+SaaS Starter includes email capabilities for sending emails to users and admins.
 
-If you setup the admin emailer, it will email you when users create their profile, or when the 'Contact Us' form is submitted. You can add additional calls to sendAdminEmail() for any other events you want to monitor.
-
-To setup, set these environment variables:
-
-- `PRIVATE_ADMIN_EMAIL`: the email address to which admin emails will be sent.
-- `PRIVATE_FROM_ADMIN_EMAIL`: the email address to use as the from address for admin emails (defaults to `PRIVATE_ADMIN_EMAIL` if not set).
-- `PRIVATE_RESEND_API_KEY`: a https://resend.com API key. Note, you'll need to verify your domain with them before you can use their service.
+These are optional and disabled by default. See [email docs](email_docs.md) for details on how to enable and customize them.
 
 ## Add Your Content
 
