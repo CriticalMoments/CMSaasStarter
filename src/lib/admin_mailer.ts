@@ -23,9 +23,11 @@ export const sendAdminEmail = async ({
     return
   }
 
-  console.log("Nodemailer", nodemailer)
+  const canCreateTransport = nodemailer?.createTransport
+  console.log("ct1", canCreateTransport === undefined)
+  console.log("ct2", canCreateTransport)
 
-  if (nodemailer) {
+  if (canCreateTransport) {
     return sendAdminEmailNodemailer({ subject, body })
   } else {
     return sendAdminEmailCloudflareWorkers({ subject, body })
