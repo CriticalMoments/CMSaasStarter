@@ -123,6 +123,7 @@ const sendAdminEmailCloudflareWorkers = async ({
   })
 
   const response = await fetch(send_request)
+  console.log("MailChannels API response:", response)
   if (!response.ok) {
     console.log("Error sending admin email with MailChannels API", response)
     return
