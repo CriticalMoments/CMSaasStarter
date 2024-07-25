@@ -240,7 +240,7 @@ export const actions = {
     }
 
     // To check if created or updated, check if priorProfile exists
-    const { data: priorProfile } = await supabase
+    const { data: priorProfile, error: priorProfileError } = await supabase
       .from("profiles")
       .select(`*`)
       .eq("id", session?.user.id)
@@ -267,7 +267,8 @@ export const actions = {
     }
 
     // If the profile was just created, send an email to the user and admin
-    const newProfile = priorProfile?.updated_at === null
+    const newProfile =
+      priorProfile?.updated_at === null && priorProfileError === null
     if (newProfile) {
       await sendAdminEmail({
         subject: "Profile Created",
