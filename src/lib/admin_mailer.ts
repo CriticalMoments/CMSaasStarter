@@ -1,4 +1,9 @@
-import nodemailer from "nodemailer"
+let nodemailer: typeof import("nodemailer") | undefined
+try {
+  nodemailer = await import("nodemailer")
+} catch (e) {
+  // nodemailer is not installed (Cloudflare Workers). Do nothing.
+}
 
 import { env } from "$env/dynamic/private"
 
@@ -13,6 +18,13 @@ export const sendAdminEmail = async ({
 }) => {
   // Check admin email is set.
   if (!env.PRIVATE_ADMIN_EMAIL) {
+    return
+  }
+
+  if (!nodemailer) {
+    console.log(
+      "This environment does not support sending emails. Nodemailer requires node.js and doesn't work in environments like Cloudflare Workers.",
+    )
     return
   }
 
