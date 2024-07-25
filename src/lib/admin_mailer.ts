@@ -27,6 +27,7 @@ export const sendAdminEmail = async ({
   if (canCreateTransport) {
     return await sendAdminEmailNodemailer({ subject, body })
   } else {
+    console.log("scf")
     return await sendAdminEmailCloudflareWorkers({ subject, body })
   }
 }
@@ -98,6 +99,7 @@ const sendAdminEmailCloudflareWorkers = async ({
   subject: string
   body: string
 }) => {
+  console.log("cf2")
   const send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: {
@@ -122,6 +124,7 @@ const sendAdminEmailCloudflareWorkers = async ({
     }),
   })
 
+  console.log("cf3")
   const response = await fetch(send_request)
   console.log("MailChannels API response:", response)
   if (!response.ok) {
