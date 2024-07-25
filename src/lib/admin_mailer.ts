@@ -1,3 +1,4 @@
+// Optional dependency, only used if platform suppport node.js (not Cloudflare Workers).
 let nodemailer: typeof import("nodemailer") | undefined
 try {
   nodemailer = await import("nodemailer")
@@ -21,6 +22,20 @@ export const sendAdminEmail = async ({
     return
   }
 
+  if (nodemailer) {
+    return sendAdminEmailNodemailer({ subject, body })
+  } else {
+    return sendAdminEmailCloudflareWorkers({ subject, body })
+  }
+}
+
+const sendAdminEmailNodemailer = async ({
+  subject,
+  body,
+}: {
+  subject: string
+  body: string
+}) => {
   if (!nodemailer) {
     console.log(
       "This environment does not support sending emails. Nodemailer requires node.js and doesn't work in environments like Cloudflare Workers.",
@@ -70,5 +85,44 @@ export const sendAdminEmail = async ({
     }
   } catch (e) {
     console.log("Failed to send admin email, error:", e)
+  }
+}
+
+// https://blog.cloudflare.com/sending-email-from-workers-with-mailchannels/
+const sendAdminEmailCloudflareWorkers = async ({
+  subject,
+  body,
+}: {
+  subject: string
+  body: string
+}) => {
+  const send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      personalizations: [
+        {
+          to: [{ email: env.PRIVATE_ADMIN_EMAIL }],
+        },
+      ],
+      from: {
+        email: env.PRIVATE_ADMIN_EMAIL,
+      },
+      subject: "ADMIN_MAIL: " + subject,
+      content: [
+        {
+          type: "text/plain",
+          value: body,
+        },
+      ],
+    }),
+  })
+
+  const response = await fetch(send_request)
+  if (!response.ok) {
+    console.log("Error sending admin email with MailChannels API", response)
+    return
   }
 }
