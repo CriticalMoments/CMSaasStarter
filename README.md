@@ -271,6 +271,16 @@ If you prefer another host you can explore alternatives:
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains, unlike Cloudflare.
 
+## Setup Admin Emailer -- Optional
+
+SaaS Starter includes an admin emailer for sending yourself email notifications when important events happen, such as a new user creating their profile. This let's you monitor your app and respond to users without watching the database.
+
+Provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun.
+
+Set the email address which admil emails will be sent to in `PRIVATE_ADMIN_EMAIL`.
+
+You can add additional calls to sendAdminEmail() for any other events you want to monitor.
+
 ## Add Your Content
 
 After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t have your content. The following checklist helps you customize the template to make a SaaS homepage for your company.
