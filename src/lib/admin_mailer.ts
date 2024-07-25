@@ -110,7 +110,7 @@ const sendAdminEmailCloudflareWorkers = async ({
         },
       ],
       from: {
-        email: "noreply@saasstarter.pages.dev",
+        email: "noreply@scosman.workers.dev",
       },
       subject: "ADMIN_MAIL: " + subject,
       content: [
