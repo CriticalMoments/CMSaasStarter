@@ -110,8 +110,7 @@ const sendAdminEmailCloudflareWorkers = async ({
         },
       ],
       from: {
-        // Can't spoof a lot of email addresses, so use a generic email address.
-        email: "noreply@your_domain_here_optional.com",
+        email: "noreply@saasstarter.pages.dev",
       },
       subject: "ADMIN_MAIL: " + subject,
       content: [
