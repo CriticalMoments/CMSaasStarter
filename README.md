@@ -275,11 +275,13 @@ If you prefer another host you can explore alternatives:
 
 SaaS Starter includes an admin emailer for sending yourself email notifications when important events happen. This let's you monitor your app and respond to users without watching the database.
 
-If you setup the admin emailer, it will email you when users create their profile or the 'Contact Us' form is submitted. You can add additional calls to sendAdminEmail() for any other events you want to monitor.
+If you setup the admin emailer, it will email you when users create their profile, or when the 'Contact Us' form is submitted. You can add additional calls to sendAdminEmail() for any other events you want to monitor.
 
-**Not supported on Cloudflare Workers**: the admin emailer is not supported on Cloudflare Workers as it does not have a full node.js environment.
+To setup, set these environment variables:
 
-To setup, first set the email address to which admin emails will be sent in the env var `PRIVATE_ADMIN_EMAIL`. Then provide email SMTP credientials in your environment variables: `PRIVATE_SMTP_HOST`, `PRIVATE_SMTP_PORT`, `PRIVATE_SMTP_USER`, `PRIVATE_SMTP_PASS`. You can use any SMTP providers such as Gmail, Sendgrid, AWS SES, Resend, or Mailgun.
+- `PRIVATE_ADMIN_EMAIL`: the email address to which admin emails will be sent.
+- `PRIVATE_FROM_ADMIN_EMAIL`: the email address to use as the from address for admin emails (defaults to `PRIVATE_ADMIN_EMAIL` if not set).
+- `PRIVATE_RESEND_API_KEY`: a https://resend.com API key. Note, you'll need to verify your domain with them before you can use their service.
 
 ## Add Your Content
 

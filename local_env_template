@@ -6,9 +6,7 @@ PRIVATE_SUPABASE_SERVICE_ROLE='REPLACE_ME'
 # Stripe settings
 PRIVATE_STRIPE_API_KEY='REPLACE_ME'
 
-# SMTP settings for email - optional
-# PRIVATE_ADMIN_EMAIL='your_email@example.com' # see lib/admin_mailer.ts
-# PRIVATE_SMTP_HOST='REPLACE_ME'
-# PRIVATE_SMTP_PORT='587'
-# PRIVATE_SMTP_USER='REPLACE_ME'
-# PRIVATE_SMTP_PASS='REPLACE_ME'
+# settings for email - optional
+# PRIVATE_ADMIN_EMAIL='your_email@example.com'
+# PRIVATE_FROM_ADMIN_EMAIL='REPLACE_ME' 
+# PRIVATE_RESEND_API_KEY='REPLACE_ME'
