@@ -1,5 +1,8 @@
 import { Resend } from "resend"
 import { env } from "$env/dynamic/private"
+import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
+import { PUBLIC_SUPABASE_URL } from "$env/static/public"
+import { createClient, type User } from "@supabase/supabase-js"
 
 // Sends an email to the admin email address.
 // Does not throw errors, but logs them.
@@ -30,6 +33,53 @@ export const sendAdminEmail = async ({
   } catch (e) {
     console.log("Failed to send admin email, error:", e)
   }
+}
+
+export const sendUserEmail = async ({
+  user,
+  subject,
+  from_email,
+  template_name,
+  template_properties,
+}: {
+  user: User
+  subject: string
+  from_email: string
+  template_name: string
+  template_properties: Record<string, string>
+}) => {
+  const email = user.email
+  if (!email) {
+    console.log("No email for user. Aborting email. ", user.id)
+    return
+  }
+
+  // Check if the user email is verified using the full user object from service role
+  // Oauth uses email_verified, and email auth uses email_confirmed_at
+  const serverSupabase = createClient(
+    PUBLIC_SUPABASE_URL,
+    PRIVATE_SUPABASE_SERVICE_ROLE,
+    { auth: { persistSession: false } },
+  )
+  const { data: serviceUserData } = await serverSupabase.auth.admin.getUserById(
+    user.id,
+  )
+  const emailVerified =
+    serviceUserData.user?.email_confirmed_at ||
+    serviceUserData.user?.user_metadata?.email_verified
+
+  if (!emailVerified) {
+    console.log("User email not verified. Aborting email. ", user.id, email)
+    return
+  }
+
+  sendTemplatedEmail({
+    subject,
+    to_emails: [email],
+    from_email,
+    template_name,
+    template_properties,
+  })
 }
 
 export const sendTemplatedEmail = async ({

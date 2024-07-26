@@ -1,5 +1,5 @@
 import { fail, redirect } from "@sveltejs/kit"
-import { sendAdminEmail, sendTemplatedEmail } from "$lib/mailer"
+import { sendAdminEmail, sendUserEmail } from "$lib/mailer"
 
 export const actions = {
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
@@ -192,10 +192,7 @@ export const actions = {
     await supabase.auth.signOut()
     redirect(303, "/")
   },
-  updateProfile: async ({
-    request,
-    locals: { supabase, safeGetSession, supabaseServiceRole },
-  }) => {
+  updateProfile: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (!session) {
       redirect(303, "/login")
@@ -278,27 +275,16 @@ export const actions = {
         body: `Profile created by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
       })
 
-      // Check if the user email is verified using the full user object from service role
-      // Oauth uses email_verified, and email auth uses email_confirmed_at
-      const { data: serviceUserData } =
-        await supabaseServiceRole.auth.admin.getUserById(session.user.id)
-      const emailVerified =
-        serviceUserData.user?.email_confirmed_at ||
-        serviceUserData.user?.user_metadata?.email_verified
-
-      // Send welcome email to user if they have confirmed their email
-      const userEmail = session.user.email
-      if (userEmail && emailVerified) {
-        await sendTemplatedEmail({
-          subject: "Welcome!",
-          to_emails: [userEmail],
-          from_email: "no-reply@saasstarter.work",
-          template_name: "welcome_email",
-          template_properties: {
-            companyName: "SaaS Starter",
-          },
-        })
-      }
+      // Send welcome email
+      await sendUserEmail({
+        user: session.user,
+        subject: "Welcome!",
+        from_email: "no-reply@saasstarter.work",
+        template_name: "welcome_email",
+        template_properties: {
+          companyName: "SaaS Starter",
+        },
+      })
     }
 
     return {
