@@ -274,8 +274,9 @@ export const actions = {
         subject: "Profile Created",
         body: `Profile created by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
       })
+      // Send welcome email to user if they have confirmed their email
       const userEmail = session.user.email
-      if (userEmail) {
+      if (userEmail && session.user.user_metadata?.email_verified) {
         await sendTemplatedEmail({
           subject: "Welcome!",
           to_emails: [userEmail],
