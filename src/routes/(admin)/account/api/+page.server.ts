@@ -1,5 +1,6 @@
-import { fail, redirect } from "@sveltejs/kit"
+import { UserProfileManager } from "$lib/business/UserProfileManager"
 import { sendAdminEmail, sendUserEmail } from "$lib/mailer"
+import { fail, redirect } from "@sveltejs/kit"
 
 export const actions = {
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
@@ -240,11 +241,8 @@ export const actions = {
     }
 
     // To check if created or updated, check if priorProfile exists
-    const { data: priorProfile, error: priorProfileError } = await supabase
-      .from("profiles")
-      .select(`*`)
-      .eq("id", session?.user.id)
-      .single()
+    const userProfileManager = new UserProfileManager(supabase, session)
+    const priorProfile = await userProfileManager.getProfile()
 
     const { error } = await supabase
       .from("profiles")
@@ -267,9 +265,9 @@ export const actions = {
     }
 
     // If the profile was just created, send an email to the user and admin
-    const newProfile =
-      priorProfile?.updated_at === null && priorProfileError === null
-    if (newProfile) {
+    const isNewProfile =
+      priorProfile && priorProfile?.updated_at === null ? false : true
+    if (isNewProfile) {
       await sendAdminEmail({
         subject: "Profile Created",
         body: `Profile created by ${session.user.email}\nFull name: ${fullName}\nCompany name: ${companyName}\nWebsite: ${website}`,
