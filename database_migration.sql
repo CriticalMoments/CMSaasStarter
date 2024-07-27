@@ -5,7 +5,9 @@ create table profiles (
   full_name text,
   company_name text,
   avatar_url text,
-  website text
+  website text,
+  gcu_agreed_at timestamp with time zone,
+  newsletter_agreed_at timestamp with time zone
 );
 -- Set up Row Level Security (RLS)
 -- See https://supabase.com/docs/guides/auth/row-level-security for more details.

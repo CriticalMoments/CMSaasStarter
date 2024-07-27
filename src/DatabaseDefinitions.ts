@@ -19,6 +19,8 @@ export interface Database {
           message_body: string | null
           phone: string | null
           updated_at: Date | null
+          gcu_agreed_at: Date | null
+          newsletter_agreed_at: Date | null
         }
         Insert: {
           company_name?: string | null
@@ -29,6 +31,8 @@ export interface Database {
           message_body?: string | null
           phone?: string | null
           updated_at?: Date | null
+          gcu_agreed_at?: Date | null
+          newsletter_agreed_at?: Date | null
         }
         Update: {
           company_name?: string | null
@@ -39,6 +43,8 @@ export interface Database {
           message_body?: string | null
           phone?: string | null
           updated_at?: Date | null
+          gcu_agreed_at?: Date | null
+          newsletter_agreed_at?: Date | null
         }
         Relationships: []
       }
@@ -50,6 +56,8 @@ export interface Database {
           updated_at: string | null
           company_name: string | null
           website: string | null
+          gcu_agreed_at: Date | null
+          newsletter_agreed_at: Date | null
         }
         Insert: {
           avatar_url?: string | null
@@ -58,6 +66,8 @@ export interface Database {
           updated_at?: Date | null
           company_name?: string | null
           website?: string | null
+          gcu_agreed_at?: Date | null
+          newsletter_agreed_at?: Date | null
         }
         Update: {
           avatar_url?: string | null
@@ -66,6 +76,8 @@ export interface Database {
           updated_at?: string | null
           company_name?: string | null
           website?: string | null
+          gcu_agreed_at?: Date | null
+          newsletter_agreed_at?: Date | null
         }
         Relationships: [
           {

@@ -6,6 +6,8 @@ declare global {
     companyName?: string
     website?: string
     email?: string
+    isGcuAgreed?: boolean | null
+    isNewsletterAgreed?: boolean | null
   }
 }
 

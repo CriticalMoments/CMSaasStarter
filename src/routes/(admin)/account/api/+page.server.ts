@@ -1,5 +1,5 @@
-import { fail, redirect } from "@sveltejs/kit"
 import { sendAdminEmail, sendUserEmail } from "$lib/mailer"
+import { fail, redirect } from "@sveltejs/kit"
 
 export const actions = {
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
@@ -192,6 +192,49 @@ export const actions = {
     await supabase.auth.signOut()
     redirect(303, "/")
   },
+  updateNewsletterSubscription: async ({
+    request,
+    locals: { supabase, safeGetSession },
+  }) => {
+    const { session } = await safeGetSession()
+    if (!session) {
+      redirect(303, "/login")
+    }
+
+    const formData = await request.formData()
+    const isChecked = Boolean(formData.get("newsletter_checkbox"))
+
+    if (isChecked === null) {
+      return fail(400, {
+        errorMessage: "Checkbox value is required",
+        errorFields: ["newsletter_checkbox"],
+      })
+    }
+
+    let newsletterAgreedAt = null
+    if (isChecked) {
+      newsletterAgreedAt = new Date()
+    }
+
+    // To check if created or updated, check if priorProfile exists
+    const { error } = await supabase
+      .from("profiles")
+      .upsert({
+        id: session?.user.id,
+        newsletter_agreed_at: newsletterAgreedAt,
+      })
+      .select()
+
+    if (error) {
+      return fail(500, {
+        errorMessage: "Unknown error. If this persists please contact us.",
+      })
+    }
+
+    return {
+      isChecked,
+    }
+  },
   updateProfile: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (!session) {
@@ -202,10 +245,13 @@ export const actions = {
     const fullName = formData.get("fullName") as string
     const companyName = formData.get("companyName") as string
     const website = formData.get("website") as string
+    const isGcuAgreed = formData.get("isGcuAgreed")
+    const isNewsletterAgreed = formData.get("isNewsletterAgreed")
 
     let validationError
     const fieldMaxTextLength = 50
     const errorFields = []
+
     if (!fullName) {
       validationError = "Name is required"
       errorFields.push("fullName")
@@ -239,6 +285,11 @@ export const actions = {
       })
     }
 
+    // Transform the checkbox values into dates
+    const currentISODate = new Date().toISOString()
+    const gcuAgreedAt = isGcuAgreed ? currentISODate : null
+    const newsletterAgreedAt = isNewsletterAgreed ? currentISODate : null
+
     // To check if created or updated, check if priorProfile exists
     const { data: priorProfile, error: priorProfileError } = await supabase
       .from("profiles")
@@ -254,6 +305,8 @@ export const actions = {
         company_name: companyName,
         website: website,
         updated_at: new Date(),
+        gcu_agreed_at: gcuAgreedAt,
+        newsletter_agreed_at: newsletterAgreedAt,
       })
       .select()
 
@@ -263,6 +316,8 @@ export const actions = {
         fullName,
         companyName,
         website,
+        gcuAgreedAt,
+        newsletterAgreedAt,
       })
     }
 
