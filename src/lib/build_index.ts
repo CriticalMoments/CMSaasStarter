@@ -5,6 +5,8 @@ import { convert } from "html-to-text"
 import JSDOM from "jsdom"
 import Fuse from "fuse.js"
 
+const excludePaths = ["/search"]
+
 export async function buildSearchIndex() {
   const indexData = []
 
@@ -15,13 +17,24 @@ export async function buildSearchIndex() {
   const allFiles = glob.sync(path.join(pagesPath, "**/*.html"))
   for (const file of allFiles) {
     try {
-      // read the file
-      const data = fs.readFileSync(file, "utf8")
-      const plaintext = convert(data)
       const webPath = file
         .replace(pagesPath, "")
         .replace("/index.html", "")
         .replace(".html", "")
+
+      // check if path is excluded
+      if (excludePaths.includes(webPath)) {
+        continue
+      }
+
+      // read the file
+      const data = fs.readFileSync(file, "utf8")
+      const plaintext = convert(data, {
+        selectors: [
+          { selector: "a", options: { ignoreHref: true, linkBrackets: false } },
+          { selector: "img", format: "skip" },
+        ],
+      })
       const dom = new JSDOM.JSDOM(data)
       const title = dom.window.document.querySelector("title")?.innerHTML
       const description = dom.window.document

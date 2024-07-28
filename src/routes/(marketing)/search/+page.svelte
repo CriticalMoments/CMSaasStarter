@@ -7,7 +7,8 @@
 
   const fuseOptions = {
     keys: ["title", "description", "body"],
-    //threshold: 0.1,
+    ignoreLocation: true,
+    threshold: 0.3,
   }
 
   let fuse: Fuse<Result> | undefined
