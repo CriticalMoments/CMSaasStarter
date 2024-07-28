@@ -3,6 +3,7 @@
   import { browser } from "$app/environment"
   import { onMount } from "svelte"
   import Fuse from "fuse.js"
+  import { goto } from "$app/navigation"
 
   const fuseOptions = {
     keys: ["title", "description", "body"],
@@ -28,9 +29,6 @@
     loading = false
   })
 
-  // searchQuery is $page.url.hash minus the "#" at the beginning if present
-  let searchQuery = decodeURIComponent($page.url.hash.slice(1) ?? "")
-
   type Result = {
     item: {
       title: string
@@ -40,16 +38,18 @@
     }
   }
   let results: Result[] = []
+
+  // searchQuery is $page.url.hash minus the "#" at the beginning if present
+  let searchQuery = decodeURIComponent($page.url.hash.slice(1) ?? "")
   $: {
     if (fuse) {
       results = fuse.search(searchQuery)
     }
   }
-
   // Update the URL hash when searchQuery changes so the browser can bookmark/share the search results
   $: {
     if (browser) {
-      window.location.hash = "#" + searchQuery
+      goto("#" + searchQuery, { keepFocus: true })
     }
   }
 </script>
