@@ -15,20 +15,21 @@
 
   let loading = true
   onMount(async () => {
-    // load search index and data
-    // static index in the /static folder in dev mode
-    // in prod mode, the index is built at build time and written to the /client folder
-    const searchData = await (await fetch("/search/api")).json()
-    if (searchData && searchData.index && searchData.indexData) {
-      try {
+    try {
+      const response = await fetch("/search/api")
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const searchData = await response.json()
+      if (searchData && searchData.index && searchData.indexData) {
         const index = Fuse.parseIndex(searchData.index)
         fuse = new Fuse<Result>(searchData.indexData, fuseOptions, index)
-      } catch (e) {
-        console.log("Blog search indexing error", e)
       }
+    } catch (error) {
+      console.error("Failed to load search data", error)
+    } finally {
+      loading = false
     }
-    loading = false
-    document.getElementById("search-input")?.focus()
   })
 
   type Result = {
@@ -50,7 +51,7 @@
   }
   // Update the URL hash when searchQuery changes so the browser can bookmark/share the search results
   $: {
-    if (browser) {
+    if (browser && window.location.hash.slice(1) !== searchQuery) {
       goto("#" + searchQuery, { keepFocus: true })
     }
   }
@@ -78,6 +79,7 @@
       class="grow"
       placeholder="Search"
       bind:value={searchQuery}
+      aria-label="Search input"
     />
   </label>
 

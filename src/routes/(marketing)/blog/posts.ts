@@ -9,13 +9,7 @@ export type BlogPost = {
   title: string
   description: string
   parsedDate?: Date // Optional because it's added dynamically
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  component: any
 }
-
-import ExampleBlogPost from "./(posts)/example_blog_post/+page.svelte"
-import HowWeBuiltOur41kbSaaSWebsite from "./(posts)/how_we_built_our_41kb_saas_website/+page.svelte"
-import AwesomePost from "./(posts)/awesome_post/+page.svelte"
 
 // Update this list with the actual blog post list
 // Create a page in the "(posts)" directory for each entry
@@ -25,21 +19,18 @@ const blogPosts: BlogPost[] = [
     description: "How to use this template you to bootstrap your own site.",
     link: "/blog/how_we_built_our_41kb_saas_website",
     date: "2024-03-10",
-    component: HowWeBuiltOur41kbSaaSWebsite,
   },
   {
     title: "Example Blog Post 2",
     description: "Even more example content!",
     link: "/blog/awesome_post",
     date: "2022-9-23",
-    component: AwesomePost,
   },
   {
     title: "Example Blog Post",
     description: "A sample blog post, showing our blog engine",
     link: "/blog/example_blog_post",
     date: "2023-03-13",
-    component: ExampleBlogPost,
   },
 ]
 

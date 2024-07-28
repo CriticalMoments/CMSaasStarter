@@ -21,7 +21,7 @@
 
 # SaaS Starter: A SvelteKit Boilerplate/Template
 
-- [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more.
+- [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, search, emails, and more.
 - [Lightning Performance](#performance--best-practices): fast pre-rendered pages which score 100/100 on Google PageSpeed.
 - [Delighful Developer Experience](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase.
 - Extensible: all the tools you need to make additional marketing pages, UI components, user dashboards, admin portals, database backends, API endpoints, and more.
@@ -63,9 +63,11 @@ Everything you need to get started for a SaaS company:
 - User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth. GDPR cookie warning for European users.
 - Marketing Page with SEO optimization
 - Blog engine with rich formatting, RSS and SEO optimization.
-- User Dashboard with user profile, user settings, update email/password, billing, and more.
+- User Dashboard with user profile, user settings, update email/password, billing, and more
 - Subscriptions powered by Stripe Checkout
 - Pricing page
+- Emails: send emails to users, including template support
+- Search: lightning fast site search, without a backend
 - Contact-us form
 - Billing portal: self serve to change card, upgrade, cancel, or download receipts
 - Onboarding flow after signup: collect user data, and select a payment plan

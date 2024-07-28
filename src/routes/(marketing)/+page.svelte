@@ -108,6 +108,17 @@
 <path d="M16 9.88432V5.41121M16 5.41121V2.63519C16 2.39905 16.1676 2.19612 16.3994 2.15144L16.8855 2.05779C17.4738 1.94443 18.0821 1.99855 18.6412 2.214L18.7203 2.24451C19.2746 2.4581 19.8807 2.498 20.4582 2.35891C20.7343 2.2924 21 2.50168 21 2.78573V5.00723C21 5.2442 20.8376 5.45031 20.6073 5.5058L20.5407 5.52184C19.9095 5.67387 19.247 5.63026 18.6412 5.39679C18.0821 5.18135 17.4738 5.12722 16.8855 5.24058L16 5.41121Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>`,
     },
     {
+      name: "Search",
+      link: "/search",
+      description: "Lighting fast site search, without a backend.",
+      svgContent: `
+<path d="M22 13V12C22 8.22876 22 6.34315 20.8284 5.17157C19.6569 4 17.7712 4 14 4H10C6.22876 4 4.34315 4 3.17157 5.17157C2 6.34315 2 8.22876 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20H13" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M10 16H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M2 10L22 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="18" cy="17" r="3" stroke="#1C274C" stroke-width="1.5"/>
+<path d="M20.5 19.5L21.5 20.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>`,
+    },
+    {
       name: "Email",
       link: "https://github.com/CriticalMoments/CMSaasStarter/blob/main/email_docs.md",
       linkText: "Docs",
