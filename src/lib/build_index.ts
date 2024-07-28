@@ -41,7 +41,11 @@ export async function buildSearchIndex() {
   const index = Fuse.createIndex(["title", "description", "body"], indexData)
   const jsonIndex = index.toJSON()
   const data = { index: jsonIndex, indexData, buildMode: "build-time-compiled" }
+  return data
+}
 
+export async function buildAndCacheSearchIndex() {
+  const data = await buildSearchIndex()
   // write index data to file, overwriting static file on build
   fs.writeFileSync(
     path.resolve("./.svelte-kit/output/client/search_index.json"),

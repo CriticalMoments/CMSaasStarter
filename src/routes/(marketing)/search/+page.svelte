@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { blogInfo } from "./../posts"
   import { page } from "$app/stores"
   import { browser } from "$app/environment"
   import { onMount } from "svelte"
@@ -17,7 +16,7 @@
     // load search index and data
     // static index in the /static folder in dev mode
     // in prod mode, the index is built at build time and written to the /client folder
-    const searchData = await (await fetch("/search_index.json")).json()
+    const searchData = await (await fetch("/search/api")).json()
     if (searchData && searchData.index && searchData.indexData) {
       try {
         const index = Fuse.parseIndex(searchData.index)
@@ -56,8 +55,8 @@
 </script>
 
 <svelte:head>
-  <title>{blogInfo.name} Search</title>
-  <meta name="description" content="Search our blog posts." />
+  <title>Search</title>
+  <meta name="description" content="Search our website." />
 </svelte:head>
 
 <div class="py-8 lg:py-12 px-6 max-w-lg mx-auto">
@@ -67,7 +66,7 @@
     <div
       class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent"
     >
-      Blog Search
+      Search
     </div>
   </div>
   <label class="input input-bordered flex items-center gap-2 mt-10">
@@ -81,6 +80,10 @@
 
   {#if loading && searchQuery.length > 0}
     <div class="text-center mt-10 text-accent text-xl">Loading...</div>
+  {/if}
+
+  {#if !loading && searchQuery.length > 0 && results.length === 0}
+    <div class="text-center mt-10 text-accent text-xl">No results found</div>
   {/if}
 
   <div>
