@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sortedBlogPosts, blogInfo } from "./../posts"
+  import { blogInfo } from "./../posts"
   import { page } from "$app/stores"
   import { browser } from "$app/environment"
 
@@ -7,11 +7,10 @@
 
   import Fuse from "fuse.js"
 
-  const fuseOptions = {
-    keys: ["title", "description"],
-    threshold: 0.1,
-  }
-  const fuse = new Fuse(sortedBlogPosts, fuseOptions)
+  const index = Fuse.parseIndex(data.index)
+  const fuse = new Fuse(data.indexData, data.fuseOptions, index)
+
+  //const fuse = new Fuse(sortedBlogPosts, fuseOptions)
 
   // searchQuery is $page.url.hash minus the "#" at the beginning if present
   let searchQuery = $page.url.hash.slice(1) ?? ""
