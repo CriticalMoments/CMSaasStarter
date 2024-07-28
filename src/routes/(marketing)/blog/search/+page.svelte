@@ -2,20 +2,50 @@
   import { blogInfo } from "./../posts"
   import { page } from "$app/stores"
   import { browser } from "$app/environment"
-
-  export let data
-
+  import { onMount } from "svelte"
   import Fuse from "fuse.js"
 
-  const index = Fuse.parseIndex(data.index)
-  const fuse = new Fuse(data.indexData, data.fuseOptions, index)
+  const fuseOptions = {
+    keys: ["title", "description", "body"],
+    //threshold: 0.1,
+  }
 
-  //const fuse = new Fuse(sortedBlogPosts, fuseOptions)
+  let fuse: Fuse<Result> | undefined
+
+  let loading = true
+  onMount(async () => {
+    // load search index and data
+    // static index in the /static folder in dev mode
+    // in prod mode, the index is built at build time and written to the /client folder
+    const searchData = await (await fetch("/search_index.json")).json()
+    if (searchData && searchData.index && searchData.indexData) {
+      try {
+        const index = Fuse.parseIndex(searchData.index)
+        fuse = new Fuse<Result>(searchData.indexData, fuseOptions, index)
+      } catch (e) {
+        console.log("Blog search indexing error", e)
+      }
+    }
+    loading = false
+  })
 
   // searchQuery is $page.url.hash minus the "#" at the beginning if present
-  let searchQuery = $page.url.hash.slice(1) ?? ""
+  let searchQuery = decodeURIComponent($page.url.hash.slice(1) ?? "")
 
-  $: results = fuse.search(searchQuery)
+  type Result = {
+    item: {
+      title: string
+      description: string
+      body: string
+      path: string
+    }
+  }
+  let results: Result[] = []
+  $: {
+    if (fuse) {
+      results = fuse.search(searchQuery)
+    }
+  }
 
   // Update the URL hash when searchQuery changes so the browser can bookmark/share the search results
   $: {
@@ -49,28 +79,26 @@
     />
   </label>
 
+  {#if loading && searchQuery.length > 0}
+    <div class="text-center mt-10 text-accent text-xl">Loading...</div>
+  {/if}
+
   <div>
     {#each results as result}
-      <div class="card my-6 bg-white shadow-xl flex-row overflow-hidden">
-        <div class="flex-none w-6 md:w-32 bg-secondary"></div>
-        <div class="py-6 px-6">
-          <div class="text-xl">{result.item.title}</div>
-          <div class="text-sm text-accent">
-            {result.item.parsedDate?.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            })}
+      <a href={result.item.path || "/"}>
+        <div class="card my-6 bg-white shadow-xl flex-row overflow-hidden">
+          <div class="flex-none w-6 md:w-32 bg-secondary"></div>
+          <div class="py-6 px-6">
+            <div class="text-xl">{result.item.title}</div>
+            <div class="text-sm text-accent">
+              {result.item.path}
+            </div>
+            <div class="text-slate-500">{result.item.description}</div>
           </div>
-          <div class="text-slate-500">{result.item.description}</div>
         </div>
-      </div>
+      </a>
     {/each}
   </div>
 
   <div></div>
-
-  <div>
-    {JSON.stringify(data.indexData)}
-  </div>
 </div>

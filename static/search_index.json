@@ -1,0 +1,162 @@
+{
+  "index": {
+    "keys": [
+      {
+        "path": ["title"],
+        "id": "title",
+        "weight": 1,
+        "src": "title",
+        "getFn": null
+      },
+      {
+        "path": ["description"],
+        "id": "description",
+        "weight": 1,
+        "src": "description",
+        "getFn": null
+      },
+      {
+        "path": ["body"],
+        "id": "body",
+        "weight": 1,
+        "src": "body",
+        "getFn": null
+      }
+    ],
+    "records": [
+      {
+        "i": 0,
+        "$": {
+          "0": { "v": "SaaS Starter Blog", "n": 0.577 },
+          "1": { "v": "Our blog posts.", "n": 0.577 },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nSaaS Starter Blog\nrss feed [/images/rss.svg]/blog/rss.xml\nA demo blog with sample content.\nHow we built a beautiful 41kb SaaS website with this template\nMar 10, 2024\nHow to use this template you to bootstrap your own site.\n[/blog/how_we_built_our_41kb_saas_website]\nExample Blog Post\nMar 13, 2023\nA sample blog post, showing our blog engine\n[/blog/example_blog_post]\nExample Blog Post 2\nSep 23, 2022\nEven more example content!\n[/blog/awesome_post]\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.096
+          }
+        }
+      },
+      {
+        "i": 1,
+        "$": {
+          "0": { "v": "Example Blog Post 2", "n": 0.5 },
+          "1": { "v": "Even more example content!", "n": 0.5 },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nSep 23, 2022\n\n\nEXAMPLE BLOG POST 2\n\nA sample post\n\nThis is a sample blog post to demonstrate the blog engine. It shows some of the\nformatting options included in the template.\n\n\nSECTION TITLES ARE GREAT\n\nAs are more paragraphs.\n\n> Block quotes are styled\n\n# Code blocks work too!\nnpm install \n\n\nCheck out more formatting options like lists, headers, and more in the\ntailwind/typograpy docs\n[https://play.tailwindcss.com/uj1vGACRJA?layout=preview].\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.094
+          }
+        }
+      },
+      {
+        "i": 2,
+        "$": {
+          "0": { "v": "Example Blog Post", "n": 0.577 },
+          "1": {
+            "v": "A sample blog post, showing our blog engine",
+            "n": 0.354
+          },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nMar 13, 2023\n\n\nEXAMPLE BLOG POST\n\nA sample post\n\nThis is a sample blog post to demonstrate the blog engine. It shows some of the\nformatting options included in the template.\n\n\nSECTION TITLES ARE GREAT\n\nAs are more paragraphs.\n\n> Block quotes are styled\n\n# Code blocks work too!\nnpm install \n\n\nCheck out more formatting options like lists, headers, and more in the\ntailwind/typograpy docs\n[https://play.tailwindcss.com/uj1vGACRJA?layout=preview].\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.094
+          }
+        }
+      },
+      {
+        "i": 3,
+        "$": {
+          "0": {
+            "v": "How we built a beautiful 41kb SaaS website with this template",
+            "n": 0.302
+          },
+          "1": {
+            "v": "How to use this template you to bootstrap your own site.",
+            "n": 0.302
+          },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nMar 10, 2024\n\n\nHOW WE BUILT A BEAUTIFUL 41KB SAAS WEBSITE WITH THIS TEMPLATE\n\nHow to use this template you to bootstrap your own site.\n\nWe've written a detailed blog post about how we took this template, and created\na real SaaS company website [https://criticalmoments.io]. Topics include:\n\n * Optimizing the stack for performance and developer productivity\n * Creating rich interactive animations with Svelte\n * Creating pixel perfect designs without rasterization\n * Speed measurements: how we kept it small and lightning fast\n\nRead the Blog Post\n[https://criticalmoments.io/blog/how_we_built_our_marketing_page]\n\nThe blog post is over on criticalmoments.io [https://criticalmoments.io], a page\nwhich uses this boilerplate as a starting point.\n\nIf you are looking for examples of blog posts with rich content rendered inside\nthis template, checkout the other demo posts here [/blog].\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.076
+          }
+        }
+      },
+      {
+        "i": 4,
+        "$": {
+          "0": { "v": "SaaS Starter Blog Search", "n": 0.5 },
+          "1": { "v": "Search our blog posts.", "n": 0.5 },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nBlog Search\n\n\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.13
+          }
+        }
+      },
+      {
+        "i": 5,
+        "$": {
+          "0": { "v": "SaaS Starter", "n": 0.707 },
+          "1": {
+            "v": "Open source, fast, and free to host SaaS template. Built with SvelteKit, Supabase, Stripe, Tailwind, DaisyUI, and Postgres",
+            "n": 0.236
+          },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nSaaS Starter Demo\nThe open source, fast, and free to host SaaS template\nBuilt with SvelteKit [https://kit.svelte.dev], Supabase [https://supabase.com],\nStripe [https://stripe.com], Tailwind [https://tailwindcss.com], DaisyUI\n[https://daisyui.com], and Postgres [https://www.postgresql.org]\n★ us on Github [https://github.com/CriticalMoments/CMSaasStarter] Read the Docs\n[https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter]\nExplore the Features\nAnd try them on this fully functional demo\n\n\nFREE TO HOST\n\nInstructions included for Cloudflare+Supabase. Free to start, and cost effective\nto scale.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#suggested-hosting-stack]\n\n\nUSER AUTH\n\nSign up, sign out, forgot password, email verification, and oAuth. Powered by\nSupabase Auth.\n\nTry It [/login]\n\n\nPRICING PAGE\n\nCustomizable and fast pricing page, integrated into the billing portal.\n\nTry It [/pricing]\n\n\nBLOG\n\nBlog engine with rich formatting, RSS and SEO optimization.\n\nTry It [/blog]\n\n\nSUBSCRIPTIONS\n\nUser friendly subscriptions powered by Stripe Checkout.\n\nTry It [/pricing]\n\n\nBILLING PORTAL\n\nSelf-serve portal for updating card, receipts, upgrades, downgrades and more.\n\nTry It [/account/billing]\n\n\nUSER DASHBOARD\n\nUser profile, user settings, update email/password, billing, and more.\n\nTry It [/account/settings]\n\n\nCONTACT US\n\nContact form for customers to reach out for demos, quotes, and questions.\n\nTry It [/contact_us]\n\n\nEMAIL\n\nSend emails to users, including template support.\n\nDocs [https://github.com/CriticalMoments/CMSaasStarter/blob/main/email_docs.md]\n\n\nPERFORMANCE\n\nPre-rendering. Compiled on deployment to remove unused CSS/JS. Perfect 100/100\nGoogle performance scores.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#performance--best-practices]\n\n\nRESPONSIVE\n\nDesigned for mobile and desktop.\n\n\nDELIGHTFUL STACK\n\nTools you'll love working with, including SvelteKit, Tailwind, DaisyUI,\nPostgres, and Supabase.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#tech-stack]\n\n\nEXTENSIBLE\n\nAll the tools you need to make additional marketing pages, UI components, admin\nportals, database backends, API endpoints, and more.\n\n\nDEVELOPER EXPERIENCE\n\nBuilt in linting, type checking, formatting, and test framework. Run locally in\nyour editor, and on Github CI.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#developer-tools]\n\n\nSCALABLE\n\nHandle new users and scale with horizontally scaling edge functions.\n\n\nEXTENSIONS\n\nCommunity extensions for internationalization, dark mode theme, and more.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#community-extensions]\nSee it in Action\nhttps://criticalmoments.io\nScreenshot of criticalmoments.io homepage [/images/example-home.png]\n[https://criticalmoments.io]\nScreenshot of criticalmoments.io homepage [/images/example-home.png]\nhttps://criticalmoments.io\nSaaS Starter was created by Critical Moments: a SDK to to help mobile apps\nincrease conversion rates and app-ratings. [https://criticalmoments.io]\nOur webpage [https://criticalmoments.io] is the best example of SaaS Starter\nwith style and real content.\nSee it in Action [https://criticalmoments.io]\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.056
+          }
+        }
+      },
+      {
+        "i": 6,
+        "$": {
+          "0": { "v": "Pricing Page", "n": 1 },
+          "1": { "v": "Pricing Page - SaaS Starter", "n": 0.5 },
+          "2": {
+            "v": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\n\nPRICING\n\n\nTOTALLY FREE, SCALE TO MILLIONS OF USERS\n\nFree\n\nA free plan to get you started!\n\nPlan Includes:\n * MIT Licence\n * Fast Performance\n * Stripe Integration\n   \n\n$0 per month\nGet Started [/account/subscribe/free_plan]\nPro\n\nA plan to test the purchase experience. Try buying this with the test credit\ncard 4242424242424242.\n\nPlan Includes:\n * Everything in Free\n * Support us with fake money\n * Test the purchase experience\n   \n\n$5 per month\nGet Started [/account/subscribe/price_1NkdZCHMjzZ8mGZnRSjUm4yA]\nEnterprise\n\nA plan to test the upgrade experience. Try buying this with the test credit card\n4242424242424242.\n\nPlan Includes:\n * Everything in Pro\n * Try the 'upgrade plan' UX\n * Still actually free!\n   \n\n$15 per month\nGet Started [/account/subscribe/price_1Nkda2HMjzZ8mGZn4sKvbDAV]\n\n\nPRICING FAQ\n\nIs this template free to use?\n\nYup! This template is free to use for any project.\n\nWhy does a free template have a pricing page?\n\nThe pricing page is part of the boilerplate. It shows how the pricing page\nintegrates into the billing portal and the Stripe Checkout flows.\n\nWhat license is the template under?\n\nThe template is under the MIT license.\n\nCan I try out purchase flows without real a credit card?\n\nOur demo page SaasStarter.work [https://saasstarter.work] has a functional demo\npage, using Stripe's test environment.\n\nYou can use the credit card number 4242 4242 4242 4242 with any future expiry\ndate to test the payment and upgrade flows.\n\n\nPLAN FEATURES\n\n\nEXAMPLE FEATURE TABLE\n\nFree Pro Section 1 Feature 1 Feature 2 Feature 3 3 Unlimited Section 2 Feature 4\nFeature 5\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+            "n": 0.061
+          }
+        }
+      }
+    ]
+  },
+  "indexData": [
+    {
+      "title": "SaaS Starter Blog",
+      "description": "Our blog posts.",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nSaaS Starter Blog\nrss feed [/images/rss.svg]/blog/rss.xml\nA demo blog with sample content.\nHow we built a beautiful 41kb SaaS website with this template\nMar 10, 2024\nHow to use this template you to bootstrap your own site.\n[/blog/how_we_built_our_41kb_saas_website]\nExample Blog Post\nMar 13, 2023\nA sample blog post, showing our blog engine\n[/blog/example_blog_post]\nExample Blog Post 2\nSep 23, 2022\nEven more example content!\n[/blog/awesome_post]\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": "/blog"
+    },
+    {
+      "title": "Example Blog Post 2",
+      "description": "Even more example content!",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nSep 23, 2022\n\n\nEXAMPLE BLOG POST 2\n\nA sample post\n\nThis is a sample blog post to demonstrate the blog engine. It shows some of the\nformatting options included in the template.\n\n\nSECTION TITLES ARE GREAT\n\nAs are more paragraphs.\n\n> Block quotes are styled\n\n# Code blocks work too!\nnpm install \n\n\nCheck out more formatting options like lists, headers, and more in the\ntailwind/typograpy docs\n[https://play.tailwindcss.com/uj1vGACRJA?layout=preview].\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": "/blog/awesome_post"
+    },
+    {
+      "title": "Example Blog Post",
+      "description": "A sample blog post, showing our blog engine",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nMar 13, 2023\n\n\nEXAMPLE BLOG POST\n\nA sample post\n\nThis is a sample blog post to demonstrate the blog engine. It shows some of the\nformatting options included in the template.\n\n\nSECTION TITLES ARE GREAT\n\nAs are more paragraphs.\n\n> Block quotes are styled\n\n# Code blocks work too!\nnpm install \n\n\nCheck out more formatting options like lists, headers, and more in the\ntailwind/typograpy docs\n[https://play.tailwindcss.com/uj1vGACRJA?layout=preview].\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": "/blog/example_blog_post"
+    },
+    {
+      "title": "How we built a beautiful 41kb SaaS website with this template",
+      "description": "How to use this template you to bootstrap your own site.",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nMar 10, 2024\n\n\nHOW WE BUILT A BEAUTIFUL 41KB SAAS WEBSITE WITH THIS TEMPLATE\n\nHow to use this template you to bootstrap your own site.\n\nWe've written a detailed blog post about how we took this template, and created\na real SaaS company website [https://criticalmoments.io]. Topics include:\n\n * Optimizing the stack for performance and developer productivity\n * Creating rich interactive animations with Svelte\n * Creating pixel perfect designs without rasterization\n * Speed measurements: how we kept it small and lightning fast\n\nRead the Blog Post\n[https://criticalmoments.io/blog/how_we_built_our_marketing_page]\n\nThe blog post is over on criticalmoments.io [https://criticalmoments.io], a page\nwhich uses this boilerplate as a starting point.\n\nIf you are looking for examples of blog posts with rich content rendered inside\nthis template, checkout the other demo posts here [/blog].\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": "/blog/how_we_built_our_41kb_saas_website"
+    },
+    {
+      "title": "SaaS Starter Blog Search",
+      "description": "Search our blog posts.",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nBlog Search\n\n\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": "/blog/search"
+    },
+    {
+      "title": "SaaS Starter",
+      "description": "Open source, fast, and free to host SaaS template. Built with SvelteKit, Supabase, Stripe, Tailwind, DaisyUI, and Postgres",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\nSaaS Starter Demo\nThe open source, fast, and free to host SaaS template\nBuilt with SvelteKit [https://kit.svelte.dev], Supabase [https://supabase.com],\nStripe [https://stripe.com], Tailwind [https://tailwindcss.com], DaisyUI\n[https://daisyui.com], and Postgres [https://www.postgresql.org]\n★ us on Github [https://github.com/CriticalMoments/CMSaasStarter] Read the Docs\n[https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter]\nExplore the Features\nAnd try them on this fully functional demo\n\n\nFREE TO HOST\n\nInstructions included for Cloudflare+Supabase. Free to start, and cost effective\nto scale.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#suggested-hosting-stack]\n\n\nUSER AUTH\n\nSign up, sign out, forgot password, email verification, and oAuth. Powered by\nSupabase Auth.\n\nTry It [/login]\n\n\nPRICING PAGE\n\nCustomizable and fast pricing page, integrated into the billing portal.\n\nTry It [/pricing]\n\n\nBLOG\n\nBlog engine with rich formatting, RSS and SEO optimization.\n\nTry It [/blog]\n\n\nSUBSCRIPTIONS\n\nUser friendly subscriptions powered by Stripe Checkout.\n\nTry It [/pricing]\n\n\nBILLING PORTAL\n\nSelf-serve portal for updating card, receipts, upgrades, downgrades and more.\n\nTry It [/account/billing]\n\n\nUSER DASHBOARD\n\nUser profile, user settings, update email/password, billing, and more.\n\nTry It [/account/settings]\n\n\nCONTACT US\n\nContact form for customers to reach out for demos, quotes, and questions.\n\nTry It [/contact_us]\n\n\nEMAIL\n\nSend emails to users, including template support.\n\nDocs [https://github.com/CriticalMoments/CMSaasStarter/blob/main/email_docs.md]\n\n\nPERFORMANCE\n\nPre-rendering. Compiled on deployment to remove unused CSS/JS. Perfect 100/100\nGoogle performance scores.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#performance--best-practices]\n\n\nRESPONSIVE\n\nDesigned for mobile and desktop.\n\n\nDELIGHTFUL STACK\n\nTools you'll love working with, including SvelteKit, Tailwind, DaisyUI,\nPostgres, and Supabase.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#tech-stack]\n\n\nEXTENSIBLE\n\nAll the tools you need to make additional marketing pages, UI components, admin\nportals, database backends, API endpoints, and more.\n\n\nDEVELOPER EXPERIENCE\n\nBuilt in linting, type checking, formatting, and test framework. Run locally in\nyour editor, and on Github CI.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#developer-tools]\n\n\nSCALABLE\n\nHandle new users and scale with horizontally scaling edge functions.\n\n\nEXTENSIONS\n\nCommunity extensions for internationalization, dark mode theme, and more.\n\nDocs\n[https://github.com/CriticalMoments/CMSaasStarter?tab=readme-ov-file#community-extensions]\nSee it in Action\nhttps://criticalmoments.io\nScreenshot of criticalmoments.io homepage [/images/example-home.png]\n[https://criticalmoments.io]\nScreenshot of criticalmoments.io homepage [/images/example-home.png]\nhttps://criticalmoments.io\nSaaS Starter was created by Critical Moments: a SDK to to help mobile apps\nincrease conversion rates and app-ratings. [https://criticalmoments.io]\nOur webpage [https://criticalmoments.io] is the best example of SaaS Starter\nwith style and real content.\nSee it in Action [https://criticalmoments.io]\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": ""
+    },
+    {
+      "title": "Pricing Page",
+      "description": "Pricing - SaaS Starter",
+      "body": "SaaS Starter [/]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n\n * Blog [/blog]\n * Pricing [/pricing]\n * Account [/account]\n * ★ us on Github [https://github.com/CriticalMoments/CMSaasStarter]\n\n\nPRICING\n\n\nTOTALLY FREE, SCALE TO MILLIONS OF USERS\n\nFree\n\nA free plan to get you started!\n\nPlan Includes:\n * MIT Licence\n * Fast Performance\n * Stripe Integration\n   \n\n$0 per month\nGet Started [/account/subscribe/free_plan]\nPro\n\nA plan to test the purchase experience. Try buying this with the test credit\ncard 4242424242424242.\n\nPlan Includes:\n * Everything in Free\n * Support us with fake money\n * Test the purchase experience\n   \n\n$5 per month\nGet Started [/account/subscribe/price_1NkdZCHMjzZ8mGZnRSjUm4yA]\nEnterprise\n\nA plan to test the upgrade experience. Try buying this with the test credit card\n4242424242424242.\n\nPlan Includes:\n * Everything in Pro\n * Try the 'upgrade plan' UX\n * Still actually free!\n   \n\n$15 per month\nGet Started [/account/subscribe/price_1Nkda2HMjzZ8mGZn4sKvbDAV]\n\n\nPRICING FAQ\n\nIs this template free to use?\n\nYup! This template is free to use for any project.\n\nWhy does a free template have a pricing page?\n\nThe pricing page is part of the boilerplate. It shows how the pricing page\nintegrates into the billing portal and the Stripe Checkout flows.\n\nWhat license is the template under?\n\nThe template is under the MIT license.\n\nCan I try out purchase flows without real a credit card?\n\nOur demo page SaasStarter.work [https://saasstarter.work] has a functional demo\npage, using Stripe's test environment.\n\nYou can use the credit card number 4242 4242 4242 4242 with any future expiry\ndate to test the payment and upgrade flows.\n\n\nPLAN FEATURES\n\n\nEXAMPLE FEATURE TABLE\n\nFree Pro Section 1 Feature 1 Feature 2 Feature 3 3 Unlimited Section 2 Feature 4\nFeature 5\n\n\nExplore Overview [/] Pricing [/pricing] Blog [/blog] Contact Us [/contact_us]\nGithub [https://github.com/CriticalMoments/CMSaasStarter]\nSponsor Critical Moments Logo [/images/cm_logo.svg] Make mobile apps? Improve\nconversion rates and ratings with Critical Moments. [https://criticalmoments.io]",
+      "path": "/pricing"
+    }
+  ]
+}
