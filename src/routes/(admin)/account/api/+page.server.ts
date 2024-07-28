@@ -202,7 +202,7 @@ export const actions = {
     }
 
     const formData = await request.formData()
-    const isChecked = Boolean(formData.get("newsletter_checkbox"))
+    const isChecked = formData.get("newsletter_checkbox") === "on"
 
     if (isChecked === null) {
       return fail(400, {
