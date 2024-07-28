@@ -265,8 +265,7 @@ export const actions = {
     }
 
     // If the profile was just created, send an email to the user and admin
-    const isNewProfile =
-      priorProfile && priorProfile?.updated_at === null ? false : true
+    const isNewProfile = !priorProfile || priorProfile?.updated_at !== null
     if (isNewProfile) {
       await sendAdminEmail({
         subject: "Profile Created",
