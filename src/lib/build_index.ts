@@ -47,4 +47,5 @@ export async function buildSearchIndex() {
     path.resolve("./.svelte-kit/output/client/search_index.json"),
     JSON.stringify(data),
   )
+  console.log("Search index built")
 }
