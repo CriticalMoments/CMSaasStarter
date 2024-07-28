@@ -73,7 +73,7 @@ export const sendUserEmail = async ({
     return
   }
 
-  sendTemplatedEmail({
+  await sendTemplatedEmail({
     subject,
     to_emails: [email],
     from_email,
