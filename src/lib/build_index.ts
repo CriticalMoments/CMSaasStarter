@@ -53,7 +53,7 @@ export async function buildSearchIndex() {
 
   const index = Fuse.createIndex(["title", "description", "body"], indexData)
   const jsonIndex = index.toJSON()
-  const data = { index: jsonIndex, indexData, buildMode: "build-time-compiled" }
+  const data = { index: jsonIndex, indexData, buildTime: Date.now() }
   return data
 }
 
