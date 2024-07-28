@@ -27,6 +27,7 @@
       }
     }
     loading = false
+    document.getElementById("search-input")?.focus()
   })
 
   type Result = {
@@ -71,6 +72,7 @@
   </div>
   <label class="input input-bordered flex items-center gap-2 mt-10">
     <input
+      id="search-input"
       type="text"
       class="grow"
       placeholder="Search"
