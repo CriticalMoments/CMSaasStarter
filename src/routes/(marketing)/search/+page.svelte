@@ -15,6 +15,7 @@
   let fuse: Fuse<Result> | undefined
 
   let loading = true
+  let error = false
   onMount(async () => {
     try {
       const response = await fetch("/search/api")
@@ -26,10 +27,12 @@
         const index = Fuse.parseIndex(searchData.index)
         fuse = new Fuse<Result>(searchData.indexData, fuseOptions, index)
       }
-    } catch (error) {
-      console.error("Failed to load search data", error)
+    } catch (e) {
+      console.error("Failed to load search data", e)
+      error = true
     } finally {
       loading = false
+      document.getElementById("search-input")?.focus()
     }
   })
 
@@ -56,7 +59,28 @@
       goto("#" + searchQuery, { keepFocus: true })
     }
   }
+
+  let focusItem = 0
+  function onKeyDown(event: KeyboardEvent) {
+    if (event.key === "Escape") {
+      searchQuery = ""
+    } else if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      focusItem += event.key === "ArrowDown" ? 1 : -1
+      if (focusItem < 0) {
+        focusItem = 0
+      } else if (focusItem > results.length) {
+        focusItem = results.length
+      }
+      if (focusItem === 0) {
+        document.getElementById("search-input")?.focus()
+      } else {
+        document.getElementById(`search-result-${focusItem}`)?.focus()
+      }
+    }
+  }
 </script>
+
+<svelte:window on:keydown={onKeyDown} />
 
 <svelte:head>
   <title>Search</title>
@@ -80,6 +104,7 @@
       class="grow"
       placeholder="Search"
       bind:value={searchQuery}
+      on:focus={() => (focusItem = 0)}
       aria-label="Search input"
     />
   </label>
@@ -88,7 +113,13 @@
     <div class="text-center mt-10 text-accent text-xl">Loading...</div>
   {/if}
 
-  {#if !loading && searchQuery.length > 0 && results.length === 0}
+  {#if error}
+    <div class="text-center mt-10 text-accent text-xl">
+      Error connecting to search. Please try again later.
+    </div>
+  {/if}
+
+  {#if !loading && searchQuery.length > 0 && results.length === 0 && !error}
     <div class="text-center mt-10 text-accent text-xl">No results found</div>
     {#if dev}
       <div class="text-center mt-4 font-mono">
@@ -99,17 +130,19 @@
   {/if}
 
   <div>
-    {#each results as result}
-      <a href={result.item.path || "/"}>
-        <div class="card my-6 bg-white shadow-xl flex-row overflow-hidden">
-          <div class="flex-none w-6 md:w-32 bg-secondary"></div>
-          <div class="py-6 px-6">
-            <div class="text-xl">{result.item.title}</div>
-            <div class="text-sm text-accent">
-              {result.item.path}
-            </div>
-            <div class="text-slate-500">{result.item.description}</div>
+    {#each results as result, i}
+      <a
+        href={result.item.path || "/"}
+        id="search-result-{i + 1}"
+        class="card my-6 bg-white shadow-xl flex-row overflow-hidden focus:border"
+      >
+        <div class="flex-none w-6 md:w-32 bg-secondary"></div>
+        <div class="py-6 px-6">
+          <div class="text-xl">{result.item.title}</div>
+          <div class="text-sm text-accent">
+            {result.item.path}
           </div>
+          <div class="text-slate-500">{result.item.description}</div>
         </div>
       </a>
     {/each}
