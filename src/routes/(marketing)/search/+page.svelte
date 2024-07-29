@@ -4,6 +4,7 @@
   import { onMount } from "svelte"
   import Fuse from "fuse.js"
   import { goto } from "$app/navigation"
+  import { dev } from "$app/environment"
 
   const fuseOptions = {
     keys: ["title", "description", "body"],
@@ -89,6 +90,12 @@
 
   {#if !loading && searchQuery.length > 0 && results.length === 0}
     <div class="text-center mt-10 text-accent text-xl">No results found</div>
+    {#if dev}
+      <div class="text-center mt-4 font-mono">
+        Development mode only message: if you're missing content, rebuild your
+        local search index with `npm run build`
+      </div>
+    {/if}
   {/if}
 
   <div>

@@ -36,10 +36,13 @@ export async function buildSearchIndex() {
         ],
       })
       const dom = new JSDOM.JSDOM(data)
-      const title = dom.window.document.querySelector("title")?.innerHTML
-      const description = dom.window.document
-        .querySelector('meta[name="description"]')
-        ?.getAttribute("content")
+      const title =
+        dom.window.document.querySelector("title")?.innerHTML ||
+        "Page " + webPath
+      const description =
+        dom.window.document
+          .querySelector('meta[name="description"]')
+          ?.getAttribute("content") || ""
       indexData.push({
         title,
         description,
