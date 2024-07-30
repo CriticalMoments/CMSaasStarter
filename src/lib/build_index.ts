@@ -60,11 +60,17 @@ export async function buildSearchIndex() {
   return data
 }
 
+// Build search index into the output directory, for use in the build process (see vite.config.js)
 export async function buildAndCacheSearchIndex() {
   const data = await buildSearchIndex()
-  // write index data to file, overwriting static file on build
+
+  const dir = path.resolve("./.svelte-kit/output/client/search")
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
+  }
+
   fs.writeFileSync(
-    path.resolve("./.svelte-kit/output/client/search_index.json"),
+    path.resolve("./.svelte-kit/output/client/search/api"),
     JSON.stringify(data),
   )
   console.log("Search index built")
