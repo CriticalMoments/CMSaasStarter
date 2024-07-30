@@ -22,6 +22,7 @@
     "@types/glob": "^8.1.0",
     "@types/html-to-text": "^9.0.4",
     "@types/jsdom": "^21.1.7",
+    "@types/lunr": "^2.3.7",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.19.0",
     "autoprefixer": "^10.4.15",
@@ -29,7 +30,6 @@
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.30.0",
-    "fuse.js": "^7.0.0",
     "html-to-text": "^9.0.5",
     "jsdom": "^24.1.1",
     "postcss": "^8.4.31",
@@ -47,6 +47,7 @@
     "@supabase/auth-helpers-sveltekit": "^0.11.0",
     "@supabase/auth-ui-svelte": "^0.2.9",
     "@supabase/supabase-js": "^2.33.0",
+    "lunr": "^2.3.9",
     "resend": "^3.5.0",
     "stripe": "^13.3.0"
   }
