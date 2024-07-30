@@ -3,25 +3,19 @@ import fs from "fs"
 import glob from "glob"
 import { convert } from "html-to-text"
 import JSDOM from "jsdom"
-import lunr from "lunr"
+import Fuse from "fuse.js"
 
 const excludePaths = ["/search"]
 
 export async function buildSearchIndex() {
-  const docs = []
-  const indexDocs: {
-    title: string
-    description: string
-    body: string
-    id: number
-  }[] = []
+  const indexData = []
 
   // iterate all files with html extension in ./svelte-kit/output/prerendered/pages
   const fileRoot = path.resolve(".")
   const pagesPath = path.join(fileRoot, ".svelte-kit/output/prerendered/pages")
 
   const allFiles = glob.sync(path.join(pagesPath, "**/*.html"))
-  for (const [i, file] of allFiles.entries()) {
+  for (const file of allFiles) {
     try {
       const webPath = file
         .replace(pagesPath, "")
@@ -49,42 +43,23 @@ export async function buildSearchIndex() {
         dom.window.document
           .querySelector('meta[name="description"]')
           ?.getAttribute("content") || ""
-      docs.push({
-        title,
-        description,
-        path: webPath,
-      })
-      indexDocs.push({
+      indexData.push({
         title,
         description,
         body: plaintext,
-        id: i,
+        path: webPath,
       })
     } catch (e) {
       console.log("Blog search indexing error", file, e)
     }
   }
 
-  const index = lunr(function () {
-    this.field("title", { boost: 3 })
-    this.field("description", { boost: 2 })
-    this.field("body", { boost: 1 })
-    this.ref("id")
-
-    indexDocs.forEach((doc) => {
-      this.add(doc)
-    }, this)
-  })
-
-  return {
-    index: JSON.stringify(index),
-    docs,
-    buildTime: Date.now(),
-  }
+  const index = Fuse.createIndex(["title", "description", "body"], indexData)
+  const jsonIndex = index.toJSON()
+  const data = { index: jsonIndex, indexData, buildTime: Date.now() }
+  return data
 }
 
-// Use this if you want to integrate intyou your build process manually.
-// Default install achieves similar result by setting prerender=true fore /search/api route.
 export async function buildAndCacheSearchIndex() {
   const data = await buildSearchIndex()
   // write index data to file, overwriting static file on build
