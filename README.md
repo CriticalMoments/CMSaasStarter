@@ -193,9 +193,14 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
 - Create a Supabase account
 - Create a new Supabase project in the console
 - Wait for the database to launch
-- Create your user management tables in the database
-  - Go to the [SQL Editor](https://supabase.com/dashboard/project/_/sql) page in the Dashboard.
-  - Paste the SQL from `database_migration.sql` in this repo to create your user/profiles table and click run.
+- Set up your database schema:
+  - For new Supabase projects:
+    - Go to the [SQL Editor](https://supabase.com/dashboard/project/_/sql) page in the Dashboard.
+    - Run the SQL from `database_migration.sql` to create the initial schema.
+  - For existing projects:
+    - Apply migrations from the `supabase/migrations` directory:
+      1. Go to the Supabase dashboard's SQL Editor.
+      2. Identify the last migration you applied, then run the SQL content of each subsequent file in chronological order.
 - Enable user signups in the [Supabase console](https://app.supabase.com/project/_/settings/auth): sometimes new signups are disabled by default in Supabase projects
 - Go to the [API Settings](https://supabase.com/dashboard/project/_/settings/api) page in the Dashboard. Find your Project-URL (PUBLIC_SUPABASE_URL), anon (PUBLIC_SUPABASE_ANON_KEY) and service_role (PRIVATE_SUPABASE_SERVICE_ROLE).
   - For local development: create a `.env.local` file:
