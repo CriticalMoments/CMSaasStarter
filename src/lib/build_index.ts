@@ -70,7 +70,7 @@ export async function buildAndCacheSearchIndex() {
   }
 
   fs.writeFileSync(
-    path.resolve("./.svelte-kit/output/client/search/api"),
+    path.resolve("./.svelte-kit/output/client/search/api.json"),
     JSON.stringify(data),
   )
   console.log("Search index built")
