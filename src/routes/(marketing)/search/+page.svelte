@@ -7,7 +7,11 @@
   import { dev } from "$app/environment"
 
   const fuseOptions = {
-    keys: ["title", "description", "body"],
+    keys: [
+      { name: "title", weight: 3 },
+      { name: "description", weight: 2 },
+      { name: "body", weight: 1 },
+    ],
     ignoreLocation: true,
     threshold: 0.3,
   }
@@ -18,7 +22,7 @@
   let error = false
   onMount(async () => {
     try {
-      const response = await fetch("/search/api")
+      const response = await fetch("/search/api.json")
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
