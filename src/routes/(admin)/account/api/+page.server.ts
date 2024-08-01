@@ -282,6 +282,7 @@ export const actions = {
         company_name: companyName,
         website: website,
         updated_at: new Date(),
+        unsubscribed: priorProfile?.unsubscribed ?? false,
       })
       .select()
 

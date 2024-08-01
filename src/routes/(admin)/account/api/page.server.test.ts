@@ -33,8 +33,11 @@ describe("toggleEmailSubscription", () => {
 
     await expect(
       actions.toggleEmailSubscription({
-        locals: { supabase: mockSupabase, safeGetSession: mockSafeGetSession },
-      }),
+        locals: {
+          supabase: mockSupabase,
+          safeGetSession: mockSafeGetSession,
+        },
+      } as any),
     ).rejects.toThrow("Redirect")
 
     expect(redirect).toHaveBeenCalledWith(303, "/login")
@@ -56,7 +59,7 @@ describe("toggleEmailSubscription", () => {
 
     const result = await actions.toggleEmailSubscription({
       locals: { supabase: mockSupabase, safeGetSession: mockSafeGetSession },
-    })
+    } as any)
 
     expect(mockSupabase.from).toHaveBeenCalledWith("profiles")
     expect(mockSupabase.select).toHaveBeenCalledWith("unsubscribed")
@@ -83,7 +86,7 @@ describe("toggleEmailSubscription", () => {
 
     const result = await actions.toggleEmailSubscription({
       locals: { supabase: mockSupabase, safeGetSession: mockSafeGetSession },
-    })
+    } as any)
 
     expect(mockSupabase.from).toHaveBeenCalledWith("profiles")
     expect(mockSupabase.select).toHaveBeenCalledWith("unsubscribed")
@@ -110,7 +113,7 @@ describe("toggleEmailSubscription", () => {
 
     await actions.toggleEmailSubscription({
       locals: { supabase: mockSupabase, safeGetSession: mockSafeGetSession },
-    })
+    } as any)
 
     // Check if fail was called with the correct arguments
     expect(fail).toHaveBeenCalledWith(500, {

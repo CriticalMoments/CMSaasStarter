@@ -193,7 +193,6 @@
                                   style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #0867ec;"
                                   valign="top"
                                   align="center"
-                                  bgcolor="#0867ec"
                                 >
                                   <a
                                     href="https://github.com/CriticalMoments/CMSaasStarter"
