@@ -1,3 +1,4 @@
+import { UserProfileManager } from "$lib/business/UserProfileManager"
 import { redirect } from "@sveltejs/kit"
 import type { LayoutServerLoad } from "./$types"
 
@@ -10,11 +11,8 @@ export const load: LayoutServerLoad = async ({
     redirect(303, "/login")
   }
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select(`*`)
-    .eq("id", session.user.id)
-    .single()
+  const userProfileManager = new UserProfileManager(supabase, session)
+  const profile = await userProfileManager.getProfile()
 
   return { session, profile }
 }
