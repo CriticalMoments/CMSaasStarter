@@ -3,6 +3,7 @@ import { env } from "$env/dynamic/private"
 import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
 import { PUBLIC_SUPABASE_URL } from "$env/static/public"
 import { createClient, type User } from "@supabase/supabase-js"
+import type { Database } from "../DatabaseDefinitions"
 
 // Sends an email to the admin email address.
 // Does not throw errors, but logs them.
@@ -56,7 +57,7 @@ export const sendUserEmail = async ({
 
   // Check if the user email is verified using the full user object from service role
   // Oauth uses email_verified, and email auth uses email_confirmed_at
-  const serverSupabase = createClient(
+  const serverSupabase = createClient<Database>(
     PUBLIC_SUPABASE_URL,
     PRIVATE_SUPABASE_SERVICE_ROLE,
     { auth: { persistSession: false } },
@@ -70,6 +71,23 @@ export const sendUserEmail = async ({
 
   if (!emailVerified) {
     console.log("User email not verified. Aborting email. ", user.id, email)
+    return
+  }
+
+  // Fetch user profile to check unsubscribed status
+  const { data: profile, error: profileError } = await serverSupabase
+    .from("profiles")
+    .select("unsubscribed")
+    .eq("id", user.id)
+    .single()
+
+  if (profileError) {
+    console.log("Error fetching user profile. Aborting email. ", user.id, email)
+    return
+  }
+
+  if (profile?.unsubscribed) {
+    console.log("User unsubscribed. Aborting email. ", user.id, email)
     return
   }
 

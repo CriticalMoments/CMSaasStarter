@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { WebsiteBaseUrl } from "../../config"
+
   // This email template is a fork of this MIT open source project: https://github.com/leemunroe/responsive-html-email-template
   // See full license https://github.com/leemunroe/responsive-html-email-template/blob/master/license.txt
 
@@ -191,7 +193,6 @@
                                   style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #0867ec;"
                                   valign="top"
                                   align="center"
-                                  bgcolor="#0867ec"
                                 >
                                   <a
                                     href="https://github.com/CriticalMoments/CMSaasStarter"
@@ -256,6 +257,20 @@
                       href="http://htmlemail.io"
                       style="color: #9a9ea6; font-size: 16px; text-align: center; text-decoration: none;"
                       >HTMLemail.io</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="content-block"
+                    style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 14px; text-align: center;"
+                    valign="top"
+                    align="center"
+                  >
+                    <a
+                      href="{WebsiteBaseUrl}/account/settings/change_email_subscription"
+                      style="color: #4382ff; font-size: 16px; text-align: center; text-decoration: underline;"
+                      >Unsubscribe</a
                     >
                   </td>
                 </tr>
