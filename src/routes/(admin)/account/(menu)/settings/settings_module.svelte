@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { enhance, applyAction } from "$app/forms"
+  import { applyAction, enhance } from "$app/forms"
   import { page } from "$app/stores"
   import type { SubmitFunction } from "@sveltejs/kit"
 
@@ -81,26 +81,42 @@
         use:enhance={handleSubmit}
       >
         {#each fields as field}
-          {#if field.label}
-            <label for={field.id}>
-              <span class="text-sm text-gray-500">{field.label}</span>
-            </label>
-          {/if}
-          {#if editable}
-            <input
-              id={field.id}
-              name={field.id}
-              type={field.inputType ?? "text"}
-              disabled={!editable}
-              placeholder={field.placeholder ?? field.label ?? ""}
-              class="{fieldError($page?.form, field.id)
-                ? 'input-error'
-                : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"
-              value={$page.form ? $page.form[field.id] : field.initialValue}
-              maxlength={field.maxlength ? field.maxlength : null}
-            />
+          {#if field.inputType === "checkbox"}
+            <div class="flex items-center">
+              <input
+                id={field.id}
+                name={field.id}
+                type="checkbox"
+                class="mr-2"
+                disabled={!editable}
+                checked={$page.form ? $page.form[field.id] : field.initialValue}
+              />
+              <label for={field.id} class="text-sm text-gray-500">
+                {field.label}
+              </label>
+            </div>
           {:else}
-            <div class="text-lg mb-3">{field.initialValue}</div>
+            {#if field.label}
+              <label for={field.id}>
+                <span class="text-sm text-gray-500">{field.label}</span>
+              </label>
+            {/if}
+            {#if editable}
+              <input
+                id={field.id}
+                name={field.id}
+                type={field.inputType ?? "text"}
+                disabled={!editable}
+                placeholder={field.placeholder ?? field.label ?? ""}
+                class="{fieldError($page?.form, field.id)
+                  ? 'input-error'
+                  : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"
+                value={$page.form ? $page.form[field.id] : field.initialValue}
+                maxlength={field.maxlength ? field.maxlength : null}
+              />
+            {:else}
+              <div class="text-lg mb-3">{field.initialValue}</div>
+            {/if}
           {/if}
         {/each}
 

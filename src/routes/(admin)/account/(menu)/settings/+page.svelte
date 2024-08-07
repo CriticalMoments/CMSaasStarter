@@ -37,6 +37,21 @@
 />
 
 <SettingsModule
+  title="Newsletter"
+  editable={false}
+  fields={[
+    {
+      id: "newsletter",
+      label: "Newsletter agreement",
+      initialValue: Boolean(profile?.newsletter_agreed_at),
+      inputType: "checkbox",
+    },
+  ]}
+  editButtonTitle="Edit"
+  editLink="/account/settings/edit_newsletter"
+/>
+
+<SettingsModule
   title="Email"
   editable={false}
   fields={[{ id: "email", initialValue: session?.user?.email || "" }]}

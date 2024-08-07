@@ -1,7 +1,7 @@
 <script lang="ts">
-  import "../../../../app.css"
-  import { enhance, applyAction } from "$app/forms"
+  import { applyAction, enhance } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
+  import "../../../../app.css"
 
   export let data
   export let form: FormAccountUpdateResult
@@ -93,6 +93,45 @@
             value={form?.website ?? website}
             maxlength="50"
           />
+        </div>
+
+        <div class="mt-4">
+          <label
+            class="flex items
+          -center"
+          >
+            <input
+              id="isGcuAgreed"
+              name="isGcuAgreed"
+              type="checkbox"
+              class="checkbox"
+              checked={form?.isGcuAgreed}
+            />
+            <span class="ml-2 text-sm text-slate-800">
+              I accept the{" "}
+              <a href="/legal/gcu" target="_blank" class="underline">
+                General Conditions of Use
+              </a>
+            </span>
+          </label>
+        </div>
+
+        <div class="mt-4">
+          <label
+            class="flex items
+          -center"
+          >
+            <input
+              id="isNewsletterAgreed"
+              name="isNewsletterAgreed"
+              type="checkbox"
+              class="checkbox"
+              checked={form?.isNewsletterAgreed}
+            />
+            <span class="ml-2 text-sm text-slate-800">
+              I want to receive the newsletter
+            </span>
+          </label>
         </div>
 
         {#if form?.errorMessage}
