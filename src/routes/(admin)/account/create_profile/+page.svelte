@@ -113,7 +113,9 @@
       <div class="text-sm text-slate-800 mt-14">
         You are logged in as {session?.user?.email}.
         <br />
-        <a class="underline" href="/account/sign_out"> Sign out </a>
+        <form action="/account/sign_out" method="POST">
+          <button type="submit" class="underline">Sign out</button>
+        </form>
       </div>
     </div>
   </div>
