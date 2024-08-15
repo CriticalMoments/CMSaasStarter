@@ -2,6 +2,34 @@ import { fail, redirect } from "@sveltejs/kit"
 import { sendAdminEmail, sendUserEmail } from "$lib/mailer"
 
 export const actions = {
+  toggleEmailSubscription: async ({ locals: { supabase, safeGetSession } }) => {
+    const { session } = await safeGetSession()
+
+    if (!session) {
+      redirect(303, "/login")
+    }
+
+    const { data: currentProfile } = await supabase
+      .from("profiles")
+      .select("unsubscribed")
+      .eq("id", session.user.id)
+      .single()
+
+    const newUnsubscribedStatus = !currentProfile?.unsubscribed
+
+    const { error } = await supabase
+      .from("profiles")
+      .update({ unsubscribed: newUnsubscribedStatus })
+      .eq("id", session.user.id)
+
+    if (error) {
+      return fail(500, { message: "Failed to update subscription status" })
+    }
+
+    return {
+      unsubscribed: newUnsubscribedStatus,
+    }
+  },
   updateEmail: async ({ request, locals: { supabase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (!session) {
@@ -254,6 +282,7 @@ export const actions = {
         company_name: companyName,
         website: website,
         updated_at: new Date(),
+        unsubscribed: priorProfile?.unsubscribed ?? false,
       })
       .select()
 
