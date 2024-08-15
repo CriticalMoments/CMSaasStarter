@@ -24,10 +24,12 @@ export const load = async ({ fetch, data, depends, url }) => {
     data.profile
 
   const createProfilePath = "/account/create_profile"
+  const signOutPath = "/account/sign_out"
   if (
     profile &&
     !_hasFullProfile(profile) &&
-    url.pathname !== createProfilePath
+    url.pathname !== createProfilePath &&
+    url.pathname !== signOutPath
   ) {
     redirect(303, createProfilePath)
   }
