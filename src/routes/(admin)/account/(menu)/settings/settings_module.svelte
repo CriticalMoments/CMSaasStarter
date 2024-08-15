@@ -116,7 +116,7 @@
               type="submit"
               class="ml-auto btn btn-sm mt-3 min-w-[145px] {dangerous
                 ? 'btn-error'
-                : 'btn-success'}"
+                : 'btn-primary btn-outline'}"
               disabled={loading}
             >
               {#if loading}

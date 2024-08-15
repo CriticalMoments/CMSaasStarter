@@ -9,18 +9,18 @@
   <title>Change Email Subscription</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">
-  {unsubscribed ? "Re-subscribe to Emails" : "Unsubscribe from Emails"}
-</h1>
+<h1 class="text-2xl font-bold mb-6">Email Subscription</h1>
 
 <SettingsModule
   editable={true}
-  saveButtonTitle={unsubscribed
-    ? "Re-subscribe"
-    : "Unsubscribe from all emails"}
+  title="Subscription"
+  message={unsubscribed
+    ? "You are currently unsubscribed from emails"
+    : "You are currently subscribed to emails"}
+  saveButtonTitle={unsubscribed ? "Re-subscribe" : "Unsubscribe"}
   successBody={unsubscribed
     ? "You have been re-subscribed to emails"
-    : "You have been unsubscribed from all emails"}
+    : "You have been unsubscribed from emails"}
   formTarget="/account/api?/toggleEmailSubscription"
   fields={[]}
 />
