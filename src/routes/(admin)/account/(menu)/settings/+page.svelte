@@ -61,7 +61,7 @@
       initialValue: profile?.unsubscribed ? "Unsubscribed" : "Subscribed",
     },
   ]}
-  editButtonTitle={profile?.unsubscribed ? "Re-Subscribe" : "Unsubscribe"}
+  editButtonTitle="Change Subscription"
   editLink="/account/settings/change_email_subscription"
 />
 

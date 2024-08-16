@@ -49,7 +49,7 @@
 
 <div class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow">
   {#if title}
-    <div class="text-xl font-bold mb-3 w-48 flex-none">{title}</div>
+    <div class="text-xl font-bold mb-3 w-48 md:pr-8 flex-none">{title}</div>
   {/if}
 
   <div class="w-full min-w-48">
