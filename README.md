@@ -161,9 +161,22 @@ npm run dev -- --open
 
 ## Developer Tools
 
-The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). Github disables CI on new repos by default, so be sure to go into the Github Actions page for your repo and enable workflows.
+The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml), and even spell checking.
 
-You can manually run these scripts yourself; `npm run build` for the build, `npm run format_check` to check formatting, `npm run lint` for the linting, `npm run check` for typechecking, and `npm run test` for testing (if you add tests).
+### Enabling GitHub Actions
+
+Github disables CI on new forks by default, so be sure to go into the Github Actions page for your repo and enable workflows.
+
+### Running Developer Tools Locally
+
+To manually run all these tools run the following script. You can view it's contents for individual commands.
+
+```
+# first time only: chmod +x ./check.sh
+./check.sh
+```
+
+### Running Developer Tools in your IDE
 
 Installing extensions in your editor can automatically format-on-save, show linting/type issues inline, and run your test cases:
 
@@ -171,22 +184,20 @@ Installing extensions in your editor can automatically format-on-save, show lint
 - ESLint for type checking and linting: [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [other editors](https://eslint.org/docs/latest/use/integrations)
 - Vitest for testing if you add tests: [VSCode](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) or [other editors](https://vitest.dev/guide/ide)
 
+### Running Developer Tools from Git Hooks
+
 To catch build, formatting, linting and test issues before you commit changes, we suggest the following local git hook. It will run before you commit, stop you from breaking the build, and show any issues that are found. Add the lines below to an executable git hook script at the location `.git/hooks/pre-commit`.
 
 ```
 #!/bin/sh
-set -e
-npm run format_check
-npm run lint
-npm run build
-npm run check
-npm run test_run
-
-# Optional: check for misspelled words. Uncomment line below after installing misspell tool https://github.com/client9/misspell?tab=readme-ov-file#install
-# misspell -error ./src README.md
+# Run standard checks before committing
+cd "$(dirname "$0")"
+sh ../../checks.sh
 ```
 
-Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
+### Disabling Developer Tools
+
+If you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and removing the git hook (`.git/hooks/pre-commit`).
 
 ## Setup Supabase Project
 
