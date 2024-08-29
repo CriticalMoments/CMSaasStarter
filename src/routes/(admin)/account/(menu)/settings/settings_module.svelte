@@ -30,8 +30,8 @@
   export let formTarget: string = ""
   export let successTitle = "Success"
   export let successBody = ""
-  export let editButtonTitle: string = ""
-  export let editLink: string = ""
+  export let editButtonTitle: string | null = null
+  export let editLink: string | null = null
   export let saveButtonTitle: string = "Save"
 
   const handleSubmit: SubmitFunction = () => {
@@ -128,7 +128,7 @@
               {/if}
             </button>
           </div>
-        {:else}
+        {:else if editButtonTitle && editLink}
           <!-- !editable -->
           <a href={editLink} class="mt-1">
             <button
