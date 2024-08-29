@@ -5,6 +5,7 @@ import {
 import { createSupabaseLoadClient } from "@supabase/auth-helpers-sveltekit"
 import type { Database } from "../../../DatabaseDefinitions.js"
 import { redirect } from "@sveltejs/kit"
+import { CreateProfileStep } from "../../../config"
 
 export const load = async ({ fetch, data, depends, url }) => {
   depends("supabase:auth")
@@ -29,7 +30,8 @@ export const load = async ({ fetch, data, depends, url }) => {
     profile &&
     !_hasFullProfile(profile) &&
     url.pathname !== createProfilePath &&
-    url.pathname !== signOutPath
+    url.pathname !== signOutPath &&
+    CreateProfileStep
   ) {
     redirect(303, createProfilePath)
   }
