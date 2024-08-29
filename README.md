@@ -61,7 +61,7 @@ See [criticalmoments.io](https://criticalmoments.io) for an example of what’s 
 Everything you need to get started for a SaaS company:
 
 - User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth. GDPR cookie warning for European users.
-- Marketing Page with SEO optimization
+- Marketing Page with SEO optimization and Sitemap
 - Blog engine with rich formatting, RSS and SEO optimization.
 - User Dashboard with user profile, user settings, update email/password, billing, and more
 - Subscriptions powered by Stripe Checkout
@@ -74,7 +74,6 @@ Everything you need to get started for a SaaS company:
 - Style toolkit: theming and UI components
 - Responsive: designed for mobile and desktop.
 - Extensible: all the tools you need to make additional marketing pages, UI components, admin portals, database backends, API endpoints, and more.
-- Sitemap
 
 ## Introduction Blog Post
 
