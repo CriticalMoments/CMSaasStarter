@@ -74,6 +74,7 @@ Everything you need to get started for a SaaS company:
 - Style toolkit: theming and UI components
 - Responsive: designed for mobile and desktop.
 - Extensible: all the tools you need to make additional marketing pages, UI components, admin portals, database backends, API endpoints, and more.
+- Sitemap
 
 ## Introduction Blog Post
 
