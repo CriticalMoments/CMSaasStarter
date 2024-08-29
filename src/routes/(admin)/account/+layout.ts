@@ -25,17 +25,31 @@ export const load = async ({ fetch, data, depends, url }) => {
           fetch,
         },
         cookies: {
-          // TODO: does not match latest supabase guide
-          get() {
-            return JSON.stringify(data.session)
+          getAll() {
+            return data.cookies
           },
         },
       })
 
+  /**
+   * It's fine to use `getSession` here, because on the client, `getSession` is
+   * safe, and on the server, it reads `session` from the `LayoutData`, which
+   * safely checked the session using `safeGetSession`.
+   * Source: https://supabase.com/docs/guides/auth/server-side/sveltekit
+   */
   const {
     data: { session },
   } = await supabase.auth.getSession()
 
+  // https://github.com/supabase/auth-js/issues/888#issuecomment-2189298518
+  if ("suppressGetSessionWarning" in supabase.auth) {
+    // @ts-expect-error - suppressGetSessionWarning is not part of the official API
+    supabase.auth.suppressGetSessionWarning = true
+  } else {
+    console.warn(
+      "SupabaseAuthClient#suppressGetSessionWarning was removed. See https://github.com/supabase/auth-js/issues/888.",
+    )
+  }
   const {
     data: { user },
   } = await supabase.auth.getUser()

@@ -14,18 +14,16 @@ export const handle: Handle = async ({ event, resolve }) => {
     PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
-        get: (key) => event.cookies.get(key),
+        getAll: () => event.cookies.getAll(),
         /**
-         * Note: You have to add the `path` variable to the
-         * set and remove method due to sveltekit's cookie API
-         * requiring this to be set, setting the path to an empty string
-         * will replicate previous/standard behaviour (https://kit.svelte.dev/docs/types#public-types-cookies)
+         * SvelteKit's cookies API requires `path` to be explicitly set in
+         * the cookie options. Setting `path` to `/` replicates previous/
+         * standard behavior.
          */
-        set: (key, value, options) => {
-          event.cookies.set(key, value, { ...options, path: "/" })
-        },
-        remove: (key, options) => {
-          event.cookies.delete(key, { ...options, path: "/" })
+        setAll: (cookiesToSet) => {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            event.cookies.set(name, value, { ...options, path: "/" })
+          })
         },
       },
     },
@@ -36,6 +34,16 @@ export const handle: Handle = async ({ event, resolve }) => {
     PRIVATE_SUPABASE_SERVICE_ROLE,
     { auth: { persistSession: false } },
   )
+
+  // https://github.com/supabase/auth-js/issues/888#issuecomment-2189298518
+  if ("suppressGetSessionWarning" in event.locals.supabase.auth) {
+    // @ts-expect-error - suppressGetSessionWarning is not part of the official API
+    event.locals.supabase.auth.suppressGetSessionWarning = true
+  } else {
+    console.warn(
+      "SupabaseAuthClient#suppressGetSessionWarning was removed. See https://github.com/supabase/auth-js/issues/888.",
+    )
+  }
 
   /**
    * Unlike `supabase.auth.getSession()`, which returns the session _without_
