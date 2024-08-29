@@ -10,7 +10,7 @@
 
   onMount(() => {
     supabase.auth.onAuthStateChange((event) => {
-      // Redirect to account after sucessful login
+      // Redirect to account after successful login
       if (event == "SIGNED_IN") {
         // Delay needed because order of callback not guaranteed.
         // Give the layout callback priority to update state or

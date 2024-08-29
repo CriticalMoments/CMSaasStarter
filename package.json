@@ -15,9 +15,13 @@
     "format_check": "prettier --check --plugin prettier-plugin-svelte ./"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.30.4",
-    "@tailwindcss/typography": "^0.5.10",
+    "@sveltejs/adapter-auto": "^3.2.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/glob": "^8.1.0",
+    "@types/html-to-text": "^9.0.4",
+    "@types/jsdom": "^21.1.7",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.19.0",
     "autoprefixer": "^10.4.15",
@@ -25,21 +29,26 @@
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.30.0",
+    "fuse.js": "^7.0.0",
+    "html-to-text": "^9.0.5",
+    "jsdom": "^24.1.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
+    "super-sitemap": "^0.15.1",
     "svelte": "^4.0.5",
     "svelte-check": "^3.4.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.0.0",
-    "vite": "^4.4.2",
-    "vitest": "^0.34.0"
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
   },
   "type": "module",
   "dependencies": {
-    "@supabase/auth-ui-svelte": "^0.2.2",
-    "@supabase/ssr": "^0.3.0",
-    "@supabase/supabase-js": "^2.43.1",
+    "@supabase/auth-ui-svelte": "^0.2.9",
+    "@supabase/ssr": "^0.5.1",
+    "@supabase/supabase-js": "^2.45.2",
+    "resend": "^3.5.0",
     "stripe": "^13.3.0"
   }
 }

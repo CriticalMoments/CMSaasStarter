@@ -1,5 +1,13 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "svelte.svelte-vscode",
-  "eslint.validate": ["javascript", "javascriptreact", "svelte"]
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "svelte"]
 }

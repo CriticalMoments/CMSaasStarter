@@ -26,6 +26,13 @@ module.exports = {
         },
       },
     },
+    {
+      // Apply to all test files. Proper type checking in tests with mocks can be tedious and counterproductive.
+      files: ["**/*.test.ts", "**/*.spec.ts"],
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off",
+      },
+    },
   ],
   env: {
     browser: true,

@@ -4,45 +4,44 @@
   import { sortedBlogPosts, type BlogPost } from "./../posts"
   import { WebsiteName } from "../../../../config"
 
-  let currentPost: BlogPost | null = null
-  for (const post of sortedBlogPosts) {
-    if (
-      $page.url.pathname == post.link ||
-      $page.url.pathname == post.link + "/"
-    ) {
-      currentPost = post
-      continue
+  function getCurrentPost(url: string): BlogPost {
+    let searchPost: BlogPost | null = null
+    for (const post of sortedBlogPosts) {
+      if (url == post.link || url == post.link + "/") {
+        searchPost = post
+        continue
+      }
+    }
+    if (!searchPost) {
+      error(404, "Blog post not found")
+    }
+    return searchPost
+  }
+  $: currentPost = getCurrentPost($page.url.pathname)
+
+  function buildLdJson(post: BlogPost) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      datePublished: post.parsedDate?.toISOString(),
+      dateModified: post.parsedDate?.toISOString(),
     }
   }
-  if (!currentPost) {
-    throw error(404, "Blog post not found")
-  }
-
-  const pageTitle = currentPost?.title ? currentPost.title : "Not Found"
-  const pageDescription = currentPost?.description
-    ? currentPost.description
-    : "Blog post"
-  const pageUrl = $page.url.origin + $page.url.pathname
-
-  const ldJson = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: pageTitle,
-    datePublished: currentPost.parsedDate?.toISOString(),
-    dateModified: currentPost.parsedDate?.toISOString(),
-  }
-  const jsonldScript = `<script type="application/ld+json">${
-    JSON.stringify(ldJson) + "<"
+  $: jsonldScript = `<script type="application/ld+json">${
+    JSON.stringify(buildLdJson(currentPost)) + "<"
   }/script>`
+
+  $: pageUrl = $page.url.origin + $page.url.pathname
 </script>
 
 <svelte:head>
-  <title>{pageTitle}</title>
-  <meta name="description" content={pageDescription} />
+  <title>{currentPost.title}</title>
+  <meta name="description" content={currentPost.description} />
 
   <!-- Facebook -->
-  <meta property="og:title" content={pageTitle} />
-  <meta property="og:description" content={pageDescription} />
+  <meta property="og:title" content={currentPost.title} />
+  <meta property="og:description" content={currentPost.description} />
   <meta property="og:site_name" content={WebsiteName} />
   <meta property="og:url" content={pageUrl} />
   <!-- <meta property="og:image" content="https://samplesite.com/image.jpg"> -->
@@ -50,8 +49,8 @@
   <!-- Twitter -->
   <!-- “summary”, “summary_large_image”, “app”, or “player” -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content={pageTitle} />
-  <meta name="twitter:description" content={pageDescription} />
+  <meta name="twitter:title" content={currentPost.title} />
+  <meta name="twitter:description" content={currentPost.description} />
   <!-- <meta name="twitter:site" content="@samplesite"> -->
   <!-- <meta name="twitter:image" content="https://samplesite.com/image.jpg"> -->
 
@@ -60,17 +59,13 @@
 </svelte:head>
 
 <article class="prose mx-auto py-12 px-6 font-sans">
-  {#if currentPost == null}
-    <h1>Blog post not found</h1>
-  {:else}
-    <div class="text-sm text-accent">
-      {currentPost.parsedDate?.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      })}
-    </div>
-    <h1>{currentPost.title}</h1>
-    <slot />
-  {/if}
+  <div class="text-sm text-accent">
+    {currentPost.parsedDate?.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    })}
+  </div>
+  <h1>{currentPost.title}</h1>
+  <slot />
 </article>

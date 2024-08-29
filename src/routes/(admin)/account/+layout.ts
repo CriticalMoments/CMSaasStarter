@@ -6,10 +6,10 @@ import {
   createBrowserClient,
   createServerClient,
   isBrowser,
-  parse,
 } from "@supabase/ssr"
 import { redirect } from "@sveltejs/kit"
 import type { Database } from "../../../DatabaseDefinitions.js"
+import { CreateProfileStep } from "../../../config"
 
 export const load = async ({ fetch, data, depends, url }) => {
   depends("supabase:auth")
@@ -19,18 +19,13 @@ export const load = async ({ fetch, data, depends, url }) => {
         global: {
           fetch,
         },
-        cookies: {
-          get(key) {
-            const cookie = parse(document.cookie)
-            return cookie[key]
-          },
-        },
       })
     : createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
         global: {
           fetch,
         },
         cookies: {
+          // TODO: does not match latest supabase guide
           get() {
             return JSON.stringify(data.session)
           },
@@ -51,12 +46,15 @@ export const load = async ({ fetch, data, depends, url }) => {
     data.profile
 
   const createProfilePath = "/account/create_profile"
+  const signOutPath = "/account/sign_out"
   if (
     profile &&
     !_hasFullProfile(profile) &&
-    url.pathname !== createProfilePath
+    url.pathname !== createProfilePath &&
+    url.pathname !== signOutPath &&
+    CreateProfileStep
   ) {
-    throw redirect(303, createProfilePath)
+    redirect(303, createProfilePath)
   }
 
   return {

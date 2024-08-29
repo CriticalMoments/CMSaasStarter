@@ -1,13 +1,27 @@
-# SaaS Starter
+<p align="center">
+    <picture>
+        <img width="420" alt="SaaS Starter Header reading: The open source, fast, and free to host SaaS template" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/12f47617-e5be-4694-affc-23310e54b885">
+    </picture>
+</p>
 
-[![Build](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml)
-[![Format Check](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml)
-[![Linting](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml/badge.svg?branch=main)](https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml)
-[![License](https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f)](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
+<p align="center">
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main" alt="Built Status"></a>
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml/badge.svg?branch=main" alt="Format Check"></a>
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml/badge.svg?branch=main" alt="Linting"></a>
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f" alt="License"></a>
+</p>
 
-### SaaS Starter is an open source, fast, and free to host SaaS template / boilerplate
+<p align="center">
+  <a href="https://saasstarter.work"><strong>Demo & Homepage</strong></a> •
+  <a href="https://github.com/CriticalMoments/CMSaasStarter#quick-start"><strong>Quick Start Guide</strong></a> • 
+  <a href="https://github.com/CriticalMoments/CMSaasStarter/issues"><strong>Issues</strong></a>
+</p>
 
-- [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, and more.
+<br/>
+
+# SaaS Starter: A SvelteKit Boilerplate/Template
+
+- [Feature Rich](#features): user auth, user dashboard, marketing site, blog engine, billing/subscriptions, pricing page, search, emails, and more.
 - [Lightning Performance](#performance--best-practices): fast pre-rendered pages which score 100/100 on Google PageSpeed.
 - [Delighful Developer Experience](#tech-stack): tools you'll love working with, including SvelteKit, Tailwind, DaisyUI, Postgres, and Supabase.
 - Extensible: all the tools you need to make additional marketing pages, UI components, user dashboards, admin portals, database backends, API endpoints, and more.
@@ -16,7 +30,7 @@
 - [Fully Functional Demo](https://saasstarter.work)
 - [Quick Start](#quick-start): Full docs from `git clone` to deployment.
 
-Created by the folks at [Critical Moments](https://criticalmoments.io)! Check out our website site for an example depolyment of SaaS Starter.
+Created by the folks at [Critical Moments](https://criticalmoments.io)! Check out our website site for an example deployment of SaaS Starter.
 
 **Make mobile apps?** Improve conversion rates and ratings with [Critical Moments](https://criticalmoments.io).
 
@@ -46,12 +60,14 @@ See [criticalmoments.io](https://criticalmoments.io) for an example of what’s 
 
 Everything you need to get started for a SaaS company:
 
-- User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth.
-- Marketing Page with SEO optimization
+- User Authentication: Sign up, sign out, forgot password, email verification, and oAuth. Powered by Supabase Auth. GDPR cookie warning for European users.
+- Marketing Page with SEO optimization and Sitemap
 - Blog engine with rich formatting, RSS and SEO optimization.
-- User Dashboard with user profile, user settings, update email/password, billing, and more.
+- User Dashboard with user profile, user settings, update email/password, billing, and more
 - Subscriptions powered by Stripe Checkout
 - Pricing page
+- Emails: send emails to users, including template support
+- Search: lightning fast site search, without a backend
 - Contact-us form
 - Billing portal: self serve to change card, upgrade, cancel, or download receipts
 - Onboarding flow after signup: collect user data, and select a payment plan
@@ -120,14 +136,20 @@ The result is a perfect Google PageSpeed Insights score in all categories!
 
 # Quick Start
 
-### Get Started (Local Development)
+## Create a Copy of the Template
 
-To get started, fork and run this project!
+To get started, create your own copy of the project for development. There are two options:
+
+- "Use this template": use this Github button if you want to build your own project using CMSaasStarter as a starter template and you aren't planning on contributing work back to the public open source project. See [Github Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+- "Fork": use this button if you want contribute some or all of your work back to the public open source project. It will keep the full commit history, and be easier to create PRs back to CMSaasStarter.
+
+## Setup Local Development
+
+On your development machine:
 
 ```
-## First fork the project on Github
-git pull [Your Fork]
-cd CMSaasStarter ## or your fork name if different
+git pull [Your Repo Created Above]
+cd CMSaasStarter ## or your repo name if different
 npm install
 ## Create an env file. You'll replace the values in this in later steps.
 cp local_env_template .env.local
@@ -135,11 +157,26 @@ cp local_env_template .env.local
 npm run dev -- --open
 ```
 
-### Developer Environment
+**Note:** some features won't work until you complete the rest of the setup steps below!
 
-The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), and [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml). Github disables CI on forks by default, so if you fork this repo, be sure to go into the Github Actions page for your repo and enable workflows.
+## Developer Tools
 
-You can manually run these scripts yourself; `npm run build` for the build, `npm run format_check` to check formatting, `npm run lint` for the linting, `npm run check` for typechecking, and `npm run test` for testing (if you add tests).
+The repo includes [CI scripts](https://aws.amazon.com/devops/continuous-integration/) designed for [GitHub Actions](https://github.com/features/actions). These confirm you don’t break your [build](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/build.yml), you use [proper code formatting](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/format.yml), [code linting and typechecking passes](https://github.com/CriticalMoments/CMSaasStarter/blob/main/.github/workflows/linting.yml), and even spell checking.
+
+### Enabling GitHub Actions
+
+Github disables CI on new forks by default, so be sure to go into the Github Actions page for your repo and enable workflows.
+
+### Running Developer Tools Locally
+
+To manually run all these tools run the following script. You can view it's contents for individual commands.
+
+```
+# first time only: chmod +x ./check.sh
+./check.sh
+```
+
+### Running Developer Tools in your IDE
 
 Installing extensions in your editor can automatically format-on-save, show linting/type issues inline, and run your test cases:
 
@@ -147,28 +184,34 @@ Installing extensions in your editor can automatically format-on-save, show lint
 - ESLint for type checking and linting: [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [other editors](https://eslint.org/docs/latest/use/integrations)
 - Vitest for testing if you add tests: [VSCode](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) or [other editors](https://vitest.dev/guide/ide)
 
+### Running Developer Tools from Git Hooks
+
 To catch build, formatting, linting and test issues before you commit changes, we suggest the following local git hook. It will run before you commit, stop you from breaking the build, and show any issues that are found. Add the lines below to an executable git hook script at the location `.git/hooks/pre-commit`.
 
 ```
 #!/bin/sh
-set -e
-npm run format_check
-npm run lint
-npm run build
-npm run check
-npm run test_run
+# Run standard checks before committing
+cd "$(dirname "$0")"
+sh ../../checks.sh
 ```
 
-Finally: if you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and remove the git hook (`.git/hooks/pre-commit`).
+### Disabling Developer Tools
 
-### Setup Supabase
+If you find build, formatting or linting rules too tedious, you can disable enforcement by deleting the CI files (`.github/workflows/*`) and removing the git hook (`.git/hooks/pre-commit`).
+
+## Setup Supabase Project
 
 - Create a Supabase account
 - Create a new Supabase project in the console
 - Wait for the database to launch
-- Create your user management tables in the database
-  - Go to the [SQL Editor](https://supabase.com/dashboard/project/_/sql) page in the Dashboard.
-  - Paste the SQL from `database_migration.sql` in this repo to create your user/profiles table and click run.
+- Set up your database schema:
+  - For new Supabase projects:
+    - Go to the [SQL Editor](https://supabase.com/dashboard/project/_/sql) page in the Dashboard.
+    - Run the SQL from `database_migration.sql` to create the initial schema.
+  - For existing projects:
+    - Apply migrations from the `supabase/migrations` directory:
+      1. Go to the Supabase dashboard's SQL Editor.
+      2. Identify the last migration you applied, then run the SQL content of each subsequent file in chronological order.
 - Enable user signups in the [Supabase console](https://app.supabase.com/project/_/settings/auth): sometimes new signups are disabled by default in Supabase projects
 - Go to the [API Settings](https://supabase.com/dashboard/project/_/settings/api) page in the Dashboard. Find your Project-URL (PUBLIC_SUPABASE_URL), anon (PUBLIC_SUPABASE_ANON_KEY) and service_role (PRIVATE_SUPABASE_SERVICE_ROLE).
   - For local development: create a `.env.local` file:
@@ -177,7 +220,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
     PUBLIC_SUPABASE_ANON_KEY=your-anon-key
     PRIVATE_SUPABASE_SERVICE_ROLE=your service_role secret
     ```
-  - For production, add these two keys to your Cloudflare environment (see below). We suggest you encrypt your service role.
+  - For production, add these two keys to your deployment environment (see below). We suggest you encrypt your service role.
 - Auth Callback
   - Set your default callback URL for auth in the Supabase Auth console. For example, for the demo page we added: `https://saasstarter.work/auth/callback` . Also add that same URL to the the “allowed redirect URL” list in the Supabase auth console further down the page.
   - Add a link to the redirect URL allow list which allows parameters to your auth callback. For example we added the following for the demo page: `https://saasstarter.work/auth/callback?*`
@@ -185,7 +228,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
   - Test that the "sign up" and "forgot password" emails link back to your domain correctly by checking the have a redirect_to parameter to your `yourdomain.com/auth/callback`. If they link to the base URL or another page, double check you have the config above set correctly.
 - OAuth Logins
   - Decide which oauth logins you want to support, and set them up in the Supabase Auth console under “Auth Providers”. Be sure to provide them the Supabase callback URL. Also be sure to set any platform specific permissions/settings to retrieve their email as part of the login (for example, for Github it's under `Account Permissions > Email Address > Read Only Access`
-  - Edit `oauthProviders` list in `/src/routes/(marketing)/login/login_conf.ts` with the list of providers you chose. If you don’t want any OAuth options, make this an empty array.
+  - Edit `oauthProviders` list in `/src/routes/(marketing)/login/login_config.ts` with the list of providers you chose. If you don’t want any OAuth options, make this an empty array.
   - Test each provider to ensure you setup the client ID, client secret and callback correctly for each
 - Auth Email SMTP
   - Supabase has a limit of 4 emails per hour on their development server. You should [Configure a Custom SMTP](https://supabase.com/docs/guides/auth/auth-smtp) sending emails from your own domain.
@@ -193,7 +236,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
 - Test authentication
   - Open the `/login` page in your browser, and ensure you can sign up, confirm email, log in, and edit your account.
 
-### Setup Stripe Billing
+## Setup Stripe
 
 - Create a Stripe account
 - Create a product and price Tiers
@@ -205,7 +248,7 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
 - Optional: theme your Stripe integration
   - Change the colors and fonts to match your brand [here](https://dashboard.stripe.com/settings/branding)
 - Update your pricing plan data to align to your stripe data
-  - See `/src/routes/(marketing)/pricing/pricing.js` and Fill in all fields for each plan. stripe_price_id and stripe_product_id should only be omitted on a single “free” plan. Multiple free plans are not supported.
+  - See `/src/routes/(marketing)/pricing/pricing_plans.ts` and Fill in all fields for each plan. stripe_price_id and stripe_product_id should only be omitted on a single “free” plan. Multiple free plans are not supported.
     - The product in Stripe can contain several prices for the same product (annual, monthly, etc). The stripe_price_id you choose to put in this json will be the default we use for the checkout experience. However, if you have more prices configured for a product configured, the user can switch between them in the management portal.
   - Set the `defaultPlanId` to the plan the user will see as their “current plan” after signup, but before subscribing to a paid plan (typically “free”). It should align to the plan with no stripe_price_id.
   - if you want an item highlighted on `/pricing`, specify that plan ID in `/src/routes/(marketing)/pricing/+page.svelte`
@@ -214,6 +257,12 @@ Finally: if you find build, formatting or linting rules too tedious, you can dis
     - Disallow editing email under customer information (since we allow editing in primary portal)
     - Optional: setup a custom domain so Stripe pages use your own domain
 - Repeat steps in production environment
+
+## Deploy
+
+We have two documented options for deploying SaaS Starter: Cloudflare Pages and Vercel. However, it can be hosted anywhere you can host a SvelteKit app.
+
+Our [official demo](https://saasstarter.work) is hosted on Cloudflare Pages, and deployed each time the main branch is updated.
 
 ### Deploy To Cloudflare
 
@@ -224,13 +273,29 @@ PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_
 
 Optional: enable [Cloudflare Analytics](https://www.cloudflare.com/en-ca/application-services/products/analytics/) for usage metrics.
 
+### Deploy to Vercel
+
+Deploy using Vercel's deploy button:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCriticalMoments%2FCMSaasStarter&env=PUBLIC_SUPABASE_URL,PUBLIC_SUPABASE_ANON_KEY,PRIVATE_SUPABASE_SERVICE_ROLE,PRIVATE_STRIPE_API_KEY&envDescription=Each%20environment%20variable%20is%20documented%20in%20our%20quick%20start%20guide%3A%20https%3A%2F%2Fgithub.com%2FCriticalMoments%2FCMSaasStarter%3Ftab%3Dreadme-ov-file%23quick-start&envLink=https%3A%2F%2Fgithub.com%2FCriticalMoments%2FCMSaasStarter%3Ftab%3Dreadme-ov-file%23quick-start&demo-title=SaasStarter%20Demo&demo-description=A%20live%20demo%20of%20this%20template%2C%20deployed%20from%20the%20main%20branch.&demo-url=https%3A%2F%2Fsaasstarter.work&demo-image=https%3A%2F%2Fprivate-user-images.githubusercontent.com%2F848343%2F297197975-34944c09-df72-4ac2-9099-01d25d99911b.png%3Fjwt%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjE0NTAwMzMsIm5iZiI6MTcyMTQ0OTczMywicGF0aCI6Ii84NDgzNDMvMjk3MTk3OTc1LTM0OTQ0YzA5LWRmNzItNGFjMi05MDk5LTAxZDI1ZDk5OTExYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyMFQwNDI4NTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zY2E4ZmY3YjVhMTc3YWE5YmI2MzI3YWE3MWQ2OWIzMjI3MGU2YzhmZDJjNjhlNDJhY2VjMDExMDk5ZjMyM2M4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.O8e9x5qFiij0TILjUncTOXjAs5Di2-8221K-N0YttbE)
+
+Here is a demo of of Saas Starter hosted on Vercel: [vercel.saasstarter.work](https://vercel.saasstarter.work)
+
+### Deploy Alternatives
+
 If you prefer another host you can explore alternatives:
 
 - [SvelteKit official adapters](https://kit.svelte.dev/docs/adapters) including Netlify, Vercel, and Node
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains, unlike Cloudflare.
 
-### Add your content!
+## Setup Emailer -- Optional
+
+SaaS Starter includes email capabilities for sending emails to users and admins.
+
+These are optional and disabled by default. See [email docs](email_docs.md) for details on how to enable and customize them.
+
+## Add Your Content
 
 After the steps above, you’ll have a working version like the demo page. However, it’s not branded, and doesn’t have your content. The following checklist helps you customize the template to make a SaaS homepage for your company.
 
@@ -251,21 +316,22 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Style: make it your own look and feel.
   - Update the favicon in the `/static/` directory
   - The Authentication UI should automatically update based on your DaisyUI style, but check out the login in pages, and further design tweaks can be made in `src/routes/(marketing)/login/login_config.ts` (see [Auth UI](https://supabase.com/docs/guides/auth/auth-helpers/auth-ui#customization) for options).
+- Site Search: any [prerendered](https://kit.svelte.dev/docs/page-options#prerender) content will automatically be indexed by the site search. To exclude a page, add it to `excludePaths` in `src/lib/build_index.ts`.
 - Functionality
   - Add actual SaaS functionality!
   - Replace the admin dashboard with real content (`/src/routes/(admin)/account/+page.svelte`).
   - Add API endpoints and database tables as needed to deliver your SaaS product.
 
-### Extensions
+## Community Extensions
 
 The open source community is extending and improving SaasStarter!
 
-These extensions are reference implementations of commonly needed features. We don't integrate them into the main branch to keep our dependencies minimal and simplify maintenance. However, if you need them you can cherry pick into your fork:
+These extensions are reference implementations of commonly needed features. We don't integrate them into the main branch to keep our dependencies minimal and simplify maintenance. However, if you need them you can cherry pick into your fork/repo:
 
 - Internationalization: [branch](https://github.com/CriticalMoments/CMSaasStarter/tree/extension/internationalization), and [instructions](https://github.com/CriticalMoments/CMSaasStarter/pull/49)
 - Dark mode theme: [branch](https://github.com/CriticalMoments/CMSaasStarter/tree/extension/dark_mode), and [instructions](https://github.com/CriticalMoments/CMSaasStarter/pull/47)
 
-## Icons
+### Icons Credits
 
 Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/collection/solar-broken-line-icons/) and [Solar Linear Icons](https://www.svgrepo.com/collection/solar-linear-icons) via CC Attribution License.
 

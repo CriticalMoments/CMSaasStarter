@@ -53,6 +53,19 @@
 />
 
 <SettingsModule
+  title="Email Subscription"
+  editable={false}
+  fields={[
+    {
+      id: "subscriptionStatus",
+      initialValue: profile?.unsubscribed ? "Unsubscribed" : "Subscribed",
+    },
+  ]}
+  editButtonTitle="Change Subscription"
+  editLink="/account/settings/change_email_subscription"
+/>
+
+<SettingsModule
   title="Danger Zone"
   editable={false}
   dangerous={true}
