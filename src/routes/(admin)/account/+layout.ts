@@ -32,10 +32,7 @@ export const load = async ({ fetch, data, depends, url }) => {
       })
 
   /**
-   * It's fine to use `getSession` here, because on the client, `getSession` is
-   * safe, and on the server, it reads `session` from the `LayoutData`, which
-   * safely checked the session using `safeGetSession`.
-   * Source: https://supabase.com/docs/guides/auth/server-side/sveltekit
+   * Not always safe on server, but calling getUser next to verify JWT token
    */
   const {
     data: { session },
@@ -52,7 +49,13 @@ export const load = async ({ fetch, data, depends, url }) => {
   }
   const {
     data: { user },
+    error: userError,
   } = await supabase.auth.getUser()
+  if (userError || !user) {
+    // JWT validation has failed
+    console.log("User error", userError)
+    redirect(303, "/login")
+  }
 
   const { data: aal } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel()
 

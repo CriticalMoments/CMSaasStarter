@@ -14,8 +14,8 @@ export const load: LayoutServerLoad = async ({
   const { data: profile } = await supabase
     .from("profiles")
     .select(`*`)
-    .eq("id", user?.id)
+    .eq("id", user.id)
     .single()
 
-  return { session, profile, cookies: cookies.getAll() }
+  return { session, user, profile, cookies: cookies.getAll() }
 }
