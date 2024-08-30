@@ -284,7 +284,6 @@ export const actions = {
         unsubscribed: priorProfile?.unsubscribed ?? false,
       })
       .select()
-    // TODO: need this select? I don't use result
 
     if (error) {
       return fail(500, {
