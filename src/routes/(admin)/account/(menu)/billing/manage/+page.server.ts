@@ -1,22 +1,22 @@
-import { redirect, error } from "@sveltejs/kit"
+import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
+import { error, redirect } from "@sveltejs/kit"
+import Stripe from "stripe"
 import { getOrCreateCustomerId } from "../../../subscription_helpers.server"
 import type { PageServerLoad } from "./$types"
-import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
-import Stripe from "stripe"
 const stripe = new Stripe(PRIVATE_STRIPE_API_KEY, { apiVersion: "2023-08-16" })
 
 export const load: PageServerLoad = async ({
   url,
   locals: { safeGetSession, supabaseServiceRole },
 }) => {
-  const { session } = await safeGetSession()
+  const { session, user } = await safeGetSession()
   if (!session) {
     redirect(303, "/login")
   }
 
   const { error: idError, customerId } = await getOrCreateCustomerId({
     supabaseServiceRole,
-    session,
+    user,
   })
   if (idError || !customerId) {
     error(500, {

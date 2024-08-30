@@ -73,7 +73,7 @@ export const actions = {
     }
   },
   updatePassword: async ({ request, locals: { supabase, safeGetSession } }) => {
-    const { session } = await safeGetSession()
+    const { session, user, amr } = await safeGetSession()
     if (!session) {
       redirect(303, "/login")
     }
@@ -85,8 +85,7 @@ export const actions = {
 
     // Can check if we're a "password recovery" session by checking session amr
     // let currentPassword take priority if provided (user can use either form)
-    // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-    const recoveryAmr = session.user?.amr?.find((x) => x.method === "recovery")
+    const recoveryAmr = amr?.find((x) => x.method === "recovery")
     const isRecoverySession = recoveryAmr && !currentPassword
 
     // if this is password recovery session, check timestamp of recovery session
@@ -148,7 +147,7 @@ export const actions = {
     // However, having the UI accessible route still verify password is still helpful, and needed once you get the setting above enabled
     if (!isRecoverySession) {
       const { error } = await supabase.auth.signInWithPassword({
-        email: session?.user.email || "",
+        email: user?.email || "",
         password: currentPassword,
       })
       if (error) {
@@ -179,8 +178,8 @@ export const actions = {
     request,
     locals: { supabase, supabaseServiceRole, safeGetSession },
   }) => {
-    const { session } = await safeGetSession()
-    if (!session) {
+    const { session, user } = await safeGetSession()
+    if (!session || !user?.id) {
       redirect(303, "/login")
     }
 
@@ -198,7 +197,7 @@ export const actions = {
 
     // Check current password is correct before deleting account
     const { error: pwError } = await supabase.auth.signInWithPassword({
-      email: session?.user.email || "",
+      email: user?.email || "",
       password: currentPassword,
     })
     if (pwError) {
@@ -207,7 +206,7 @@ export const actions = {
     }
 
     const { error } = await supabaseServiceRole.auth.admin.deleteUser(
-      session.user.id,
+      user.id,
       true,
     )
     if (error) {
@@ -221,8 +220,8 @@ export const actions = {
     redirect(303, "/")
   },
   updateProfile: async ({ request, locals: { supabase, safeGetSession } }) => {
-    const { session } = await safeGetSession()
-    if (!session) {
+    const { session, user } = await safeGetSession()
+    if (!session || !user?.id) {
       redirect(303, "/login")
     }
 
@@ -277,7 +276,7 @@ export const actions = {
     const { error } = await supabase
       .from("profiles")
       .upsert({
-        id: session?.user.id,
+        id: user.id,
         full_name: fullName,
         company_name: companyName,
         website: website,
