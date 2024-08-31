@@ -13,6 +13,8 @@ declare global {
         user: User | null
         amr: AMREntry[] | null
       }>
+      session: Session | null
+      user: User | null
     }
     interface PageData {
       session: Session | null

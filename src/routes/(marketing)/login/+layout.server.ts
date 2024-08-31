@@ -6,15 +6,13 @@ export const load: LayoutServerLoad = async ({
   locals: { safeGetSession },
   cookies,
 }) => {
-  const { session } = await safeGetSession()
-
   // if the user is already logged in return them to the account page
+  const { session } = await safeGetSession()
   if (session) {
     redirect(303, "/account")
   }
 
   return {
-    session: session,
     url: url.origin,
     cookies: cookies.getAll(),
   }
