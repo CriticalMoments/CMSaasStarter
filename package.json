@@ -36,7 +36,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "super-sitemap": "^0.15.1",
-    "svelte": "^4.0.5",
+    "svelte": "^4.2.19",
     "svelte-check": "^3.4.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.0.0",
