@@ -1,6 +1,6 @@
 import path from "path"
 import fs from "fs"
-import glob from "glob"
+import { glob } from "glob"
 import { convert } from "html-to-text"
 import JSDOM from "jsdom"
 import Fuse from "fuse.js"

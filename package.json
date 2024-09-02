@@ -30,6 +30,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.30.0",
     "fuse.js": "^7.0.0",
+    "glob": "^11.0.0",
     "html-to-text": "^9.0.5",
     "jsdom": "^24.1.1",
     "postcss": "^8.4.31",
@@ -50,5 +51,10 @@
     "@supabase/supabase-js": "^2.45.2",
     "resend": "^3.5.0",
     "stripe": "^13.3.0"
+  },
+  "overrides": {
+    "@supabase/auth-ui-svelte": {
+      "svelte": "$svelte"
+    }
   }
 }
