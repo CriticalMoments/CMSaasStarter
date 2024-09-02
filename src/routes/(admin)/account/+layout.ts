@@ -10,6 +10,7 @@ import {
 import { redirect } from "@sveltejs/kit"
 import type { Database } from "../../../DatabaseDefinitions.js"
 import { CreateProfileStep } from "../../../config"
+import { load_helper } from "$lib/load_helpers"
 
 export const load = async ({ fetch, data, depends, url }) => {
   depends("supabase:auth")
@@ -31,32 +32,8 @@ export const load = async ({ fetch, data, depends, url }) => {
         },
       })
 
-  // on server populated on server by LayoutData, using authGuard hook
-  let session = data.session
-  if (isBrowser()) {
-    // Only call getSession in browser where it's safe.
-    const getSessionResponse = await supabase.auth.getSession()
-    session = getSessionResponse.data.session
-  }
-  if (!session) {
-    redirect(303, "/login")
-  }
-
-  // https://github.com/supabase/auth-js/issues/888#issuecomment-2189298518
-  if ("suppressGetSessionWarning" in supabase.auth) {
-    // @ts-expect-error - suppressGetSessionWarning is not part of the official API
-    supabase.auth.suppressGetSessionWarning = true
-  } else {
-    console.warn(
-      "SupabaseAuthClient#suppressGetSessionWarning was removed. See https://github.com/supabase/auth-js/issues/888.",
-    )
-  }
-  const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser()
-  if (userError || !user) {
-    // JWT validation has failed
+  const { session, user } = await load_helper(data.session, supabase)
+  if (!session || !user) {
     redirect(303, "/login")
   }
 
