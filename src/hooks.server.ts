@@ -8,7 +8,6 @@ import { createServerClient } from "@supabase/ssr"
 import { createClient } from "@supabase/supabase-js"
 import type { Handle } from "@sveltejs/kit"
 import { sequence } from "@sveltejs/kit/hooks"
-import { redirect } from "@sveltejs/kit"
 
 export const supabase: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createServerClient(
@@ -85,18 +84,12 @@ export const supabase: Handle = async ({ event, resolve }) => {
   })
 }
 
+// Not called for prerendered marketing pages so generally okay to call on ever server request
+// Next-page CSR will mean relatively minimal calls to this hook
 const authGuard: Handle = async ({ event, resolve }) => {
   const { session, user } = await event.locals.safeGetSession()
   event.locals.session = session
   event.locals.user = user
-
-  if (!event.locals.session && event.url.pathname.startsWith("/account")) {
-    redirect(303, "/login")
-  }
-
-  if (event.locals.session && event.url.pathname === "/login") {
-    redirect(303, "/account")
-  }
 
   return resolve(event)
 }

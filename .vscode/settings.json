@@ -9,5 +9,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "svelte"]
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "svelte"],
+  "editor.tabSize": 2
 }
