@@ -47,7 +47,6 @@ export const actions = {
       errors["message"] = "Message too long (" + message.length + " of 2000)"
     }
 
-    console.log("errors:", errors)
     if (Object.keys(errors).length > 0) {
       return fail(400, { errors })
     }
@@ -66,6 +65,7 @@ export const actions = {
       })
 
     if (insertError) {
+      console.error("Error saving contact request", insertError)
       return fail(500, { errors: { _: "Error saving" } })
     }
 

@@ -19,6 +19,7 @@ export const load: PageServerLoad = async ({
     user,
   })
   if (idError || !customerId) {
+    console.error("Error creating customer id", idError)
     error(500, {
       message: "Unknown error (PCID). If issue persists, please contact us.",
     })
@@ -32,6 +33,7 @@ export const load: PageServerLoad = async ({
     })
     portalLink = portalSession?.url
   } catch (e) {
+    console.error("Error creating billing portal session", e)
     error(500, "Unknown error (PSE). If issue persists, please contact us.")
   }
 

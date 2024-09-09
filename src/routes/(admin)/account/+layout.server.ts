@@ -5,6 +5,7 @@ export const load: LayoutServerLoad = async ({
   cookies,
 }) => {
   // Session here is from authGuard hook
+
   return {
     session,
     cookies: cookies.getAll(),

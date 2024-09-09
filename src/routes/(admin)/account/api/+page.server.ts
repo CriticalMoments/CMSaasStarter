@@ -23,6 +23,7 @@ export const actions = {
       .eq("id", session.user.id)
 
     if (error) {
+      console.error("Error updating subscription status", error)
       return fail(500, { message: "Failed to update subscription status" })
     }
 
@@ -62,6 +63,7 @@ export const actions = {
     const { error } = await supabase.auth.updateUser({ email: email })
 
     if (error) {
+      console.error("Error updating email", error)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
         email,
@@ -160,6 +162,7 @@ export const actions = {
       password: newPassword1,
     })
     if (error) {
+      console.error("Error updating password", error)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
         newPassword1,
@@ -210,6 +213,7 @@ export const actions = {
       true,
     )
     if (error) {
+      console.error("Error deleting user", error)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
         currentPassword,
@@ -286,6 +290,7 @@ export const actions = {
       .select()
 
     if (error) {
+      console.error("Error updating profile", error)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
         fullName,
