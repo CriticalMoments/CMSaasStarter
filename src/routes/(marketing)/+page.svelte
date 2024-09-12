@@ -233,7 +233,7 @@
   <div class="hero-content text-center py-12">
     <div class="max-w-xl">
       <div
-        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-4 md:mb-8 pb-1"
+        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
       >
         SaaS Starter Demo
       </div>
@@ -304,7 +304,7 @@
       >
         Explore the Features
       </div>
-      <div class="mt-6 text-xl font-bold">
+      <div class="mt-4 text-xl font-bold">
         And try them on this
         <span
           class="underline decoration-secondary decoration-[3px] md:decoration-[4px]"
@@ -366,7 +366,7 @@
         See it in Action
       </div>
       <div
-        class="flex flex-col lg:flex-row mt-8 gap-6 place-content-center content-center"
+        class="flex flex-col lg:flex-row mt-6 gap-6 place-content-center content-center"
       >
         <div class="hidden md:block">
           <a href="https://criticalmoments.io" target="_blank" class="link">
