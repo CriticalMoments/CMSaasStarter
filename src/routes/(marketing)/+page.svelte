@@ -300,7 +300,7 @@
   <div class="pt-20 pb-8 px-7">
     <div class="max-w-lg mx-auto text-center">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
       >
         Explore the Features
       </div>
@@ -361,7 +361,7 @@
   <div class="hero-content text-center pb-16 pt-4 px-4">
     <div class="max-w-lg">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mt-4"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mt-4 pb-2"
       >
         See it in Action
       </div>
