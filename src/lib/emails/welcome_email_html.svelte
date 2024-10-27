@@ -12,7 +12,11 @@
   export const ssr = true
 
   // Define all your props here
-  export let companyName: string = ""
+  interface Props {
+    companyName?: string;
+  }
+
+  let { companyName = "" }: Props = $props();
 </script>
 
 <html lang="en">

@@ -2,10 +2,14 @@
   import { goto } from "$app/navigation"
   import { onMount } from "svelte"
 
-  export let data
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
 
   let { supabase } = data
-  let message = "Signing out...."
+  let message = $state("Signing out....")
 
   // on mount, sign out
   onMount(() => {

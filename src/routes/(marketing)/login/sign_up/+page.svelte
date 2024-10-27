@@ -2,7 +2,11 @@
   import { Auth } from "@supabase/auth-ui-svelte"
   import { sharedAppearance, oauthProviders } from "../login_config"
 
-  export let data
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>

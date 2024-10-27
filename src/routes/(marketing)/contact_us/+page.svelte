@@ -2,9 +2,9 @@
   import { enhance, applyAction } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
 
-  let errors: { [fieldName: string]: string } = {}
-  let loading = false
-  let showSuccess = false
+  let errors: { [fieldName: string]: string } = $state({})
+  let loading = $state(false)
+  let showSuccess = $state(false)
 
   const formFields = [
     {

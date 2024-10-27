@@ -1,6 +1,10 @@
 <script lang="ts">
   import SettingsModule from "../settings_module.svelte"
-  export let data
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
   let { profile } = data
   let unsubscribed = profile?.unsubscribed
 </script>
