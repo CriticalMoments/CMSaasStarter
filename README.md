@@ -322,6 +322,20 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Replace the admin dashboard with real content (`/src/routes/(admin)/account/+page.svelte`).
   - Add API endpoints and database tables as needed to deliver your SaaS product.
 
+## Setup Analytics -- Optional
+
+### PostHog
+
+- Create a PostHog Account
+- Install PostHog JS Library
+  - Run `npm install posthog-js` in your terminal. This will add PostHog dependencies to your `package.json` and `package-lock.json`.
+- Set Up PostHog
+  - Create a new layout file at `src/routes/+layout.js`
+  - Log into PostHog. Then copy the code from [Svelte Client-side setup](https://posthog.com/docs/libraries/svelte#client-side-setup) and paste it into your `src/routes/+layout.js` file
+    - Note: ensure you’re logged into PostHog so that the code includes your unique API key automatically.
+- Test analytics
+  - Click around and view a few pages on your site to generate some events. You can view these events in PostHog to ensure tracking is active.
+
 ## Community Extensions
 
 The open source community is extending and improving SaasStarter!
