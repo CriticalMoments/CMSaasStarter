@@ -1,6 +1,13 @@
 <script>
   import { WebsiteName } from "./../../config"
   import "../../app.css"
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { children } = $props()
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">
@@ -34,8 +41,8 @@
       </li>
     </ul>
     <div class="dropdown dropdown-end sm:hidden">
-      <!-- svelte-ignore a11y-label-has-associated-control -->
-      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+      <!-- svelte-ignore a11y_label_has_associated_control -->
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +58,7 @@
           /></svg
         >
       </label>
-      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
       <ul
         tabindex="0"
         class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
@@ -72,7 +79,7 @@
 </div>
 
 <div class="">
-  <slot />
+  {@render children?.()}
 </div>
 
 <!-- Spacer grows so the footer can be at bottom on short pages -->

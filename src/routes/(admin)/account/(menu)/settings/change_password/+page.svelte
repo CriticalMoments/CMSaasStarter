@@ -7,7 +7,7 @@
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
 
-  export let data
+  let { data } = $props()
   let { user, supabase } = data
 
   // True if definitely has a password, but can be false if they
@@ -21,8 +21,8 @@
   // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
   let usingOAuth = user?.amr?.find((x) => x.method === "oauth") ? true : false
 
-  let sendBtn: HTMLButtonElement
-  let sentEmail = false
+  let sendBtn: HTMLButtonElement = $state()
+  let sentEmail = $state(false)
   let sendForgotPassword = () => {
     sendBtn.disabled = true
     sendBtn.textContent = "Sending..."
@@ -95,7 +95,7 @@
       <button
         class="btn btn-outline btn-wide {sentEmail ? 'hidden' : ''}"
         bind:this={sendBtn}
-        on:click={sendForgotPassword}
+        onclick={sendForgotPassword}
         >Send Set Password Email
       </button>
       <div class="success alert alert-success {sentEmail ? '' : 'hidden'}">

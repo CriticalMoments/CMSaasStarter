@@ -5,7 +5,7 @@
   import { onMount } from "svelte"
   import { page } from "$app/stores"
 
-  export let data
+  let { data } = $props()
   let { supabase } = data
 
   onMount(() => {
