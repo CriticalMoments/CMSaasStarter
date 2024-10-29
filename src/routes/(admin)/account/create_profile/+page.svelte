@@ -3,8 +3,18 @@
   import type { SubmitFunction } from "@sveltejs/kit"
   import "../../../../app.css"
 
+  interface User {
+    email: string
+  }
+
+  interface Profile {
+    full_name?: string
+    company_name?: string
+    website?: string
+  }
+
   interface Props {
-    data: any
+    data: { user: User; profile: Profile }
     form: FormAccountUpdateResult
   }
 
