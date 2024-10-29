@@ -21,11 +21,14 @@
   // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
   let usingOAuth = user?.amr?.find((x) => x.method === "oauth") ? true : false
 
-  let sendBtn: HTMLButtonElement = $state()
+  let sendBtn: HTMLButtonElement | undefined = $state()
   let sentEmail = $state(false)
   let sendForgotPassword = () => {
-    sendBtn.disabled = true
-    sendBtn.textContent = "Sending..."
+    if (sendBtn) {
+      sendBtn.disabled = true
+      sendBtn.textContent = "Sending..."
+    }
+
     let email = user?.email
     if (email) {
       supabase.auth
@@ -34,6 +37,10 @@
         })
         .then((d) => {
           sentEmail = d.error ? false : true
+          if (sendBtn) {
+            sendBtn.disabled = false
+            sendBtn.textContent = "Send Forgot Password"
+          }
         })
     }
   }
