@@ -26,7 +26,7 @@
       <li class="md:mx-2"><a href="/pricing">Pricing</a></li>
       <li class="md:mx-2"><a href="/account">Account</a></li>
       <li class="md:mx-0">
-        <a href="/search">
+        <a href="/search" aria-label="Search">
           <svg
             fill="#000000"
             class="w-6 h-6"
