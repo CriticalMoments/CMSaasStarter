@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
+  import { run } from "svelte/legacy"
 
   import { page } from "$app/stores"
   import { browser } from "$app/environment"
@@ -58,13 +58,13 @@
     if (fuse) {
       results = fuse.search(searchQuery)
     }
-  });
+  })
   // Update the URL hash when searchQuery changes so the browser can bookmark/share the search results
   run(() => {
     if (browser && window.location.hash.slice(1) !== searchQuery) {
       goto("#" + searchQuery, { keepFocus: true })
     }
-  });
+  })
 
   let focusItem = $state(0)
   function onKeyDown(event: KeyboardEvent) {
