@@ -11,7 +11,7 @@
 
   const adminSectionStore = writable("")
   setContext("adminSection", adminSectionStore)
-  let adminSection: string = $state()
+  let adminSection: string | undefined = $state()
   adminSectionStore.subscribe((value) => {
     adminSection = value
   })
