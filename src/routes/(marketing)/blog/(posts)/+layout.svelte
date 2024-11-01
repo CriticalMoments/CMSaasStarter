@@ -3,6 +3,11 @@
   import { error } from "@sveltejs/kit"
   import { sortedBlogPosts, type BlogPost } from "./../posts"
   import { WebsiteName } from "../../../../config"
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 
   function getCurrentPost(url: string): BlogPost {
     let searchPost: BlogPost | null = null
@@ -17,7 +22,7 @@
     }
     return searchPost
   }
-  $: currentPost = getCurrentPost($page.url.pathname)
+  let currentPost = $derived(getCurrentPost($page.url.pathname))
 
   function buildLdJson(post: BlogPost) {
     return {
@@ -28,11 +33,11 @@
       dateModified: post.parsedDate?.toISOString(),
     }
   }
-  $: jsonldScript = `<script type="application/ld+json">${
+  let jsonldScript = $derived(`<script type="application/ld+json">${
     JSON.stringify(buildLdJson(currentPost)) + "<"
-  }/script>`
+  }/script>`)
 
-  $: pageUrl = $page.url.origin + $page.url.pathname
+  let pageUrl = $derived($page.url.origin + $page.url.pathname)
 </script>
 
 <svelte:head>
@@ -67,5 +72,5 @@
     })}
   </div>
   <h1>{currentPost.title}</h1>
-  <slot />
+  {@render children?.()}
 </article>
