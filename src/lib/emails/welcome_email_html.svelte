@@ -116,177 +116,182 @@
       width="100%"
       bgcolor="#f4f5f6"
     >
-      <tr>
-        <td
-          style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top;"
-          valign="top">&nbsp;</td
-        >
-        <td
-          class="container"
-          style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; max-width: 600px; padding: 0; padding-top: 24px; width: 600px; margin: 0 auto;"
-          width="600"
-          valign="top"
-        >
-          <div
-            class="content"
-            style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;"
+      <tbody>
+        <tr>
+          <td
+            style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top;"
+            valign="top">&nbsp;</td
           >
-            <!-- START CENTERED WHITE CONTAINER -->
-            <span
-              class="preheader"
-              style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;"
-              >Welcome to {companyName}. We're excited to have you on board.</span
-            >
-            <table
-              role="presentation"
-              border="0"
-              cellpadding="0"
-              cellspacing="0"
-              class="main"
-              style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border: 1px solid #eaebed; border-radius: 16px; width: 100%;"
-              width="100%"
-            >
-              <!-- START MAIN CONTENT AREA -->
-              <tr>
-                <td
-                  class="wrapper"
-                  style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;"
-                  valign="top"
-                >
-                  <p
-                    style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
-                  >
-                    Welcome to {companyName}!
-                  </p>
-                  <p
-                    style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
-                  >
-                    This is a quick sample of a welcome email. You can customize
-                    this email to fit your needs.
-                  </p>
-                  <table
-                    role="presentation"
-                    border="0"
-                    cellpadding="0"
-                    cellspacing="0"
-                    class="btn btn-primary"
-                    style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%;"
-                    width="100%"
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          align="left"
-                          style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 16px;"
-                          valign="top"
-                        >
-                          <table
-                            role="presentation"
-                            border="0"
-                            cellpadding="0"
-                            cellspacing="0"
-                            style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;"
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #0867ec;"
-                                  valign="top"
-                                  align="center"
-                                >
-                                  <a
-                                    href="https://github.com/CriticalMoments/CMSaasStarter"
-                                    target="_blank"
-                                    style="border: solid 2px #0867ec; border-radius: 4px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 16px; font-weight: bold; margin: 0; padding: 12px 24px; text-decoration: none; text-transform: capitalize; background-color: #0867ec; border-color: #0867ec; color: #ffffff;"
-                                    >View SaaS Starter Docs</a
-                                  >
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p
-                    style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
-                  >
-                    Thanks for using {companyName}!
-                  </p>
-                </td>
-              </tr>
-
-              <!-- END MAIN CONTENT AREA -->
-            </table>
-
-            <!-- START FOOTER -->
+          <td
+            class="container"
+            style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; max-width: 600px; padding: 0; padding-top: 24px; width: 600px; margin: 0 auto;"
+            width="600"
+            valign="top"
+          >
             <div
-              class="footer"
-              style="clear: both; padding-top: 24px; text-align: center; width: 100%;"
+              class="content"
+              style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;"
             >
+              <!-- START CENTERED WHITE CONTAINER -->
+              <span
+                class="preheader"
+                style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;"
+                >Welcome to {companyName}. We're excited to have you on board.</span
+              >
               <table
                 role="presentation"
                 border="0"
                 cellpadding="0"
                 cellspacing="0"
-                style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                class="main"
+                style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border: 1px solid #eaebed; border-radius: 16px; width: 100%;"
                 width="100%"
               >
-                <tr>
-                  <td
-                    class="content-block"
-                    style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;"
-                    valign="top"
-                    align="center"
-                  >
-                    <span
-                      class="apple-link"
-                      style="color: #9a9ea6; font-size: 16px; text-align: center;"
-                      >Company Inc, 123 Main St, Toronto, Canada</span
+                <!-- START MAIN CONTENT AREA -->
+                <tbody>
+                  <tr>
+                    <td
+                      class="wrapper"
+                      style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;"
+                      valign="top"
                     >
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    class="content-block powered-by"
-                    style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;"
-                    valign="top"
-                    align="center"
-                  >
-                    Email Template by <a
-                      href="http://htmlemail.io"
-                      style="color: #9a9ea6; font-size: 16px; text-align: center; text-decoration: none;"
-                      >HTMLemail.io</a
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    class="content-block"
-                    style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 14px; text-align: center;"
-                    valign="top"
-                    align="center"
-                  >
-                    <a
-                      href="{WebsiteBaseUrl}/account/settings/change_email_subscription"
-                      style="color: #4382ff; font-size: 16px; text-align: center; text-decoration: underline;"
-                      >Unsubscribe</a
-                    >
-                  </td>
-                </tr>
+                      <p
+                        style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
+                      >
+                        Welcome to {companyName}!
+                      </p>
+                      <p
+                        style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
+                      >
+                        This is a quick sample of a welcome email. You can
+                        customize this email to fit your needs.
+                      </p>
+                      <table
+                        role="presentation"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        class="btn btn-primary"
+                        style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; min-width: 100%;"
+                        width="100%"
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              align="left"
+                              style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 16px;"
+                              valign="top"
+                            >
+                              <table
+                                role="presentation"
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;"
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; border-radius: 4px; text-align: center; background-color: #0867ec;"
+                                      valign="top"
+                                      align="center"
+                                    >
+                                      <a
+                                        href="https://github.com/CriticalMoments/CMSaasStarter"
+                                        target="_blank"
+                                        style="border: solid 2px #0867ec; border-radius: 4px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 16px; font-weight: bold; margin: 0; padding: 12px 24px; text-decoration: none; text-transform: capitalize; background-color: #0867ec; border-color: #0867ec; color: #ffffff;"
+                                        >View SaaS Starter Docs</a
+                                      >
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p
+                        style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"
+                      >
+                        Thanks for using {companyName}!
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+                <!-- END MAIN CONTENT AREA -->
               </table>
+
+              <!-- START FOOTER -->
+              <div
+                class="footer"
+                style="clear: both; padding-top: 24px; text-align: center; width: 100%;"
+              >
+                <table
+                  role="presentation"
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                  width="100%"
+                >
+                  <tbody>
+                    <tr>
+                      <td
+                        class="content-block"
+                        style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;"
+                        valign="top"
+                        align="center"
+                      >
+                        <span
+                          class="apple-link"
+                          style="color: #9a9ea6; font-size: 16px; text-align: center;"
+                          >Company Inc, 123 Main St, Toronto, Canada</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="content-block powered-by"
+                        style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;"
+                        valign="top"
+                        align="center"
+                      >
+                        Email Template by <a
+                          href="http://htmlemail.io"
+                          style="color: #9a9ea6; font-size: 16px; text-align: center; text-decoration: none;"
+                          >HTMLemail.io</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="content-block"
+                        style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 14px; text-align: center;"
+                        valign="top"
+                        align="center"
+                      >
+                        <a
+                          href="{WebsiteBaseUrl}/account/settings/change_email_subscription"
+                          style="color: #4382ff; font-size: 16px; text-align: center; text-decoration: underline;"
+                          >Unsubscribe</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- END FOOTER -->
+
+              <!-- END CENTERED WHITE CONTAINER -->
             </div>
-
-            <!-- END FOOTER -->
-
-            <!-- END CENTERED WHITE CONTAINER -->
-          </div>
-        </td>
-        <td
-          style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top;"
-          valign="top">&nbsp;</td
-        >
-      </tr>
+          </td>
+          <td
+            style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top;"
+            valign="top">&nbsp;</td
+          >
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>
