@@ -1,13 +1,12 @@
-<script>
+<script lang="ts">
   import { WebsiteName } from "./../../config"
   import "../../app.css"
-  /**
-   * @typedef {Object} Props
-   * @property {import('svelte').Snippet} [children]
-   */
 
-  /** @type {Props} */
-  let { children } = $props()
+  interface Props {
+    children?: import("svelte").Snippet
+  }
+
+  let { children }: Props = $props()
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">
