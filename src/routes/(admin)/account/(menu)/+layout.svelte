@@ -3,10 +3,15 @@
   import { writable } from "svelte/store"
   import { setContext } from "svelte"
   import { WebsiteName } from "../../../../config"
+  interface Props {
+    children?: import("svelte").Snippet
+  }
+
+  let { children }: Props = $props()
 
   const adminSectionStore = writable("")
   setContext("adminSection", adminSectionStore)
-  let adminSection: string
+  let adminSection: string = $state()
   adminSectionStore.subscribe((value) => {
     adminSection = value
   })
@@ -47,12 +52,12 @@
       </div>
     </div>
     <div class="container px-6 lg:px-12 py-3 lg:py-6">
-      <slot />
+      {@render children?.()}
     </div>
   </div>
 
   <div class="drawer-side">
-    <label for="admin-drawer" class="drawer-overlay" />
+    <label for="admin-drawer" class="drawer-overlay"></label>
     <ul
       class="menu menu-lg p-4 w-80 min-h-full bg-base-100 lg:border-r text-primary"
     >
@@ -68,7 +73,7 @@
         <a
           href="/account"
           class={adminSection === "home" ? "active" : ""}
-          on:click={closeDrawer}
+          onclick={closeDrawer}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +95,7 @@
         <a
           href="/account/billing"
           class={adminSection === "billing" ? "active" : ""}
-          on:click={closeDrawer}
+          onclick={closeDrawer}
         >
           <svg
             class="h-5 w-5"
@@ -109,7 +114,7 @@
         <a
           href="/account/settings"
           class={adminSection === "settings" ? "active" : ""}
-          on:click={closeDrawer}
+          onclick={closeDrawer}
         >
           <svg class="h-5 w-5" viewBox="0 0 24 24" stroke="none" fill="none">
             <g id="Interface / Settings">

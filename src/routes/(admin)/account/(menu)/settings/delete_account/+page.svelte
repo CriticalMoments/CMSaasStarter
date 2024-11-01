@@ -6,7 +6,7 @@
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
 
-  export let data
+  let { data } = $props()
   let { session } = data
 </script>
 

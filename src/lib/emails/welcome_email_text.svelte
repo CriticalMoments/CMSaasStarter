@@ -7,8 +7,13 @@
   // must be set to true to render email on server
   export const ssr = true
 
-  // Define all your props here
-  export let companyName: string = ""
+  
+  interface Props {
+    // Define all your props here
+    companyName?: string;
+  }
+
+  let { companyName = "" }: Props = $props();
 </script>
 
 Welcome to {companyName}! 

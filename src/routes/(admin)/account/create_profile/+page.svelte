@@ -3,12 +3,26 @@
   import type { SubmitFunction } from "@sveltejs/kit"
   import "../../../../app.css"
 
-  export let data
-  export let form: FormAccountUpdateResult
+  interface User {
+    email: string
+  }
+
+  interface Profile {
+    full_name?: string
+    company_name?: string
+    website?: string
+  }
+
+  interface Props {
+    data: { user: User; profile: Profile }
+    form: FormAccountUpdateResult
+  }
+
+  let { data, form }: Props = $props()
 
   let { user, profile } = data
 
-  let loading = false
+  let loading = $state(false)
   let fullName: string = profile?.full_name ?? ""
   let companyName: string = profile?.company_name ?? ""
   let website: string = profile?.website ?? ""
