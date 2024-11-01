@@ -4,6 +4,7 @@ import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
 import { PUBLIC_SUPABASE_URL } from "$env/static/public"
 import { createClient, type User } from "@supabase/supabase-js"
 import type { Database } from "../DatabaseDefinitions"
+import { render } from "svelte/server"
 
 // Sends an email to the admin email address.
 // Does not throw errors, but logs them.
@@ -123,8 +124,8 @@ export const sendTemplatedEmail = async ({
     const emailTemplate = await import(
       `./emails/${template_name}_text.svelte`
     ).then((mod) => mod.default)
-    const { html } = emailTemplate.render(template_properties)
-    plaintextBody = html
+    const { body } = render(emailTemplate, { props: template_properties })
+    plaintextBody = body.replace(/<!--[\s\S]*?-->/g, "")
   } catch (e) {
     // ignore, plaintextBody is optional
     plaintextBody = undefined
@@ -135,8 +136,8 @@ export const sendTemplatedEmail = async ({
     const emailTemplate = await import(
       `./emails/${template_name}_html.svelte`
     ).then((mod) => mod.default)
-    const { html } = emailTemplate.render(template_properties)
-    htmlBody = html
+    const { body } = render(emailTemplate, { props: template_properties })
+    htmlBody = body
   } catch (e) {
     // ignore, htmlBody is optional
     htmlBody = undefined
