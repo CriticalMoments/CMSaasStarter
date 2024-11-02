@@ -21,13 +21,12 @@
   // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
   let usingOAuth = user?.amr?.find((x) => x.method === "oauth") ? true : false
 
-  let sendBtn: HTMLButtonElement | undefined = $state()
+  let sendBtnDisabled = $state(false)
+  let sendBtnText = $state("Send Set Password Email")
   let sentEmail = $state(false)
   let sendForgotPassword = () => {
-    if (sendBtn) {
-      sendBtn.disabled = true
-      sendBtn.textContent = "Sending..."
-    }
+    sendBtnDisabled = true
+    sendBtnText = "Sending..."
 
     let email = user?.email
     if (email) {
@@ -37,10 +36,8 @@
         })
         .then((d) => {
           sentEmail = d.error ? false : true
-          if (sendBtn) {
-            sendBtn.disabled = false
-            sendBtn.textContent = "Send Forgot Password"
-          }
+          sendBtnDisabled = false
+          sendBtnText = "Send Forgot Password Email"
         })
     }
   }
@@ -101,9 +98,10 @@
       </div>
       <button
         class="btn btn-outline btn-wide {sentEmail ? 'hidden' : ''}"
-        bind:this={sendBtn}
+        disabled={sendBtnDisabled}
         onclick={sendForgotPassword}
-        >Send Set Password Email
+      >
+        {sendBtnText}
       </button>
       <div class="success alert alert-success {sentEmail ? '' : 'hidden'}">
         Sent email! Please check your inbox and use the link to set your
