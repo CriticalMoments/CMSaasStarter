@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { run } from "svelte/legacy"
-
   import { page } from "$app/stores"
   import { browser } from "$app/environment"
   import { onMount } from "svelte"
@@ -54,13 +52,13 @@
 
   // searchQuery is $page.url.hash minus the "#" at the beginning if present
   let searchQuery = $state(decodeURIComponent($page.url.hash.slice(1) ?? ""))
-  run(() => {
+  $effect(() => {
     if (fuse) {
       results = fuse.search(searchQuery)
     }
   })
   // Update the URL hash when searchQuery changes so the browser can bookmark/share the search results
-  run(() => {
+  $effect(() => {
     if (browser && window.location.hash.slice(1) !== searchQuery) {
       goto("#" + searchQuery, { keepFocus: true })
     }
