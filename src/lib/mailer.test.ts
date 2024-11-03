@@ -57,7 +57,10 @@ describe("mailer", () => {
         subject: "Test",
         from_email: "test@example.com",
         template_name: "welcome_email",
-        template_properties: {},
+        template_properties: {
+          companyName: "Test Company",
+          WebsiteBaseUrl: "https://test.com",
+        },
       })
 
       expect(mockSend).toHaveBeenCalled()
@@ -106,7 +109,10 @@ describe("mailer", () => {
         from_email: "from@example.com",
         to_emails: ["to@example.com"],
         template_name: "welcome_email",
-        template_properties: {},
+        template_properties: {
+          companyName: "Test Company",
+          WebsiteBaseUrl: "https://test.com",
+        },
       })
 
       expect(mockSend).toHaveBeenCalled()
@@ -115,7 +121,12 @@ describe("mailer", () => {
       expect(email.to).toEqual(["to@example.com"])
       expect(email.subject).toEqual("Test subject")
       expect(email.text).toContain("This is a quick sample of a welcome email")
-      expect(email.html).toContain(">This is a quick sample of a welcome email")
+      expect(email.html).toContain("This is a quick sample of a welcome email")
+      expect(email.html).toContain("<html")
+      expect(email.html).toContain("https://test.com")
+      expect(email.html).toContain("Test Company")
+      expect(email.text).toContain("https://test.com")
+      expect(email.text).toContain("Test Company")
     })
   })
 })

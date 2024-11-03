@@ -28,6 +28,8 @@ To customize the email:
 - edit the plaintext email content in src/lib/emails/welcome_email_text.svelte
 - edit the html email content in src/lib/emails/welcome_email_html.svelte - don't forget address and preheader text which won't render in a preview, but will in the client's email client.
 
+**Note**: use triple braces for properties in plaintext emails, and double braces for html emails. See the [handlebars documentation](https://handlebarsjs.com/guide/expressions.html#html-escaping) for more information.
+
 You can also delete the welcome email by removing the call to sendTemplatedEmail in src/routes/(admin)/account/api/+page.server.ts
 
 ## Adding Admin Emails
@@ -38,7 +40,7 @@ Simply add a call to sendAdminEmail() in the appropriate place, passing a subjec
 
 ## Adding Additional User Emails
 
-You can add more user emails. Create a template in src/lib/emails, using the welcome email as a guide. You should have both a plaintext and html version of the email (see welcome_email_text.svelte and welcome_email_html.svelte), although it will work with just one.
+You can add more user emails. Create a template in src/lib/emails, using the welcome email as a guide. You should have both a plaintext and html version of the email (see welcome_email_text.svelte and welcome_email_html.svelte for examples), although it will work with just one.
 
 When you want to send the email, call sendUserEmail() with the appropriate parameters, including the name of the email template.
 
