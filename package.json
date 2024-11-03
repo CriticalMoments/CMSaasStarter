@@ -56,6 +56,12 @@
   "overrides": {
     "@supabase/auth-ui-svelte": {
       "svelte": "$svelte"
+    },
+    "@supabase/ssr": {
+      "cookie": "^0.7.0"
+    },
+    "@sveltejs/kit": {
+      "cookie": "^0.7.0"
     }
   }
 }
