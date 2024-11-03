@@ -4,6 +4,7 @@ import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
 import { PUBLIC_SUPABASE_URL } from "$env/static/public"
 import { createClient, type User } from "@supabase/supabase-js"
 import type { Database } from "../DatabaseDefinitions"
+import handlebars from "handlebars"
 
 // Sends an email to the admin email address.
 // Does not throw errors, but logs them.
@@ -120,11 +121,11 @@ export const sendTemplatedEmail = async ({
 
   let plaintextBody: string | undefined = undefined
   try {
-    const emailTemplate = await import(
-      `./emails/${template_name}_text.svelte`
+    const textTemplate = await import(
+      `./emails/${template_name}_text.hbs?raw`
     ).then((mod) => mod.default)
-    const { html } = emailTemplate.render(template_properties)
-    plaintextBody = html
+    const template = handlebars.compile(textTemplate)
+    plaintextBody = template(template_properties)
   } catch (e) {
     // ignore, plaintextBody is optional
     plaintextBody = undefined
@@ -132,11 +133,11 @@ export const sendTemplatedEmail = async ({
 
   let htmlBody: string | undefined = undefined
   try {
-    const emailTemplate = await import(
-      `./emails/${template_name}_html.svelte`
+    const htmlTemplate = await import(
+      `./emails/${template_name}_html.hbs?raw`
     ).then((mod) => mod.default)
-    const { html } = emailTemplate.render(template_properties)
-    htmlBody = html
+    const template = handlebars.compile(htmlTemplate)
+    htmlBody = template(template_properties)
   } catch (e) {
     // ignore, htmlBody is optional
     htmlBody = undefined

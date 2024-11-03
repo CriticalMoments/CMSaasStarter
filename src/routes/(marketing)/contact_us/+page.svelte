@@ -1,12 +1,20 @@
 <script lang="ts">
   import { enhance, applyAction } from "$app/forms"
   import type { SubmitFunction } from "@sveltejs/kit"
+  import type { FullAutoFill } from "svelte/elements"
 
-  let errors: { [fieldName: string]: string } = {}
-  let loading = false
-  let showSuccess = false
+  let errors: { [fieldName: string]: string } = $state({})
+  let loading = $state(false)
+  let showSuccess = $state(false)
 
-  const formFields = [
+  interface FormField {
+    id: string
+    label: string
+    inputType: string
+    autocomplete: FullAutoFill
+  }
+
+  const formFields: FormField[] = [
     {
       id: "first_name",
       label: "First Name *",

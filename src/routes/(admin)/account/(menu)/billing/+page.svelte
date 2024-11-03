@@ -11,7 +11,7 @@
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("billing")
 
-  export let data
+  let { data } = $props()
 
   let currentPlanId = data.currentPlanId ?? defaultPlanId
   let currentPlanName = pricingPlans.find(
