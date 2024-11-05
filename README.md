@@ -321,6 +321,7 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Add actual SaaS functionality!
   - Replace the admin dashboard with real content (`/src/routes/(admin)/account/+page.svelte`).
   - Add API endpoints and database tables as needed to deliver your SaaS product.
+- Analytics: optionally add analytics to your project. [guide](/analytics_docs.md)
 
 ## Community Extensions
 
