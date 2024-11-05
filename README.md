@@ -172,8 +172,8 @@ Github disables CI on new forks by default, so be sure to go into the Github Act
 To manually run all these tools run the following script. You can view it's contents for individual commands.
 
 ```
-# first time only: chmod +x ./check.sh
-./check.sh
+# first time only: chmod +x ./checks.sh
+./checks.sh
 ```
 
 ### Running Developer Tools in your IDE
