@@ -339,4 +339,6 @@ Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/coll
 
 # Sponsor
 
-We hope you enjoy SaaS Starter! If you build mobile apps, please check out its sponsor/creator, [Critical Moments](https://criticalmoments.io). We can help improve your mobile app conversions, improve your app rating, and mitigate major bugs and outages.
+We hope you enjoy SaaS Starter! If you build mobile apps, please check out its sponsor/creator.
+
+**[Kiln AI](https://getkiln.ai):** Free apps and tools for building high quality AI products.
