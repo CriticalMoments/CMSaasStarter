@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.0",
-    "@sveltejs/kit": "^2.5.27",
+    "@sveltejs/kit": "^2.8.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tailwindcss/typography": "^0.5.13",
     "@types/glob": "^8.1.0",
@@ -47,7 +47,7 @@
   "type": "module",
   "dependencies": {
     "@supabase/auth-ui-svelte": "^0.2.9",
-    "@supabase/ssr": "^0.5.1",
+    "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.45.2",
     "handlebars": "^4.7.8",
     "resend": "^3.5.0",
