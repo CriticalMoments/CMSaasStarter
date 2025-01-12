@@ -30,9 +30,9 @@
 - [Fully Functional Demo](https://saasstarter.work)
 - [Quick Start](#quick-start): Full docs from `git clone` to deployment.
 
-Created by the folks at [Critical Moments](https://criticalmoments.io)! Check out our website site for an example deployment of SaaS Starter.
+Created by the folks at [Kiln AI](https://getkiln.ai)! It's the easiest tool for fine-tuning LLM models, synthetic data generation, and collaborating on datasets. The Kiln app was built with SaaS Starter!
 
-**Make mobile apps?** Improve conversion rates and ratings with [Critical Moments](https://criticalmoments.io).
+**[Kiln AI](https://getkiln.ai)** Rapid AI Prototyping and Dataset Collaboration Tool
 
 ## Demo
 
