@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin "daisyui";
@@ -32,7 +32,7 @@
 
   /* border radius */
   --radius-selector: 1rem;
-  --radius-field: 0.25rem;
+  --radius-field: 0.5rem;
   --radius-box: 0.5rem;
 
   /* base sizes */

@@ -17,8 +17,9 @@
 <a
   href="https://criticalmoments.io/blog/how_we_built_our_marketing_page"
   target="_blank"
-  class="btn btn-primary">Read the Blog Post</a
 >
+  <button class="btn btn-primary">Read the Blog Post</button>
+</a>
 
 <p>
   The blog post is over on <a href="https://criticalmoments.io" target="_blank"
