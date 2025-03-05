@@ -96,16 +96,16 @@
     class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
   >
     <div
-      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent"
+      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent"
     >
       Search
     </div>
   </div>
-  <label class="input input-bordered flex items-center gap-2 mt-10">
+  <label class="input input-bordered flex items-center gap-2 mt-10 mb-5 w-full">
     <input
       id="search-input"
       type="text"
-      class="grow"
+      class="grow w-full"
       placeholder="Search"
       bind:value={searchQuery}
       onfocus={() => (focusItem = 0)}
@@ -138,7 +138,7 @@
       <a
         href={result.item.path || "/"}
         id="search-result-{i + 1}"
-        class="card my-6 bg-white shadow-xl flex-row overflow-hidden focus:border"
+        class="card my-6 bg-white shadow-xl flex-row overflow-hidden focus:mx-[-10px] focus:my-[-5px] focus:border-4 focus:border-secondary"
       >
         <div class="flex-none w-6 md:w-32 bg-secondary"></div>
         <div class="py-6 px-6">

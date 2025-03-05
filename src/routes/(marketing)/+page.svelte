@@ -233,7 +233,7 @@
   <div class="hero-content text-center py-12">
     <div class="max-w-xl">
       <div
-        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
+        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
       >
         SaaS Starter Demo
       </div>
@@ -281,15 +281,16 @@
           target="_blank">Postgres</a
         >
       </div>
-      <div class="mt-6 md:mt-2">
+      <div
+        class="mt-6 md:mt-4 flex flex-row flex-wrap gap-4 place-content-center"
+      >
         <a href="https://github.com/CriticalMoments/CMSaasStarter">
-          <button class="btn btn-primary btn-sm px-6">★ us on Github</button>
+          <button class="btn btn-primary px-6">★ us on Github</button>
         </a>
         <a
           href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
         >
-          <button class="btn btn-outline btn-primary btn-sm px-6 mt-3 mx-2"
-            >Read the Docs</button
+          <button class="btn btn-outline btn-primary px-6">Read the Docs</button
           >
         </a>
       </div>
@@ -300,7 +301,7 @@
   <div class="pt-20 pb-8 px-7">
     <div class="max-w-lg mx-auto text-center">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
       >
         Explore the Features
       </div>
@@ -361,7 +362,7 @@
   <div class="hero-content text-center pb-16 pt-4 px-4">
     <div class="max-w-lg">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mt-4 pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mt-4 pb-2"
       >
         See it in Action
       </div>
@@ -379,7 +380,7 @@
               <div class="flex justify-center">
                 <img
                   alt="Screenshot of criticalmoments.io homepage"
-                  class="aspect-[2044/1242]"
+                  class="aspect-2044/1242"
                   src="/images/example-home.png"
                 />
               </div>
@@ -391,7 +392,7 @@
             <div class="card shadow-xl border overflow-hidden">
               <img
                 alt="Screenshot of criticalmoments.io homepage"
-                class="aspect-[2044/1242]"
+                class="aspect-2044/1242"
                 src="/images/example-home.png"
               />
             </div></a

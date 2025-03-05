@@ -95,7 +95,7 @@
   </div>
 
   <div
-    class="flex flex-col flex-grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center lg:min-h-[70vh]"
+    class="flex flex-col grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center lg:min-h-[70vh]"
   >
     {#if showSuccess}
       <div class="flex flex-col place-content-center lg:min-h-[70vh]">
@@ -119,7 +119,7 @@
               <div class="flex flex-row">
                 <div class="text-base font-bold">{field.label}</div>
                 {#if errors[field.id]}
-                  <div class="text-red-600 flex-grow text-sm ml-2 text-right">
+                  <div class="text-red-600 grow text-sm ml-2 text-right">
                     {errors[field.id]}
                   </div>
                 {/if}
