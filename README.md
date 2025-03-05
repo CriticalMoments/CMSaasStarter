@@ -266,7 +266,7 @@ Our [official demo](https://saasstarter.work) is hosted on Cloudflare Pages, and
 
 ### Deploy To Cloudflare
 
-Cloudflare Pages and Workers is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/#deploy-with-cloudflare-pages) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
+Cloudflare Pages and Workers is one of the most popular options for deploying SvelteKit and we recommend it. [Follow Cloudflare’s instructions](https://developers.cloudflare.com/pages/get-started/git-integration/) to deploy in a few clicks. Be sure to select “SvelteKit” as framework, and the rest of the defaults will work.
 
 When prompted: add environment variables for your production environment (PUBLIC_SUPABASE_URL,
 PUBLIC_SUPABASE_ANON_KEY, PRIVATE_SUPABASE_SERVICE_ROLE, and PRIVATE_STRIPE_API_KEY).
