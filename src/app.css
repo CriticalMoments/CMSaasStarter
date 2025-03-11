@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
-@plugin "daisyui";
+@plugin "daisyui" {
+  /* Disable all other themes which forces the default theme created below. You can add a dark mode theme using daisyui if you like, and it will automatically use it when the user's system is in dark mode. Docs: https://daisyui.com/docs/themes/ */
+  themes: false;
+}
 
 @plugin "daisyui/theme" {
   name: "saasstartertheme";
