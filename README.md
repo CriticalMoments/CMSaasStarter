@@ -40,7 +40,7 @@ You can explore all the features using our fully functional demo [saasstarter.wo
 
 [![Try it Now](https://img.shields.io/badge/Try_it_Now-37a779?style=for-the-badge "Try it Now")](https://saasstarter.work)
 
-See [criticalmoments.io](https://criticalmoments.io) for an example of what’s possible after this template has design, content, and functionality added.
+See [criticalmoments.io](https://criticalmoments.io) and [getkiln.ai](https://getkiln.ai) for examples of what’s possible after this template has design, content, and functionality added.
 
 <a href="https://saasstarter.work">
 <kbd>
@@ -336,8 +336,19 @@ These extensions are reference implementations of commonly needed features. We d
 
 Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/collection/solar-broken-line-icons/) and [Solar Linear Icons](https://www.svgrepo.com/collection/solar-linear-icons) via CC Attribution License.
 
-# Sponsor
+# Sponsor: Kiln AI
 
-We hope you enjoy SaaS Starter! If you build mobile apps, please check out its sponsor/creator.
+CMSaasStarter is sponsored by [Kiln AI](https://getkiln.ai): the easiest way to build AI products.
 
-**[Kiln AI](https://getkiln.ai):** Free apps and tools for building high quality AI products.
+- 🚀 Intuitive Desktop Apps: One-click apps for Windows, MacOS, and Linux. Truly intuitive design.
+- 🎛️ Fine Tuning: Zero-code fine-tuning for Llama, GPT-4o, and more. Automatic serverless deployment of models.
+- 📊 Evals: Evaluate the quality of your models/tasks using state of the art evaluators.
+- 🤖 Synthetic Data Generation: Generate training data with our interactive visual tooling.
+- 🧠 Reasoning Models: Train or distill your own custom reasoning models.
+- 🤝 Team Collaboration: Git-based version control for your AI datasets. Intuitive UI makes it easy to collaborate with QA, PM, and subject matter experts on structured data (examples, prompts, ratings, feedback, issues, etc.).
+
+**Demo of Kiln AI:**
+
+https://github.com/user-attachments/assets/0fb3cd48-0f2c-40f5-baf2-b38f11ed85ea
+
+
