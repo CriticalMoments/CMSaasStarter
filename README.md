@@ -350,5 +350,3 @@ CMSaasStarter is sponsored by [Kiln AI](https://getkiln.ai): the easiest way to 
 **Demo of Kiln AI:**
 
 https://github.com/user-attachments/assets/0fb3cd48-0f2c-40f5-baf2-b38f11ed85ea
-
-
