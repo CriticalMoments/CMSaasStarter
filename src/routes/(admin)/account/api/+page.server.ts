@@ -1,5 +1,5 @@
-import { fail, redirect } from "@sveltejs/kit"
 import { sendAdminEmail, sendUserEmail } from "$lib/mailer"
+import { fail, redirect } from "@sveltejs/kit"
 import { WebsiteBaseUrl } from "../../../../config"
 
 export const actions = {
@@ -180,7 +180,7 @@ export const actions = {
   },
   deleteAccount: async ({
     request,
-    locals: { supabase, supabaseServiceRole, safeGetSession },
+    locals: { supabase, supabaseServiceRole, safeGetSession, stripe },
   }) => {
     const { session, user } = await safeGetSession()
     if (!session || !user?.id) {
@@ -207,6 +207,48 @@ export const actions = {
     if (pwError) {
       // The user was logged out because of bad password. Redirect to error page explaining.
       redirect(303, "/login/current_password_error")
+    }
+
+    const { data: customer, error: cusError } = await supabaseServiceRole
+      .from("stripe_customers")
+      .select("stripe_customer_id")
+      .eq("user_id", user.id)
+      .single()
+
+    if (cusError) {
+      console.error("Error getting stripe customer ID.", cusError)
+      return fail(500, {
+        errorMessage: "Unknown error. If this persists please contact us.",
+        currentPassword,
+      })
+    }
+
+    // Try cancelling all subscriptions
+    // If this fails we should notice the user and not delete their account
+    try {
+      const subscriptionsPromise = stripe.subscriptions.list({
+        customer: customer.stripe_customer_id,
+        limit: 100,
+      })
+
+      const [{ data: subscriptions }] = await Promise.all([
+        subscriptionsPromise,
+      ])
+
+      const currentSubscriptions = subscriptions.filter((sub) =>
+        ["active", "trailing", "past_due"].includes(sub.status),
+      )
+
+      const cancelPromises = currentSubscriptions.map((sub) =>
+        stripe.subscriptions.cancel(sub.id),
+      )
+
+      await Promise.all(cancelPromises)
+    } catch (error) {
+      console.error("Error cancelling subscriptions:", error)
+      return fail(500, {
+        errorMessage: "Unknown error. If this persists please contact us.",
+      })
     }
 
     const { error } = await supabaseServiceRole.auth.admin.deleteUser(
