@@ -1,5 +1,8 @@
 // src/hooks.server.ts
-import { PRIVATE_SUPABASE_SERVICE_ROLE } from "$env/static/private"
+import {
+  PRIVATE_STRIPE_API_KEY,
+  PRIVATE_SUPABASE_SERVICE_ROLE,
+} from "$env/static/private"
 import {
   PUBLIC_SUPABASE_ANON_KEY,
   PUBLIC_SUPABASE_URL,
@@ -8,6 +11,7 @@ import { createServerClient } from "@supabase/ssr"
 import { createClient } from "@supabase/supabase-js"
 import type { Handle } from "@sveltejs/kit"
 import { sequence } from "@sveltejs/kit/hooks"
+import Stripe from "stripe"
 
 export const supabase: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createServerClient(
@@ -94,4 +98,11 @@ const authGuard: Handle = async ({ event, resolve }) => {
   return resolve(event)
 }
 
-export const handle: Handle = sequence(supabase, authGuard)
+const stripe: Handle = async ({ event, resolve }) => {
+  event.locals.stripe = new Stripe(PRIVATE_STRIPE_API_KEY, {
+    apiVersion: "2023-08-16",
+  })
+  return resolve(event)
+}
+
+export const handle: Handle = sequence(supabase, authGuard, stripe)
