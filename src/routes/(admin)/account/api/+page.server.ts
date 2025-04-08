@@ -236,7 +236,7 @@ export const actions = {
       ])
 
       const currentSubscriptions = subscriptions.filter((sub) =>
-        ["active", "trailing", "past_due"].includes(sub.status),
+        ["active", "trialing", "past_due"].includes(sub.status),
       )
 
       const cancelPromises = currentSubscriptions.map((sub) =>
@@ -247,7 +247,8 @@ export const actions = {
     } catch (error) {
       console.error("Error cancelling subscriptions:", error)
       return fail(500, {
-        errorMessage: "Unknown error. If this persists please contact us.",
+        errorMessage:
+          "Failed to cancel subscriptions. Please try again or contact support.",
       })
     }
 
