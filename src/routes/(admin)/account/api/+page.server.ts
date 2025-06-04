@@ -219,7 +219,6 @@ export const actions = {
       console.error("Error getting stripe customer ID.", cusError)
       return fail(500, {
         errorMessage: "Unknown error. If this persists please contact us.",
-        currentPassword,
       })
     }
 
