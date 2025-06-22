@@ -17,9 +17,9 @@ export function GET({ url }) {
 
   let body = `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> 
   <channel>
-    <title>${blogInfo.name}</title>
+    <title>${encodeXML(blogInfo.name)}</title>
     <link>${url.origin}/blog</link>
-    <description>${blogInfo.description}</description>
+    <description>${encodeXML(blogInfo.description)}</description>
     <atom:link href="${url.origin}/blog/rss.xml" rel="self" type="application/rss+xml" />`
   for (const post of sortedBlogPosts) {
     body += `

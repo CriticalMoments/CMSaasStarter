@@ -37,7 +37,7 @@ export async function buildSearchIndex() {
       })
       const dom = new JSDOM.JSDOM(data)
       const title =
-        dom.window.document.querySelector("title")?.innerHTML ||
+        dom.window.document.querySelector("title")?.textContent ||
         "Page " + webPath
       const description =
         dom.window.document
