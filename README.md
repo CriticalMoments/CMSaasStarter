@@ -281,7 +281,7 @@ If you prefer another host you can explore alternatives:
 - [Community adapters](https://sveltesociety.dev/components#adapters) including Github pages, AppEngine, Azure, and more
 - [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/sveltekit) if you want one host for everything. Note: they do charge $10 a month for custom domains, unlike Cloudflare.
 
-We do not recommend using Vercel.
+We do not recommend using Vercel for this (or anything else).
 
 ## Setup Emailer -- Optional
 
