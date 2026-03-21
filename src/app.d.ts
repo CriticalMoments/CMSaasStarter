@@ -1,4 +1,5 @@
 import { Session, SupabaseClient, type AMREntry } from "@supabase/supabase-js"
+import type Stripe from "stripe"
 import { Database } from "./DatabaseDefinitions"
 
 // See https://kit.svelte.dev/docs/types#app
@@ -15,6 +16,7 @@ declare global {
       }>
       session: Session | null
       user: User | null
+      stripe: Stripe
     }
     interface PageData {
       session: Session | null
