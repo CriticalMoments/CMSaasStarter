@@ -34,6 +34,14 @@ Created by the folks at [Kiln AI](https://getkiln.ai)! It's the easiest tool for
 
 **[Kiln AI](https://getkiln.ai)** Rapid AI Prototyping and Dataset Collaboration Tool
 
+## AI Agents support
+
+This repo uses [AGENTS.md](https://github.com/agentsmd/agents.md) guiding (plus nested `*/AGENTS.md`) to help AI agents (and humans) navigate the template and find the right customization zones.
+
+- 👍 **Recommended**: [OpenCode](https://github.com/anomalyco/opencode) with [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) plugin (native support for `AGENTS.md` + nested `AGENTS.md`).
+- 👌 **Alternatives**: [OpenAI Codex](https://github.com/openai/codex), [Gemini CLI](https://github.com/google-gemini/gemini-cli).
+- 🤷‍♂️ **Not recommended** _(vendor lock-in)_: **Claude Code**. _If you want to use it anyway, rename all `AGENTS.md` files to `CLAUDE.md`_.
+
 ## Demo
 
 You can explore all the features using our fully functional demo [saasstarter.work](https://saasstarter.work).
