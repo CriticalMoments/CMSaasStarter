@@ -4,10 +4,8 @@
 
   let { data, children } = $props()
 
-  let { supabase, session } = $state(data)
-  $effect(() => {
-    ;({ supabase, session } = data)
-  })
+  let supabase = $derived(data.supabase)
+  let session = $derived(data.session)
 
   onMount(() => {
     const { data } = supabase.auth.onAuthStateChange((event, _session) => {

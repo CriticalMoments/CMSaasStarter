@@ -9,7 +9,7 @@
     isEurope = Intl.DateTimeFormat()
       .resolvedOptions()
       .timeZone.startsWith("Europe/")
-  } catch (e) {
+  } catch {
     /* continue */
   }
 </script>

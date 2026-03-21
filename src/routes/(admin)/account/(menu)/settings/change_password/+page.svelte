@@ -2,24 +2,31 @@
   import { page } from "$app/stores"
   import { getContext } from "svelte"
   import type { Writable } from "svelte/store"
+  import type { User } from "@supabase/supabase-js"
   import SettingsModule from "../settings_module.svelte"
+
+  // Supabase does not maintain an AMR typedef, so we extend User
+  interface UserWithAmr extends User {
+    amr?: { method: string }[]
+  }
 
   let adminSection: Writable<string> = getContext("adminSection")
   adminSection.set("settings")
 
   let { data } = $props()
-  let { user, supabase } = data
+  let { user, supabase } = $derived(data)
 
   // True if definitely has a password, but can be false if they
   // logged in with oAuth or email link
+  let userWithAmr = $derived(user as UserWithAmr | undefined)
 
-  // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-  let hasPassword = user?.amr?.find((x) => x.method === "password")
-    ? true
-    : false
+  let hasPassword = $derived(
+    userWithAmr?.amr?.find((x) => x.method === "password") ? true : false,
+  )
 
-  // @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
-  let usingOAuth = user?.amr?.find((x) => x.method === "oauth") ? true : false
+  let usingOAuth = $derived(
+    userWithAmr?.amr?.find((x) => x.method === "oauth") ? true : false,
+  )
 
   let sendBtnDisabled = $state(false)
   let sendBtnText = $state("Send Set Password Email")

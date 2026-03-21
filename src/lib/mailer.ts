@@ -126,7 +126,7 @@ export const sendTemplatedEmail = async ({
     ).then((mod) => mod.default)
     const template = handlebars.compile(textTemplate)
     plaintextBody = template(template_properties)
-  } catch (e) {
+  } catch {
     // ignore, plaintextBody is optional
     plaintextBody = undefined
   }
@@ -138,7 +138,7 @@ export const sendTemplatedEmail = async ({
     ).then((mod) => mod.default)
     const template = handlebars.compile(htmlTemplate)
     htmlBody = template(template_properties)
-  } catch (e) {
+  } catch {
     // ignore, htmlBody is optional
     htmlBody = undefined
   }

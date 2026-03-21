@@ -8,7 +8,7 @@
 
   let { data } = $props()
 
-  let { profile } = data
+  let { profile } = $derived(data)
 </script>
 
 <svelte:head>

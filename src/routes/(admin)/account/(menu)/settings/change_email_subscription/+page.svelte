@@ -1,8 +1,8 @@
 <script lang="ts">
   import SettingsModule from "../settings_module.svelte"
   let { data } = $props()
-  let { profile } = data
-  let unsubscribed = profile?.unsubscribed
+  let { profile } = $derived(data)
+  let unsubscribed = $derived(profile?.unsubscribed)
 </script>
 
 <svelte:head>

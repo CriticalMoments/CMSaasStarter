@@ -6,7 +6,7 @@
   import { page } from "$app/stores"
 
   let { data } = $props()
-  let { supabase } = data
+  let { supabase } = $derived(data)
 
   onMount(() => {
     const { data } = supabase.auth.onAuthStateChange((event) => {
