@@ -1,6 +1,7 @@
 <script lang="ts">
   import { WebsiteName } from "./../../config"
   import "../../app.css"
+  import KnocketWidget from "$lib/KnocketWidget.svelte"
 
   interface Props {
     children?: import("svelte").Snippet
@@ -8,6 +9,8 @@
 
   let { children }: Props = $props()
 </script>
+
+<KnocketWidget />
 
 <div class="navbar bg-base-100 container mx-auto">
   <div class="flex-1">
