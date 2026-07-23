@@ -128,3 +128,46 @@ export const fetchSubscription = async ({
     hasEverHadSubscription,
   }
 }
+
+export const cancelActiveSubscriptions = async ({
+  supabaseServiceRole,
+  userId,
+}: {
+  supabaseServiceRole: SupabaseClient<Database>
+  userId: string
+}) => {
+  const { data: dbCustomer, error } = await supabaseServiceRole
+    .from("stripe_customers")
+    .select("stripe_customer_id")
+    .eq("user_id", userId)
+    .single()
+
+  if (error?.code === "PGRST116") {
+    return {}
+  }
+  if (error) {
+    return { error }
+  }
+  if (!dbCustomer?.stripe_customer_id) {
+    return {}
+  }
+
+  try {
+    const subscriptions = await stripe.subscriptions.list({
+      customer: dbCustomer.stripe_customer_id,
+      status: "all",
+      limit: 100,
+    })
+    await Promise.all(
+      subscriptions.data
+        .filter(({ status }) =>
+          ["active", "trialing", "past_due"].includes(status),
+        )
+        .map(({ id }) => stripe.subscriptions.cancel(id)),
+    )
+  } catch (error) {
+    return { error }
+  }
+
+  return {}
+}

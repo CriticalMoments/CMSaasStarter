@@ -1,6 +1,7 @@
 import { fail, redirect } from "@sveltejs/kit"
 import { sendAdminEmail, sendUserEmail } from "$lib/mailer"
 import { WebsiteBaseUrl } from "../../../../config"
+import { cancelActiveSubscriptions } from "../subscription_helpers.server"
 
 export const actions = {
   toggleEmailSubscription: async ({ locals: { supabase, safeGetSession } }) => {
@@ -207,6 +208,18 @@ export const actions = {
     if (pwError) {
       // The user was logged out because of bad password. Redirect to error page explaining.
       redirect(303, "/login/current_password_error")
+    }
+
+    const { error: subscriptionError } = await cancelActiveSubscriptions({
+      supabaseServiceRole,
+      userId: user.id,
+    })
+    if (subscriptionError) {
+      console.error("Error cancelling subscriptions", subscriptionError)
+      return fail(500, {
+        errorMessage: "Unable to cancel your subscription. Please try again.",
+        currentPassword,
+      })
     }
 
     const { error } = await supabaseServiceRole.auth.admin.deleteUser(
